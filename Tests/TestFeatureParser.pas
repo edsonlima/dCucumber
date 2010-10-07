@@ -20,6 +20,7 @@ type
   published
     procedure ParseDeveriaRetornarUmaFeature;
     procedure ParseDeveriaTrazerOsCenariosDaFeature;
+    procedure ParseDeveriaTrazerOTituloEADescricaoDaFeature;
   end;
 
 implementation
@@ -32,8 +33,16 @@ var
   LFeature: IFeature;
 begin
   LFeature := FFeatureParser.Parse;
-  Specify.That(LFeature.Descricao).Should.Equal('Opa, no caminho certo!');
-  Specify.That(LFeature.Cenarios.Count).Should.Equal(1);
+  Specify.That(LFeature.Scenarios.Count).Should.Equal(1);
+end;
+
+procedure TestTFeatureParser.ParseDeveriaTrazerOTituloEADescricaoDaFeature;
+var
+  LFeature: IFeature;
+begin
+  LFeature := FFeatureParser.Parse;
+  Specify.That(LFeature.Titulo).Should.Equal('Um modelo de teste');
+  Specify.That(LFeature.Descricao).Should.Equal(DescricaoFeatureTeste);
 end;
 
 procedure TestTFeatureParser.SetUp;

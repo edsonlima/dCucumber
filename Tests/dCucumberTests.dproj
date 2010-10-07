@@ -67,6 +67,8 @@
 			<DCCReference Include="..\source\Feature.pas"/>
 			<DCCReference Include="..\pcre\PerlRegEx.pas"/>
 			<DCCReference Include="..\pcre\pcre.pas"/>
+			<DCCReference Include="..\source\ScenarioIntf.pas"/>
+			<DCCReference Include="..\source\Scenario.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

@@ -107,6 +107,7 @@ type
     procedure SetValue(const Value: string);
     property Value: string read GetValue write SetValue;
     property Vazia: Boolean read GetVazia;
+    procedure Clear;
   end;
 
   TString = class(TInterfacedObject, IString)
@@ -163,6 +164,7 @@ type
     procedure Show;
     procedure ShowWarning;
     procedure ShowError;
+    procedure Clear;
     function ShowConfirmation: boolean;
     function Length: Integer;
     function LowerCase: string;
@@ -279,6 +281,8 @@ type
     function IgualA(AValor: string): Boolean; overload;
     function IgualA(AValor: IString): Boolean; overload;
     function IgualA(AValor: IXString): Boolean; overload;
+    function IsEmpty: Boolean;
+    procedure Clear;
 
     property Get[De, Ate: Integer]: IXString read GetAt write SetAt; default;
     property Value: string read GetValue write SetValue;
@@ -364,11 +368,13 @@ type
     function IgualA(AValor: string): Boolean; overload;
     function IgualA(AValor: IString): Boolean; overload;
     function IgualA(AValor: IXString): Boolean; overload;
+    procedure Clear;
 
     property Value: string read GetValue write SetValue;
     property Get[De, Ate: Integer]: IXString read GetAt write SetAt; default;
     constructor Create(AValue: string);
     function AsInteger: Integer;
+    function IsEmpty: Boolean;
   end;
 
   TIntegerProc = reference to procedure;
@@ -766,6 +772,11 @@ end;
 function TString.Centralizado(ATamanho: Integer = 38): string;
 begin
   Result := AlinhaTX(Value, 'C', ATamanho);
+end;
+
+procedure TString.Clear;
+begin
+  Value := '';
 end;
 
 function TString.Contem(AValue: string): Boolean;
@@ -1342,6 +1353,11 @@ begin
   Result := Self;
 end;
 
+procedure TXString.Clear;
+begin
+  Value := '';
+end;
+
 function TXString.ComAspas: IXString;
 begin
   Value := S(Value).ComAspas;
@@ -1428,6 +1444,11 @@ end;
 function TXString.IndexOf(ASubstring: string; AOffSet: Integer): Integer;
 begin
   Result := S(Value).IndexOf(ASubstring, AOffSet);
+end;
+
+function TXString.IsEmpty: Boolean;
+begin
+  Result := System.Length(Value) = 0;
 end;
 
 function TXString.Length: Integer;

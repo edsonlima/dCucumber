@@ -8,17 +8,17 @@ uses
 type
   TFeature = class(TInterfacedObject, IFeature)
   private
-    FCenarios: IInterfaceList;
+    FScenarios: IInterfaceList;
     FDescricao: string;
     FTitulo: string;
-    function GetCenarios: IInterfaceList;
+    function GetScenarios: IInterfaceList;
     function GetDescricao: string;
     function GetTitulo: string;
     procedure SetDescricao(const Value: string);
     procedure SetTitulo(const Value: string);
   public
     constructor Create;
-    property Cenarios: IInterfaceList read GetCenarios;
+    property Scenarios: IInterfaceList read GetScenarios;
     property Descricao: string read GetDescricao write SetDescricao;
     property Titulo: string read GetTitulo write SetTitulo;
   end;
@@ -27,12 +27,12 @@ implementation
 
 constructor TFeature.Create;
 begin
-  FCenarios := TInterfaceList.Create;
+  FScenarios := TInterfaceList.Create;
 end;
 
-function TFeature.GetCenarios: IInterfaceList;
+function TFeature.GetScenarios: IInterfaceList;
 begin
-  Result := FCenarios;
+  Result := FScenarios;
 end;
 
 function TFeature.GetDescricao: string;

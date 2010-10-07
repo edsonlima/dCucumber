@@ -35,7 +35,9 @@ uses
   FeatureIntf in '..\source\FeatureIntf.pas',
   Feature in '..\source\Feature.pas',
   PerlRegEx in '..\pcre\PerlRegEx.pas',
-  pcre in '..\pcre\pcre.pas';
+  pcre in '..\pcre\pcre.pas',
+  ScenarioIntf in '..\source\ScenarioIntf.pas',
+  Scenario in '..\source\Scenario.pas';
 
 {$R *.RES}
 

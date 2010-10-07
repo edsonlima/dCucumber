@@ -1,8 +1,8 @@
 
  Start         Length     Name                   Class
- 0001:00401000 0013C4FCH .text                   CODE
+ 0001:00401000 0013CB18H .text                   CODE
  0002:0053E000 00000D18H .itext                  ICODE
- 0003:0053F000 00011090H .data                   DATA
+ 0003:0053F000 00011094H .data                   DATA
  0004:00551000 00005350H .bss                    BSS
  0005:00000000 00000048H .tls                    TLS
 
@@ -67,21 +67,22 @@ Detailed map of segments
  0001:0010AF9C 000018E6 C=CODE     S=.text    G=(none)   M=TextTestRunner ACBP=A9
  0001:0010C884 00000035 C=CODE     S=.text    G=(none)   M=FeatureIntf ACBP=A9
  0001:0010C8BC 00000041 C=CODE     S=.text    G=(none)   M=FeatureParserIntf ACBP=A9
- 0001:0010C900 000002EF C=CODE     S=.text    G=(none)   M=Feature  ACBP=A9
- 0001:0010CBF0 00011AE4 C=CODE     S=.text    G=(none)   M=pcre     ACBP=A9
- 0001:0011E6D4 00003070 C=CODE     S=.text    G=(none)   M=PerlRegEx ACBP=A9
- 0001:00121744 00008F5E C=CODE     S=.text    G=(none)   M=TypeUtils ACBP=A9
- 0001:0012A6A4 0000039F C=CODE     S=.text    G=(none)   M=FeatureParser ACBP=A9
- 0001:0012AA44 00000140 C=CODE     S=.text    G=(none)   M=dSpecIntf ACBP=A9
- 0001:0012AB84 00000574 C=CODE     S=.text    G=(none)   M=AutoDocObjects ACBP=A9
- 0001:0012B0F8 000003A4 C=CODE     S=.text    G=(none)   M=dSpecUtils ACBP=A9
- 0001:0012B49C 00000547 C=CODE     S=.text    G=(none)   M=BaseObjects ACBP=A9
- 0001:0012B9E4 000012E4 C=CODE     S=.text    G=(none)   M=Modifiers ACBP=A9
- 0001:0012CCC8 00008D28 C=CODE     S=.text    G=(none)   M=Specifiers ACBP=A9
- 0001:001359F0 00001373 C=CODE     S=.text    G=(none)   M=dSpec    ACBP=A9
- 0001:00136D64 00000010 C=CODE     S=.text    G=(none)   M=TestConsts ACBP=A9
- 0001:00136D74 0000088B C=CODE     S=.text    G=(none)   M=TestFeatureParser ACBP=A9
- 0001:00137600 00004EFA C=CODE     S=.text    G=(none)   M=dCucumberTests ACBP=A9
+ 0001:0010C900 000000D8 C=CODE     S=.text    G=(none)   M=Scenario ACBP=A9
+ 0001:0010C9D8 00009086 C=CODE     S=.text    G=(none)   M=TypeUtils ACBP=A9
+ 0001:00115A60 00011AE4 C=CODE     S=.text    G=(none)   M=pcre     ACBP=A9
+ 0001:00127544 00003070 C=CODE     S=.text    G=(none)   M=PerlRegEx ACBP=A9
+ 0001:0012A5B4 000002EF C=CODE     S=.text    G=(none)   M=Feature  ACBP=A9
+ 0001:0012A8A4 00000628 C=CODE     S=.text    G=(none)   M=FeatureParser ACBP=A9
+ 0001:0012AECC 00000140 C=CODE     S=.text    G=(none)   M=dSpecIntf ACBP=A9
+ 0001:0012B00C 00000574 C=CODE     S=.text    G=(none)   M=AutoDocObjects ACBP=A9
+ 0001:0012B580 000003A4 C=CODE     S=.text    G=(none)   M=dSpecUtils ACBP=A9
+ 0001:0012B924 00000547 C=CODE     S=.text    G=(none)   M=BaseObjects ACBP=A9
+ 0001:0012BE6C 000012E4 C=CODE     S=.text    G=(none)   M=Modifiers ACBP=A9
+ 0001:0012D150 00008D28 C=CODE     S=.text    G=(none)   M=Specifiers ACBP=A9
+ 0001:00135E78 00001373 C=CODE     S=.text    G=(none)   M=dSpec    ACBP=A9
+ 0001:001371EC 00000018 C=CODE     S=.text    G=(none)   M=TestConsts ACBP=A9
+ 0001:00137204 000009E3 C=CODE     S=.text    G=(none)   M=TestFeatureParser ACBP=A9
+ 0001:00137BE8 00004F30 C=CODE     S=.text    G=(none)   M=dCucumberTests ACBP=A9
  0002:00000000 000000AA C=ICODE    S=.itext   G=(none)   M=System   ACBP=A9
  0002:000000AC 00000016 C=ICODE    S=.itext   G=(none)   M=Windows  ACBP=A9
  0002:000000C4 000000B4 C=ICODE    S=.itext   G=(none)   M=SysUtils ACBP=A9
@@ -289,25 +290,25 @@ Detailed map of segments
  0001:000DE500       ActnList.TCustomActionList.UpdateAction
  0001:000DEF0C       ActnList.TShortCutList.Add
  0001:000DEF74       ActnList.TShortCutList.IndexOfShortCut
- 0001:0012AC00       AutoDocObjects..TBaseAutoDoc
- 0001:0012ADFC       AutoDocObjects.TBaseAutoDoc.BeginSpec
- 0001:0012AE88       AutoDocObjects.TBaseAutoDoc.Create
- 0001:0012AEC8       AutoDocObjects.TBaseAutoDoc.Destroy
- 0001:0012AEFC       AutoDocObjects.TBaseAutoDoc.DocSpec
- 0001:0012AFCC       AutoDocObjects.TBaseAutoDoc.DoOutput
- 0001:0012AFF4       AutoDocObjects.TBaseAutoDoc.GetEnabled
- 0001:0012AFFC       AutoDocObjects.TBaseAutoDoc.SetEnabled
- 0001:0012B000       AutoDocObjects.TBaseAutoDoc.SplitCamelCaseString
- 0001:0012B5A0       BaseObjects..TFailureList
- 0001:0012B49C       BaseObjects..TFailureListItem
- 0001:0012B718       BaseObjects..TFailureReportingObject
- 0001:0012B89C       BaseObjects.TFailureList.Add
- 0001:0012B8AC       BaseObjects.TFailureList.AddFailure
- 0001:0012B8D0       BaseObjects.TFailureList.Create
- 0001:0012B910       BaseObjects.TFailureList.GetItem
- 0001:0012B928       BaseObjects.TFailureReportingObject.Create
- 0001:0012B978       BaseObjects.TFailureReportingObject.Destroy
- 0001:0012B9B0       BaseObjects.TFailureReportingObject.Fail
+ 0001:0012B088       AutoDocObjects..TBaseAutoDoc
+ 0001:0012B284       AutoDocObjects.TBaseAutoDoc.BeginSpec
+ 0001:0012B310       AutoDocObjects.TBaseAutoDoc.Create
+ 0001:0012B350       AutoDocObjects.TBaseAutoDoc.Destroy
+ 0001:0012B384       AutoDocObjects.TBaseAutoDoc.DocSpec
+ 0001:0012B454       AutoDocObjects.TBaseAutoDoc.DoOutput
+ 0001:0012B47C       AutoDocObjects.TBaseAutoDoc.GetEnabled
+ 0001:0012B484       AutoDocObjects.TBaseAutoDoc.SetEnabled
+ 0001:0012B488       AutoDocObjects.TBaseAutoDoc.SplitCamelCaseString
+ 0001:0012BA28       BaseObjects..TFailureList
+ 0001:0012B924       BaseObjects..TFailureListItem
+ 0001:0012BBA0       BaseObjects..TFailureReportingObject
+ 0001:0012BD24       BaseObjects.TFailureList.Add
+ 0001:0012BD34       BaseObjects.TFailureList.AddFailure
+ 0001:0012BD58       BaseObjects.TFailureList.Create
+ 0001:0012BD98       BaseObjects.TFailureList.GetItem
+ 0001:0012BDB0       BaseObjects.TFailureReportingObject.Create
+ 0001:0012BE00       BaseObjects.TFailureReportingObject.Destroy
+ 0001:0012BE38       BaseObjects.TFailureReportingObject.Fail
  0004:00005310       Buttons..5
  0003:000023C0       Buttons.BitBtnCaptions
  0004:00005314       Buttons.BitBtnGlyphs
@@ -3178,7 +3179,7 @@ Detailed map of segments
  0004:000052B4       Controls._ImmSetOpenStatus
  0004:000052A0       Controls._WINNLSEnableIME
  0002:00000CD8       dCucumberTests.dCucumberTests
- 0001:00137600       dCucumberTests.Finalization
+ 0001:00137BE8       dCucumberTests.Finalization
  0004:000051C0       Dialogs..03
  0001:000A41A0       Dialogs..EPlatformVersionException
  0001:000A3DC4       Dialogs..TCommonDialog
@@ -3315,43 +3316,43 @@ Detailed map of segments
  0001:000A8BD4       Dialogs.TTaskMessageDialog.Execute
  0003:00001D20       Dialogs.UseLatestCommonDialogs
  0003:00001D28       Dialogs.WndProcPtrAtom
- 0001:00135EE0       dSpec..TContext
- 0001:001359F0       dSpec..TSpecify
- 0001:00136198       dSpec.RegisterSpec
- 0001:00136808       dSpec.TContext.AddFailure
- 0001:00136818       dSpec.TContext.Create
- 0001:00136A94       dSpec.TContext.CreateAutoDoc
- 0001:00136904       dSpec.TContext.Destroy
- 0001:00136958       dSpec.TContext.DocumentSpec
- 0001:00136A60       dSpec.TContext.DoStatus
- 0001:00136A7C       dSpec.TContext.GetAutoDoc
- 0001:00136AC8       dSpec.TContext.GetContextDescription
- 0001:00136AE0       dSpec.TContext.Invoke
- 0001:00136C24       dSpec.TContext.NewSpecDox
- 0001:00136B70       dSpec.TContext.RepealLastFailure
- 0001:00136B8C       dSpec.TContext.ReportFailures
- 0001:00136CF0       dSpec.TContext.RunWithFixture
- 0001:00136D08       dSpec.TContext.SetAutoDoc
- 0001:00136D4C       dSpec.TContext.SetContextDescription
- 0001:001361E0       dSpec.TSpecify.Create
- 0001:00136220       dSpec.TSpecify.Destroy
- 0001:001366B0       dSpec.TSpecify.That
- 0001:00136620       dSpec.TSpecify.That
- 0001:001365A8       dSpec.TSpecify.That
- 0001:00136754       dSpec.TSpecify.That
- 0001:00136438       dSpec.TSpecify.That
- 0001:00136390       dSpec.TSpecify.That
- 0001:001362F0       dSpec.TSpecify.That
- 0001:00136250       dSpec.TSpecify.That
- 0001:001364E8       dSpec.TSpecify.That
- 0001:0012B140       dSpecUtils.CallerAddr
- 0001:0012B160       dSpecUtils.GetImplementingObjectFor
- 0001:0012B430       dSpecUtils.GetValueName
- 0001:0012B288       dSpecUtils.IsAlpha
- 0001:0012B328       dSpecUtils.IsAlphaNumeric
- 0001:0012B0F8       dSpecUtils.IsBadPointer
- 0001:0012B1FC       dSpecUtils.IsNumeric
- 0001:0012B3C8       dSpecUtils.IsPrime
+ 0001:00136368       dSpec..TContext
+ 0001:00135E78       dSpec..TSpecify
+ 0001:00136620       dSpec.RegisterSpec
+ 0001:00136C90       dSpec.TContext.AddFailure
+ 0001:00136CA0       dSpec.TContext.Create
+ 0001:00136F1C       dSpec.TContext.CreateAutoDoc
+ 0001:00136D8C       dSpec.TContext.Destroy
+ 0001:00136DE0       dSpec.TContext.DocumentSpec
+ 0001:00136EE8       dSpec.TContext.DoStatus
+ 0001:00136F04       dSpec.TContext.GetAutoDoc
+ 0001:00136F50       dSpec.TContext.GetContextDescription
+ 0001:00136F68       dSpec.TContext.Invoke
+ 0001:001370AC       dSpec.TContext.NewSpecDox
+ 0001:00136FF8       dSpec.TContext.RepealLastFailure
+ 0001:00137014       dSpec.TContext.ReportFailures
+ 0001:00137178       dSpec.TContext.RunWithFixture
+ 0001:00137190       dSpec.TContext.SetAutoDoc
+ 0001:001371D4       dSpec.TContext.SetContextDescription
+ 0001:00136668       dSpec.TSpecify.Create
+ 0001:001366A8       dSpec.TSpecify.Destroy
+ 0001:00136B38       dSpec.TSpecify.That
+ 0001:00136AA8       dSpec.TSpecify.That
+ 0001:00136A30       dSpec.TSpecify.That
+ 0001:00136BDC       dSpec.TSpecify.That
+ 0001:001368C0       dSpec.TSpecify.That
+ 0001:00136818       dSpec.TSpecify.That
+ 0001:00136778       dSpec.TSpecify.That
+ 0001:001366D8       dSpec.TSpecify.That
+ 0001:00136970       dSpec.TSpecify.That
+ 0001:0012B5C8       dSpecUtils.CallerAddr
+ 0001:0012B5E8       dSpecUtils.GetImplementingObjectFor
+ 0001:0012B8B8       dSpecUtils.GetValueName
+ 0001:0012B710       dSpecUtils.IsAlpha
+ 0001:0012B7B0       dSpecUtils.IsAlphaNumeric
+ 0001:0012B580       dSpecUtils.IsBadPointer
+ 0001:0012B684       dSpecUtils.IsNumeric
+ 0001:0012B850       dSpecUtils.IsPrime
  0001:00044D98       Dwmapi.DWMAPI.DLL
  0001:00044DD0       Dwmapi.DwmCompositionEnabled
  0001:00044DA8       Dwmapi.DwmExtendFrameIntoClientArea
@@ -3435,18 +3436,19 @@ Detailed map of segments
  0001:000747B8       ExtCtrls.TTimer.UpdateTimer
  0001:00074744       ExtCtrls.TTimer.WndProc
  0003:00001B4C       ExtCtrls.VerticalAlignments
- 0001:0010C988       Feature..TFeature
- 0001:0010CB28       Feature.TFeature.Create
- 0001:0010CB78       Feature.TFeature.GetCenarios
- 0001:0010CB90       Feature.TFeature.GetDescricao
- 0001:0010CBA8       Feature.TFeature.GetTitulo
- 0001:0010CBC0       Feature.TFeature.SetDescricao
- 0001:0010CBD8       Feature.TFeature.SetTitulo
- 0001:0012A714       FeatureParser..TFeatureParser
- 0001:0012A854       FeatureParser.TFeatureParser.GetFeatureFileName
- 0001:0012A86C       FeatureParser.TFeatureParser.LoadFeature
- 0001:0012A8D4       FeatureParser.TFeatureParser.Parse
- 0001:0012AA2C       FeatureParser.TFeatureParser.SetFeatureFileName
+ 0001:0012A63C       Feature..TFeature
+ 0001:0012A7DC       Feature.TFeature.Create
+ 0001:0012A844       Feature.TFeature.GetDescricao
+ 0001:0012A82C       Feature.TFeature.GetScenarios
+ 0001:0012A85C       Feature.TFeature.GetTitulo
+ 0001:0012A874       Feature.TFeature.SetDescricao
+ 0001:0012A88C       Feature.TFeature.SetTitulo
+ 0001:0012A914       FeatureParser..TFeatureParser
+ 0001:0012AA9C       FeatureParser.TFeatureParser.Destroy
+ 0001:0012AAD4       FeatureParser.TFeatureParser.GetFeatureFileName
+ 0001:0012AAEC       FeatureParser.TFeatureParser.LoadedFeature
+ 0001:0012AB48       FeatureParser.TFeatureParser.Parse
+ 0001:0012AB30       FeatureParser.TFeatureParser.SetFeatureFileName
  0004:0000521C       FlatSB..1
  0001:000A9514       FlatSB.Finalization
  0002:00000A98       FlatSB.FlatSB
@@ -5216,26 +5218,26 @@ Detailed map of segments
  0001:0000C0E0       Messages.SendGetStructMessage
  0001:0000C0C8       Messages.SendStructMessage
  0001:0000C06C       Messages.SendTextMessage
- 0001:0012BDB8       Modifiers..TFloatModifier
- 0001:0012BA7C       Modifiers..TModifier
- 0001:0012BFEC       Modifiers..TStringModifier
- 0001:0012C610       Modifiers.TFloatModifier.Create
- 0001:0012C6C0       Modifiers.TFloatModifier.CreateModifier
- 0001:0012C74C       Modifiers.TFloatModifier.Percent
- 0001:0012C8D0       Modifiers.TFloatModifier.WithAToleranceOf
- 0001:0012C598       Modifiers.TModifier.And_
- 0001:0012C1EC       Modifiers.TModifier.Create
- 0001:0012C284       Modifiers.TModifier.CreateModifier
- 0001:0012C2F8       Modifiers.TModifier.Destroy
- 0001:0012C324       Modifiers.TModifier.DoEvaluation
- 0001:0012C3B4       Modifiers.TModifier.DoNotApplicableFailure
- 0001:0012C440       Modifiers.TModifier.IgnoringCase
- 0001:0012C458       Modifiers.TModifier.Percent
- 0001:0012C470       Modifiers.TModifier.Unless
- 0001:0012C580       Modifiers.TModifier.WithAToleranceOf
- 0001:0012CA44       Modifiers.TStringModifier.Create
- 0001:0012CB04       Modifiers.TStringModifier.CreateModifier
- 0001:0012CB6C       Modifiers.TStringModifier.IgnoringCase
+ 0001:0012C240       Modifiers..TFloatModifier
+ 0001:0012BF04       Modifiers..TModifier
+ 0001:0012C474       Modifiers..TStringModifier
+ 0001:0012CA98       Modifiers.TFloatModifier.Create
+ 0001:0012CB48       Modifiers.TFloatModifier.CreateModifier
+ 0001:0012CBD4       Modifiers.TFloatModifier.Percent
+ 0001:0012CD58       Modifiers.TFloatModifier.WithAToleranceOf
+ 0001:0012CA20       Modifiers.TModifier.And_
+ 0001:0012C674       Modifiers.TModifier.Create
+ 0001:0012C70C       Modifiers.TModifier.CreateModifier
+ 0001:0012C780       Modifiers.TModifier.Destroy
+ 0001:0012C7AC       Modifiers.TModifier.DoEvaluation
+ 0001:0012C83C       Modifiers.TModifier.DoNotApplicableFailure
+ 0001:0012C8C8       Modifiers.TModifier.IgnoringCase
+ 0001:0012C8E0       Modifiers.TModifier.Percent
+ 0001:0012C8F8       Modifiers.TModifier.Unless
+ 0001:0012CA08       Modifiers.TModifier.WithAToleranceOf
+ 0001:0012CECC       Modifiers.TStringModifier.Create
+ 0001:0012CF8C       Modifiers.TStringModifier.CreateModifier
+ 0001:0012CFF4       Modifiers.TStringModifier.IgnoringCase
  0004:000050BC       MultiMon..1
  0004:000050B8       MultiMon.EnumDisplayMonitors
  0001:000479C8       MultiMon.Finalization
@@ -5260,67 +5262,67 @@ Detailed map of segments
  0001:0004733C       MultiMon.xMonitorFromRect
  0001:000473E0       MultiMon.xMonitorFromWindow
  0001:000472A0       MultiMon._GetSystemMetrics
- 0001:0010CD24       pcre...
+ 0001:00115B94       pcre...
  0003:000023F0       pcre...
  0003:00003068       pcre...
- 0001:00113948       pcre...
+ 0001:0011C7B8       pcre...
  0003:00003088       pcre...
- 0001:0011E170       pcre...
+ 0001:00126FE0       pcre...
  0003:00003098       pcre...
- 0001:0011D9B4       pcre...
- 0001:0011D678       pcre.@_pcre_is_newline
- 0001:0011D968       pcre.@_pcre_ord2utf8
- 0001:0011E1C0       pcre.@_pcre_try_flipped
- 0001:0011E2E8       pcre.@_pcre_valid_utf8
- 0001:0011D7EC       pcre.@_pcre_was_newline
- 0001:0011E3FC       pcre.@_pcre_xclass
- 0001:0010CCC4       pcre.free
- 0001:0010CC90       pcre.malloc
- 0001:001131D8       pcre.pcre_compile
- 0001:001131F0       pcre.pcre_compile2
- 0001:0011D210       pcre.pcre_copy_named_substring
- 0001:0011D1B4       pcre.pcre_copy_substring
- 0001:0010CCF8       pcre.pcre_dispose
- 0001:0011C0F8       pcre.pcre_exec
- 0001:0010CCCC       pcre.pcre_free
- 0001:0011D3C8       pcre.pcre_free_substring
- 0001:0011D318       pcre.pcre_free_substring_list
+ 0001:00126824       pcre...
+ 0001:001264E8       pcre.@_pcre_is_newline
+ 0001:001267D8       pcre.@_pcre_ord2utf8
+ 0001:00127030       pcre.@_pcre_try_flipped
+ 0001:00127158       pcre.@_pcre_valid_utf8
+ 0001:0012665C       pcre.@_pcre_was_newline
+ 0001:0012726C       pcre.@_pcre_xclass
+ 0001:00115B34       pcre.free
+ 0001:00115B00       pcre.malloc
+ 0001:0011C048       pcre.pcre_compile
+ 0001:0011C060       pcre.pcre_compile2
+ 0001:00126080       pcre.pcre_copy_named_substring
+ 0001:00126024       pcre.pcre_copy_substring
+ 0001:00115B68       pcre.pcre_dispose
+ 0001:00124F68       pcre.pcre_exec
+ 0001:00115B3C       pcre.pcre_free
+ 0001:00126238       pcre.pcre_free_substring
+ 0001:00126188       pcre.pcre_free_substring_list
  0004:00005348       pcre.pcre_free_user
- 0001:0011CCE0       pcre.pcre_fullinfo
- 0001:0011D398       pcre.pcre_get_named_substring
- 0001:0011CEA4       pcre.pcre_get_stringnumber
- 0001:0011CF9C       pcre.pcre_get_stringtable_entries
- 0001:0011D320       pcre.pcre_get_substring
- 0001:0011D244       pcre.pcre_get_substring_list
- 0001:0011D3D0       pcre.pcre_maketables
- 0001:0010CC98       pcre.pcre_malloc
+ 0001:00125B50       pcre.pcre_fullinfo
+ 0001:00126208       pcre.pcre_get_named_substring
+ 0001:00125D14       pcre.pcre_get_stringnumber
+ 0001:00125E0C       pcre.pcre_get_stringtable_entries
+ 0001:00126190       pcre.pcre_get_substring
+ 0001:001260B4       pcre.pcre_get_substring_list
+ 0001:00126240       pcre.pcre_maketables
+ 0001:00115B08       pcre.pcre_malloc
  0004:00005344       pcre.pcre_malloc_user
- 0001:0011E034       pcre.pcre_study
- 0001:0010CCEC       pcre._free
- 0001:0010CC30       pcre._isalnum
- 0001:0010CC38       pcre._isalpha
- 0001:0010CC40       pcre._iscntrl
- 0001:0010CC48       pcre._isdigit
- 0001:0010CC50       pcre._isgraph
- 0001:0010CC58       pcre._islower
- 0001:0010CC60       pcre._isprint
- 0001:0010CC68       pcre._ispunct
- 0001:0010CC70       pcre._isspace
- 0001:0010CC78       pcre._isupper
- 0001:0010CC80       pcre._isxdigit
- 0001:0010CCB8       pcre._malloc
- 0001:0010CC10       pcre._memcmp
- 0001:0010CBF0       pcre._memcpy
- 0001:0010CBF8       pcre._memmove
- 0001:0010CC00       pcre._memset
+ 0001:00126EA4       pcre.pcre_study
+ 0001:00115B5C       pcre._free
+ 0001:00115AA0       pcre._isalnum
+ 0001:00115AA8       pcre._isalpha
+ 0001:00115AB0       pcre._iscntrl
+ 0001:00115AB8       pcre._isdigit
+ 0001:00115AC0       pcre._isgraph
+ 0001:00115AC8       pcre._islower
+ 0001:00115AD0       pcre._isprint
+ 0001:00115AD8       pcre._ispunct
+ 0001:00115AE0       pcre._isspace
+ 0001:00115AE8       pcre._isupper
+ 0001:00115AF0       pcre._isxdigit
+ 0001:00115B28       pcre._malloc
+ 0001:00115A80       pcre._memcmp
+ 0001:00115A60       pcre._memcpy
+ 0001:00115A68       pcre._memmove
+ 0001:00115A70       pcre._memset
  0003:00003084       pcre._pcre_callout
  0003:00003078       pcre._pcre_free
  0003:00003074       pcre._pcre_malloc
- 0001:0010CC88       pcre._strchr
- 0001:0010CC18       pcre._strlen
- 0001:0010CC08       pcre._strncmp
- 0001:0010CC20       pcre.__ltolower
- 0001:0010CC28       pcre.__ltoupper
+ 0001:00115AF8       pcre._strchr
+ 0001:00115A88       pcre._strlen
+ 0001:00115A78       pcre._strncmp
+ 0001:00115A90       pcre.__ltolower
+ 0001:00115A98       pcre.__ltoupper
  0003:00010660       pcre.__pcre_default_tables
  0003:00003484       pcre.__pcre_OP_lengths
  0003:00003818       pcre.__pcre_ucd_records
@@ -5335,43 +5337,43 @@ Detailed map of segments
  0003:000031C8       pcre.__pcre_utt
  0003:00003534       pcre.__pcre_utt_names
  0003:00003480       pcre.__pcre_utt_size
- 0001:0011E888       PerlRegEx..TPerlRegEx
- 0001:0011F180       PerlRegEx.FirstCap
- 0001:0011F1B4       PerlRegEx.InitialCaps
- 0001:0011F6AC       PerlRegEx.ProcessBackreference
- 0001:0011F4C0       PerlRegEx.ReplaceBackreference
- 0001:0011F24C       PerlRegEx.TPerlRegEx.CleanUp
- 0001:0011F290       PerlRegEx.TPerlRegEx.ClearStoredGroups
- 0001:0011F2B4       PerlRegEx.TPerlRegEx.Compile
- 0001:0011FC1C       PerlRegEx.TPerlRegEx.ComputeReplacement
- 0001:001201B8       PerlRegEx.TPerlRegEx.Create
- 0001:00120214       PerlRegEx.TPerlRegEx.Destroy
- 0001:00120254       PerlRegEx.TPerlRegEx.EscapeRegExChars
- 0001:001202FC       PerlRegEx.TPerlRegEx.GetFoundMatch
- 0001:00120630       PerlRegEx.TPerlRegEx.GetGroupCount
- 0001:00120738       PerlRegEx.TPerlRegEx.GetGroupLengths
- 0001:001208B8       PerlRegEx.TPerlRegEx.GetGroupOffsets
- 0001:00120A30       PerlRegEx.TPerlRegEx.GetGroups
- 0001:00120418       PerlRegEx.TPerlRegEx.GetMatchedLength
- 0001:00120524       PerlRegEx.TPerlRegEx.GetMatchedOffset
- 0001:00120308       PerlRegEx.TPerlRegEx.GetMatchedText
- 0001:00120B88       PerlRegEx.TPerlRegEx.GetSubjectLeft
- 0001:00120BA8       PerlRegEx.TPerlRegEx.GetSubjectRight
- 0001:00120BC8       PerlRegEx.TPerlRegEx.Match
- 0001:00120C88       PerlRegEx.TPerlRegEx.MatchAgain
- 0001:00120D60       PerlRegEx.TPerlRegEx.NamedGroup
- 0001:00120D84       PerlRegEx.TPerlRegEx.Replace
- 0001:00120F3C       PerlRegEx.TPerlRegEx.ReplaceAll
- 0001:00120FA0       PerlRegEx.TPerlRegEx.SetOptions
- 0001:00121030       PerlRegEx.TPerlRegEx.SetRegEx
- 0001:0012105C       PerlRegEx.TPerlRegEx.SetStart
- 0001:00121070       PerlRegEx.TPerlRegEx.SetStop
- 0001:00121098       PerlRegEx.TPerlRegEx.SetSubject
- 0001:001210E4       PerlRegEx.TPerlRegEx.Split
- 0001:001212C4       PerlRegEx.TPerlRegEx.SplitCapture
- 0001:001215A0       PerlRegEx.TPerlRegEx.SplitCapture
- 0001:001215AC       PerlRegEx.TPerlRegEx.StoreGroups
- 0001:00121650       PerlRegEx.TPerlRegEx.Study
+ 0001:001276F8       PerlRegEx..TPerlRegEx
+ 0001:00127FF0       PerlRegEx.FirstCap
+ 0001:00128024       PerlRegEx.InitialCaps
+ 0001:0012851C       PerlRegEx.ProcessBackreference
+ 0001:00128330       PerlRegEx.ReplaceBackreference
+ 0001:001280BC       PerlRegEx.TPerlRegEx.CleanUp
+ 0001:00128100       PerlRegEx.TPerlRegEx.ClearStoredGroups
+ 0001:00128124       PerlRegEx.TPerlRegEx.Compile
+ 0001:00128A8C       PerlRegEx.TPerlRegEx.ComputeReplacement
+ 0001:00129028       PerlRegEx.TPerlRegEx.Create
+ 0001:00129084       PerlRegEx.TPerlRegEx.Destroy
+ 0001:001290C4       PerlRegEx.TPerlRegEx.EscapeRegExChars
+ 0001:0012916C       PerlRegEx.TPerlRegEx.GetFoundMatch
+ 0001:001294A0       PerlRegEx.TPerlRegEx.GetGroupCount
+ 0001:001295A8       PerlRegEx.TPerlRegEx.GetGroupLengths
+ 0001:00129728       PerlRegEx.TPerlRegEx.GetGroupOffsets
+ 0001:001298A0       PerlRegEx.TPerlRegEx.GetGroups
+ 0001:00129288       PerlRegEx.TPerlRegEx.GetMatchedLength
+ 0001:00129394       PerlRegEx.TPerlRegEx.GetMatchedOffset
+ 0001:00129178       PerlRegEx.TPerlRegEx.GetMatchedText
+ 0001:001299F8       PerlRegEx.TPerlRegEx.GetSubjectLeft
+ 0001:00129A18       PerlRegEx.TPerlRegEx.GetSubjectRight
+ 0001:00129A38       PerlRegEx.TPerlRegEx.Match
+ 0001:00129AF8       PerlRegEx.TPerlRegEx.MatchAgain
+ 0001:00129BD0       PerlRegEx.TPerlRegEx.NamedGroup
+ 0001:00129BF4       PerlRegEx.TPerlRegEx.Replace
+ 0001:00129DAC       PerlRegEx.TPerlRegEx.ReplaceAll
+ 0001:00129E10       PerlRegEx.TPerlRegEx.SetOptions
+ 0001:00129EA0       PerlRegEx.TPerlRegEx.SetRegEx
+ 0001:00129ECC       PerlRegEx.TPerlRegEx.SetStart
+ 0001:00129EE0       PerlRegEx.TPerlRegEx.SetStop
+ 0001:00129F08       PerlRegEx.TPerlRegEx.SetSubject
+ 0001:00129F54       PerlRegEx.TPerlRegEx.Split
+ 0001:0012A134       PerlRegEx.TPerlRegEx.SplitCapture
+ 0001:0012A410       PerlRegEx.TPerlRegEx.SplitCapture
+ 0001:0012A41C       PerlRegEx.TPerlRegEx.StoreGroups
+ 0001:0012A4C0       PerlRegEx.TPerlRegEx.Study
  0004:00005170       Printers..3
  0001:0006EC24       Printers..EPrinter
  0001:0006EDC4       Printers..TPrinter
@@ -5533,116 +5535,117 @@ Detailed map of segments
  0001:0005185C       Registry.TRegistryIniFile.WriteTime
  0003:0000119C       Registry.Values
  0001:0006EBC0       RichEdit.SendEMGetTextExMessage
+ 0001:0010C94C       Scenario..TScenario
  0003:00001A24       ShlObj.CLSID_AutoComplete
- 0001:0012CFB8       Specifiers..TBaseSpecifier
- 0001:0012DE6C       Specifiers..TBooleanSpecifier
- 0001:0012EE38       Specifiers..TClassSpecifier
- 0001:0012F07C       Specifiers..TDateTimeSpecifier
- 0001:0012E0D8       Specifiers..TFloatSpecifier
- 0001:0012D9AC       Specifiers..TIntegerSpecifier
- 0001:0012F3AC       Specifiers..TInterfaceSpecifier
- 0001:0012E8BC       Specifiers..TObjectSpecifier
- 0001:0012EC14       Specifiers..TPointerSpecifier
- 0001:0012E4C4       Specifiers..TStringSpecifier
- 0001:0012FCB8       Specifiers.TBaseSpecifier.Alpha
- 0001:0012FD88       Specifiers.TBaseSpecifier.AlphaNumeric
- 0001:0012FE68       Specifiers.TBaseSpecifier.Assigned
- 0001:0012FF40       Specifiers.TBaseSpecifier.AtLeast
- 0001:0013001C       Specifiers.TBaseSpecifier.AtMost
- 0001:001300F8       Specifiers.TBaseSpecifier.Be
- 0001:0012F6B0       Specifiers.TBaseSpecifier.Composite
- 0001:0012F788       Specifiers.TBaseSpecifier.Contain
- 0001:0012F868       Specifiers.TBaseSpecifier.Create
- 0001:0012F8BC       Specifiers.TBaseSpecifier.CreateModifier
- 0001:0012F938       Specifiers.TBaseSpecifier.CreateNewShouldHelper
- 0001:00130A50       Specifiers.TBaseSpecifier.DescendFrom
- 0001:0012F970       Specifiers.TBaseSpecifier.Destroy
- 0001:0012F9D8       Specifiers.TBaseSpecifier.DoEvaluation
- 0001:00130B4C       Specifiers.TBaseSpecifier.Empty
- 0001:00130C1C       Specifiers.TBaseSpecifier.EndWith
- 0001:00130CF8       Specifiers.TBaseSpecifier.Equal
- 0001:00130DD0       Specifiers.TBaseSpecifier.Even
- 0001:00130174       Specifiers.TBaseSpecifier.False
- 0001:00130EA0       Specifiers.TBaseSpecifier.GreaterThan
- 0001:00130F84       Specifiers.TBaseSpecifier.Implement
- 0001:00131088       Specifiers.TBaseSpecifier.ImplementedBy
- 0001:00131188       Specifiers.TBaseSpecifier.LessThan
- 0001:00130244       Specifiers.TBaseSpecifier.NegateMessage
- 0001:001303A4       Specifiers.TBaseSpecifier.Negative
- 0001:0013047C       Specifiers.TBaseSpecifier.Nil_
- 0001:00131268       Specifiers.TBaseSpecifier.Not_
- 0001:001312E8       Specifiers.TBaseSpecifier.Numeric
- 0001:00130548       Specifiers.TBaseSpecifier.Odd
- 0001:00130614       Specifiers.TBaseSpecifier.OfType
- 0001:00130708       Specifiers.TBaseSpecifier.Positive
- 0001:001307E0       Specifiers.TBaseSpecifier.Prime
- 0001:0012FAB8       Specifiers.TBaseSpecifier.Should
- 0001:0012FAD8       Specifiers.TBaseSpecifier.StartWith
- 0001:0012FBB8       Specifiers.TBaseSpecifier.Support
- 0001:001308B0       Specifiers.TBaseSpecifier.True
- 0001:00130980       Specifiers.TBaseSpecifier.Zero
- 0001:00132154       Specifiers.TBooleanSpecifier.Create
- 0001:00132400       Specifiers.TBooleanSpecifier.Equal
- 0001:001321A8       Specifiers.TBooleanSpecifier.False
- 0001:001322D4       Specifiers.TBooleanSpecifier.True
- 0001:00134824       Specifiers.TClassSpecifier.Create
- 0001:001349C8       Specifiers.TClassSpecifier.DescendFrom
- 0001:00134874       Specifiers.TClassSpecifier.OfType
- 0001:00134B30       Specifiers.TDateTimeSpecifier.AtLeast
- 0001:00134C8C       Specifiers.TDateTimeSpecifier.AtMost
- 0001:00134DE8       Specifiers.TDateTimeSpecifier.Create
- 0001:00134E3C       Specifiers.TDateTimeSpecifier.Equal
- 0001:00134FA0       Specifiers.TDateTimeSpecifier.GreaterThan
- 0001:0013510C       Specifiers.TDateTimeSpecifier.LessThan
- 0001:00132564       Specifiers.TFloatSpecifier.AtLeast
- 0001:001326A4       Specifiers.TFloatSpecifier.AtMost
- 0001:001327E4       Specifiers.TFloatSpecifier.Create
- 0001:00132840       Specifiers.TFloatSpecifier.CreateModifier
- 0001:001328D0       Specifiers.TFloatSpecifier.Equal
- 0001:00132A18       Specifiers.TFloatSpecifier.GreaterThan
- 0001:00132B68       Specifiers.TFloatSpecifier.LessThan
- 0001:00132CB0       Specifiers.TFloatSpecifier.Negative
- 0001:00132DC4       Specifiers.TFloatSpecifier.Positive
- 0001:00132ED8       Specifiers.TFloatSpecifier.Zero
- 0001:001313BC       Specifiers.TIntegerSpecifier.AtLeast
- 0001:001314E4       Specifiers.TIntegerSpecifier.AtMost
- 0001:0013160C       Specifiers.TIntegerSpecifier.Composite
- 0001:00131718       Specifiers.TIntegerSpecifier.Create
- 0001:00131768       Specifiers.TIntegerSpecifier.Equal
- 0001:001318A0       Specifiers.TIntegerSpecifier.Even
- 0001:001319A8       Specifiers.TIntegerSpecifier.GreaterThan
- 0001:00131B00       Specifiers.TIntegerSpecifier.LessThan
- 0001:00131C50       Specifiers.TIntegerSpecifier.Negative
- 0001:00131D5C       Specifiers.TIntegerSpecifier.Odd
- 0001:00131E5C       Specifiers.TIntegerSpecifier.Positive
- 0001:00131F68       Specifiers.TIntegerSpecifier.Prime
- 0001:00132064       Specifiers.TIntegerSpecifier.Zero
- 0001:00135270       Specifiers.TInterfaceSpecifier.Assigned
- 0001:00135358       Specifiers.TInterfaceSpecifier.Create
- 0001:001353E4       Specifiers.TInterfaceSpecifier.Destroy
- 0001:00135418       Specifiers.TInterfaceSpecifier.ImplementedBy
- 0001:001356F0       Specifiers.TInterfaceSpecifier.Nil_
- 0001:001357C0       Specifiers.TInterfaceSpecifier.Support
- 0001:00133AF0       Specifiers.TObjectSpecifier.Assigned
- 0001:00133BD4       Specifiers.TObjectSpecifier.Create
- 0001:0013416C       Specifiers.TObjectSpecifier.DescendFrom
- 0001:001343C0       Specifiers.TObjectSpecifier.Implement
- 0001:00133C24       Specifiers.TObjectSpecifier.Nil_
- 0001:00133CF4       Specifiers.TObjectSpecifier.OfType
- 0001:00133F14       Specifiers.TObjectSpecifier.Support
- 0001:00134620       Specifiers.TPointerSpecifier.Assigned
- 0001:00134704       Specifiers.TPointerSpecifier.Create
- 0001:00134754       Specifiers.TPointerSpecifier.Nil_
- 0001:00132FDC       Specifiers.TStringSpecifier.Alpha
- 0001:001330D4       Specifiers.TStringSpecifier.AlphaNumeric
- 0001:001331EC       Specifiers.TStringSpecifier.Contain
- 0001:00133344       Specifiers.TStringSpecifier.Create
- 0001:001333D0       Specifiers.TStringSpecifier.CreateModifier
- 0001:00133454       Specifiers.TStringSpecifier.Empty
- 0001:00133544       Specifiers.TStringSpecifier.EndWith
- 0001:0013371C       Specifiers.TStringSpecifier.Equal
- 0001:00133858       Specifiers.TStringSpecifier.Numeric
- 0001:00133958       Specifiers.TStringSpecifier.StartWith
+ 0001:0012D440       Specifiers..TBaseSpecifier
+ 0001:0012E2F4       Specifiers..TBooleanSpecifier
+ 0001:0012F2C0       Specifiers..TClassSpecifier
+ 0001:0012F504       Specifiers..TDateTimeSpecifier
+ 0001:0012E560       Specifiers..TFloatSpecifier
+ 0001:0012DE34       Specifiers..TIntegerSpecifier
+ 0001:0012F834       Specifiers..TInterfaceSpecifier
+ 0001:0012ED44       Specifiers..TObjectSpecifier
+ 0001:0012F09C       Specifiers..TPointerSpecifier
+ 0001:0012E94C       Specifiers..TStringSpecifier
+ 0001:00130140       Specifiers.TBaseSpecifier.Alpha
+ 0001:00130210       Specifiers.TBaseSpecifier.AlphaNumeric
+ 0001:001302F0       Specifiers.TBaseSpecifier.Assigned
+ 0001:001303C8       Specifiers.TBaseSpecifier.AtLeast
+ 0001:001304A4       Specifiers.TBaseSpecifier.AtMost
+ 0001:00130580       Specifiers.TBaseSpecifier.Be
+ 0001:0012FB38       Specifiers.TBaseSpecifier.Composite
+ 0001:0012FC10       Specifiers.TBaseSpecifier.Contain
+ 0001:0012FCF0       Specifiers.TBaseSpecifier.Create
+ 0001:0012FD44       Specifiers.TBaseSpecifier.CreateModifier
+ 0001:0012FDC0       Specifiers.TBaseSpecifier.CreateNewShouldHelper
+ 0001:00130ED8       Specifiers.TBaseSpecifier.DescendFrom
+ 0001:0012FDF8       Specifiers.TBaseSpecifier.Destroy
+ 0001:0012FE60       Specifiers.TBaseSpecifier.DoEvaluation
+ 0001:00130FD4       Specifiers.TBaseSpecifier.Empty
+ 0001:001310A4       Specifiers.TBaseSpecifier.EndWith
+ 0001:00131180       Specifiers.TBaseSpecifier.Equal
+ 0001:00131258       Specifiers.TBaseSpecifier.Even
+ 0001:001305FC       Specifiers.TBaseSpecifier.False
+ 0001:00131328       Specifiers.TBaseSpecifier.GreaterThan
+ 0001:0013140C       Specifiers.TBaseSpecifier.Implement
+ 0001:00131510       Specifiers.TBaseSpecifier.ImplementedBy
+ 0001:00131610       Specifiers.TBaseSpecifier.LessThan
+ 0001:001306CC       Specifiers.TBaseSpecifier.NegateMessage
+ 0001:0013082C       Specifiers.TBaseSpecifier.Negative
+ 0001:00130904       Specifiers.TBaseSpecifier.Nil_
+ 0001:001316F0       Specifiers.TBaseSpecifier.Not_
+ 0001:00131770       Specifiers.TBaseSpecifier.Numeric
+ 0001:001309D0       Specifiers.TBaseSpecifier.Odd
+ 0001:00130A9C       Specifiers.TBaseSpecifier.OfType
+ 0001:00130B90       Specifiers.TBaseSpecifier.Positive
+ 0001:00130C68       Specifiers.TBaseSpecifier.Prime
+ 0001:0012FF40       Specifiers.TBaseSpecifier.Should
+ 0001:0012FF60       Specifiers.TBaseSpecifier.StartWith
+ 0001:00130040       Specifiers.TBaseSpecifier.Support
+ 0001:00130D38       Specifiers.TBaseSpecifier.True
+ 0001:00130E08       Specifiers.TBaseSpecifier.Zero
+ 0001:001325DC       Specifiers.TBooleanSpecifier.Create
+ 0001:00132888       Specifiers.TBooleanSpecifier.Equal
+ 0001:00132630       Specifiers.TBooleanSpecifier.False
+ 0001:0013275C       Specifiers.TBooleanSpecifier.True
+ 0001:00134CAC       Specifiers.TClassSpecifier.Create
+ 0001:00134E50       Specifiers.TClassSpecifier.DescendFrom
+ 0001:00134CFC       Specifiers.TClassSpecifier.OfType
+ 0001:00134FB8       Specifiers.TDateTimeSpecifier.AtLeast
+ 0001:00135114       Specifiers.TDateTimeSpecifier.AtMost
+ 0001:00135270       Specifiers.TDateTimeSpecifier.Create
+ 0001:001352C4       Specifiers.TDateTimeSpecifier.Equal
+ 0001:00135428       Specifiers.TDateTimeSpecifier.GreaterThan
+ 0001:00135594       Specifiers.TDateTimeSpecifier.LessThan
+ 0001:001329EC       Specifiers.TFloatSpecifier.AtLeast
+ 0001:00132B2C       Specifiers.TFloatSpecifier.AtMost
+ 0001:00132C6C       Specifiers.TFloatSpecifier.Create
+ 0001:00132CC8       Specifiers.TFloatSpecifier.CreateModifier
+ 0001:00132D58       Specifiers.TFloatSpecifier.Equal
+ 0001:00132EA0       Specifiers.TFloatSpecifier.GreaterThan
+ 0001:00132FF0       Specifiers.TFloatSpecifier.LessThan
+ 0001:00133138       Specifiers.TFloatSpecifier.Negative
+ 0001:0013324C       Specifiers.TFloatSpecifier.Positive
+ 0001:00133360       Specifiers.TFloatSpecifier.Zero
+ 0001:00131844       Specifiers.TIntegerSpecifier.AtLeast
+ 0001:0013196C       Specifiers.TIntegerSpecifier.AtMost
+ 0001:00131A94       Specifiers.TIntegerSpecifier.Composite
+ 0001:00131BA0       Specifiers.TIntegerSpecifier.Create
+ 0001:00131BF0       Specifiers.TIntegerSpecifier.Equal
+ 0001:00131D28       Specifiers.TIntegerSpecifier.Even
+ 0001:00131E30       Specifiers.TIntegerSpecifier.GreaterThan
+ 0001:00131F88       Specifiers.TIntegerSpecifier.LessThan
+ 0001:001320D8       Specifiers.TIntegerSpecifier.Negative
+ 0001:001321E4       Specifiers.TIntegerSpecifier.Odd
+ 0001:001322E4       Specifiers.TIntegerSpecifier.Positive
+ 0001:001323F0       Specifiers.TIntegerSpecifier.Prime
+ 0001:001324EC       Specifiers.TIntegerSpecifier.Zero
+ 0001:001356F8       Specifiers.TInterfaceSpecifier.Assigned
+ 0001:001357E0       Specifiers.TInterfaceSpecifier.Create
+ 0001:0013586C       Specifiers.TInterfaceSpecifier.Destroy
+ 0001:001358A0       Specifiers.TInterfaceSpecifier.ImplementedBy
+ 0001:00135B78       Specifiers.TInterfaceSpecifier.Nil_
+ 0001:00135C48       Specifiers.TInterfaceSpecifier.Support
+ 0001:00133F78       Specifiers.TObjectSpecifier.Assigned
+ 0001:0013405C       Specifiers.TObjectSpecifier.Create
+ 0001:001345F4       Specifiers.TObjectSpecifier.DescendFrom
+ 0001:00134848       Specifiers.TObjectSpecifier.Implement
+ 0001:001340AC       Specifiers.TObjectSpecifier.Nil_
+ 0001:0013417C       Specifiers.TObjectSpecifier.OfType
+ 0001:0013439C       Specifiers.TObjectSpecifier.Support
+ 0001:00134AA8       Specifiers.TPointerSpecifier.Assigned
+ 0001:00134B8C       Specifiers.TPointerSpecifier.Create
+ 0001:00134BDC       Specifiers.TPointerSpecifier.Nil_
+ 0001:00133464       Specifiers.TStringSpecifier.Alpha
+ 0001:0013355C       Specifiers.TStringSpecifier.AlphaNumeric
+ 0001:00133674       Specifiers.TStringSpecifier.Contain
+ 0001:001337CC       Specifiers.TStringSpecifier.Create
+ 0001:00133858       Specifiers.TStringSpecifier.CreateModifier
+ 0001:001338DC       Specifiers.TStringSpecifier.Empty
+ 0001:001339CC       Specifiers.TStringSpecifier.EndWith
+ 0001:00133BA4       Specifiers.TStringSpecifier.Equal
+ 0001:00133CE0       Specifiers.TStringSpecifier.Numeric
+ 0001:00133DE0       Specifiers.TStringSpecifier.StartWith
  0001:000A9008       StdActns..THintAction
  0001:000A9158       StdActns.THintAction.Create
  0001:00068C8C       StdCtrls..TButton
@@ -7033,15 +7036,16 @@ Detailed map of segments
  0003:00000B4C       SysUtils.Win32MinorVersion
  0003:00000B44       SysUtils.Win32Platform
  0004:0000534C       TestFeatureParser..3
- 0001:00136F50       TestFeatureParser..TestTFeatureParser
- 0001:00136D74       TestFeatureParser..TParseContext
- 0001:001375F8       TestFeatureParser.Finalization
+ 0001:001373E0       TestFeatureParser..TestTFeatureParser
+ 0001:00137204       TestFeatureParser..TParseContext
+ 0001:00137BE0       TestFeatureParser.Finalization
  0002:00000C84       TestFeatureParser.TestFeatureParser
- 0001:001374A4       TestFeatureParser.TestTFeatureParser.ParseDeveriaRetornarUmaFeature
- 0001:00137268       TestFeatureParser.TestTFeatureParser.ParseDeveriaTrazerOsCenariosDaFeature
- 0001:001373D8       TestFeatureParser.TestTFeatureParser.SetUp
- 0001:00137490       TestFeatureParser.TestTFeatureParser.TearDown
- 0001:00137560       TestFeatureParser.TParseContext.Create
+ 0001:00137A8C       TestFeatureParser.TestTFeatureParser.ParseDeveriaRetornarUmaFeature
+ 0001:00137784       TestFeatureParser.TestTFeatureParser.ParseDeveriaTrazerOsCenariosDaFeature
+ 0001:0013784C       TestFeatureParser.TestTFeatureParser.ParseDeveriaTrazerOTituloEADescricaoDaFeature
+ 0001:001379C0       TestFeatureParser.TestTFeatureParser.SetUp
+ 0001:00137A78       TestFeatureParser.TestTFeatureParser.TearDown
+ 0001:00137B48       TestFeatureParser.TParseContext.Create
  0004:0000530C       TestFramework..41
  0001:000F4BAC       TestFramework..EBreakingTestFailure
  0001:000F48D4       TestFramework..EDunitException
@@ -7385,168 +7389,171 @@ Detailed map of segments
  0001:0000A160       Types.SmallPoint
  0001:00009FC4       Types.SplitRect
  0001:00009F68       Types.SplitRect
- 0001:00121B6C       TypeUtils..TString
- 0001:001233F4       TypeUtils..TXString
- 0001:001252D4       TypeUtils.AlinhaTX
- 0001:00124C7C       TypeUtils.GetFileList
- 0001:00124718       TypeUtils.IndexOf
- 0001:001247D4       TypeUtils.ListarPastas
- 0001:001249C8       TypeUtils.ListarPastasEArquivos
- 0001:001250E0       TypeUtils.ReplaceMany
- 0001:001251F0       TypeUtils.ReplaceMany
- 0001:00125020       TypeUtils.S
- 0001:00125080       TypeUtils.SX
- 0001:001247CC       TypeUtils.TemAtributo
- 0001:0012551C       TypeUtils.TString.AdicionarAntesDaString
- 0001:001255B4       TypeUtils.TString.AdicionarDepoisDaString
- 0001:0012564C       TypeUtils.TString.AlinhadoADireita
- 0001:001256A4       TypeUtils.TString.AlinhadoAEsquerda
- 0001:00126FCC       TypeUtils.TString.AsInteger
- 0001:001274F0       TypeUtils.TString.Aspas
- 0001:001277D8       TypeUtils.TString.AsStringList
- 0001:00127650       TypeUtils.TString.Ate
- 0001:00127670       TypeUtils.TString.Ate
- 0001:001276CC       TypeUtils.TString.AteAntesDe
- 0001:00126C68       TypeUtils.TString.Camelize
- 0001:001256FC       TypeUtils.TString.Centralizado
- 0001:001269E0       TypeUtils.TString.ComAspas
- 0001:00125E1C       TypeUtils.TString.ComZerosAEsquerda
- 0001:00127838       TypeUtils.TString.Contem
- 0001:00125754       TypeUtils.TString.Contem
- 0001:00126280       TypeUtils.TString.Copy
- 0001:001257C0       TypeUtils.TString.Create
- 0001:00125E58       TypeUtils.TString.Decripta
- 0001:00126D18       TypeUtils.TString.Desumanize
- 0001:00125E90       TypeUtils.TString.Encripta
- 0001:00127728       TypeUtils.TString.EncriptSimples
- 0001:00127A10       TypeUtils.TString.Equals
- 0001:001279A4       TypeUtils.TString.Equals
- 0001:00125A50       TypeUtils.TString.EstaContidoEm
- 0001:00125834       TypeUtils.TString.EstaContidoEm
- 0001:001258B0       TypeUtils.TString.EstaContidoEm
- 0001:00125924       TypeUtils.TString.EstaContidoEm
- 0001:001259B0       TypeUtils.TString.EstaContidoEm
- 0001:00125EC8       TypeUtils.TString.Format
- 0001:001262DC       TypeUtils.TString.GetAt
- 0001:00127558       TypeUtils.TString.GetAtStr
- 0001:00127B38       TypeUtils.TString.GetChave
- 0001:00125B04       TypeUtils.TString.GetValue
- 0001:0012701C       TypeUtils.TString.GetVazia
- 0001:00126B68       TypeUtils.TString.Humanize
- 0001:00127AE8       TypeUtils.TString.IgualA
- 0001:00127A7C       TypeUtils.TString.IgualA
- 0001:00126970       TypeUtils.TString.IndexOf
- 0001:00126908       TypeUtils.TString.IndexOf
- 0001:00127908       TypeUtils.TString.IndiceNoArray
- 0001:00126858       TypeUtils.TString.Length
- 0001:00127124       TypeUtils.TString.ListarArquivos
- 0001:00127210       TypeUtils.TString.ListarArquivosComPrefixoParaCopy
- 0001:001272FC       TypeUtils.TString.ListarPastas
- 0001:00127400       TypeUtils.TString.ListarPastasEArquivos
- 0001:0012773C       TypeUtils.TString.LoadFromFile
- 0001:001268B8       TypeUtils.TString.LowerCase
- 0001:00125B1C       TypeUtils.TString.Mais
- 0001:00125C00       TypeUtils.TString.Menos
- 0001:00125B88       TypeUtils.TString.Menos
- 0001:00126D70       TypeUtils.TString.Modulo10
- 0001:00126EC8       TypeUtils.TString.Modulo11
- 0001:001264FC       TypeUtils.TString.Replace
- 0001:00126448       TypeUtils.TString.Replace
- 0001:001265E0       TypeUtils.TString.Replace
- 0001:0012669C       TypeUtils.TString.Replace
- 0001:001263CC       TypeUtils.TString.Replace
- 0001:00126358       TypeUtils.TString.Replace
- 0001:00127080       TypeUtils.TString.ReplaceAll
- 0001:00126108       TypeUtils.TString.Reverter
- 0001:00126158       TypeUtils.TString.SaveToFile
- 0001:00126788       TypeUtils.TString.SetAt
- 0001:001275D4       TypeUtils.TString.SetAtStr
- 0001:00127CD4       TypeUtils.TString.SetChave
- 0001:00125CAC       TypeUtils.TString.SetValue
- 0001:00125F3C       TypeUtils.TString.Show
- 0001:00126080       TypeUtils.TString.ShowConfirmation
- 0001:00126004       TypeUtils.TString.ShowError
- 0001:00125F88       TypeUtils.TString.ShowWarning
- 0001:00125CC4       TypeUtils.TString.Trim
- 0001:00125D14       TypeUtils.TString.TrimLeft
- 0001:00125D64       TypeUtils.TString.TrimRight
- 0001:00126CC0       TypeUtils.TString.Underscore
- 0001:00126A30       TypeUtils.TString.UpperCase
- 0001:00126A80       TypeUtils.TString.UTF8Decode
- 0001:00126B00       TypeUtils.TString.UTF8Encode
- 0001:00126204       TypeUtils.TString.ValidarComXSD
- 0001:00125DB4       TypeUtils.TString.Vezes
- 0001:00127CFC       TypeUtils.TXString.AdicionarAntesDaString
- 0001:00127DA4       TypeUtils.TXString.AdicionarDepoisDaString
- 0001:00127E4C       TypeUtils.TXString.AlinhadoADireita
- 0001:00127EE0       TypeUtils.TXString.AlinhadoAEsquerda
- 0001:0012835C       TypeUtils.TXString.AsInteger
- 0001:0012A31C       TypeUtils.TXString.AsStringList
- 0001:00129D28       TypeUtils.TXString.Ate
- 0001:00129DC0       TypeUtils.TXString.Ate
- 0001:00129E64       TypeUtils.TXString.AteAntesDe
- 0001:00127F74       TypeUtils.TXString.Camelize
- 0001:00128004       TypeUtils.TXString.Centralizado
- 0001:00128098       TypeUtils.TXString.ComAspas
- 0001:00128128       TypeUtils.TXString.ComZerosAEsquerda
- 0001:001281BC       TypeUtils.TXString.Contem
- 0001:0012A5F0       TypeUtils.TXString.Contem
- 0001:00128238       TypeUtils.TXString.Copy
- 0001:001282D4       TypeUtils.TXString.Create
- 0001:001283AC       TypeUtils.TXString.Decripta
- 0001:00129A64       TypeUtils.TXString.Desumanize
- 0001:00128450       TypeUtils.TXString.Encripta
- 0001:0012A3F0       TypeUtils.TXString.Equals
- 0001:0012A384       TypeUtils.TXString.Equals
- 0001:0012A45C       TypeUtils.TXString.Equals
- 0001:00128570       TypeUtils.TXString.EstaContidoEm
- 0001:00129F98       TypeUtils.TXString.EstaContidoEm
- 0001:0012A02C       TypeUtils.TXString.EstaContidoEm
- 0001:0012A0D8       TypeUtils.TXString.EstaContidoEm
- 0001:001284F4       TypeUtils.TXString.EstaContidoEm
- 0001:00128620       TypeUtils.TXString.Format
- 0001:001286D0       TypeUtils.TXString.GetAt
- 0001:00128768       TypeUtils.TXString.GetValue
- 0001:00128800       TypeUtils.TXString.Humanize
- 0001:0012A534       TypeUtils.TXString.IgualA
- 0001:0012A5A0       TypeUtils.TXString.IgualA
- 0001:0012A4C8       TypeUtils.TXString.IgualA
- 0001:00128890       TypeUtils.TXString.IndexOf
- 0001:00128780       TypeUtils.TXString.IndexOf
- 0001:00128914       TypeUtils.TXString.Length
- 0001:00129BA8       TypeUtils.TXString.ListarArquivos
- 0001:00129C64       TypeUtils.TXString.ListarArquivosComPrefixoParaCopy
- 0001:0012A194       TypeUtils.TXString.ListarPastas
- 0001:0012A258       TypeUtils.TXString.ListarPastasEArquivos
- 0001:00129F08       TypeUtils.TXString.LoadFromFile
- 0001:0012897C       TypeUtils.TXString.LowerCase
- 0001:00128A0C       TypeUtils.TXString.Mais
- 0001:00128AB0       TypeUtils.TXString.Menos
- 0001:00128B84       TypeUtils.TXString.Menos
- 0001:00128E88       TypeUtils.TXString.Replace
- 0001:00128FA8       TypeUtils.TXString.Replace
- 0001:00128D98       TypeUtils.TXString.Replace
- 0001:00128CDC       TypeUtils.TXString.Replace
- 0001:00128C28       TypeUtils.TXString.Replace
- 0001:001290A0       TypeUtils.TXString.Replace
- 0001:00129AF4       TypeUtils.TXString.ReplaceAll
- 0001:001291C8       TypeUtils.TXString.Reverter
- 0001:00129258       TypeUtils.TXString.SaveToFile
- 0001:001292E8       TypeUtils.TXString.SetAt
- 0001:00129370       TypeUtils.TXString.SetValue
- 0001:00129380       TypeUtils.TXString.Show
- 0001:001294E8       TypeUtils.TXString.ShowConfirmation
- 0001:00129470       TypeUtils.TXString.ShowError
- 0001:001293F8       TypeUtils.TXString.ShowWarning
- 0001:00129550       TypeUtils.TXString.Trim
- 0001:001295DC       TypeUtils.TXString.TrimLeft
- 0001:00129668       TypeUtils.TXString.TrimRight
- 0001:001299D4       TypeUtils.TXString.Underscore
- 0001:001296F4       TypeUtils.TXString.UpperCase
- 0001:00129784       TypeUtils.TXString.UTF8Decode
- 0001:00129814       TypeUtils.TXString.UTF8Encode
- 0001:001298A4       TypeUtils.TXString.ValidarComXSD
- 0001:00129940       TypeUtils.TXString.Vezes
+ 0001:0010CE0C       TypeUtils..TString
+ 0001:0010E6D8       TypeUtils..TXString
+ 0001:00110614       TypeUtils.AlinhaTX
+ 0001:0010FFBC       TypeUtils.GetFileList
+ 0001:0010FA58       TypeUtils.IndexOf
+ 0001:0010FB14       TypeUtils.ListarPastas
+ 0001:0010FD08       TypeUtils.ListarPastasEArquivos
+ 0001:00110530       TypeUtils.ReplaceMany
+ 0001:00110420       TypeUtils.ReplaceMany
+ 0001:00110360       TypeUtils.S
+ 0001:001103C0       TypeUtils.SX
+ 0001:0010FB0C       TypeUtils.TemAtributo
+ 0001:0011085C       TypeUtils.TString.AdicionarAntesDaString
+ 0001:001108F4       TypeUtils.TString.AdicionarDepoisDaString
+ 0001:0011098C       TypeUtils.TString.AlinhadoADireita
+ 0001:001109E4       TypeUtils.TString.AlinhadoAEsquerda
+ 0001:00112318       TypeUtils.TString.AsInteger
+ 0001:0011283C       TypeUtils.TString.Aspas
+ 0001:00112B24       TypeUtils.TString.AsStringList
+ 0001:0011299C       TypeUtils.TString.Ate
+ 0001:001129BC       TypeUtils.TString.Ate
+ 0001:00112A18       TypeUtils.TString.AteAntesDe
+ 0001:00111FB4       TypeUtils.TString.Camelize
+ 0001:00110A3C       TypeUtils.TString.Centralizado
+ 0001:00110A94       TypeUtils.TString.Clear
+ 0001:00111D2C       TypeUtils.TString.ComAspas
+ 0001:00111168       TypeUtils.TString.ComZerosAEsquerda
+ 0001:00110AA0       TypeUtils.TString.Contem
+ 0001:00112B84       TypeUtils.TString.Contem
+ 0001:001115CC       TypeUtils.TString.Copy
+ 0001:00110B0C       TypeUtils.TString.Create
+ 0001:001111A4       TypeUtils.TString.Decripta
+ 0001:00112064       TypeUtils.TString.Desumanize
+ 0001:001111DC       TypeUtils.TString.Encripta
+ 0001:00112A74       TypeUtils.TString.EncriptSimples
+ 0001:00112CF0       TypeUtils.TString.Equals
+ 0001:00112D5C       TypeUtils.TString.Equals
+ 0001:00110D9C       TypeUtils.TString.EstaContidoEm
+ 0001:00110B80       TypeUtils.TString.EstaContidoEm
+ 0001:00110BFC       TypeUtils.TString.EstaContidoEm
+ 0001:00110C70       TypeUtils.TString.EstaContidoEm
+ 0001:00110CFC       TypeUtils.TString.EstaContidoEm
+ 0001:00111214       TypeUtils.TString.Format
+ 0001:00111628       TypeUtils.TString.GetAt
+ 0001:001128A4       TypeUtils.TString.GetAtStr
+ 0001:00112E84       TypeUtils.TString.GetChave
+ 0001:00110E50       TypeUtils.TString.GetValue
+ 0001:00112368       TypeUtils.TString.GetVazia
+ 0001:00111EB4       TypeUtils.TString.Humanize
+ 0001:00112E34       TypeUtils.TString.IgualA
+ 0001:00112DC8       TypeUtils.TString.IgualA
+ 0001:00111CBC       TypeUtils.TString.IndexOf
+ 0001:00111C54       TypeUtils.TString.IndexOf
+ 0001:00112C54       TypeUtils.TString.IndiceNoArray
+ 0001:00111BA4       TypeUtils.TString.Length
+ 0001:00112470       TypeUtils.TString.ListarArquivos
+ 0001:0011255C       TypeUtils.TString.ListarArquivosComPrefixoParaCopy
+ 0001:00112648       TypeUtils.TString.ListarPastas
+ 0001:0011274C       TypeUtils.TString.ListarPastasEArquivos
+ 0001:00112A88       TypeUtils.TString.LoadFromFile
+ 0001:00111C04       TypeUtils.TString.LowerCase
+ 0001:00110E68       TypeUtils.TString.Mais
+ 0001:00110ED4       TypeUtils.TString.Menos
+ 0001:00110F4C       TypeUtils.TString.Menos
+ 0001:001120BC       TypeUtils.TString.Modulo10
+ 0001:00112214       TypeUtils.TString.Modulo11
+ 0001:00111848       TypeUtils.TString.Replace
+ 0001:00111794       TypeUtils.TString.Replace
+ 0001:0011192C       TypeUtils.TString.Replace
+ 0001:001119E8       TypeUtils.TString.Replace
+ 0001:00111718       TypeUtils.TString.Replace
+ 0001:001116A4       TypeUtils.TString.Replace
+ 0001:001123CC       TypeUtils.TString.ReplaceAll
+ 0001:00111454       TypeUtils.TString.Reverter
+ 0001:001114A4       TypeUtils.TString.SaveToFile
+ 0001:00111AD4       TypeUtils.TString.SetAt
+ 0001:00112920       TypeUtils.TString.SetAtStr
+ 0001:00113020       TypeUtils.TString.SetChave
+ 0001:00110FF8       TypeUtils.TString.SetValue
+ 0001:00111288       TypeUtils.TString.Show
+ 0001:001113CC       TypeUtils.TString.ShowConfirmation
+ 0001:00111350       TypeUtils.TString.ShowError
+ 0001:001112D4       TypeUtils.TString.ShowWarning
+ 0001:00111010       TypeUtils.TString.Trim
+ 0001:00111060       TypeUtils.TString.TrimLeft
+ 0001:001110B0       TypeUtils.TString.TrimRight
+ 0001:0011200C       TypeUtils.TString.Underscore
+ 0001:00111D7C       TypeUtils.TString.UpperCase
+ 0001:00111DCC       TypeUtils.TString.UTF8Decode
+ 0001:00111E4C       TypeUtils.TString.UTF8Encode
+ 0001:00111550       TypeUtils.TString.ValidarComXSD
+ 0001:00111100       TypeUtils.TString.Vezes
+ 0001:00113048       TypeUtils.TXString.AdicionarAntesDaString
+ 0001:001130F0       TypeUtils.TXString.AdicionarDepoisDaString
+ 0001:00113198       TypeUtils.TXString.AlinhadoADireita
+ 0001:0011322C       TypeUtils.TXString.AlinhadoAEsquerda
+ 0001:001136B4       TypeUtils.TXString.AsInteger
+ 0001:001156D8       TypeUtils.TXString.AsStringList
+ 0001:001150E4       TypeUtils.TXString.Ate
+ 0001:0011517C       TypeUtils.TXString.Ate
+ 0001:00115220       TypeUtils.TXString.AteAntesDe
+ 0001:001132C0       TypeUtils.TXString.Camelize
+ 0001:00113350       TypeUtils.TXString.Centralizado
+ 0001:001133E4       TypeUtils.TXString.Clear
+ 0001:001133F0       TypeUtils.TXString.ComAspas
+ 0001:00113480       TypeUtils.TXString.ComZerosAEsquerda
+ 0001:00113514       TypeUtils.TXString.Contem
+ 0001:001159AC       TypeUtils.TXString.Contem
+ 0001:00113590       TypeUtils.TXString.Copy
+ 0001:0011362C       TypeUtils.TXString.Create
+ 0001:00113704       TypeUtils.TXString.Decripta
+ 0001:00114E20       TypeUtils.TXString.Desumanize
+ 0001:001137A8       TypeUtils.TXString.Encripta
+ 0001:001157AC       TypeUtils.TXString.Equals
+ 0001:00115740       TypeUtils.TXString.Equals
+ 0001:00115818       TypeUtils.TXString.Equals
+ 0001:001138C8       TypeUtils.TXString.EstaContidoEm
+ 0001:00115354       TypeUtils.TXString.EstaContidoEm
+ 0001:001153E8       TypeUtils.TXString.EstaContidoEm
+ 0001:00115494       TypeUtils.TXString.EstaContidoEm
+ 0001:0011384C       TypeUtils.TXString.EstaContidoEm
+ 0001:00113978       TypeUtils.TXString.Format
+ 0001:00113A28       TypeUtils.TXString.GetAt
+ 0001:00113AC0       TypeUtils.TXString.GetValue
+ 0001:00113B58       TypeUtils.TXString.Humanize
+ 0001:001158F0       TypeUtils.TXString.IgualA
+ 0001:0011595C       TypeUtils.TXString.IgualA
+ 0001:00115884       TypeUtils.TXString.IgualA
+ 0001:00113BE8       TypeUtils.TXString.IndexOf
+ 0001:00113AD8       TypeUtils.TXString.IndexOf
+ 0001:00113C6C       TypeUtils.TXString.IsEmpty
+ 0001:00113CD0       TypeUtils.TXString.Length
+ 0001:00114F64       TypeUtils.TXString.ListarArquivos
+ 0001:00115020       TypeUtils.TXString.ListarArquivosComPrefixoParaCopy
+ 0001:00115550       TypeUtils.TXString.ListarPastas
+ 0001:00115614       TypeUtils.TXString.ListarPastasEArquivos
+ 0001:001152C4       TypeUtils.TXString.LoadFromFile
+ 0001:00113D38       TypeUtils.TXString.LowerCase
+ 0001:00113DC8       TypeUtils.TXString.Mais
+ 0001:00113E6C       TypeUtils.TXString.Menos
+ 0001:00113F40       TypeUtils.TXString.Menos
+ 0001:00114154       TypeUtils.TXString.Replace
+ 0001:00114244       TypeUtils.TXString.Replace
+ 0001:00114098       TypeUtils.TXString.Replace
+ 0001:0011445C       TypeUtils.TXString.Replace
+ 0001:00113FE4       TypeUtils.TXString.Replace
+ 0001:00114364       TypeUtils.TXString.Replace
+ 0001:00114EB0       TypeUtils.TXString.ReplaceAll
+ 0001:00114584       TypeUtils.TXString.Reverter
+ 0001:00114614       TypeUtils.TXString.SaveToFile
+ 0001:001146A4       TypeUtils.TXString.SetAt
+ 0001:0011472C       TypeUtils.TXString.SetValue
+ 0001:0011473C       TypeUtils.TXString.Show
+ 0001:001148A4       TypeUtils.TXString.ShowConfirmation
+ 0001:0011482C       TypeUtils.TXString.ShowError
+ 0001:001147B4       TypeUtils.TXString.ShowWarning
+ 0001:0011490C       TypeUtils.TXString.Trim
+ 0001:00114998       TypeUtils.TXString.TrimLeft
+ 0001:00114A24       TypeUtils.TXString.TrimRight
+ 0001:00114D90       TypeUtils.TXString.Underscore
+ 0001:00114AB0       TypeUtils.TXString.UpperCase
+ 0001:00114B40       TypeUtils.TXString.UTF8Decode
+ 0001:00114BD0       TypeUtils.TXString.UTF8Encode
+ 0001:00114C60       TypeUtils.TXString.ValidarComXSD
+ 0001:00114CFC       TypeUtils.TXString.Vezes
  0004:00004F50       TypInfo..5
  0001:00027348       TypInfo.AssignLongStr
  0001:00027E80       TypInfo.AssignVariant
@@ -15255,463 +15262,469 @@ Detailed map of segments
  0001:0010C7F8       TextTestRunner.TTextTestListener.EndSuite
  0001:0010C820       TextTestRunner.TTextTestListener.StartSuite
  0001:0010C848       TextTestRunner.Finalization
- 0001:0010C988       Feature..TFeature
- 0001:0010CB28       Feature.TFeature.Create
- 0001:0010CB78       Feature.TFeature.GetCenarios
- 0001:0010CB90       Feature.TFeature.GetDescricao
- 0001:0010CBA8       Feature.TFeature.GetTitulo
- 0001:0010CBC0       Feature.TFeature.SetDescricao
- 0001:0010CBD8       Feature.TFeature.SetTitulo
- 0001:0010CBF0       pcre._memcpy
- 0001:0010CBF8       pcre._memmove
- 0001:0010CC00       pcre._memset
- 0001:0010CC08       pcre._strncmp
- 0001:0010CC10       pcre._memcmp
- 0001:0010CC18       pcre._strlen
- 0001:0010CC20       pcre.__ltolower
- 0001:0010CC28       pcre.__ltoupper
- 0001:0010CC30       pcre._isalnum
- 0001:0010CC38       pcre._isalpha
- 0001:0010CC40       pcre._iscntrl
- 0001:0010CC48       pcre._isdigit
- 0001:0010CC50       pcre._isgraph
- 0001:0010CC58       pcre._islower
- 0001:0010CC60       pcre._isprint
- 0001:0010CC68       pcre._ispunct
- 0001:0010CC70       pcre._isspace
- 0001:0010CC78       pcre._isupper
- 0001:0010CC80       pcre._isxdigit
- 0001:0010CC88       pcre._strchr
- 0001:0010CC90       pcre.malloc
- 0001:0010CC98       pcre.pcre_malloc
- 0001:0010CCB8       pcre._malloc
- 0001:0010CCC4       pcre.free
- 0001:0010CCCC       pcre.pcre_free
- 0001:0010CCEC       pcre._free
- 0001:0010CCF8       pcre.pcre_dispose
- 0001:0010CD24       pcre...
- 0001:001131D8       pcre.pcre_compile
- 0001:001131F0       pcre.pcre_compile2
- 0001:00113948       pcre...
- 0001:0011C0F8       pcre.pcre_exec
- 0001:0011CCE0       pcre.pcre_fullinfo
- 0001:0011CEA4       pcre.pcre_get_stringnumber
- 0001:0011CF9C       pcre.pcre_get_stringtable_entries
- 0001:0011D1B4       pcre.pcre_copy_substring
- 0001:0011D210       pcre.pcre_copy_named_substring
- 0001:0011D244       pcre.pcre_get_substring_list
- 0001:0011D318       pcre.pcre_free_substring_list
- 0001:0011D320       pcre.pcre_get_substring
- 0001:0011D398       pcre.pcre_get_named_substring
- 0001:0011D3C8       pcre.pcre_free_substring
- 0001:0011D3D0       pcre.pcre_maketables
- 0001:0011D678       pcre.@_pcre_is_newline
- 0001:0011D7EC       pcre.@_pcre_was_newline
- 0001:0011D968       pcre.@_pcre_ord2utf8
- 0001:0011D9B4       pcre...
- 0001:0011E034       pcre.pcre_study
- 0001:0011E170       pcre...
- 0001:0011E1C0       pcre.@_pcre_try_flipped
- 0001:0011E2E8       pcre.@_pcre_valid_utf8
- 0001:0011E3FC       pcre.@_pcre_xclass
- 0001:0011E888       PerlRegEx..TPerlRegEx
- 0001:0011F180       PerlRegEx.FirstCap
- 0001:0011F1B4       PerlRegEx.InitialCaps
- 0001:0011F24C       PerlRegEx.TPerlRegEx.CleanUp
- 0001:0011F290       PerlRegEx.TPerlRegEx.ClearStoredGroups
- 0001:0011F2B4       PerlRegEx.TPerlRegEx.Compile
- 0001:0011F4C0       PerlRegEx.ReplaceBackreference
- 0001:0011F6AC       PerlRegEx.ProcessBackreference
- 0001:0011FC1C       PerlRegEx.TPerlRegEx.ComputeReplacement
- 0001:001201B8       PerlRegEx.TPerlRegEx.Create
- 0001:00120214       PerlRegEx.TPerlRegEx.Destroy
- 0001:00120254       PerlRegEx.TPerlRegEx.EscapeRegExChars
- 0001:001202FC       PerlRegEx.TPerlRegEx.GetFoundMatch
- 0001:00120308       PerlRegEx.TPerlRegEx.GetMatchedText
- 0001:00120418       PerlRegEx.TPerlRegEx.GetMatchedLength
- 0001:00120524       PerlRegEx.TPerlRegEx.GetMatchedOffset
- 0001:00120630       PerlRegEx.TPerlRegEx.GetGroupCount
- 0001:00120738       PerlRegEx.TPerlRegEx.GetGroupLengths
- 0001:001208B8       PerlRegEx.TPerlRegEx.GetGroupOffsets
- 0001:00120A30       PerlRegEx.TPerlRegEx.GetGroups
- 0001:00120B88       PerlRegEx.TPerlRegEx.GetSubjectLeft
- 0001:00120BA8       PerlRegEx.TPerlRegEx.GetSubjectRight
- 0001:00120BC8       PerlRegEx.TPerlRegEx.Match
- 0001:00120C88       PerlRegEx.TPerlRegEx.MatchAgain
- 0001:00120D60       PerlRegEx.TPerlRegEx.NamedGroup
- 0001:00120D84       PerlRegEx.TPerlRegEx.Replace
- 0001:00120F3C       PerlRegEx.TPerlRegEx.ReplaceAll
- 0001:00120FA0       PerlRegEx.TPerlRegEx.SetOptions
- 0001:00121030       PerlRegEx.TPerlRegEx.SetRegEx
- 0001:0012105C       PerlRegEx.TPerlRegEx.SetStart
- 0001:00121070       PerlRegEx.TPerlRegEx.SetStop
- 0001:00121098       PerlRegEx.TPerlRegEx.SetSubject
- 0001:001210E4       PerlRegEx.TPerlRegEx.Split
- 0001:001212C4       PerlRegEx.TPerlRegEx.SplitCapture
- 0001:001215A0       PerlRegEx.TPerlRegEx.SplitCapture
- 0001:001215AC       PerlRegEx.TPerlRegEx.StoreGroups
- 0001:00121650       PerlRegEx.TPerlRegEx.Study
- 0001:00121B6C       TypeUtils..TString
- 0001:001233F4       TypeUtils..TXString
- 0001:00124718       TypeUtils.IndexOf
- 0001:001247CC       TypeUtils.TemAtributo
- 0001:001247D4       TypeUtils.ListarPastas
- 0001:001249C8       TypeUtils.ListarPastasEArquivos
- 0001:00124C7C       TypeUtils.GetFileList
- 0001:00125020       TypeUtils.S
- 0001:00125080       TypeUtils.SX
- 0001:001250E0       TypeUtils.ReplaceMany
- 0001:001251F0       TypeUtils.ReplaceMany
- 0001:001252D4       TypeUtils.AlinhaTX
- 0001:0012551C       TypeUtils.TString.AdicionarAntesDaString
- 0001:001255B4       TypeUtils.TString.AdicionarDepoisDaString
- 0001:0012564C       TypeUtils.TString.AlinhadoADireita
- 0001:001256A4       TypeUtils.TString.AlinhadoAEsquerda
- 0001:001256FC       TypeUtils.TString.Centralizado
- 0001:00125754       TypeUtils.TString.Contem
- 0001:001257C0       TypeUtils.TString.Create
- 0001:00125834       TypeUtils.TString.EstaContidoEm
- 0001:001258B0       TypeUtils.TString.EstaContidoEm
- 0001:00125924       TypeUtils.TString.EstaContidoEm
- 0001:001259B0       TypeUtils.TString.EstaContidoEm
- 0001:00125A50       TypeUtils.TString.EstaContidoEm
- 0001:00125B04       TypeUtils.TString.GetValue
- 0001:00125B1C       TypeUtils.TString.Mais
- 0001:00125B88       TypeUtils.TString.Menos
- 0001:00125C00       TypeUtils.TString.Menos
- 0001:00125CAC       TypeUtils.TString.SetValue
- 0001:00125CC4       TypeUtils.TString.Trim
- 0001:00125D14       TypeUtils.TString.TrimLeft
- 0001:00125D64       TypeUtils.TString.TrimRight
- 0001:00125DB4       TypeUtils.TString.Vezes
- 0001:00125E1C       TypeUtils.TString.ComZerosAEsquerda
- 0001:00125E58       TypeUtils.TString.Decripta
- 0001:00125E90       TypeUtils.TString.Encripta
- 0001:00125EC8       TypeUtils.TString.Format
- 0001:00125F3C       TypeUtils.TString.Show
- 0001:00125F88       TypeUtils.TString.ShowWarning
- 0001:00126004       TypeUtils.TString.ShowError
- 0001:00126080       TypeUtils.TString.ShowConfirmation
- 0001:00126108       TypeUtils.TString.Reverter
- 0001:00126158       TypeUtils.TString.SaveToFile
- 0001:00126204       TypeUtils.TString.ValidarComXSD
- 0001:00126280       TypeUtils.TString.Copy
- 0001:001262DC       TypeUtils.TString.GetAt
- 0001:00126358       TypeUtils.TString.Replace
- 0001:001263CC       TypeUtils.TString.Replace
- 0001:00126448       TypeUtils.TString.Replace
- 0001:001264FC       TypeUtils.TString.Replace
- 0001:001265E0       TypeUtils.TString.Replace
- 0001:0012669C       TypeUtils.TString.Replace
- 0001:00126788       TypeUtils.TString.SetAt
- 0001:00126858       TypeUtils.TString.Length
- 0001:001268B8       TypeUtils.TString.LowerCase
- 0001:00126908       TypeUtils.TString.IndexOf
- 0001:00126970       TypeUtils.TString.IndexOf
- 0001:001269E0       TypeUtils.TString.ComAspas
- 0001:00126A30       TypeUtils.TString.UpperCase
- 0001:00126A80       TypeUtils.TString.UTF8Decode
- 0001:00126B00       TypeUtils.TString.UTF8Encode
- 0001:00126B68       TypeUtils.TString.Humanize
- 0001:00126C68       TypeUtils.TString.Camelize
- 0001:00126CC0       TypeUtils.TString.Underscore
- 0001:00126D18       TypeUtils.TString.Desumanize
- 0001:00126D70       TypeUtils.TString.Modulo10
- 0001:00126EC8       TypeUtils.TString.Modulo11
- 0001:00126FCC       TypeUtils.TString.AsInteger
- 0001:0012701C       TypeUtils.TString.GetVazia
- 0001:00127080       TypeUtils.TString.ReplaceAll
- 0001:00127124       TypeUtils.TString.ListarArquivos
- 0001:00127210       TypeUtils.TString.ListarArquivosComPrefixoParaCopy
- 0001:001272FC       TypeUtils.TString.ListarPastas
- 0001:00127400       TypeUtils.TString.ListarPastasEArquivos
- 0001:001274F0       TypeUtils.TString.Aspas
- 0001:00127558       TypeUtils.TString.GetAtStr
- 0001:001275D4       TypeUtils.TString.SetAtStr
- 0001:00127650       TypeUtils.TString.Ate
- 0001:00127670       TypeUtils.TString.Ate
- 0001:001276CC       TypeUtils.TString.AteAntesDe
- 0001:00127728       TypeUtils.TString.EncriptSimples
- 0001:0012773C       TypeUtils.TString.LoadFromFile
- 0001:001277D8       TypeUtils.TString.AsStringList
- 0001:00127838       TypeUtils.TString.Contem
- 0001:00127908       TypeUtils.TString.IndiceNoArray
- 0001:001279A4       TypeUtils.TString.Equals
- 0001:00127A10       TypeUtils.TString.Equals
- 0001:00127A7C       TypeUtils.TString.IgualA
- 0001:00127AE8       TypeUtils.TString.IgualA
- 0001:00127B38       TypeUtils.TString.GetChave
- 0001:00127CD4       TypeUtils.TString.SetChave
- 0001:00127CFC       TypeUtils.TXString.AdicionarAntesDaString
- 0001:00127DA4       TypeUtils.TXString.AdicionarDepoisDaString
- 0001:00127E4C       TypeUtils.TXString.AlinhadoADireita
- 0001:00127EE0       TypeUtils.TXString.AlinhadoAEsquerda
- 0001:00127F74       TypeUtils.TXString.Camelize
- 0001:00128004       TypeUtils.TXString.Centralizado
- 0001:00128098       TypeUtils.TXString.ComAspas
- 0001:00128128       TypeUtils.TXString.ComZerosAEsquerda
- 0001:001281BC       TypeUtils.TXString.Contem
- 0001:00128238       TypeUtils.TXString.Copy
- 0001:001282D4       TypeUtils.TXString.Create
- 0001:0012835C       TypeUtils.TXString.AsInteger
- 0001:001283AC       TypeUtils.TXString.Decripta
- 0001:00128450       TypeUtils.TXString.Encripta
- 0001:001284F4       TypeUtils.TXString.EstaContidoEm
- 0001:00128570       TypeUtils.TXString.EstaContidoEm
- 0001:00128620       TypeUtils.TXString.Format
- 0001:001286D0       TypeUtils.TXString.GetAt
- 0001:00128768       TypeUtils.TXString.GetValue
- 0001:00128780       TypeUtils.TXString.IndexOf
- 0001:00128800       TypeUtils.TXString.Humanize
- 0001:00128890       TypeUtils.TXString.IndexOf
- 0001:00128914       TypeUtils.TXString.Length
- 0001:0012897C       TypeUtils.TXString.LowerCase
- 0001:00128A0C       TypeUtils.TXString.Mais
- 0001:00128AB0       TypeUtils.TXString.Menos
- 0001:00128B84       TypeUtils.TXString.Menos
- 0001:00128C28       TypeUtils.TXString.Replace
- 0001:00128CDC       TypeUtils.TXString.Replace
- 0001:00128D98       TypeUtils.TXString.Replace
- 0001:00128E88       TypeUtils.TXString.Replace
- 0001:00128FA8       TypeUtils.TXString.Replace
- 0001:001290A0       TypeUtils.TXString.Replace
- 0001:001291C8       TypeUtils.TXString.Reverter
- 0001:00129258       TypeUtils.TXString.SaveToFile
- 0001:001292E8       TypeUtils.TXString.SetAt
- 0001:00129370       TypeUtils.TXString.SetValue
- 0001:00129380       TypeUtils.TXString.Show
- 0001:001293F8       TypeUtils.TXString.ShowWarning
- 0001:00129470       TypeUtils.TXString.ShowError
- 0001:001294E8       TypeUtils.TXString.ShowConfirmation
- 0001:00129550       TypeUtils.TXString.Trim
- 0001:001295DC       TypeUtils.TXString.TrimLeft
- 0001:00129668       TypeUtils.TXString.TrimRight
- 0001:001296F4       TypeUtils.TXString.UpperCase
- 0001:00129784       TypeUtils.TXString.UTF8Decode
- 0001:00129814       TypeUtils.TXString.UTF8Encode
- 0001:001298A4       TypeUtils.TXString.ValidarComXSD
- 0001:00129940       TypeUtils.TXString.Vezes
- 0001:001299D4       TypeUtils.TXString.Underscore
- 0001:00129A64       TypeUtils.TXString.Desumanize
- 0001:00129AF4       TypeUtils.TXString.ReplaceAll
- 0001:00129BA8       TypeUtils.TXString.ListarArquivos
- 0001:00129C64       TypeUtils.TXString.ListarArquivosComPrefixoParaCopy
- 0001:00129D28       TypeUtils.TXString.Ate
- 0001:00129DC0       TypeUtils.TXString.Ate
- 0001:00129E64       TypeUtils.TXString.AteAntesDe
- 0001:00129F08       TypeUtils.TXString.LoadFromFile
- 0001:00129F98       TypeUtils.TXString.EstaContidoEm
- 0001:0012A02C       TypeUtils.TXString.EstaContidoEm
- 0001:0012A0D8       TypeUtils.TXString.EstaContidoEm
- 0001:0012A194       TypeUtils.TXString.ListarPastas
- 0001:0012A258       TypeUtils.TXString.ListarPastasEArquivos
- 0001:0012A31C       TypeUtils.TXString.AsStringList
- 0001:0012A384       TypeUtils.TXString.Equals
- 0001:0012A3F0       TypeUtils.TXString.Equals
- 0001:0012A45C       TypeUtils.TXString.Equals
- 0001:0012A4C8       TypeUtils.TXString.IgualA
- 0001:0012A534       TypeUtils.TXString.IgualA
- 0001:0012A5A0       TypeUtils.TXString.IgualA
- 0001:0012A5F0       TypeUtils.TXString.Contem
- 0001:0012A714       FeatureParser..TFeatureParser
- 0001:0012A854       FeatureParser.TFeatureParser.GetFeatureFileName
- 0001:0012A86C       FeatureParser.TFeatureParser.LoadFeature
- 0001:0012A8D4       FeatureParser.TFeatureParser.Parse
- 0001:0012AA2C       FeatureParser.TFeatureParser.SetFeatureFileName
- 0001:0012AC00       AutoDocObjects..TBaseAutoDoc
- 0001:0012ADFC       AutoDocObjects.TBaseAutoDoc.BeginSpec
- 0001:0012AE88       AutoDocObjects.TBaseAutoDoc.Create
- 0001:0012AEC8       AutoDocObjects.TBaseAutoDoc.Destroy
- 0001:0012AEFC       AutoDocObjects.TBaseAutoDoc.DocSpec
- 0001:0012AFCC       AutoDocObjects.TBaseAutoDoc.DoOutput
- 0001:0012AFF4       AutoDocObjects.TBaseAutoDoc.GetEnabled
- 0001:0012AFFC       AutoDocObjects.TBaseAutoDoc.SetEnabled
- 0001:0012B000       AutoDocObjects.TBaseAutoDoc.SplitCamelCaseString
- 0001:0012B0F8       dSpecUtils.IsBadPointer
- 0001:0012B140       dSpecUtils.CallerAddr
- 0001:0012B160       dSpecUtils.GetImplementingObjectFor
- 0001:0012B1FC       dSpecUtils.IsNumeric
- 0001:0012B288       dSpecUtils.IsAlpha
- 0001:0012B328       dSpecUtils.IsAlphaNumeric
- 0001:0012B3C8       dSpecUtils.IsPrime
- 0001:0012B430       dSpecUtils.GetValueName
- 0001:0012B49C       BaseObjects..TFailureListItem
- 0001:0012B5A0       BaseObjects..TFailureList
- 0001:0012B718       BaseObjects..TFailureReportingObject
- 0001:0012B89C       BaseObjects.TFailureList.Add
- 0001:0012B8AC       BaseObjects.TFailureList.AddFailure
- 0001:0012B8D0       BaseObjects.TFailureList.Create
- 0001:0012B910       BaseObjects.TFailureList.GetItem
- 0001:0012B928       BaseObjects.TFailureReportingObject.Create
- 0001:0012B978       BaseObjects.TFailureReportingObject.Destroy
- 0001:0012B9B0       BaseObjects.TFailureReportingObject.Fail
- 0001:0012BA7C       Modifiers..TModifier
- 0001:0012BDB8       Modifiers..TFloatModifier
- 0001:0012BFEC       Modifiers..TStringModifier
- 0001:0012C1EC       Modifiers.TModifier.Create
- 0001:0012C284       Modifiers.TModifier.CreateModifier
- 0001:0012C2F8       Modifiers.TModifier.Destroy
- 0001:0012C324       Modifiers.TModifier.DoEvaluation
- 0001:0012C3B4       Modifiers.TModifier.DoNotApplicableFailure
- 0001:0012C440       Modifiers.TModifier.IgnoringCase
- 0001:0012C458       Modifiers.TModifier.Percent
- 0001:0012C470       Modifiers.TModifier.Unless
- 0001:0012C580       Modifiers.TModifier.WithAToleranceOf
- 0001:0012C598       Modifiers.TModifier.And_
- 0001:0012C610       Modifiers.TFloatModifier.Create
- 0001:0012C6C0       Modifiers.TFloatModifier.CreateModifier
- 0001:0012C74C       Modifiers.TFloatModifier.Percent
- 0001:0012C8D0       Modifiers.TFloatModifier.WithAToleranceOf
- 0001:0012CA44       Modifiers.TStringModifier.Create
- 0001:0012CB04       Modifiers.TStringModifier.CreateModifier
- 0001:0012CB6C       Modifiers.TStringModifier.IgnoringCase
- 0001:0012CFB8       Specifiers..TBaseSpecifier
- 0001:0012D9AC       Specifiers..TIntegerSpecifier
- 0001:0012DE6C       Specifiers..TBooleanSpecifier
- 0001:0012E0D8       Specifiers..TFloatSpecifier
- 0001:0012E4C4       Specifiers..TStringSpecifier
- 0001:0012E8BC       Specifiers..TObjectSpecifier
- 0001:0012EC14       Specifiers..TPointerSpecifier
- 0001:0012EE38       Specifiers..TClassSpecifier
- 0001:0012F07C       Specifiers..TDateTimeSpecifier
- 0001:0012F3AC       Specifiers..TInterfaceSpecifier
- 0001:0012F6B0       Specifiers.TBaseSpecifier.Composite
- 0001:0012F788       Specifiers.TBaseSpecifier.Contain
- 0001:0012F868       Specifiers.TBaseSpecifier.Create
- 0001:0012F8BC       Specifiers.TBaseSpecifier.CreateModifier
- 0001:0012F938       Specifiers.TBaseSpecifier.CreateNewShouldHelper
- 0001:0012F970       Specifiers.TBaseSpecifier.Destroy
- 0001:0012F9D8       Specifiers.TBaseSpecifier.DoEvaluation
- 0001:0012FAB8       Specifiers.TBaseSpecifier.Should
- 0001:0012FAD8       Specifiers.TBaseSpecifier.StartWith
- 0001:0012FBB8       Specifiers.TBaseSpecifier.Support
- 0001:0012FCB8       Specifiers.TBaseSpecifier.Alpha
- 0001:0012FD88       Specifiers.TBaseSpecifier.AlphaNumeric
- 0001:0012FE68       Specifiers.TBaseSpecifier.Assigned
- 0001:0012FF40       Specifiers.TBaseSpecifier.AtLeast
- 0001:0013001C       Specifiers.TBaseSpecifier.AtMost
- 0001:001300F8       Specifiers.TBaseSpecifier.Be
- 0001:00130174       Specifiers.TBaseSpecifier.False
- 0001:00130244       Specifiers.TBaseSpecifier.NegateMessage
- 0001:001303A4       Specifiers.TBaseSpecifier.Negative
- 0001:0013047C       Specifiers.TBaseSpecifier.Nil_
- 0001:00130548       Specifiers.TBaseSpecifier.Odd
- 0001:00130614       Specifiers.TBaseSpecifier.OfType
- 0001:00130708       Specifiers.TBaseSpecifier.Positive
- 0001:001307E0       Specifiers.TBaseSpecifier.Prime
- 0001:001308B0       Specifiers.TBaseSpecifier.True
- 0001:00130980       Specifiers.TBaseSpecifier.Zero
- 0001:00130A50       Specifiers.TBaseSpecifier.DescendFrom
- 0001:00130B4C       Specifiers.TBaseSpecifier.Empty
- 0001:00130C1C       Specifiers.TBaseSpecifier.EndWith
- 0001:00130CF8       Specifiers.TBaseSpecifier.Equal
- 0001:00130DD0       Specifiers.TBaseSpecifier.Even
- 0001:00130EA0       Specifiers.TBaseSpecifier.GreaterThan
- 0001:00130F84       Specifiers.TBaseSpecifier.Implement
- 0001:00131088       Specifiers.TBaseSpecifier.ImplementedBy
- 0001:00131188       Specifiers.TBaseSpecifier.LessThan
- 0001:00131268       Specifiers.TBaseSpecifier.Not_
- 0001:001312E8       Specifiers.TBaseSpecifier.Numeric
- 0001:001313BC       Specifiers.TIntegerSpecifier.AtLeast
- 0001:001314E4       Specifiers.TIntegerSpecifier.AtMost
- 0001:0013160C       Specifiers.TIntegerSpecifier.Composite
- 0001:00131718       Specifiers.TIntegerSpecifier.Create
- 0001:00131768       Specifiers.TIntegerSpecifier.Equal
- 0001:001318A0       Specifiers.TIntegerSpecifier.Even
- 0001:001319A8       Specifiers.TIntegerSpecifier.GreaterThan
- 0001:00131B00       Specifiers.TIntegerSpecifier.LessThan
- 0001:00131C50       Specifiers.TIntegerSpecifier.Negative
- 0001:00131D5C       Specifiers.TIntegerSpecifier.Odd
- 0001:00131E5C       Specifiers.TIntegerSpecifier.Positive
- 0001:00131F68       Specifiers.TIntegerSpecifier.Prime
- 0001:00132064       Specifiers.TIntegerSpecifier.Zero
- 0001:00132154       Specifiers.TBooleanSpecifier.Create
- 0001:001321A8       Specifiers.TBooleanSpecifier.False
- 0001:001322D4       Specifiers.TBooleanSpecifier.True
- 0001:00132400       Specifiers.TBooleanSpecifier.Equal
- 0001:00132564       Specifiers.TFloatSpecifier.AtLeast
- 0001:001326A4       Specifiers.TFloatSpecifier.AtMost
- 0001:001327E4       Specifiers.TFloatSpecifier.Create
- 0001:00132840       Specifiers.TFloatSpecifier.CreateModifier
- 0001:001328D0       Specifiers.TFloatSpecifier.Equal
- 0001:00132A18       Specifiers.TFloatSpecifier.GreaterThan
- 0001:00132B68       Specifiers.TFloatSpecifier.LessThan
- 0001:00132CB0       Specifiers.TFloatSpecifier.Negative
- 0001:00132DC4       Specifiers.TFloatSpecifier.Positive
- 0001:00132ED8       Specifiers.TFloatSpecifier.Zero
- 0001:00132FDC       Specifiers.TStringSpecifier.Alpha
- 0001:001330D4       Specifiers.TStringSpecifier.AlphaNumeric
- 0001:001331EC       Specifiers.TStringSpecifier.Contain
- 0001:00133344       Specifiers.TStringSpecifier.Create
- 0001:001333D0       Specifiers.TStringSpecifier.CreateModifier
- 0001:00133454       Specifiers.TStringSpecifier.Empty
- 0001:00133544       Specifiers.TStringSpecifier.EndWith
- 0001:0013371C       Specifiers.TStringSpecifier.Equal
- 0001:00133858       Specifiers.TStringSpecifier.Numeric
- 0001:00133958       Specifiers.TStringSpecifier.StartWith
- 0001:00133AF0       Specifiers.TObjectSpecifier.Assigned
- 0001:00133BD4       Specifiers.TObjectSpecifier.Create
- 0001:00133C24       Specifiers.TObjectSpecifier.Nil_
- 0001:00133CF4       Specifiers.TObjectSpecifier.OfType
- 0001:00133F14       Specifiers.TObjectSpecifier.Support
- 0001:0013416C       Specifiers.TObjectSpecifier.DescendFrom
- 0001:001343C0       Specifiers.TObjectSpecifier.Implement
- 0001:00134620       Specifiers.TPointerSpecifier.Assigned
- 0001:00134704       Specifiers.TPointerSpecifier.Create
- 0001:00134754       Specifiers.TPointerSpecifier.Nil_
- 0001:00134824       Specifiers.TClassSpecifier.Create
- 0001:00134874       Specifiers.TClassSpecifier.OfType
- 0001:001349C8       Specifiers.TClassSpecifier.DescendFrom
- 0001:00134B30       Specifiers.TDateTimeSpecifier.AtLeast
- 0001:00134C8C       Specifiers.TDateTimeSpecifier.AtMost
- 0001:00134DE8       Specifiers.TDateTimeSpecifier.Create
- 0001:00134E3C       Specifiers.TDateTimeSpecifier.Equal
- 0001:00134FA0       Specifiers.TDateTimeSpecifier.GreaterThan
- 0001:0013510C       Specifiers.TDateTimeSpecifier.LessThan
- 0001:00135270       Specifiers.TInterfaceSpecifier.Assigned
- 0001:00135358       Specifiers.TInterfaceSpecifier.Create
- 0001:001353E4       Specifiers.TInterfaceSpecifier.Destroy
- 0001:00135418       Specifiers.TInterfaceSpecifier.ImplementedBy
- 0001:001356F0       Specifiers.TInterfaceSpecifier.Nil_
- 0001:001357C0       Specifiers.TInterfaceSpecifier.Support
- 0001:001359F0       dSpec..TSpecify
- 0001:00135EE0       dSpec..TContext
- 0001:00136198       dSpec.RegisterSpec
- 0001:001361E0       dSpec.TSpecify.Create
- 0001:00136220       dSpec.TSpecify.Destroy
- 0001:00136250       dSpec.TSpecify.That
- 0001:001362F0       dSpec.TSpecify.That
- 0001:00136390       dSpec.TSpecify.That
- 0001:00136438       dSpec.TSpecify.That
- 0001:001364E8       dSpec.TSpecify.That
- 0001:001365A8       dSpec.TSpecify.That
- 0001:00136620       dSpec.TSpecify.That
- 0001:001366B0       dSpec.TSpecify.That
- 0001:00136754       dSpec.TSpecify.That
- 0001:00136808       dSpec.TContext.AddFailure
- 0001:00136818       dSpec.TContext.Create
- 0001:00136904       dSpec.TContext.Destroy
- 0001:00136958       dSpec.TContext.DocumentSpec
- 0001:00136A60       dSpec.TContext.DoStatus
- 0001:00136A7C       dSpec.TContext.GetAutoDoc
- 0001:00136A94       dSpec.TContext.CreateAutoDoc
- 0001:00136AC8       dSpec.TContext.GetContextDescription
- 0001:00136AE0       dSpec.TContext.Invoke
- 0001:00136B70       dSpec.TContext.RepealLastFailure
- 0001:00136B8C       dSpec.TContext.ReportFailures
- 0001:00136C24       dSpec.TContext.NewSpecDox
- 0001:00136CF0       dSpec.TContext.RunWithFixture
- 0001:00136D08       dSpec.TContext.SetAutoDoc
- 0001:00136D4C       dSpec.TContext.SetContextDescription
- 0001:00136D74       TestFeatureParser..TParseContext
- 0001:00136F50       TestFeatureParser..TestTFeatureParser
- 0001:00137268       TestFeatureParser.TestTFeatureParser.ParseDeveriaTrazerOsCenariosDaFeature
- 0001:001373D8       TestFeatureParser.TestTFeatureParser.SetUp
- 0001:00137490       TestFeatureParser.TestTFeatureParser.TearDown
- 0001:001374A4       TestFeatureParser.TestTFeatureParser.ParseDeveriaRetornarUmaFeature
- 0001:00137560       TestFeatureParser.TParseContext.Create
- 0001:001375F8       TestFeatureParser.Finalization
- 0001:00137600       dCucumberTests.Finalization
+ 0001:0010C94C       Scenario..TScenario
+ 0001:0010CE0C       TypeUtils..TString
+ 0001:0010E6D8       TypeUtils..TXString
+ 0001:0010FA58       TypeUtils.IndexOf
+ 0001:0010FB0C       TypeUtils.TemAtributo
+ 0001:0010FB14       TypeUtils.ListarPastas
+ 0001:0010FD08       TypeUtils.ListarPastasEArquivos
+ 0001:0010FFBC       TypeUtils.GetFileList
+ 0001:00110360       TypeUtils.S
+ 0001:001103C0       TypeUtils.SX
+ 0001:00110420       TypeUtils.ReplaceMany
+ 0001:00110530       TypeUtils.ReplaceMany
+ 0001:00110614       TypeUtils.AlinhaTX
+ 0001:0011085C       TypeUtils.TString.AdicionarAntesDaString
+ 0001:001108F4       TypeUtils.TString.AdicionarDepoisDaString
+ 0001:0011098C       TypeUtils.TString.AlinhadoADireita
+ 0001:001109E4       TypeUtils.TString.AlinhadoAEsquerda
+ 0001:00110A3C       TypeUtils.TString.Centralizado
+ 0001:00110A94       TypeUtils.TString.Clear
+ 0001:00110AA0       TypeUtils.TString.Contem
+ 0001:00110B0C       TypeUtils.TString.Create
+ 0001:00110B80       TypeUtils.TString.EstaContidoEm
+ 0001:00110BFC       TypeUtils.TString.EstaContidoEm
+ 0001:00110C70       TypeUtils.TString.EstaContidoEm
+ 0001:00110CFC       TypeUtils.TString.EstaContidoEm
+ 0001:00110D9C       TypeUtils.TString.EstaContidoEm
+ 0001:00110E50       TypeUtils.TString.GetValue
+ 0001:00110E68       TypeUtils.TString.Mais
+ 0001:00110ED4       TypeUtils.TString.Menos
+ 0001:00110F4C       TypeUtils.TString.Menos
+ 0001:00110FF8       TypeUtils.TString.SetValue
+ 0001:00111010       TypeUtils.TString.Trim
+ 0001:00111060       TypeUtils.TString.TrimLeft
+ 0001:001110B0       TypeUtils.TString.TrimRight
+ 0001:00111100       TypeUtils.TString.Vezes
+ 0001:00111168       TypeUtils.TString.ComZerosAEsquerda
+ 0001:001111A4       TypeUtils.TString.Decripta
+ 0001:001111DC       TypeUtils.TString.Encripta
+ 0001:00111214       TypeUtils.TString.Format
+ 0001:00111288       TypeUtils.TString.Show
+ 0001:001112D4       TypeUtils.TString.ShowWarning
+ 0001:00111350       TypeUtils.TString.ShowError
+ 0001:001113CC       TypeUtils.TString.ShowConfirmation
+ 0001:00111454       TypeUtils.TString.Reverter
+ 0001:001114A4       TypeUtils.TString.SaveToFile
+ 0001:00111550       TypeUtils.TString.ValidarComXSD
+ 0001:001115CC       TypeUtils.TString.Copy
+ 0001:00111628       TypeUtils.TString.GetAt
+ 0001:001116A4       TypeUtils.TString.Replace
+ 0001:00111718       TypeUtils.TString.Replace
+ 0001:00111794       TypeUtils.TString.Replace
+ 0001:00111848       TypeUtils.TString.Replace
+ 0001:0011192C       TypeUtils.TString.Replace
+ 0001:001119E8       TypeUtils.TString.Replace
+ 0001:00111AD4       TypeUtils.TString.SetAt
+ 0001:00111BA4       TypeUtils.TString.Length
+ 0001:00111C04       TypeUtils.TString.LowerCase
+ 0001:00111C54       TypeUtils.TString.IndexOf
+ 0001:00111CBC       TypeUtils.TString.IndexOf
+ 0001:00111D2C       TypeUtils.TString.ComAspas
+ 0001:00111D7C       TypeUtils.TString.UpperCase
+ 0001:00111DCC       TypeUtils.TString.UTF8Decode
+ 0001:00111E4C       TypeUtils.TString.UTF8Encode
+ 0001:00111EB4       TypeUtils.TString.Humanize
+ 0001:00111FB4       TypeUtils.TString.Camelize
+ 0001:0011200C       TypeUtils.TString.Underscore
+ 0001:00112064       TypeUtils.TString.Desumanize
+ 0001:001120BC       TypeUtils.TString.Modulo10
+ 0001:00112214       TypeUtils.TString.Modulo11
+ 0001:00112318       TypeUtils.TString.AsInteger
+ 0001:00112368       TypeUtils.TString.GetVazia
+ 0001:001123CC       TypeUtils.TString.ReplaceAll
+ 0001:00112470       TypeUtils.TString.ListarArquivos
+ 0001:0011255C       TypeUtils.TString.ListarArquivosComPrefixoParaCopy
+ 0001:00112648       TypeUtils.TString.ListarPastas
+ 0001:0011274C       TypeUtils.TString.ListarPastasEArquivos
+ 0001:0011283C       TypeUtils.TString.Aspas
+ 0001:001128A4       TypeUtils.TString.GetAtStr
+ 0001:00112920       TypeUtils.TString.SetAtStr
+ 0001:0011299C       TypeUtils.TString.Ate
+ 0001:001129BC       TypeUtils.TString.Ate
+ 0001:00112A18       TypeUtils.TString.AteAntesDe
+ 0001:00112A74       TypeUtils.TString.EncriptSimples
+ 0001:00112A88       TypeUtils.TString.LoadFromFile
+ 0001:00112B24       TypeUtils.TString.AsStringList
+ 0001:00112B84       TypeUtils.TString.Contem
+ 0001:00112C54       TypeUtils.TString.IndiceNoArray
+ 0001:00112CF0       TypeUtils.TString.Equals
+ 0001:00112D5C       TypeUtils.TString.Equals
+ 0001:00112DC8       TypeUtils.TString.IgualA
+ 0001:00112E34       TypeUtils.TString.IgualA
+ 0001:00112E84       TypeUtils.TString.GetChave
+ 0001:00113020       TypeUtils.TString.SetChave
+ 0001:00113048       TypeUtils.TXString.AdicionarAntesDaString
+ 0001:001130F0       TypeUtils.TXString.AdicionarDepoisDaString
+ 0001:00113198       TypeUtils.TXString.AlinhadoADireita
+ 0001:0011322C       TypeUtils.TXString.AlinhadoAEsquerda
+ 0001:001132C0       TypeUtils.TXString.Camelize
+ 0001:00113350       TypeUtils.TXString.Centralizado
+ 0001:001133E4       TypeUtils.TXString.Clear
+ 0001:001133F0       TypeUtils.TXString.ComAspas
+ 0001:00113480       TypeUtils.TXString.ComZerosAEsquerda
+ 0001:00113514       TypeUtils.TXString.Contem
+ 0001:00113590       TypeUtils.TXString.Copy
+ 0001:0011362C       TypeUtils.TXString.Create
+ 0001:001136B4       TypeUtils.TXString.AsInteger
+ 0001:00113704       TypeUtils.TXString.Decripta
+ 0001:001137A8       TypeUtils.TXString.Encripta
+ 0001:0011384C       TypeUtils.TXString.EstaContidoEm
+ 0001:001138C8       TypeUtils.TXString.EstaContidoEm
+ 0001:00113978       TypeUtils.TXString.Format
+ 0001:00113A28       TypeUtils.TXString.GetAt
+ 0001:00113AC0       TypeUtils.TXString.GetValue
+ 0001:00113AD8       TypeUtils.TXString.IndexOf
+ 0001:00113B58       TypeUtils.TXString.Humanize
+ 0001:00113BE8       TypeUtils.TXString.IndexOf
+ 0001:00113C6C       TypeUtils.TXString.IsEmpty
+ 0001:00113CD0       TypeUtils.TXString.Length
+ 0001:00113D38       TypeUtils.TXString.LowerCase
+ 0001:00113DC8       TypeUtils.TXString.Mais
+ 0001:00113E6C       TypeUtils.TXString.Menos
+ 0001:00113F40       TypeUtils.TXString.Menos
+ 0001:00113FE4       TypeUtils.TXString.Replace
+ 0001:00114098       TypeUtils.TXString.Replace
+ 0001:00114154       TypeUtils.TXString.Replace
+ 0001:00114244       TypeUtils.TXString.Replace
+ 0001:00114364       TypeUtils.TXString.Replace
+ 0001:0011445C       TypeUtils.TXString.Replace
+ 0001:00114584       TypeUtils.TXString.Reverter
+ 0001:00114614       TypeUtils.TXString.SaveToFile
+ 0001:001146A4       TypeUtils.TXString.SetAt
+ 0001:0011472C       TypeUtils.TXString.SetValue
+ 0001:0011473C       TypeUtils.TXString.Show
+ 0001:001147B4       TypeUtils.TXString.ShowWarning
+ 0001:0011482C       TypeUtils.TXString.ShowError
+ 0001:001148A4       TypeUtils.TXString.ShowConfirmation
+ 0001:0011490C       TypeUtils.TXString.Trim
+ 0001:00114998       TypeUtils.TXString.TrimLeft
+ 0001:00114A24       TypeUtils.TXString.TrimRight
+ 0001:00114AB0       TypeUtils.TXString.UpperCase
+ 0001:00114B40       TypeUtils.TXString.UTF8Decode
+ 0001:00114BD0       TypeUtils.TXString.UTF8Encode
+ 0001:00114C60       TypeUtils.TXString.ValidarComXSD
+ 0001:00114CFC       TypeUtils.TXString.Vezes
+ 0001:00114D90       TypeUtils.TXString.Underscore
+ 0001:00114E20       TypeUtils.TXString.Desumanize
+ 0001:00114EB0       TypeUtils.TXString.ReplaceAll
+ 0001:00114F64       TypeUtils.TXString.ListarArquivos
+ 0001:00115020       TypeUtils.TXString.ListarArquivosComPrefixoParaCopy
+ 0001:001150E4       TypeUtils.TXString.Ate
+ 0001:0011517C       TypeUtils.TXString.Ate
+ 0001:00115220       TypeUtils.TXString.AteAntesDe
+ 0001:001152C4       TypeUtils.TXString.LoadFromFile
+ 0001:00115354       TypeUtils.TXString.EstaContidoEm
+ 0001:001153E8       TypeUtils.TXString.EstaContidoEm
+ 0001:00115494       TypeUtils.TXString.EstaContidoEm
+ 0001:00115550       TypeUtils.TXString.ListarPastas
+ 0001:00115614       TypeUtils.TXString.ListarPastasEArquivos
+ 0001:001156D8       TypeUtils.TXString.AsStringList
+ 0001:00115740       TypeUtils.TXString.Equals
+ 0001:001157AC       TypeUtils.TXString.Equals
+ 0001:00115818       TypeUtils.TXString.Equals
+ 0001:00115884       TypeUtils.TXString.IgualA
+ 0001:001158F0       TypeUtils.TXString.IgualA
+ 0001:0011595C       TypeUtils.TXString.IgualA
+ 0001:001159AC       TypeUtils.TXString.Contem
+ 0001:00115A60       pcre._memcpy
+ 0001:00115A68       pcre._memmove
+ 0001:00115A70       pcre._memset
+ 0001:00115A78       pcre._strncmp
+ 0001:00115A80       pcre._memcmp
+ 0001:00115A88       pcre._strlen
+ 0001:00115A90       pcre.__ltolower
+ 0001:00115A98       pcre.__ltoupper
+ 0001:00115AA0       pcre._isalnum
+ 0001:00115AA8       pcre._isalpha
+ 0001:00115AB0       pcre._iscntrl
+ 0001:00115AB8       pcre._isdigit
+ 0001:00115AC0       pcre._isgraph
+ 0001:00115AC8       pcre._islower
+ 0001:00115AD0       pcre._isprint
+ 0001:00115AD8       pcre._ispunct
+ 0001:00115AE0       pcre._isspace
+ 0001:00115AE8       pcre._isupper
+ 0001:00115AF0       pcre._isxdigit
+ 0001:00115AF8       pcre._strchr
+ 0001:00115B00       pcre.malloc
+ 0001:00115B08       pcre.pcre_malloc
+ 0001:00115B28       pcre._malloc
+ 0001:00115B34       pcre.free
+ 0001:00115B3C       pcre.pcre_free
+ 0001:00115B5C       pcre._free
+ 0001:00115B68       pcre.pcre_dispose
+ 0001:00115B94       pcre...
+ 0001:0011C048       pcre.pcre_compile
+ 0001:0011C060       pcre.pcre_compile2
+ 0001:0011C7B8       pcre...
+ 0001:00124F68       pcre.pcre_exec
+ 0001:00125B50       pcre.pcre_fullinfo
+ 0001:00125D14       pcre.pcre_get_stringnumber
+ 0001:00125E0C       pcre.pcre_get_stringtable_entries
+ 0001:00126024       pcre.pcre_copy_substring
+ 0001:00126080       pcre.pcre_copy_named_substring
+ 0001:001260B4       pcre.pcre_get_substring_list
+ 0001:00126188       pcre.pcre_free_substring_list
+ 0001:00126190       pcre.pcre_get_substring
+ 0001:00126208       pcre.pcre_get_named_substring
+ 0001:00126238       pcre.pcre_free_substring
+ 0001:00126240       pcre.pcre_maketables
+ 0001:001264E8       pcre.@_pcre_is_newline
+ 0001:0012665C       pcre.@_pcre_was_newline
+ 0001:001267D8       pcre.@_pcre_ord2utf8
+ 0001:00126824       pcre...
+ 0001:00126EA4       pcre.pcre_study
+ 0001:00126FE0       pcre...
+ 0001:00127030       pcre.@_pcre_try_flipped
+ 0001:00127158       pcre.@_pcre_valid_utf8
+ 0001:0012726C       pcre.@_pcre_xclass
+ 0001:001276F8       PerlRegEx..TPerlRegEx
+ 0001:00127FF0       PerlRegEx.FirstCap
+ 0001:00128024       PerlRegEx.InitialCaps
+ 0001:001280BC       PerlRegEx.TPerlRegEx.CleanUp
+ 0001:00128100       PerlRegEx.TPerlRegEx.ClearStoredGroups
+ 0001:00128124       PerlRegEx.TPerlRegEx.Compile
+ 0001:00128330       PerlRegEx.ReplaceBackreference
+ 0001:0012851C       PerlRegEx.ProcessBackreference
+ 0001:00128A8C       PerlRegEx.TPerlRegEx.ComputeReplacement
+ 0001:00129028       PerlRegEx.TPerlRegEx.Create
+ 0001:00129084       PerlRegEx.TPerlRegEx.Destroy
+ 0001:001290C4       PerlRegEx.TPerlRegEx.EscapeRegExChars
+ 0001:0012916C       PerlRegEx.TPerlRegEx.GetFoundMatch
+ 0001:00129178       PerlRegEx.TPerlRegEx.GetMatchedText
+ 0001:00129288       PerlRegEx.TPerlRegEx.GetMatchedLength
+ 0001:00129394       PerlRegEx.TPerlRegEx.GetMatchedOffset
+ 0001:001294A0       PerlRegEx.TPerlRegEx.GetGroupCount
+ 0001:001295A8       PerlRegEx.TPerlRegEx.GetGroupLengths
+ 0001:00129728       PerlRegEx.TPerlRegEx.GetGroupOffsets
+ 0001:001298A0       PerlRegEx.TPerlRegEx.GetGroups
+ 0001:001299F8       PerlRegEx.TPerlRegEx.GetSubjectLeft
+ 0001:00129A18       PerlRegEx.TPerlRegEx.GetSubjectRight
+ 0001:00129A38       PerlRegEx.TPerlRegEx.Match
+ 0001:00129AF8       PerlRegEx.TPerlRegEx.MatchAgain
+ 0001:00129BD0       PerlRegEx.TPerlRegEx.NamedGroup
+ 0001:00129BF4       PerlRegEx.TPerlRegEx.Replace
+ 0001:00129DAC       PerlRegEx.TPerlRegEx.ReplaceAll
+ 0001:00129E10       PerlRegEx.TPerlRegEx.SetOptions
+ 0001:00129EA0       PerlRegEx.TPerlRegEx.SetRegEx
+ 0001:00129ECC       PerlRegEx.TPerlRegEx.SetStart
+ 0001:00129EE0       PerlRegEx.TPerlRegEx.SetStop
+ 0001:00129F08       PerlRegEx.TPerlRegEx.SetSubject
+ 0001:00129F54       PerlRegEx.TPerlRegEx.Split
+ 0001:0012A134       PerlRegEx.TPerlRegEx.SplitCapture
+ 0001:0012A410       PerlRegEx.TPerlRegEx.SplitCapture
+ 0001:0012A41C       PerlRegEx.TPerlRegEx.StoreGroups
+ 0001:0012A4C0       PerlRegEx.TPerlRegEx.Study
+ 0001:0012A63C       Feature..TFeature
+ 0001:0012A7DC       Feature.TFeature.Create
+ 0001:0012A82C       Feature.TFeature.GetScenarios
+ 0001:0012A844       Feature.TFeature.GetDescricao
+ 0001:0012A85C       Feature.TFeature.GetTitulo
+ 0001:0012A874       Feature.TFeature.SetDescricao
+ 0001:0012A88C       Feature.TFeature.SetTitulo
+ 0001:0012A914       FeatureParser..TFeatureParser
+ 0001:0012AA9C       FeatureParser.TFeatureParser.Destroy
+ 0001:0012AAD4       FeatureParser.TFeatureParser.GetFeatureFileName
+ 0001:0012AAEC       FeatureParser.TFeatureParser.LoadedFeature
+ 0001:0012AB30       FeatureParser.TFeatureParser.SetFeatureFileName
+ 0001:0012AB48       FeatureParser.TFeatureParser.Parse
+ 0001:0012B088       AutoDocObjects..TBaseAutoDoc
+ 0001:0012B284       AutoDocObjects.TBaseAutoDoc.BeginSpec
+ 0001:0012B310       AutoDocObjects.TBaseAutoDoc.Create
+ 0001:0012B350       AutoDocObjects.TBaseAutoDoc.Destroy
+ 0001:0012B384       AutoDocObjects.TBaseAutoDoc.DocSpec
+ 0001:0012B454       AutoDocObjects.TBaseAutoDoc.DoOutput
+ 0001:0012B47C       AutoDocObjects.TBaseAutoDoc.GetEnabled
+ 0001:0012B484       AutoDocObjects.TBaseAutoDoc.SetEnabled
+ 0001:0012B488       AutoDocObjects.TBaseAutoDoc.SplitCamelCaseString
+ 0001:0012B580       dSpecUtils.IsBadPointer
+ 0001:0012B5C8       dSpecUtils.CallerAddr
+ 0001:0012B5E8       dSpecUtils.GetImplementingObjectFor
+ 0001:0012B684       dSpecUtils.IsNumeric
+ 0001:0012B710       dSpecUtils.IsAlpha
+ 0001:0012B7B0       dSpecUtils.IsAlphaNumeric
+ 0001:0012B850       dSpecUtils.IsPrime
+ 0001:0012B8B8       dSpecUtils.GetValueName
+ 0001:0012B924       BaseObjects..TFailureListItem
+ 0001:0012BA28       BaseObjects..TFailureList
+ 0001:0012BBA0       BaseObjects..TFailureReportingObject
+ 0001:0012BD24       BaseObjects.TFailureList.Add
+ 0001:0012BD34       BaseObjects.TFailureList.AddFailure
+ 0001:0012BD58       BaseObjects.TFailureList.Create
+ 0001:0012BD98       BaseObjects.TFailureList.GetItem
+ 0001:0012BDB0       BaseObjects.TFailureReportingObject.Create
+ 0001:0012BE00       BaseObjects.TFailureReportingObject.Destroy
+ 0001:0012BE38       BaseObjects.TFailureReportingObject.Fail
+ 0001:0012BF04       Modifiers..TModifier
+ 0001:0012C240       Modifiers..TFloatModifier
+ 0001:0012C474       Modifiers..TStringModifier
+ 0001:0012C674       Modifiers.TModifier.Create
+ 0001:0012C70C       Modifiers.TModifier.CreateModifier
+ 0001:0012C780       Modifiers.TModifier.Destroy
+ 0001:0012C7AC       Modifiers.TModifier.DoEvaluation
+ 0001:0012C83C       Modifiers.TModifier.DoNotApplicableFailure
+ 0001:0012C8C8       Modifiers.TModifier.IgnoringCase
+ 0001:0012C8E0       Modifiers.TModifier.Percent
+ 0001:0012C8F8       Modifiers.TModifier.Unless
+ 0001:0012CA08       Modifiers.TModifier.WithAToleranceOf
+ 0001:0012CA20       Modifiers.TModifier.And_
+ 0001:0012CA98       Modifiers.TFloatModifier.Create
+ 0001:0012CB48       Modifiers.TFloatModifier.CreateModifier
+ 0001:0012CBD4       Modifiers.TFloatModifier.Percent
+ 0001:0012CD58       Modifiers.TFloatModifier.WithAToleranceOf
+ 0001:0012CECC       Modifiers.TStringModifier.Create
+ 0001:0012CF8C       Modifiers.TStringModifier.CreateModifier
+ 0001:0012CFF4       Modifiers.TStringModifier.IgnoringCase
+ 0001:0012D440       Specifiers..TBaseSpecifier
+ 0001:0012DE34       Specifiers..TIntegerSpecifier
+ 0001:0012E2F4       Specifiers..TBooleanSpecifier
+ 0001:0012E560       Specifiers..TFloatSpecifier
+ 0001:0012E94C       Specifiers..TStringSpecifier
+ 0001:0012ED44       Specifiers..TObjectSpecifier
+ 0001:0012F09C       Specifiers..TPointerSpecifier
+ 0001:0012F2C0       Specifiers..TClassSpecifier
+ 0001:0012F504       Specifiers..TDateTimeSpecifier
+ 0001:0012F834       Specifiers..TInterfaceSpecifier
+ 0001:0012FB38       Specifiers.TBaseSpecifier.Composite
+ 0001:0012FC10       Specifiers.TBaseSpecifier.Contain
+ 0001:0012FCF0       Specifiers.TBaseSpecifier.Create
+ 0001:0012FD44       Specifiers.TBaseSpecifier.CreateModifier
+ 0001:0012FDC0       Specifiers.TBaseSpecifier.CreateNewShouldHelper
+ 0001:0012FDF8       Specifiers.TBaseSpecifier.Destroy
+ 0001:0012FE60       Specifiers.TBaseSpecifier.DoEvaluation
+ 0001:0012FF40       Specifiers.TBaseSpecifier.Should
+ 0001:0012FF60       Specifiers.TBaseSpecifier.StartWith
+ 0001:00130040       Specifiers.TBaseSpecifier.Support
+ 0001:00130140       Specifiers.TBaseSpecifier.Alpha
+ 0001:00130210       Specifiers.TBaseSpecifier.AlphaNumeric
+ 0001:001302F0       Specifiers.TBaseSpecifier.Assigned
+ 0001:001303C8       Specifiers.TBaseSpecifier.AtLeast
+ 0001:001304A4       Specifiers.TBaseSpecifier.AtMost
+ 0001:00130580       Specifiers.TBaseSpecifier.Be
+ 0001:001305FC       Specifiers.TBaseSpecifier.False
+ 0001:001306CC       Specifiers.TBaseSpecifier.NegateMessage
+ 0001:0013082C       Specifiers.TBaseSpecifier.Negative
+ 0001:00130904       Specifiers.TBaseSpecifier.Nil_
+ 0001:001309D0       Specifiers.TBaseSpecifier.Odd
+ 0001:00130A9C       Specifiers.TBaseSpecifier.OfType
+ 0001:00130B90       Specifiers.TBaseSpecifier.Positive
+ 0001:00130C68       Specifiers.TBaseSpecifier.Prime
+ 0001:00130D38       Specifiers.TBaseSpecifier.True
+ 0001:00130E08       Specifiers.TBaseSpecifier.Zero
+ 0001:00130ED8       Specifiers.TBaseSpecifier.DescendFrom
+ 0001:00130FD4       Specifiers.TBaseSpecifier.Empty
+ 0001:001310A4       Specifiers.TBaseSpecifier.EndWith
+ 0001:00131180       Specifiers.TBaseSpecifier.Equal
+ 0001:00131258       Specifiers.TBaseSpecifier.Even
+ 0001:00131328       Specifiers.TBaseSpecifier.GreaterThan
+ 0001:0013140C       Specifiers.TBaseSpecifier.Implement
+ 0001:00131510       Specifiers.TBaseSpecifier.ImplementedBy
+ 0001:00131610       Specifiers.TBaseSpecifier.LessThan
+ 0001:001316F0       Specifiers.TBaseSpecifier.Not_
+ 0001:00131770       Specifiers.TBaseSpecifier.Numeric
+ 0001:00131844       Specifiers.TIntegerSpecifier.AtLeast
+ 0001:0013196C       Specifiers.TIntegerSpecifier.AtMost
+ 0001:00131A94       Specifiers.TIntegerSpecifier.Composite
+ 0001:00131BA0       Specifiers.TIntegerSpecifier.Create
+ 0001:00131BF0       Specifiers.TIntegerSpecifier.Equal
+ 0001:00131D28       Specifiers.TIntegerSpecifier.Even
+ 0001:00131E30       Specifiers.TIntegerSpecifier.GreaterThan
+ 0001:00131F88       Specifiers.TIntegerSpecifier.LessThan
+ 0001:001320D8       Specifiers.TIntegerSpecifier.Negative
+ 0001:001321E4       Specifiers.TIntegerSpecifier.Odd
+ 0001:001322E4       Specifiers.TIntegerSpecifier.Positive
+ 0001:001323F0       Specifiers.TIntegerSpecifier.Prime
+ 0001:001324EC       Specifiers.TIntegerSpecifier.Zero
+ 0001:001325DC       Specifiers.TBooleanSpecifier.Create
+ 0001:00132630       Specifiers.TBooleanSpecifier.False
+ 0001:0013275C       Specifiers.TBooleanSpecifier.True
+ 0001:00132888       Specifiers.TBooleanSpecifier.Equal
+ 0001:001329EC       Specifiers.TFloatSpecifier.AtLeast
+ 0001:00132B2C       Specifiers.TFloatSpecifier.AtMost
+ 0001:00132C6C       Specifiers.TFloatSpecifier.Create
+ 0001:00132CC8       Specifiers.TFloatSpecifier.CreateModifier
+ 0001:00132D58       Specifiers.TFloatSpecifier.Equal
+ 0001:00132EA0       Specifiers.TFloatSpecifier.GreaterThan
+ 0001:00132FF0       Specifiers.TFloatSpecifier.LessThan
+ 0001:00133138       Specifiers.TFloatSpecifier.Negative
+ 0001:0013324C       Specifiers.TFloatSpecifier.Positive
+ 0001:00133360       Specifiers.TFloatSpecifier.Zero
+ 0001:00133464       Specifiers.TStringSpecifier.Alpha
+ 0001:0013355C       Specifiers.TStringSpecifier.AlphaNumeric
+ 0001:00133674       Specifiers.TStringSpecifier.Contain
+ 0001:001337CC       Specifiers.TStringSpecifier.Create
+ 0001:00133858       Specifiers.TStringSpecifier.CreateModifier
+ 0001:001338DC       Specifiers.TStringSpecifier.Empty
+ 0001:001339CC       Specifiers.TStringSpecifier.EndWith
+ 0001:00133BA4       Specifiers.TStringSpecifier.Equal
+ 0001:00133CE0       Specifiers.TStringSpecifier.Numeric
+ 0001:00133DE0       Specifiers.TStringSpecifier.StartWith
+ 0001:00133F78       Specifiers.TObjectSpecifier.Assigned
+ 0001:0013405C       Specifiers.TObjectSpecifier.Create
+ 0001:001340AC       Specifiers.TObjectSpecifier.Nil_
+ 0001:0013417C       Specifiers.TObjectSpecifier.OfType
+ 0001:0013439C       Specifiers.TObjectSpecifier.Support
+ 0001:001345F4       Specifiers.TObjectSpecifier.DescendFrom
+ 0001:00134848       Specifiers.TObjectSpecifier.Implement
+ 0001:00134AA8       Specifiers.TPointerSpecifier.Assigned
+ 0001:00134B8C       Specifiers.TPointerSpecifier.Create
+ 0001:00134BDC       Specifiers.TPointerSpecifier.Nil_
+ 0001:00134CAC       Specifiers.TClassSpecifier.Create
+ 0001:00134CFC       Specifiers.TClassSpecifier.OfType
+ 0001:00134E50       Specifiers.TClassSpecifier.DescendFrom
+ 0001:00134FB8       Specifiers.TDateTimeSpecifier.AtLeast
+ 0001:00135114       Specifiers.TDateTimeSpecifier.AtMost
+ 0001:00135270       Specifiers.TDateTimeSpecifier.Create
+ 0001:001352C4       Specifiers.TDateTimeSpecifier.Equal
+ 0001:00135428       Specifiers.TDateTimeSpecifier.GreaterThan
+ 0001:00135594       Specifiers.TDateTimeSpecifier.LessThan
+ 0001:001356F8       Specifiers.TInterfaceSpecifier.Assigned
+ 0001:001357E0       Specifiers.TInterfaceSpecifier.Create
+ 0001:0013586C       Specifiers.TInterfaceSpecifier.Destroy
+ 0001:001358A0       Specifiers.TInterfaceSpecifier.ImplementedBy
+ 0001:00135B78       Specifiers.TInterfaceSpecifier.Nil_
+ 0001:00135C48       Specifiers.TInterfaceSpecifier.Support
+ 0001:00135E78       dSpec..TSpecify
+ 0001:00136368       dSpec..TContext
+ 0001:00136620       dSpec.RegisterSpec
+ 0001:00136668       dSpec.TSpecify.Create
+ 0001:001366A8       dSpec.TSpecify.Destroy
+ 0001:001366D8       dSpec.TSpecify.That
+ 0001:00136778       dSpec.TSpecify.That
+ 0001:00136818       dSpec.TSpecify.That
+ 0001:001368C0       dSpec.TSpecify.That
+ 0001:00136970       dSpec.TSpecify.That
+ 0001:00136A30       dSpec.TSpecify.That
+ 0001:00136AA8       dSpec.TSpecify.That
+ 0001:00136B38       dSpec.TSpecify.That
+ 0001:00136BDC       dSpec.TSpecify.That
+ 0001:00136C90       dSpec.TContext.AddFailure
+ 0001:00136CA0       dSpec.TContext.Create
+ 0001:00136D8C       dSpec.TContext.Destroy
+ 0001:00136DE0       dSpec.TContext.DocumentSpec
+ 0001:00136EE8       dSpec.TContext.DoStatus
+ 0001:00136F04       dSpec.TContext.GetAutoDoc
+ 0001:00136F1C       dSpec.TContext.CreateAutoDoc
+ 0001:00136F50       dSpec.TContext.GetContextDescription
+ 0001:00136F68       dSpec.TContext.Invoke
+ 0001:00136FF8       dSpec.TContext.RepealLastFailure
+ 0001:00137014       dSpec.TContext.ReportFailures
+ 0001:001370AC       dSpec.TContext.NewSpecDox
+ 0001:00137178       dSpec.TContext.RunWithFixture
+ 0001:00137190       dSpec.TContext.SetAutoDoc
+ 0001:001371D4       dSpec.TContext.SetContextDescription
+ 0001:00137204       TestFeatureParser..TParseContext
+ 0001:001373E0       TestFeatureParser..TestTFeatureParser
+ 0001:00137784       TestFeatureParser.TestTFeatureParser.ParseDeveriaTrazerOsCenariosDaFeature
+ 0001:0013784C       TestFeatureParser.TestTFeatureParser.ParseDeveriaTrazerOTituloEADescricaoDaFeature
+ 0001:001379C0       TestFeatureParser.TestTFeatureParser.SetUp
+ 0001:00137A78       TestFeatureParser.TestTFeatureParser.TearDown
+ 0001:00137A8C       TestFeatureParser.TestTFeatureParser.ParseDeveriaRetornarUmaFeature
+ 0001:00137B48       TestFeatureParser.TParseContext.Create
+ 0001:00137BE0       TestFeatureParser.Finalization
+ 0001:00137BE8       dCucumberTests.Finalization
  0002:00000000       System.System
  0002:000000AC       Windows.Windows
  0002:000000C4       SysUtils.TEncoding.Create@
@@ -17082,305 +17095,322 @@ Line numbers for FeatureParserIntf(..\source\FeatureParserIntf.pas) segment .tex
 
     21 0001:00000000
 
-Line numbers for Feature(..\source\Feature.pas) segment .text
+Line numbers for ScenarioIntf(..\source\ScenarioIntf.pas) segment .text
 
-    29 0001:0010CB28    30 0001:0010CB3D    31 0001:0010CB5A    34 0001:0010CB78
-    35 0001:0010CB81    36 0001:0010CB8B    39 0001:0010CB90    40 0001:0010CB99
-    41 0001:0010CBA3    44 0001:0010CBA8    45 0001:0010CBB1    46 0001:0010CBBB
-    49 0001:0010CBC0    50 0001:0010CBC9    51 0001:0010CBD3    54 0001:0010CBD8
-    55 0001:0010CBE1    56 0001:0010CBEB    58 0001:0010CBF6
+    12 0001:00000000
 
-Line numbers for pcre(..\pcre\pcre.pas) segment .text
+Line numbers for Scenario(..\source\Scenario.pas) segment .text
 
-   650 0001:0010CBF0   651 0001:0010CBF8   652 0001:0010CC00   653 0001:0010CC08
-   654 0001:0010CC10   655 0001:0010CC18   656 0001:0010CC20   657 0001:0010CC28
-   658 0001:0010CC30   659 0001:0010CC38   660 0001:0010CC40   661 0001:0010CC48
-   662 0001:0010CC50   663 0001:0010CC58   664 0001:0010CC60   665 0001:0010CC68
-   666 0001:0010CC70   667 0001:0010CC78   668 0001:0010CC80   669 0001:0010CC88
-   671 0001:0010CC90   674 0001:0010CC98   675 0001:0010CC9B   676 0001:0010CCA4
-   678 0001:0010CCAC   679 0001:0010CCB3   690 0001:0010CCB8   691 0001:0010CCBB
-   692 0001:0010CCC0   694 0001:0010CCC4   697 0001:0010CCCC   698 0001:0010CCCF
-   699 0001:0010CCD8   701 0001:0010CCE0   702 0001:0010CCE7   713 0001:0010CCEC
-   714 0001:0010CCEF   715 0001:0010CCF4  1113 0001:0010CCF8  1114 0001:0010CD01
-  1115 0001:0010CD0A  1116 0001:0010CD15  1117 0001:0010CD20
-
-Line numbers for pcre(..\pcre\pcre.pas) segment .text
-
-  1144 0001:0011EB1B
-
-Line numbers for PerlRegEx(..\pcre\PerlRegEx.pas) segment .text
-
-   238 0001:0011F180   239 0001:0011F189   241 0001:0011F198   243 0001:0011F1A1
-   248 0001:0011F1B0   254 0001:0011F1B4   255 0001:0011F1BF   256 0001:0011F1C8
-   258 0001:0011F1CA   259 0001:0011F1E6   261 0001:0011F21A   263 0001:0011F21E
-   264 0001:0011F22C   265 0001:0011F23F   268 0001:0011F241   258 0001:0011F242
-   297 0001:0011F245   303 0001:0011F24C   304 0001:0011F252   305 0001:0011F25A
-   306 0001:0011F26D   307 0001:0011F275   308 0001:0011F27D   309 0001:0011F284
-   310 0001:0011F28C   313 0001:0011F290   314 0001:0011F296   315 0001:0011F29D
-   316 0001:0011F2AE   322 0001:0011F2B4   323 0001:0011F2D4   324 0001:0011F2DA
-   325 0001:0011F2F0   326 0001:0011F2F7   327 0001:0011F320   328 0001:0011F324
-   329 0001:0011F372   330 0001:0011F376   355 0001:0011F4C0   356 0001:0011F4E1
-   357 0001:0011F4FE   358 0001:0011F511   359 0001:0011F521   361 0001:0011F52B
-   362 0001:0011F576   363 0001:0011F59E   364 0001:0011F5C6   365 0001:0011F5EE
-   367 0001:0011F614   368 0001:0011F61D   369 0001:0011F631   372 0001:0011F663
-   373 0001:0011F671   377 0001:0011F67B   383 0001:0011F6AC   384 0001:0011F6CB
-   385 0001:0011F6CE   387 0001:0011F72D   388 0001:0011F741   389 0001:0011F747
-   391 0001:0011F7A5   392 0001:0011F7BA   393 0001:0011F7CD   394 0001:0011F7CF
-   398 0001:0011F7DA   399 0001:0011F7E2   401 0001:0011F84C   402 0001:0011F852
-   404 0001:0011F88F   405 0001:0011F89B   407 0001:0011F8A3   408 0001:0011F8C2
-   406 0001:0011F8C8   412 0001:0011F905   413 0001:0011F90D   414 0001:0011F957
-   415 0001:0011F9A5   416 0001:0011F9CC   420 0001:0011F9DC   421 0001:0011FA3B
-   423 0001:0011FA46   425 0001:0011FA5F   426 0001:0011FA7D   427 0001:0011FA97
-   428 0001:0011FAB5   430 0001:0011FABA   433 0001:0011FAE4   434 0001:0011FAE6
-   438 0001:0011FAF1   439 0001:0011FAFE   443 0001:0011FB09   444 0001:0011FB27
-   445 0001:0011FB49   446 0001:0011FB5F   450 0001:0011FB64   451 0001:0011FB82
-   452 0001:0011FBA4   453 0001:0011FBD1   457 0001:0011FBD3   458 0001:0011FBE5
-   459 0001:0011FBEB   461 0001:0011FC1C   462 0001:0011FC41   463 0001:0011FC4F
-   465 0001:0011FC5B   467 0001:0011FC76   468 0001:0011FC7D   469 0001:0011FCC4
-   471 0001:0011FD62   472 0001:0011FD72   475 0001:0011FD7A   477 0001:0011FE12
-   478 0001:0011FE18   479 0001:0011FE53   480 0001:0011FEB7   481 0001:0011FEE0
-   482 0001:0011FEE3   483 0001:0011FEE7   484 0001:0011FEFC   486 0001:0011FF12
-   488 0001:0011FF1D   491 0001:0011FF26   492 0001:0011FF5E   493 0001:0011FF61
-   496 0001:0011FF71   497 0001:0011FF75   502 0001:0011FF85   503 0001:0011FF8C
-   504 0001:0011FFDF   505 0001:0011FFEC   506 0001:0011FFFC   509 0001:00120001
-   510 0001:00120005   513 0001:00120012   464 0001:00120015   516 0001:00120030
-   517 0001:0012003B   520 0001:001201B8   521 0001:001201CD   522 0001:001201D6
-   523 0001:001201E0   525 0001:001201EB   529 0001:001201F5   532 0001:00120214
-   533 0001:00120222   534 0001:00120239   535 0001:00120245   540 0001:00120254
-   541 0001:0012025E   542 0001:00120267   543 0001:0012027A   544 0001:0012027E
-   546 0001:001202B5   548 0001:001202C5   549 0001:001202D3   552 0001:001202E1
-   543 0001:001202E2   554 0001:001202E6   558 0001:001202FC   559 0001:00120306
-   562 0001:00120308   563 0001:00120311   564 0001:00120330   565 0001:0012033B
-   568 0001:00120418   569 0001:0012041E   570 0001:0012043D   571 0001:00120446
-   574 0001:00120524   575 0001:0012052A   576 0001:00120549   577 0001:00120552
-   580 0001:00120630   581 0001:00120636   582 0001:00120655   583 0001:0012065C
-   586 0001:00120738   587 0001:00120741   588 0001:00120760   589 0001:00120783
-   590 0001:00120791   593 0001:001208B8   594 0001:001208C1   595 0001:001208E0
-   596 0001:00120903   597 0001:0012090B   600 0001:00120A30   601 0001:00120A3C
-   602 0001:00120A5B   603 0001:00120A6F   604 0001:00120A8A   605 0001:00120AAB
-   608 0001:00120B88   609 0001:00120B91   610 0001:00120BA3   613 0001:00120BA8
-   614 0001:00120BB1   615 0001:00120BC2   620 0001:00120BC8   621 0001:00120BD1
-   622 0001:00120BD8   623 0001:00120BE5   624 0001:00120BF4   625 0001:00120C00
-   626 0001:00120C0C   627 0001:00120C3B   629 0001:00120C41   630 0001:00120C47
-   631 0001:00120C53   630 0001:00120C58   632 0001:00120C5B   633 0001:00120C61
-   634 0001:00120C6C   636 0001:00120C7B   641 0001:00120C88   642 0001:00120C91
-   643 0001:00120C98   644 0001:00120CA5   645 0001:00120CB4   646 0001:00120CC0
-   647 0001:00120CCC   648 0001:00120CE3   649 0001:00120D10   651 0001:00120D1C
-   652 0001:00120D22   653 0001:00120D2C   652 0001:00120D31   654 0001:00120D34
-   655 0001:00120D3A   656 0001:00120D45   658 0001:00120D54   661 0001:00120D60
-   662 0001:00120D69   663 0001:00120D7D   666 0001:00120D84   667 0001:00120D8F
-   669 0001:00120DAE   671 0001:00120DB7   673 0001:00120DC8   674 0001:00120DE2
-   675 0001:00120DFA   677 0001:00120E08   678 0001:00120E2A   680 0001:00120E4C
-   681 0001:00120E53   682 0001:00120E5B   685 0001:00120F3C   686 0001:00120F53
-   687 0001:00120F5E   689 0001:00120F60   690 0001:00120F6A   692 0001:00120F77
-   693 0001:00120F79   696 0001:00120FA0   697 0001:00120FAA   698 0001:00120FB3
-   700 0001:00120FBA   704 0001:00120FC4   705 0001:00120FD1   706 0001:00120FDE
-   707 0001:00120FEB   708 0001:00120FF8   709 0001:00121005   710 0001:00121015
-   711 0001:00121025   713 0001:0012102C   716 0001:00121030   717 0001:00121039
-   718 0001:00121045   719 0001:0012104F   721 0001:00121056   725 0001:0012105C
-   726 0001:00121069   728 0001:0012106C   731 0001:00121070   732 0001:00121071
-   733 0001:00121093   734 0001:00121096   737 0001:00121098   738 0001:001210A1
-   739 0001:001210AB   740 0001:001210B8   741 0001:001210BF   742 0001:001210CE
-   743 0001:001210DF   748 0001:001210E4   749 0001:0012110F   750 0001:00121129
-   752 0001:00121155   753 0001:0012115A   755 0001:00121161   756 0001:00121190
-   757 0001:00121193   758 0001:001211A5   759 0001:001211BE   761 0001:001211E7
-   768 0001:001212C4   769 0001:001212F0   770 0001:0012130A   773 0001:00121335
-   774 0001:0012133D   775 0001:00121343   776 0001:00121344   777 0001:00121349
-   779 0001:00121350   781 0001:00121356   783 0001:00121366   784 0001:0012136A
-   785 0001:0012139B   786 0001:001213AA   791 0001:001213D5   792 0001:00121404
-   793 0001:00121407   794 0001:00121412   796 0001:0012143B   797 0001:0012144D
-   798 0001:00121466   800 0001:0012148F   803 0001:001215A0   804 0001:001215A3
-   805 0001:001215AA   810 0001:001215AC   811 0001:001215C3   812 0001:001215CC
-   813 0001:001215D3   814 0001:001215F5   815 0001:00121603   814 0001:00121621
-   816 0001:00121626   818 0001:0012162D   823 0001:00121650   824 0001:0012166A
-   825 0001:00121677   826 0001:0012168D   827 0001:00121693   828 0001:001216D2
-   829 0001:001216D6   963 0001:00121744
+    14 0001:00000000
 
 Line numbers for TypeUtils(..\source\TypeUtils.pas) segment .text
 
-   437 0001:00124718   438 0001:00124761   439 0001:00124768   441 0001:00124775
-   442 0001:00124781   443 0001:00124784   439 0001:00124788   444 0001:0012478B
-   448 0001:001247CC   449 0001:001247D3   456 0001:001247D4   457 0001:0012482C
-   458 0001:0012483E   459 0001:00124871   460 0001:0012487F   462 0001:00124887
-   464 0001:0012489B   466 0001:001248BF   467 0001:001248C3   469 0001:001248F4
-   472 0001:00124905   460 0001:00124912   475 0001:00124927   477 0001:0012493A
-   486 0001:001249C8   487 0001:00124A2E   488 0001:00124A40   489 0001:00124A73
-   490 0001:00124A81   492 0001:00124A89   494 0001:00124AA1   496 0001:00124ACD
-   498 0001:00124ADA   499 0001:00124ADE   501 0001:00124AFB   502 0001:00124B09
-   503 0001:00124B17   504 0001:00124B4C   505 0001:00124B6E   511 0001:00124B7B
-   512 0001:00124B7F   514 0001:00124BB0   516 0001:00124BC1   490 0001:00124BCE
-   519 0001:00124BE3   521 0001:00124BF6   569 0001:00124C7C   571 0001:00124CF5
-   572 0001:00124D42   573 0001:00124D4F   574 0001:00124D61   575 0001:00124D6F
-   576 0001:00124D98   578 0001:00124DA0   581 0001:00124DBA   582 0001:00124DC7
-   583 0001:00124DCD   586 0001:00124E43   587 0001:00124E6D   588 0001:00124E73
-   590 0001:00124EE3   592 0001:00124EF4   576 0001:00124F01   594 0001:00124F09
-   596 0001:00124F23   599 0001:00124F33   624 0001:00125020   625 0001:00125040
-   626 0001:0012505F   629 0001:00125080   630 0001:001250A0   631 0001:001250BF
-   671 0001:001250E0   672 0001:00125154   673 0001:0012515F   674 0001:0012516D
-   673 0001:00125195   675 0001:00125198   681 0001:001251F0   682 0001:00125249
-   683 0001:00125253   684 0001:0012525E   683 0001:00125280   685 0001:00125283
-   723 0001:001252D4   724 0001:00125308   725 0001:00125312   726 0001:00125333
-   729 0001:00125356   730 0001:00125385   732 0001:001253D2   735 0001:0012541D
-   741 0001:001254D4   742 0001:001254DF   747 0001:0012551C   748 0001:00125546
-   749 0001:00125578   752 0001:001255B4   753 0001:001255DE   754 0001:00125610
-   757 0001:0012564C   758 0001:00125668   759 0001:00125681   762 0001:001256A4
-   763 0001:001256C0   764 0001:001256D9   767 0001:001256FC   768 0001:00125718
-   769 0001:00125731   772 0001:00125754   773 0001:0012577B   774 0001:00125797
-   777 0001:001257C0   778 0001:001257EF   779 0001:001257FA   782 0001:00125834
-   783 0001:00125859   784 0001:0012587D   787 0001:001258B0   788 0001:001258DD
-   789 0001:001258FA   792 0001:00125924   793 0001:00125959   794 0001:0012597C
-   797 0001:001259B0   798 0001:001259ED   799 0001:00125A16   804 0001:00125A50
-   805 0001:00125A96   806 0001:00125A98   808 0001:00125AA3   809 0001:00125ABB
-   811 0001:00125ABF   806 0001:00125AC2   812 0001:00125AC5   815 0001:00125B04
-   816 0001:00125B0D   817 0001:00125B17   820 0001:00125B1C   821 0001:00125B46
-   822 0001:00125B5D   825 0001:00125B88   826 0001:00125BB2   827 0001:00125BD2
-   830 0001:00125C00   831 0001:00125C44   832 0001:00125C6A   835 0001:00125CAC
-   836 0001:00125CB5   837 0001:00125CBF   840 0001:00125CC4   841 0001:00125CDD
-   842 0001:00125CF1   845 0001:00125D14   846 0001:00125D2D   847 0001:00125D41
-   850 0001:00125D64   851 0001:00125D7D   852 0001:00125D91   857 0001:00125DB4
-   858 0001:00125DD0   859 0001:00125DD9   860 0001:00125DDD   859 0001:00125DF3
-   861 0001:00125DF6   864 0001:00125E1C   865 0001:00125E28   866 0001:00125E40
-   869 0001:00125E58   870 0001:00125E6C   871 0001:00125E75   874 0001:00125E90
-   875 0001:00125EA4   876 0001:00125EAD   879 0001:00125EC8   880 0001:00125EF6
-   881 0001:00125F10   884 0001:00125F3C   885 0001:00125F52   886 0001:00125F64
-   891 0001:00125F88   892 0001:00125FA0   893 0001:00125FAF   894 0001:00125FDB
-   899 0001:00126004   900 0001:0012601C   901 0001:0012602B   902 0001:00126057
-   907 0001:00126080   908 0001:00126099   909 0001:0012609B   910 0001:001260AA
-   911 0001:001260DB   912 0001:001260DD   915 0001:00126108   916 0001:00126121
-   917 0001:00126135   922 0001:00126158   923 0001:0012617F   924 0001:0012618E
-   925 0001:0012619C   926 0001:001261B1   928 0001:001261C9   930 0001:001261D9
-   933 0001:00126204   934 0001:00126215   935 0001:0012622B   938 0001:00126280
-   939 0001:0012629C   940 0001:001262B7   943 0001:001262DC   944 0001:001262FC
-   945 0001:00126328   948 0001:00126358   949 0001:00126385   950 0001:0012639E
-   953 0001:001263CC   954 0001:001263FE   955 0001:0012641F   958 0001:00126448
-   959 0001:00126494   960 0001:001264B9   963 0001:001264FC   964 0001:00126567
-   965 0001:00126590   968 0001:001265E0   969 0001:0012662C   970 0001:00126654
-   973 0001:0012669C   974 0001:00126707   975 0001:00126733   978 0001:00126788
-   979 0001:001267B0   980 0001:0012680C   983 0001:00126858   984 0001:00126874
-   985 0001:00126892   988 0001:001268B8   989 0001:001268D1   990 0001:001268E5
-   993 0001:00126908   994 0001:0012692F   995 0001:00126947   998 0001:00126970
-   999 0001:0012699A  1000 0001:001269B5  1003 0001:001269E0  1004 0001:001269F9
-  1005 0001:00126A0D  1008 0001:00126A30  1009 0001:00126A49  1010 0001:00126A5D
-  1013 0001:00126A80  1014 0001:00126A9D  1015 0001:00126ACC  1018 0001:00126B00
-  1019 0001:00126B1B  1020 0001:00126B3A  1023 0001:00126B68  1024 0001:00126B86
-  1025 0001:00126B8F  1027 0001:00126B9F  1028 0001:00126BE5  1030 0001:00126C08
-  1033 0001:00126C68  1034 0001:00126C6B  1035 0001:00126C81  1038 0001:00126CC0
-  1039 0001:00126CC3  1040 0001:00126CD9  1043 0001:00126D18  1044 0001:00126D1B
-  1045 0001:00126D31  1052 0001:00126D70  1053 0001:00126D96  1054 0001:00126DA0
-  1055 0001:00126DA5  1057 0001:00126DCC  1058 0001:00126E06  1059 0001:00126E09
-  1061 0001:00126E10  1062 0001:00126E15  1055 0001:00126E16  1064 0001:00126E1A
-  1065 0001:00126E1C  1067 0001:00126E3D  1068 0001:00126E57  1065 0001:00126E58
-  1069 0001:00126E5B  1070 0001:00126E6E  1071 0001:00126E73  1072 0001:00126E75
-  1073 0001:00126E7F  1079 0001:00126EC8  1080 0001:00126EF3  1081 0001:00126EF5
-  1082 0001:00126EFA  1084 0001:00126F22  1085 0001:00126F49  1086 0001:00126F4E
-  1088 0001:00126F51  1089 0001:00126F56  1082 0001:00126F57  1091 0001:00126F5B
-  1092 0001:00126F61  1095 0001:00126F77  1096 0001:00126F88  1097 0001:00126F8D
-  1098 0001:00126F8F  1100 0001:00126F99  1103 0001:00126FCC  1104 0001:00126FE2
-  1105 0001:00126FF6  1108 0001:0012701C  1109 0001:00127038  1110 0001:00127059
-  1113 0001:00127080  1114 0001:001270B5  1115 0001:001270E7  1122 0001:00127124
-  1123 0001:0012715E  1124 0001:0012717C  1125 0001:00127185  1127 0001:00127198
-  1128 0001:001271AF  1129 0001:001271BC  1130 0001:001271C6  1125 0001:001271C7
-  1131 0001:001271CC  1132 0001:001271D4  1139 0001:00127210  1140 0001:0012724A
-  1141 0001:00127268  1142 0001:00127271  1144 0001:00127284  1145 0001:0012729B
-  1146 0001:001272A8  1147 0001:001272B2  1142 0001:001272B3  1148 0001:001272B8
-  1149 0001:001272C0  1156 0001:001272FC  1157 0001:00127336  1158 0001:00127357
-  1159 0001:00127360  1161 0001:00127373  1162 0001:0012738A  1163 0001:00127397
-  1164 0001:001273A1  1159 0001:001273A2  1165 0001:001273A7  1166 0001:001273AF
-  1174 0001:00127400  1175 0001:0012743A  1176 0001:0012745B  1177 0001:00127464
-  1179 0001:00127477  1180 0001:0012748E  1181 0001:0012749B  1182 0001:001274A5
-  1177 0001:001274A6  1183 0001:001274AB  1184 0001:001274B3  1187 0001:001274F0
-  1188 0001:0012750B  1189 0001:0012752D  1192 0001:00127558  1193 0001:00127585
-  1194 0001:001275A8  1197 0001:001275D4  1198 0001:00127601  1199 0001:00127624
-  1202 0001:00127650  1203 0001:0012765C  1204 0001:00127668  1207 0001:00127670
-  1208 0001:00127693  1209 0001:001276A9  1212 0001:001276CC  1213 0001:001276EF
-  1214 0001:00127706  1217 0001:00127728  1218 0001:0012772E  1219 0001:00127737
-  1224 0001:0012773C  1225 0001:0012775B  1226 0001:0012776A  1227 0001:00127778
-  1228 0001:0012778D  1230 0001:001277A4  1232 0001:001277B4  1235 0001:001277D8
-  1236 0001:001277EF  1237 0001:001277FD  1238 0001:00127811  1243 0001:00127838
-  1244 0001:00127880  1245 0001:00127884  1246 0001:0012788F  1248 0001:001278B2
-  1249 0001:001278B6  1250 0001:001278B8  1245 0001:001278BB  1251 0001:001278BE
-  1254 0001:00127908  1255 0001:0012794C  1256 0001:00127966  1259 0001:001279A4
-  1260 0001:001279CB  1261 0001:001279E2  1264 0001:00127A10  1265 0001:00127A37
-  1266 0001:00127A51  1269 0001:00127A7C  1270 0001:00127AA3  1271 0001:00127ABA
-  1274 0001:00127AE8  1275 0001:00127B08  1276 0001:00127B14  1282 0001:00127B38
-  1283 0001:00127B6D  1284 0001:00127B77  1285 0001:00127B86  1286 0001:00127B94
-  1287 0001:00127BA9  1289 0001:00127BBF  1291 0001:00127BE6  1292 0001:00127C43
-  1294 0001:00127C45  1287 0001:00127C46  1296 0001:00127C5A  1298 0001:00127C6A
-  1301 0001:00127CD4  1303 0001:00127CE5  1309 0001:00127CFC  1310 0001:00127D26
-  1311 0001:00127D56  1312 0001:00127D67  1316 0001:00127DA4  1317 0001:00127DCE
-  1318 0001:00127DFE  1319 0001:00127E0F  1322 0001:00127E4C  1323 0001:00127E70
-  1324 0001:00127E9C  1325 0001:00127EAD  1328 0001:00127EE0  1329 0001:00127F04
-  1330 0001:00127F30  1331 0001:00127F41  1334 0001:00127F74  1335 0001:00127F91
-  1336 0001:00127FBE  1337 0001:00127FCE  1340 0001:00128004  1341 0001:00128028
-  1342 0001:00128054  1343 0001:00128065  1346 0001:00128098  1347 0001:001280B5
-  1348 0001:001280E2  1349 0001:001280F2  1352 0001:00128128  1353 0001:0012814C
-  1354 0001:00128178  1355 0001:00128189  1358 0001:001281BC  1359 0001:001281E1
-  1360 0001:00128203  1363 0001:00128238  1364 0001:0012825A  1365 0001:0012828D
-  1366 0001:0012829E  1369 0001:001282D4  1370 0001:00128303  1371 0001:00128323
-  1374 0001:0012835C  1375 0001:00128372  1376 0001:00128386  1379 0001:001283AC
-  1380 0001:001283D7  1381 0001:00128404  1382 0001:00128414  1385 0001:00128450
-  1386 0001:0012847B  1387 0001:001284A8  1388 0001:001284B8  1391 0001:001284F4
-  1392 0001:00128519  1393 0001:0012853B  1396 0001:00128570  1397 0001:001285B7
-  1398 0001:001285DC  1401 0001:00128620  1402 0001:00128654  1403 0001:00128684
-  1404 0001:00128695  1407 0001:001286D0  1408 0001:001286F2  1409 0001:00128722
-  1410 0001:00128733  1413 0001:00128768  1414 0001:00128771  1415 0001:0012877B
-  1418 0001:00128780  1419 0001:001287A5  1420 0001:001287CA  1423 0001:00128800
-  1424 0001:0012881D  1425 0001:0012884A  1426 0001:0012885A  1429 0001:00128890
-  1430 0001:001288B8  1431 0001:001288DF  1434 0001:00128914  1435 0001:0012892C
-  1436 0001:0012894E  1439 0001:0012897C  1440 0001:00128999  1441 0001:001289C6
-  1442 0001:001289D6  1445 0001:00128A0C  1446 0001:00128A37  1447 0001:00128A64
-  1448 0001:00128A74  1451 0001:00128AB0  1452 0001:00128AF6  1453 0001:00128B27
-  1454 0001:00128B38  1457 0001:00128B84  1458 0001:00128BAF  1459 0001:00128BDC
-  1460 0001:00128BEC  1463 0001:00128C28  1464 0001:00128C5D  1465 0001:00128C91
-  1466 0001:00128CA2  1469 0001:00128CDC  1470 0001:00128D11  1471 0001:00128D4A
-  1472 0001:00128D5B  1475 0001:00128D98  1476 0001:00128DE6  1477 0001:00128E23
-  1478 0001:00128E34  1481 0001:00128E88  1482 0001:00128EF5  1483 0001:00128F36
-  1484 0001:00128F47  1487 0001:00128FA8  1488 0001:00128FF6  1489 0001:00129036
-  1490 0001:00129047  1493 0001:001290A0  1494 0001:0012910D  1495 0001:00129151
-  1496 0001:00129162  1499 0001:001291C8  1500 0001:001291E5  1501 0001:00129212
-  1502 0001:00129222  1505 0001:00129258  1506 0001:00129280  1507 0001:001292A3
-  1508 0001:001292B3  1511 0001:001292E8  1512 0001:00129308  1513 0001:00129337
-  1516 0001:00129370  1517 0001:00129373  1518 0001:0012937E  1521 0001:00129380
-  1522 0001:0012939B  1523 0001:001293BB  1524 0001:001293CB  1527 0001:001293F8
-  1528 0001:00129413  1529 0001:00129433  1530 0001:00129443  1533 0001:00129470
-  1534 0001:0012948B  1535 0001:001294AB  1536 0001:001294BB  1539 0001:001294E8
-  1540 0001:00129500  1542 0001:00129522  1545 0001:00129550  1546 0001:0012956D
-  1547 0001:00129597  1548 0001:001295A7  1551 0001:001295DC  1552 0001:001295F9
-  1553 0001:00129623  1554 0001:00129633  1557 0001:00129668  1558 0001:00129685
-  1559 0001:001296AF  1560 0001:001296BF  1563 0001:001296F4  1564 0001:00129711
-  1565 0001:0012973E  1566 0001:0012974E  1569 0001:00129784  1570 0001:001297A1
-  1571 0001:001297CE  1572 0001:001297DE  1575 0001:00129814  1576 0001:00129831
-  1577 0001:0012985E  1578 0001:0012986E  1581 0001:001298A4  1582 0001:001298CF
-  1583 0001:001298F5  1584 0001:00129905  1587 0001:00129940  1588 0001:00129964
-  1589 0001:00129990  1590 0001:001299A1  1593 0001:001299D4  1594 0001:001299F1
-  1595 0001:00129A1E  1596 0001:00129A2E  1599 0001:00129A64  1600 0001:00129A81
-  1601 0001:00129AAE  1602 0001:00129ABE  1605 0001:00129AF4  1606 0001:00129B29
-  1607 0001:00129B5D  1608 0001:00129B6E  1612 0001:00129BA8  1613 0001:00129BDA
-  1614 0001:00129C11  1615 0001:00129C22  1619 0001:00129C64  1620 0001:00129C8E
-  1621 0001:00129CC6  1622 0001:00129CD7  1625 0001:00129D28  1626 0001:00129D4C
-  1627 0001:00129D7B  1628 0001:00129D8C  1631 0001:00129DC0  1632 0001:00129DEB
-  1633 0001:00129E1B  1634 0001:00129E2B  1637 0001:00129E64  1638 0001:00129E8F
-  1639 0001:00129EBF  1640 0001:00129ECF  1643 0001:00129F08  1644 0001:00129F25
-  1645 0001:00129F52  1646 0001:00129F62  1649 0001:00129F98  1650 0001:00129FCD
-  1651 0001:00129FF2  1654 0001:0012A02C  1655 0001:0012A069  1656 0001:0012A092
-  1659 0001:0012A0D8  1660 0001:0012A11D  1661 0001:0012A14A  1664 0001:0012A194
-  1665 0001:0012A1BE  1666 0001:0012A1F6  1667 0001:0012A207  1672 0001:0012A258
-  1673 0001:0012A28A  1674 0001:0012A2C6  1675 0001:0012A2D7  1678 0001:0012A31C
-  1679 0001:0012A334  1680 0001:0012A356  1683 0001:0012A384  1684 0001:0012A3AB
-  1685 0001:0012A3C2  1688 0001:0012A3F0  1689 0001:0012A417  1690 0001:0012A42E
-  1693 0001:0012A45C  1694 0001:0012A483  1695 0001:0012A49D  1698 0001:0012A4C8
-  1699 0001:0012A4EF  1700 0001:0012A506  1703 0001:0012A534  1704 0001:0012A55B
-  1705 0001:0012A572  1708 0001:0012A5A0  1709 0001:0012A5C0  1710 0001:0012A5CC
-  1713 0001:0012A5F0  1714 0001:0012A637  1715 0001:0012A65F  1758 0001:0012A6A2
+   443 0001:0010FA58   444 0001:0010FAA1   445 0001:0010FAA8   447 0001:0010FAB5
+   448 0001:0010FAC1   449 0001:0010FAC4   445 0001:0010FAC8   450 0001:0010FACB
+   454 0001:0010FB0C   455 0001:0010FB13   462 0001:0010FB14   463 0001:0010FB6C
+   464 0001:0010FB7E   465 0001:0010FBB1   466 0001:0010FBBF   468 0001:0010FBC7
+   470 0001:0010FBDB   472 0001:0010FBFF   473 0001:0010FC03   475 0001:0010FC34
+   478 0001:0010FC45   466 0001:0010FC52   481 0001:0010FC67   483 0001:0010FC7A
+   492 0001:0010FD08   493 0001:0010FD6E   494 0001:0010FD80   495 0001:0010FDB3
+   496 0001:0010FDC1   498 0001:0010FDC9   500 0001:0010FDE1   502 0001:0010FE0D
+   504 0001:0010FE1A   505 0001:0010FE1E   507 0001:0010FE3B   508 0001:0010FE49
+   509 0001:0010FE57   510 0001:0010FE8C   511 0001:0010FEAE   517 0001:0010FEBB
+   518 0001:0010FEBF   520 0001:0010FEF0   522 0001:0010FF01   496 0001:0010FF0E
+   525 0001:0010FF23   527 0001:0010FF36   575 0001:0010FFBC   577 0001:00110035
+   578 0001:00110082   579 0001:0011008F   580 0001:001100A1   581 0001:001100AF
+   582 0001:001100D8   584 0001:001100E0   587 0001:001100FA   588 0001:00110107
+   589 0001:0011010D   592 0001:00110183   593 0001:001101AD   594 0001:001101B3
+   596 0001:00110223   598 0001:00110234   582 0001:00110241   600 0001:00110249
+   602 0001:00110263   605 0001:00110273   630 0001:00110360   631 0001:00110380
+   632 0001:0011039F   635 0001:001103C0   636 0001:001103E0   637 0001:001103FF
+   677 0001:00110420   678 0001:00110494   679 0001:0011049F   680 0001:001104AD
+   679 0001:001104D5   681 0001:001104D8   687 0001:00110530   688 0001:00110589
+   689 0001:00110593   690 0001:0011059E   689 0001:001105C0   691 0001:001105C3
+   729 0001:00110614   730 0001:00110648   731 0001:00110652   732 0001:00110673
+   735 0001:00110696   736 0001:001106C5   738 0001:00110712   741 0001:0011075D
+   747 0001:00110814   748 0001:0011081F   753 0001:0011085C   754 0001:00110886
+   755 0001:001108B8   758 0001:001108F4   759 0001:0011091E   760 0001:00110950
+   763 0001:0011098C   764 0001:001109A8   765 0001:001109C1   768 0001:001109E4
+   769 0001:00110A00   770 0001:00110A19   773 0001:00110A3C   774 0001:00110A58
+   775 0001:00110A71   778 0001:00110A94   779 0001:00110A97   780 0001:00110A9E
+   783 0001:00110AA0   784 0001:00110AC7   785 0001:00110AE3   788 0001:00110B0C
+   789 0001:00110B3B   790 0001:00110B46   793 0001:00110B80   794 0001:00110BA5
+   795 0001:00110BC9   798 0001:00110BFC   799 0001:00110C29   800 0001:00110C46
+   803 0001:00110C70   804 0001:00110CA5   805 0001:00110CC8   808 0001:00110CFC
+   809 0001:00110D39   810 0001:00110D62   815 0001:00110D9C   816 0001:00110DE2
+   817 0001:00110DE4   819 0001:00110DEF   820 0001:00110E07   822 0001:00110E0B
+   817 0001:00110E0E   823 0001:00110E11   826 0001:00110E50   827 0001:00110E59
+   828 0001:00110E63   831 0001:00110E68   832 0001:00110E92   833 0001:00110EA9
+   836 0001:00110ED4   837 0001:00110EFE   838 0001:00110F1E   841 0001:00110F4C
+   842 0001:00110F90   843 0001:00110FB6   846 0001:00110FF8   847 0001:00111001
+   848 0001:0011100B   851 0001:00111010   852 0001:00111029   853 0001:0011103D
+   856 0001:00111060   857 0001:00111079   858 0001:0011108D   861 0001:001110B0
+   862 0001:001110C9   863 0001:001110DD   868 0001:00111100   869 0001:0011111C
+   870 0001:00111125   871 0001:00111129   870 0001:0011113F   872 0001:00111142
+   875 0001:00111168   876 0001:00111174   877 0001:0011118C   880 0001:001111A4
+   881 0001:001111B8   882 0001:001111C1   885 0001:001111DC   886 0001:001111F0
+   887 0001:001111F9   890 0001:00111214   891 0001:00111242   892 0001:0011125C
+   895 0001:00111288   896 0001:0011129E   897 0001:001112B0   902 0001:001112D4
+   903 0001:001112EC   904 0001:001112FB   905 0001:00111327   910 0001:00111350
+   911 0001:00111368   912 0001:00111377   913 0001:001113A3   918 0001:001113CC
+   919 0001:001113E5   920 0001:001113E7   921 0001:001113F6   922 0001:00111427
+   923 0001:00111429   926 0001:00111454   927 0001:0011146D   928 0001:00111481
+   933 0001:001114A4   934 0001:001114CB   935 0001:001114DA   936 0001:001114E8
+   937 0001:001114FD   939 0001:00111515   941 0001:00111525   944 0001:00111550
+   945 0001:00111561   946 0001:00111577   949 0001:001115CC   950 0001:001115E8
+   951 0001:00111603   954 0001:00111628   955 0001:00111648   956 0001:00111674
+   959 0001:001116A4   960 0001:001116D1   961 0001:001116EA   964 0001:00111718
+   965 0001:0011174A   966 0001:0011176B   969 0001:00111794   970 0001:001117E0
+   971 0001:00111805   974 0001:00111848   975 0001:001118B3   976 0001:001118DC
+   979 0001:0011192C   980 0001:00111978   981 0001:001119A0   984 0001:001119E8
+   985 0001:00111A53   986 0001:00111A7F   989 0001:00111AD4   990 0001:00111AFC
+   991 0001:00111B58   994 0001:00111BA4   995 0001:00111BC0   996 0001:00111BDE
+   999 0001:00111C04  1000 0001:00111C1D  1001 0001:00111C31  1004 0001:00111C54
+  1005 0001:00111C7B  1006 0001:00111C93  1009 0001:00111CBC  1010 0001:00111CE6
+  1011 0001:00111D01  1014 0001:00111D2C  1015 0001:00111D45  1016 0001:00111D59
+  1019 0001:00111D7C  1020 0001:00111D95  1021 0001:00111DA9  1024 0001:00111DCC
+  1025 0001:00111DE9  1026 0001:00111E18  1029 0001:00111E4C  1030 0001:00111E67
+  1031 0001:00111E86  1034 0001:00111EB4  1035 0001:00111ED2  1036 0001:00111EDB
+  1038 0001:00111EEB  1039 0001:00111F31  1041 0001:00111F54  1044 0001:00111FB4
+  1045 0001:00111FB7  1046 0001:00111FCD  1049 0001:0011200C  1050 0001:0011200F
+  1051 0001:00112025  1054 0001:00112064  1055 0001:00112067  1056 0001:0011207D
+  1063 0001:001120BC  1064 0001:001120E2  1065 0001:001120EC  1066 0001:001120F1
+  1068 0001:00112118  1069 0001:00112152  1070 0001:00112155  1072 0001:0011215C
+  1073 0001:00112161  1066 0001:00112162  1075 0001:00112166  1076 0001:00112168
+  1078 0001:00112189  1079 0001:001121A3  1076 0001:001121A4  1080 0001:001121A7
+  1081 0001:001121BA  1082 0001:001121BF  1083 0001:001121C1  1084 0001:001121CB
+  1090 0001:00112214  1091 0001:0011223F  1092 0001:00112241  1093 0001:00112246
+  1095 0001:0011226E  1096 0001:00112295  1097 0001:0011229A  1099 0001:0011229D
+  1100 0001:001122A2  1093 0001:001122A3  1102 0001:001122A7  1103 0001:001122AD
+  1106 0001:001122C3  1107 0001:001122D4  1108 0001:001122D9  1109 0001:001122DB
+  1111 0001:001122E5  1114 0001:00112318  1115 0001:0011232E  1116 0001:00112342
+  1119 0001:00112368  1120 0001:00112384  1121 0001:001123A5  1124 0001:001123CC
+  1125 0001:00112401  1126 0001:00112433  1133 0001:00112470  1134 0001:001124AA
+  1135 0001:001124C8  1136 0001:001124D1  1138 0001:001124E4  1139 0001:001124FB
+  1140 0001:00112508  1141 0001:00112512  1136 0001:00112513  1142 0001:00112518
+  1143 0001:00112520  1150 0001:0011255C  1151 0001:00112596  1152 0001:001125B4
+  1153 0001:001125BD  1155 0001:001125D0  1156 0001:001125E7  1157 0001:001125F4
+  1158 0001:001125FE  1153 0001:001125FF  1159 0001:00112604  1160 0001:0011260C
+  1167 0001:00112648  1168 0001:00112682  1169 0001:001126A3  1170 0001:001126AC
+  1172 0001:001126BF  1173 0001:001126D6  1174 0001:001126E3  1175 0001:001126ED
+  1170 0001:001126EE  1176 0001:001126F3  1177 0001:001126FB  1185 0001:0011274C
+  1186 0001:00112786  1187 0001:001127A7  1188 0001:001127B0  1190 0001:001127C3
+  1191 0001:001127DA  1192 0001:001127E7  1193 0001:001127F1  1188 0001:001127F2
+  1194 0001:001127F7  1195 0001:001127FF  1198 0001:0011283C  1199 0001:00112857
+  1200 0001:00112879  1203 0001:001128A4  1204 0001:001128D1  1205 0001:001128F4
+  1208 0001:00112920  1209 0001:0011294D  1210 0001:00112970  1213 0001:0011299C
+  1214 0001:001129A8  1215 0001:001129B4  1218 0001:001129BC  1219 0001:001129DF
+  1220 0001:001129F5  1223 0001:00112A18  1224 0001:00112A3B  1225 0001:00112A52
+  1228 0001:00112A74  1229 0001:00112A7A  1230 0001:00112A83  1235 0001:00112A88
+  1236 0001:00112AA7  1237 0001:00112AB6  1238 0001:00112AC4  1239 0001:00112AD9
+  1241 0001:00112AF0  1243 0001:00112B00  1246 0001:00112B24  1247 0001:00112B3B
+  1248 0001:00112B49  1249 0001:00112B5D  1254 0001:00112B84  1255 0001:00112BCC
+  1256 0001:00112BD0  1257 0001:00112BDB  1259 0001:00112BFE  1260 0001:00112C02
+  1261 0001:00112C04  1256 0001:00112C07  1262 0001:00112C0A  1265 0001:00112C54
+  1266 0001:00112C98  1267 0001:00112CB2  1270 0001:00112CF0  1271 0001:00112D17
+  1272 0001:00112D2E  1275 0001:00112D5C  1276 0001:00112D83  1277 0001:00112D9D
+  1280 0001:00112DC8  1281 0001:00112DEF  1282 0001:00112E06  1285 0001:00112E34
+  1286 0001:00112E54  1287 0001:00112E60  1293 0001:00112E84  1294 0001:00112EB9
+  1295 0001:00112EC3  1296 0001:00112ED2  1297 0001:00112EE0  1298 0001:00112EF5
+  1300 0001:00112F0B  1302 0001:00112F32  1303 0001:00112F8F  1305 0001:00112F91
+  1298 0001:00112F92  1307 0001:00112FA6  1309 0001:00112FB6  1312 0001:00113020
+  1314 0001:00113031  1320 0001:00113048  1321 0001:00113072  1322 0001:001130A2
+  1323 0001:001130B3  1327 0001:001130F0  1328 0001:0011311A  1329 0001:0011314A
+  1330 0001:0011315B  1333 0001:00113198  1334 0001:001131BC  1335 0001:001131E8
+  1336 0001:001131F9  1339 0001:0011322C  1340 0001:00113250  1341 0001:0011327C
+  1342 0001:0011328D  1345 0001:001132C0  1346 0001:001132DD  1347 0001:0011330A
+  1348 0001:0011331A  1351 0001:00113350  1352 0001:00113374  1353 0001:001133A0
+  1354 0001:001133B1  1357 0001:001133E4  1358 0001:001133E7  1359 0001:001133EE
+  1362 0001:001133F0  1363 0001:0011340D  1364 0001:0011343A  1365 0001:0011344A
+  1368 0001:00113480  1369 0001:001134A4  1370 0001:001134D0  1371 0001:001134E1
+  1374 0001:00113514  1375 0001:00113539  1376 0001:0011355B  1379 0001:00113590
+  1380 0001:001135B2  1381 0001:001135E5  1382 0001:001135F6  1385 0001:0011362C
+  1386 0001:0011365B  1387 0001:0011367B  1390 0001:001136B4  1391 0001:001136CA
+  1392 0001:001136DE  1395 0001:00113704  1396 0001:0011372F  1397 0001:0011375C
+  1398 0001:0011376C  1401 0001:001137A8  1402 0001:001137D3  1403 0001:00113800
+  1404 0001:00113810  1407 0001:0011384C  1408 0001:00113871  1409 0001:00113893
+  1412 0001:001138C8  1413 0001:0011390F  1414 0001:00113934  1417 0001:00113978
+  1418 0001:001139AC  1419 0001:001139DC  1420 0001:001139ED  1423 0001:00113A28
+  1424 0001:00113A4A  1425 0001:00113A7A  1426 0001:00113A8B  1429 0001:00113AC0
+  1430 0001:00113AC9  1431 0001:00113AD3  1434 0001:00113AD8  1435 0001:00113AFD
+  1436 0001:00113B22  1439 0001:00113B58  1440 0001:00113B75  1441 0001:00113BA2
+  1442 0001:00113BB2  1445 0001:00113BE8  1446 0001:00113C10  1447 0001:00113C37
+  1450 0001:00113C6C  1451 0001:00113C88  1452 0001:00113CA9  1455 0001:00113CD0
+  1456 0001:00113CE8  1457 0001:00113D0A  1460 0001:00113D38  1461 0001:00113D55
+  1462 0001:00113D82  1463 0001:00113D92  1466 0001:00113DC8  1467 0001:00113DF3
+  1468 0001:00113E20  1469 0001:00113E30  1472 0001:00113E6C  1473 0001:00113EB2
+  1474 0001:00113EE3  1475 0001:00113EF4  1478 0001:00113F40  1479 0001:00113F6B
+  1480 0001:00113F98  1481 0001:00113FA8  1484 0001:00113FE4  1485 0001:00114019
+  1486 0001:0011404D  1487 0001:0011405E  1490 0001:00114098  1491 0001:001140CD
+  1492 0001:00114106  1493 0001:00114117  1496 0001:00114154  1497 0001:001141A2
+  1498 0001:001141DF  1499 0001:001141F0  1502 0001:00114244  1503 0001:001142B1
+  1504 0001:001142F2  1505 0001:00114303  1508 0001:00114364  1509 0001:001143B2
+  1510 0001:001143F2  1511 0001:00114403  1514 0001:0011445C  1515 0001:001144C9
+  1516 0001:0011450D  1517 0001:0011451E  1520 0001:00114584  1521 0001:001145A1
+  1522 0001:001145CE  1523 0001:001145DE  1526 0001:00114614  1527 0001:0011463C
+  1528 0001:0011465F  1529 0001:0011466F  1532 0001:001146A4  1533 0001:001146C4
+  1534 0001:001146F3  1537 0001:0011472C  1538 0001:0011472F  1539 0001:0011473A
+  1542 0001:0011473C  1543 0001:00114757  1544 0001:00114777  1545 0001:00114787
+  1548 0001:001147B4  1549 0001:001147CF  1550 0001:001147EF  1551 0001:001147FF
+  1554 0001:0011482C  1555 0001:00114847  1556 0001:00114867  1557 0001:00114877
+  1560 0001:001148A4  1561 0001:001148BC  1563 0001:001148DE  1566 0001:0011490C
+  1567 0001:00114929  1568 0001:00114953  1569 0001:00114963  1572 0001:00114998
+  1573 0001:001149B5  1574 0001:001149DF  1575 0001:001149EF  1578 0001:00114A24
+  1579 0001:00114A41  1580 0001:00114A6B  1581 0001:00114A7B  1584 0001:00114AB0
+  1585 0001:00114ACD  1586 0001:00114AFA  1587 0001:00114B0A  1590 0001:00114B40
+  1591 0001:00114B5D  1592 0001:00114B8A  1593 0001:00114B9A  1596 0001:00114BD0
+  1597 0001:00114BED  1598 0001:00114C1A  1599 0001:00114C2A  1602 0001:00114C60
+  1603 0001:00114C8B  1604 0001:00114CB1  1605 0001:00114CC1  1608 0001:00114CFC
+  1609 0001:00114D20  1610 0001:00114D4C  1611 0001:00114D5D  1614 0001:00114D90
+  1615 0001:00114DAD  1616 0001:00114DDA  1617 0001:00114DEA  1620 0001:00114E20
+  1621 0001:00114E3D  1622 0001:00114E6A  1623 0001:00114E7A  1626 0001:00114EB0
+  1627 0001:00114EE5  1628 0001:00114F19  1629 0001:00114F2A  1633 0001:00114F64
+  1634 0001:00114F96  1635 0001:00114FCD  1636 0001:00114FDE  1640 0001:00115020
+  1641 0001:0011504A  1642 0001:00115082  1643 0001:00115093  1646 0001:001150E4
+  1647 0001:00115108  1648 0001:00115137  1649 0001:00115148  1652 0001:0011517C
+  1653 0001:001151A7  1654 0001:001151D7  1655 0001:001151E7  1658 0001:00115220
+  1659 0001:0011524B  1660 0001:0011527B  1661 0001:0011528B  1664 0001:001152C4
+  1665 0001:001152E1  1666 0001:0011530E  1667 0001:0011531E  1670 0001:00115354
+  1671 0001:00115389  1672 0001:001153AE  1675 0001:001153E8  1676 0001:00115425
+  1677 0001:0011544E  1680 0001:00115494  1681 0001:001154D9  1682 0001:00115506
+  1685 0001:00115550  1686 0001:0011557A  1687 0001:001155B2  1688 0001:001155C3
+  1693 0001:00115614  1694 0001:00115646  1695 0001:00115682  1696 0001:00115693
+  1699 0001:001156D8  1700 0001:001156F0  1701 0001:00115712  1704 0001:00115740
+  1705 0001:00115767  1706 0001:0011577E  1709 0001:001157AC  1710 0001:001157D3
+  1711 0001:001157EA  1714 0001:00115818  1715 0001:0011583F  1716 0001:00115859
+  1719 0001:00115884  1720 0001:001158AB  1721 0001:001158C2  1724 0001:001158F0
+  1725 0001:00115917  1726 0001:0011592E  1729 0001:0011595C  1730 0001:0011597C
+  1731 0001:00115988  1734 0001:001159AC  1735 0001:001159F3  1736 0001:00115A1B
+  1779 0001:00115A5E
+
+Line numbers for pcre(..\pcre\pcre.pas) segment .text
+
+   650 0001:00115A60   651 0001:00115A68   652 0001:00115A70   653 0001:00115A78
+   654 0001:00115A80   655 0001:00115A88   656 0001:00115A90   657 0001:00115A98
+   658 0001:00115AA0   659 0001:00115AA8   660 0001:00115AB0   661 0001:00115AB8
+   662 0001:00115AC0   663 0001:00115AC8   664 0001:00115AD0   665 0001:00115AD8
+   666 0001:00115AE0   667 0001:00115AE8   668 0001:00115AF0   669 0001:00115AF8
+   671 0001:00115B00   674 0001:00115B08   675 0001:00115B0B   676 0001:00115B14
+   678 0001:00115B1C   679 0001:00115B23   690 0001:00115B28   691 0001:00115B2B
+   692 0001:00115B30   694 0001:00115B34   697 0001:00115B3C   698 0001:00115B3F
+   699 0001:00115B48   701 0001:00115B50   702 0001:00115B57   713 0001:00115B5C
+   714 0001:00115B5F   715 0001:00115B64  1113 0001:00115B68  1114 0001:00115B71
+  1115 0001:00115B7A  1116 0001:00115B85  1117 0001:00115B90
+
+Line numbers for pcre(..\pcre\pcre.pas) segment .text
+
+  1144 0001:0012798B
+
+Line numbers for PerlRegEx(..\pcre\PerlRegEx.pas) segment .text
+
+   238 0001:00127FF0   239 0001:00127FF9   241 0001:00128008   243 0001:00128011
+   248 0001:00128020   254 0001:00128024   255 0001:0012802F   256 0001:00128038
+   258 0001:0012803A   259 0001:00128056   261 0001:0012808A   263 0001:0012808E
+   264 0001:0012809C   265 0001:001280AF   268 0001:001280B1   258 0001:001280B2
+   297 0001:001280B5   303 0001:001280BC   304 0001:001280C2   305 0001:001280CA
+   306 0001:001280DD   307 0001:001280E5   308 0001:001280ED   309 0001:001280F4
+   310 0001:001280FC   313 0001:00128100   314 0001:00128106   315 0001:0012810D
+   316 0001:0012811E   322 0001:00128124   323 0001:00128144   324 0001:0012814A
+   325 0001:00128160   326 0001:00128167   327 0001:00128190   328 0001:00128194
+   329 0001:001281E2   330 0001:001281E6   355 0001:00128330   356 0001:00128351
+   357 0001:0012836E   358 0001:00128381   359 0001:00128391   361 0001:0012839B
+   362 0001:001283E6   363 0001:0012840E   364 0001:00128436   365 0001:0012845E
+   367 0001:00128484   368 0001:0012848D   369 0001:001284A1   372 0001:001284D3
+   373 0001:001284E1   377 0001:001284EB   383 0001:0012851C   384 0001:0012853B
+   385 0001:0012853E   387 0001:0012859D   388 0001:001285B1   389 0001:001285B7
+   391 0001:00128615   392 0001:0012862A   393 0001:0012863D   394 0001:0012863F
+   398 0001:0012864A   399 0001:00128652   401 0001:001286BC   402 0001:001286C2
+   404 0001:001286FF   405 0001:0012870B   407 0001:00128713   408 0001:00128732
+   406 0001:00128738   412 0001:00128775   413 0001:0012877D   414 0001:001287C7
+   415 0001:00128815   416 0001:0012883C   420 0001:0012884C   421 0001:001288AB
+   423 0001:001288B6   425 0001:001288CF   426 0001:001288ED   427 0001:00128907
+   428 0001:00128925   430 0001:0012892A   433 0001:00128954   434 0001:00128956
+   438 0001:00128961   439 0001:0012896E   443 0001:00128979   444 0001:00128997
+   445 0001:001289B9   446 0001:001289CF   450 0001:001289D4   451 0001:001289F2
+   452 0001:00128A14   453 0001:00128A41   457 0001:00128A43   458 0001:00128A55
+   459 0001:00128A5B   461 0001:00128A8C   462 0001:00128AB1   463 0001:00128ABF
+   465 0001:00128ACB   467 0001:00128AE6   468 0001:00128AED   469 0001:00128B34
+   471 0001:00128BD2   472 0001:00128BE2   475 0001:00128BEA   477 0001:00128C82
+   478 0001:00128C88   479 0001:00128CC3   480 0001:00128D27   481 0001:00128D50
+   482 0001:00128D53   483 0001:00128D57   484 0001:00128D6C   486 0001:00128D82
+   488 0001:00128D8D   491 0001:00128D96   492 0001:00128DCE   493 0001:00128DD1
+   496 0001:00128DE1   497 0001:00128DE5   502 0001:00128DF5   503 0001:00128DFC
+   504 0001:00128E4F   505 0001:00128E5C   506 0001:00128E6C   509 0001:00128E71
+   510 0001:00128E75   513 0001:00128E82   464 0001:00128E85   516 0001:00128EA0
+   517 0001:00128EAB   520 0001:00129028   521 0001:0012903D   522 0001:00129046
+   523 0001:00129050   525 0001:0012905B   529 0001:00129065   532 0001:00129084
+   533 0001:00129092   534 0001:001290A9   535 0001:001290B5   540 0001:001290C4
+   541 0001:001290CE   542 0001:001290D7   543 0001:001290EA   544 0001:001290EE
+   546 0001:00129125   548 0001:00129135   549 0001:00129143   552 0001:00129151
+   543 0001:00129152   554 0001:00129156   558 0001:0012916C   559 0001:00129176
+   562 0001:00129178   563 0001:00129181   564 0001:001291A0   565 0001:001291AB
+   568 0001:00129288   569 0001:0012928E   570 0001:001292AD   571 0001:001292B6
+   574 0001:00129394   575 0001:0012939A   576 0001:001293B9   577 0001:001293C2
+   580 0001:001294A0   581 0001:001294A6   582 0001:001294C5   583 0001:001294CC
+   586 0001:001295A8   587 0001:001295B1   588 0001:001295D0   589 0001:001295F3
+   590 0001:00129601   593 0001:00129728   594 0001:00129731   595 0001:00129750
+   596 0001:00129773   597 0001:0012977B   600 0001:001298A0   601 0001:001298AC
+   602 0001:001298CB   603 0001:001298DF   604 0001:001298FA   605 0001:0012991B
+   608 0001:001299F8   609 0001:00129A01   610 0001:00129A13   613 0001:00129A18
+   614 0001:00129A21   615 0001:00129A32   620 0001:00129A38   621 0001:00129A41
+   622 0001:00129A48   623 0001:00129A55   624 0001:00129A64   625 0001:00129A70
+   626 0001:00129A7C   627 0001:00129AAB   629 0001:00129AB1   630 0001:00129AB7
+   631 0001:00129AC3   630 0001:00129AC8   632 0001:00129ACB   633 0001:00129AD1
+   634 0001:00129ADC   636 0001:00129AEB   641 0001:00129AF8   642 0001:00129B01
+   643 0001:00129B08   644 0001:00129B15   645 0001:00129B24   646 0001:00129B30
+   647 0001:00129B3C   648 0001:00129B53   649 0001:00129B80   651 0001:00129B8C
+   652 0001:00129B92   653 0001:00129B9C   652 0001:00129BA1   654 0001:00129BA4
+   655 0001:00129BAA   656 0001:00129BB5   658 0001:00129BC4   661 0001:00129BD0
+   662 0001:00129BD9   663 0001:00129BED   666 0001:00129BF4   667 0001:00129BFF
+   669 0001:00129C1E   671 0001:00129C27   673 0001:00129C38   674 0001:00129C52
+   675 0001:00129C6A   677 0001:00129C78   678 0001:00129C9A   680 0001:00129CBC
+   681 0001:00129CC3   682 0001:00129CCB   685 0001:00129DAC   686 0001:00129DC3
+   687 0001:00129DCE   689 0001:00129DD0   690 0001:00129DDA   692 0001:00129DE7
+   693 0001:00129DE9   696 0001:00129E10   697 0001:00129E1A   698 0001:00129E23
+   700 0001:00129E2A   704 0001:00129E34   705 0001:00129E41   706 0001:00129E4E
+   707 0001:00129E5B   708 0001:00129E68   709 0001:00129E75   710 0001:00129E85
+   711 0001:00129E95   713 0001:00129E9C   716 0001:00129EA0   717 0001:00129EA9
+   718 0001:00129EB5   719 0001:00129EBF   721 0001:00129EC6   725 0001:00129ECC
+   726 0001:00129ED9   728 0001:00129EDC   731 0001:00129EE0   732 0001:00129EE1
+   733 0001:00129F03   734 0001:00129F06   737 0001:00129F08   738 0001:00129F11
+   739 0001:00129F1B   740 0001:00129F28   741 0001:00129F2F   742 0001:00129F3E
+   743 0001:00129F4F   748 0001:00129F54   749 0001:00129F7F   750 0001:00129F99
+   752 0001:00129FC5   753 0001:00129FCA   755 0001:00129FD1   756 0001:0012A000
+   757 0001:0012A003   758 0001:0012A015   759 0001:0012A02E   761 0001:0012A057
+   768 0001:0012A134   769 0001:0012A160   770 0001:0012A17A   773 0001:0012A1A5
+   774 0001:0012A1AD   775 0001:0012A1B3   776 0001:0012A1B4   777 0001:0012A1B9
+   779 0001:0012A1C0   781 0001:0012A1C6   783 0001:0012A1D6   784 0001:0012A1DA
+   785 0001:0012A20B   786 0001:0012A21A   791 0001:0012A245   792 0001:0012A274
+   793 0001:0012A277   794 0001:0012A282   796 0001:0012A2AB   797 0001:0012A2BD
+   798 0001:0012A2D6   800 0001:0012A2FF   803 0001:0012A410   804 0001:0012A413
+   805 0001:0012A41A   810 0001:0012A41C   811 0001:0012A433   812 0001:0012A43C
+   813 0001:0012A443   814 0001:0012A465   815 0001:0012A473   814 0001:0012A491
+   816 0001:0012A496   818 0001:0012A49D   823 0001:0012A4C0   824 0001:0012A4DA
+   825 0001:0012A4E7   826 0001:0012A4FD   827 0001:0012A503   828 0001:0012A542
+   829 0001:0012A546   963 0001:0012A5B4
+
+Line numbers for Feature(..\source\Feature.pas) segment .text
+
+    29 0001:0012A7DC    30 0001:0012A7F1    31 0001:0012A80E    34 0001:0012A82C
+    35 0001:0012A835    36 0001:0012A83F    39 0001:0012A844    40 0001:0012A84D
+    41 0001:0012A857    44 0001:0012A85C    45 0001:0012A865    46 0001:0012A86F
+    49 0001:0012A874    50 0001:0012A87D    51 0001:0012A887    54 0001:0012A88C
+    55 0001:0012A895    56 0001:0012A89F    58 0001:0012A8AA
 
 Line numbers for FeatureParser(..\source\FeatureParser.pas) segment .text
 
-    27 0001:0012A854    28 0001:0012A85D    29 0001:0012A867    32 0001:0012A86C
-    33 0001:0012A885    34 0001:0012A88E    35 0001:0012A89A    36 0001:0012A8B2
-    42 0001:0012A8D4    43 0001:0012A8F4    45 0001:0012A910    46 0001:0012A91F
-    47 0001:0012A92D    48 0001:0012A93A    49 0001:0012A95F    51 0001:0012A96B
-    52 0001:0012A981    55 0001:0012A9AE    57 0001:0012A9BE    60 0001:0012AA2C
-    61 0001:0012AA35    62 0001:0012AA3F    64 0001:0012AA4A
+    30 0001:0012AA9C    31 0001:0012AAAA    32 0001:0012AAB1    33 0001:0012AAB6
+    34 0001:0012AAC2    37 0001:0012AAD4    38 0001:0012AADD    39 0001:0012AAE7
+    42 0001:0012AAEC    43 0001:0012AAF2    44 0001:0012AAF8    46 0001:0012AB07
+    47 0001:0012AB1F    48 0001:0012AB2A    49 0001:0012AB2D    52 0001:0012AB30
+    53 0001:0012AB39    54 0001:0012AB43    62 0001:0012AB48    63 0001:0012AB6C
+    65 0001:0012AB88    66 0001:0012AB97    67 0001:0012ABA5    68 0001:0012ABAF
+    69 0001:0012ABB9    71 0001:0012ABFA    73 0001:0012AC15    74 0001:0012AC22
+    76 0001:0012AC2E    77 0001:0012AC4E    78 0001:0012AC64    82 0001:0012AC69
+    83 0001:0012AC76    86 0001:0012AC86    88 0001:0012ACA5    89 0001:0012ACD8
+    91 0001:0012ACE3    92 0001:0012AD0C    93 0001:0012AD22    96 0001:0012AD24
+    97 0001:0012AD49    69 0001:0012AD67    98 0001:0012AD84   100 0001:0012ADA9
+   102 0001:0012ADB9   104 0001:0012AED3
 
 Line numbers for dSpecIntf(dspec\dSpecIntf.pas) segment .text
 
@@ -17388,48 +17418,48 @@ Line numbers for dSpecIntf(dspec\dSpecIntf.pas) segment .text
 
 Line numbers for AutoDocObjects(dspec\AutoDocObjects.pas) segment .text
 
-    31 0001:0012ADFC    32 0001:0012AE1A    33 0001:0012AE49    36 0001:0012AE88
-    37 0001:0012AEA0    38 0001:0012AEAA    41 0001:0012AEC8    42 0001:0012AED6
-    43 0001:0012AEDE    44 0001:0012AEEA    49 0001:0012AEFC    50 0001:0012AF1E
-    51 0001:0012AF2F    53 0001:0012AF4C    54 0001:0012AF56    55 0001:0012AF78
-    58 0001:0012AFCC    59 0001:0012AFD5    60 0001:0012AFDB    62 0001:0012AFE6
-    63 0001:0012AFEF    67 0001:0012AFF4    68 0001:0012AFF8    72 0001:0012AFFC
-    73 0001:0012AFFF    78 0001:0012B000    79 0001:0012B02C    80 0001:0012B031
-    82 0001:0012B040    83 0001:0012B07A    84 0001:0012B086    85 0001:0012B0AB
-    81 0001:0012B0AC    87 0001:0012B0BD    89 0001:0012B0FF
+    31 0001:0012B284    32 0001:0012B2A2    33 0001:0012B2D1    36 0001:0012B310
+    37 0001:0012B328    38 0001:0012B332    41 0001:0012B350    42 0001:0012B35E
+    43 0001:0012B366    44 0001:0012B372    49 0001:0012B384    50 0001:0012B3A6
+    51 0001:0012B3B7    53 0001:0012B3D4    54 0001:0012B3DE    55 0001:0012B400
+    58 0001:0012B454    59 0001:0012B45D    60 0001:0012B463    62 0001:0012B46E
+    63 0001:0012B477    67 0001:0012B47C    68 0001:0012B480    72 0001:0012B484
+    73 0001:0012B487    78 0001:0012B488    79 0001:0012B4B4    80 0001:0012B4B9
+    82 0001:0012B4C8    83 0001:0012B502    84 0001:0012B50E    85 0001:0012B533
+    81 0001:0012B534    87 0001:0012B545    89 0001:0012B587
 
 Line numbers for dSpecUtils(dspec\dSpecUtils.pas) segment .text
 
-    33 0001:0012B0F8    34 0001:0012B0FE    35 0001:0012B10C    38 0001:0012B12F
-    40 0001:0012B136    50 0001:0012B140    51 0001:0012B142    52 0001:0012B147
-    53 0001:0012B149    55 0001:0012B14B    56 0001:0012B14E    58 0001:0012B151
-    59 0001:0012B152    60 0001:0012B157    61 0001:0012B159    62 0001:0012B15A
-    65 0001:0012B15C    67 0001:0012B15E    91 0001:0012B160    92 0001:0012B180
-    93 0001:0012B185    94 0001:0012B189    95 0001:0012B197    96 0001:0012B19B
-    97 0001:0012B1AA    98 0001:0012B1B4   100 0001:0012B1BD   103 0001:0012B1CE
-   105 0001:0012B1D5   110 0001:0012B1FC   111 0001:0012B21B   112 0001:0012B21D
-   113 0001:0012B24C   114 0001:0012B25D   112 0001:0012B25E   115 0001:0012B261
-   116 0001:0012B263   121 0001:0012B288   122 0001:0012B2A7   123 0001:0012B2A9
-   124 0001:0012B2D8   125 0001:0012B2FB   123 0001:0012B2FC   126 0001:0012B2FF
-   127 0001:0012B301   132 0001:0012B328   133 0001:0012B347   134 0001:0012B349
-   135 0001:0012B378   136 0001:0012B39B   134 0001:0012B39C   137 0001:0012B39F
-   138 0001:0012B3A1   145 0001:0012B3C8   146 0001:0012B3D3   147 0001:0012B3D5
-   148 0001:0012B3DD   149 0001:0012B3F3   150 0001:0012B3FE   151 0001:0012B403
-   152 0001:0012B407   154 0001:0012B410   155 0001:0012B413   157 0001:0012B41C
-   151 0001:0012B41F   159 0001:0012B423   160 0001:0012B425   165 0001:0012B430
-   166 0001:0012B45C   167 0001:0012B460   168 0001:0012B469   170 0001:0012B46B
-   171 0001:0012B46F   172 0001:0012B478   174 0001:0012B4A3
+    33 0001:0012B580    34 0001:0012B586    35 0001:0012B594    38 0001:0012B5B7
+    40 0001:0012B5BE    50 0001:0012B5C8    51 0001:0012B5CA    52 0001:0012B5CF
+    53 0001:0012B5D1    55 0001:0012B5D3    56 0001:0012B5D6    58 0001:0012B5D9
+    59 0001:0012B5DA    60 0001:0012B5DF    61 0001:0012B5E1    62 0001:0012B5E2
+    65 0001:0012B5E4    67 0001:0012B5E6    91 0001:0012B5E8    92 0001:0012B608
+    93 0001:0012B60D    94 0001:0012B611    95 0001:0012B61F    96 0001:0012B623
+    97 0001:0012B632    98 0001:0012B63C   100 0001:0012B645   103 0001:0012B656
+   105 0001:0012B65D   110 0001:0012B684   111 0001:0012B6A3   112 0001:0012B6A5
+   113 0001:0012B6D4   114 0001:0012B6E5   112 0001:0012B6E6   115 0001:0012B6E9
+   116 0001:0012B6EB   121 0001:0012B710   122 0001:0012B72F   123 0001:0012B731
+   124 0001:0012B760   125 0001:0012B783   123 0001:0012B784   126 0001:0012B787
+   127 0001:0012B789   132 0001:0012B7B0   133 0001:0012B7CF   134 0001:0012B7D1
+   135 0001:0012B800   136 0001:0012B823   134 0001:0012B824   137 0001:0012B827
+   138 0001:0012B829   145 0001:0012B850   146 0001:0012B85B   147 0001:0012B85D
+   148 0001:0012B865   149 0001:0012B87B   150 0001:0012B886   151 0001:0012B88B
+   152 0001:0012B88F   154 0001:0012B898   155 0001:0012B89B   157 0001:0012B8A4
+   151 0001:0012B8A7   159 0001:0012B8AB   160 0001:0012B8AD   165 0001:0012B8B8
+   166 0001:0012B8E4   167 0001:0012B8E8   168 0001:0012B8F1   170 0001:0012B8F3
+   171 0001:0012B8F7   172 0001:0012B900   174 0001:0012B92B
 
 Line numbers for BaseObjects(dspec\BaseObjects.pas) segment .text
 
-    59 0001:0012B89C    60 0001:0012B8A2    61 0001:0012B8A9    65 0001:0012B8AC
-    66 0001:0012B8B6    67 0001:0012B8BD    68 0001:0012B8C7    70 0001:0012B8CA
-    73 0001:0012B8D0    74 0001:0012B8E5    75 0001:0012B8F4    78 0001:0012B910
-    79 0001:0012B919    80 0001:0012B922    90 0001:0012B928    91 0001:0012B940
-    92 0001:0012B949    93 0001:0012B94C    94 0001:0012B957    97 0001:0012B978
-    98 0001:0012B986    99 0001:0012B98B   100 0001:0012B993   101 0001:0012B99F
-   104 0001:0012B9B0   105 0001:0012B9B9   106 0001:0012B9C0   108 0001:0012B9CE
-   109 0001:0012B9DF   111 0001:0012B9EA
+    59 0001:0012BD24    60 0001:0012BD2A    61 0001:0012BD31    65 0001:0012BD34
+    66 0001:0012BD3E    67 0001:0012BD45    68 0001:0012BD4F    70 0001:0012BD52
+    73 0001:0012BD58    74 0001:0012BD6D    75 0001:0012BD7C    78 0001:0012BD98
+    79 0001:0012BDA1    80 0001:0012BDAA    90 0001:0012BDB0    91 0001:0012BDC8
+    92 0001:0012BDD1    93 0001:0012BDD4    94 0001:0012BDDF    97 0001:0012BE00
+    98 0001:0012BE0E    99 0001:0012BE13   100 0001:0012BE1B   101 0001:0012BE27
+   104 0001:0012BE38   105 0001:0012BE41   106 0001:0012BE48   108 0001:0012BE56
+   109 0001:0012BE67   111 0001:0012BE72
 
 Line numbers for FailureMessages(dspec\FailureMessages.pas) segment .text
 
@@ -17437,191 +17467,192 @@ Line numbers for FailureMessages(dspec\FailureMessages.pas) segment .text
 
 Line numbers for Modifiers(dspec\Modifiers.pas) segment .text
 
-    76 0001:0012C1EC    77 0001:0012C21A    78 0001:0012C22A    79 0001:0012C234
-    80 0001:0012C23B    81 0001:0012C246    85 0001:0012C284    86 0001:0012C2A7
-    87 0001:0012C2D4    90 0001:0012C2F8    92 0001:0012C306    93 0001:0012C312
-    97 0001:0012C324    98 0001:0012C354    99 0001:0012C35A   100 0001:0012C362
-   101 0001:0012C366   102 0001:0012C370   103 0001:0012C380   104 0001:0012C38E
-   107 0001:0012C3B4   108 0001:0012C3BD   109 0001:0012C3C3   110 0001:0012C3CB
-   111 0001:0012C3D7   112 0001:0012C3E6   115 0001:0012C440   116 0001:0012C449
-   117 0001:0012C452   120 0001:0012C458   121 0001:0012C461   122 0001:0012C46A
-   127 0001:0012C470   128 0001:0012C494   129 0001:0012C498   131 0001:0012C4AA
-   132 0001:0012C4B5   133 0001:0012C4D9   136 0001:0012C580   137 0001:0012C589
-   138 0001:0012C592   141 0001:0012C598   142 0001:0012C5B5   143 0001:0012C5C1
-   144 0001:0012C5D9   150 0001:0012C610   151 0001:0012C63E   152 0001:0012C65A
-   153 0001:0012C66E   154 0001:0012C682   158 0001:0012C6C0   159 0001:0012C6E3
-   160 0001:0012C726   167 0001:0012C74C   168 0001:0012C778   169 0001:0012C785
-   170 0001:0012C7AB   171 0001:0012C7AF   173 0001:0012C7CE   174 0001:0012C7DE
-   175 0001:0012C7FC   181 0001:0012C8D0   182 0001:0012C8F5   183 0001:0012C90B
-   184 0001:0012C90F   186 0001:0012C93B   187 0001:0012C94B   188 0001:0012C96C
-   194 0001:0012CA44   195 0001:0012CA83   196 0001:0012CAA0   197 0001:0012CAAB
-   198 0001:0012CAB6   202 0001:0012CB04   203 0001:0012CB18   204 0001:0012CB51
-   210 0001:0012CB6C   211 0001:0012CB8D   212 0001:0012CB9D   213 0001:0012CBA5
-   215 0001:0012CBC4   216 0001:0012CBD4   217 0001:0012CBF5   219 0001:0012CCCF
+    76 0001:0012C674    77 0001:0012C6A2    78 0001:0012C6B2    79 0001:0012C6BC
+    80 0001:0012C6C3    81 0001:0012C6CE    85 0001:0012C70C    86 0001:0012C72F
+    87 0001:0012C75C    90 0001:0012C780    92 0001:0012C78E    93 0001:0012C79A
+    97 0001:0012C7AC    98 0001:0012C7DC    99 0001:0012C7E2   100 0001:0012C7EA
+   101 0001:0012C7EE   102 0001:0012C7F8   103 0001:0012C808   104 0001:0012C816
+   107 0001:0012C83C   108 0001:0012C845   109 0001:0012C84B   110 0001:0012C853
+   111 0001:0012C85F   112 0001:0012C86E   115 0001:0012C8C8   116 0001:0012C8D1
+   117 0001:0012C8DA   120 0001:0012C8E0   121 0001:0012C8E9   122 0001:0012C8F2
+   127 0001:0012C8F8   128 0001:0012C91C   129 0001:0012C920   131 0001:0012C932
+   132 0001:0012C93D   133 0001:0012C961   136 0001:0012CA08   137 0001:0012CA11
+   138 0001:0012CA1A   141 0001:0012CA20   142 0001:0012CA3D   143 0001:0012CA49
+   144 0001:0012CA61   150 0001:0012CA98   151 0001:0012CAC6   152 0001:0012CAE2
+   153 0001:0012CAF6   154 0001:0012CB0A   158 0001:0012CB48   159 0001:0012CB6B
+   160 0001:0012CBAE   167 0001:0012CBD4   168 0001:0012CC00   169 0001:0012CC0D
+   170 0001:0012CC33   171 0001:0012CC37   173 0001:0012CC56   174 0001:0012CC66
+   175 0001:0012CC84   181 0001:0012CD58   182 0001:0012CD7D   183 0001:0012CD93
+   184 0001:0012CD97   186 0001:0012CDC3   187 0001:0012CDD3   188 0001:0012CDF4
+   194 0001:0012CECC   195 0001:0012CF0B   196 0001:0012CF28   197 0001:0012CF33
+   198 0001:0012CF3E   202 0001:0012CF8C   203 0001:0012CFA0   204 0001:0012CFD9
+   210 0001:0012CFF4   211 0001:0012D015   212 0001:0012D025   213 0001:0012D02D
+   215 0001:0012D04C   216 0001:0012D05C   217 0001:0012D07D   219 0001:0012D157
 
 Line numbers for Specifiers(dspec\Specifiers.pas) segment .text
 
-   198 0001:0012F6B0   199 0001:0012F6CD   200 0001:0012F6ED   203 0001:0012F788
-   204 0001:0012F7B4   205 0001:0012F7CC   209 0001:0012F868   210 0001:0012F87D
-   211 0001:0012F88A   212 0001:0012F891   213 0001:0012F89C   216 0001:0012F8BC
-   217 0001:0012F8DF   218 0001:0012F912   221 0001:0012F938   222 0001:0012F944
-   223 0001:0012F96A   226 0001:0012F970   227 0001:0012F981   228 0001:0012F989
-   229 0001:0012F997   231 0001:0012F9AF   233 0001:0012F9C6   239 0001:0012F9D8
-   240 0001:0012FA0C   241 0001:0012FA16   242 0001:0012FA1C   243 0001:0012FA1F
-   245 0001:0012FA29   246 0001:0012FA2F   247 0001:0012FA47   248 0001:0012FA4B
-   249 0001:0012FA55   250 0001:0012FA69   251 0001:0012FA77   254 0001:0012FAB8
-   255 0001:0012FAC1   256 0001:0012FAD1   259 0001:0012FAD8   260 0001:0012FB04
-   261 0001:0012FB1C   264 0001:0012FBB8   265 0001:0012FBE9   266 0001:0012FC17
-   269 0001:0012FCB8   270 0001:0012FCD5   271 0001:0012FCF5   274 0001:0012FD88
-   275 0001:0012FDA5   276 0001:0012FDC5   279 0001:0012FE68   280 0001:0012FE85
-   281 0001:0012FEA5   284 0001:0012FF40   285 0001:0012FF6C   286 0001:0012FF84
-   289 0001:0013001C   290 0001:00130048   291 0001:00130060   294 0001:001300F8
-   295 0001:00130115   296 0001:00130125   297 0001:0013013D   300 0001:00130174
-   301 0001:00130191   302 0001:001301B1   307 0001:00130244   308 0001:0013025E
-   309 0001:0013027B   310 0001:001302A4   311 0001:001302CD   312 0001:001302D7
-   315 0001:001303A4   316 0001:001303C1   317 0001:001303E1   320 0001:0013047C
-   321 0001:00130499   322 0001:001304B9   325 0001:00130548   326 0001:00130565
-   327 0001:00130585   330 0001:00130614   331 0001:00130638   332 0001:00130665
-   335 0001:00130708   336 0001:00130725   337 0001:00130745   340 0001:001307E0
-   341 0001:001307FD   342 0001:0013081D   345 0001:001308B0   346 0001:001308CD
-   347 0001:001308ED   350 0001:00130980   351 0001:0013099D   352 0001:001309BD
-   355 0001:00130A50   356 0001:00130A74   357 0001:00130AA1   360 0001:00130B4C
-   361 0001:00130B69   362 0001:00130B89   365 0001:00130C1C   366 0001:00130C48
-   367 0001:00130C60   370 0001:00130CF8   371 0001:00130D24   372 0001:00130D3C
-   375 0001:00130DD0   376 0001:00130DED   377 0001:00130E0D   380 0001:00130EA0
-   381 0001:00130ECC   382 0001:00130EE4   385 0001:00130F84   386 0001:00130FB5
-   387 0001:00130FE3   390 0001:00131088   391 0001:001310AC   392 0001:001310D9
-   395 0001:00131188   396 0001:001311B4   397 0001:001311CC   400 0001:00131268
-   401 0001:00131286   402 0001:00131295   403 0001:001312AD   406 0001:001312E8
-   407 0001:00131305   408 0001:00131325   415 0001:001313BC   416 0001:001313ED
-   417 0001:0013141C   418 0001:0013143E   423 0001:001314E4   424 0001:00131515
-   425 0001:00131544   426 0001:00131566   432 0001:0013160C   433 0001:0013162D
-   434 0001:0013163A   435 0001:00131657   436 0001:00131678   439 0001:00131718
-   440 0001:00131730   441 0001:00131746   442 0001:00131749   447 0001:00131768
-   448 0001:001317A5   449 0001:001317D4   450 0001:00131803   456 0001:001318A0
-   457 0001:001318C3   458 0001:001318D9   459 0001:001318F3   460 0001:00131917
-   465 0001:001319A8   466 0001:001319E5   467 0001:00131A14   468 0001:00131A43
-   473 0001:00131B00   474 0001:00131B3D   475 0001:00131B6C   476 0001:00131B9B
-   482 0001:00131C50   483 0001:00131C73   484 0001:00131C7B   485 0001:00131C95
-   486 0001:00131CB9   492 0001:00131D5C   493 0001:00131D7F   494 0001:00131D95
-   495 0001:00131DAF   496 0001:00131DD3   502 0001:00131E5C   503 0001:00131E7F
-   504 0001:00131E87   505 0001:00131EA1   506 0001:00131EC5   512 0001:00131F68
-   513 0001:00131F89   514 0001:00131F93   515 0001:00131FB0   516 0001:00131FD1
-   521 0001:00132064   522 0001:00132084   523 0001:001320A1   524 0001:001320C4
-   529 0001:00132154   530 0001:0013216D   531 0001:00132183   532 0001:00132186
-   537 0001:001321A8   538 0001:001321CC   539 0001:00132210   540 0001:00132233
-   545 0001:001322D4   546 0001:001322F8   547 0001:0013233C   548 0001:0013235F
-   553 0001:00132400   554 0001:00132443   555 0001:0013248D   556 0001:001324BB
-   563 0001:00132564   564 0001:00132595   565 0001:001325CB   566 0001:001325D7
-   567 0001:001325FF   572 0001:001326A4   573 0001:001326D5   574 0001:0013270B
-   575 0001:00132717   576 0001:0013273F   579 0001:001327E4   580 0001:001327F9
-   581 0001:0013280C   582 0001:00132820   586 0001:00132840   587 0001:00132863
-   588 0001:001328AC   593 0001:001328D0   594 0001:0013290D   595 0001:00132943
-   596 0001:0013294F   597 0001:0013297C   602 0001:00132A18   603 0001:00132A49
-   604 0001:00132A7F   605 0001:00132A8B   606 0001:00132AB3   611 0001:00132B68
-   612 0001:00132B99   613 0001:00132BCF   614 0001:00132BDB   615 0001:00132C03
-   621 0001:00132CB0   622 0001:00132CD1   623 0001:00132CE1   624 0001:00132CFE
-   625 0001:00132D1F   631 0001:00132DC4   632 0001:00132DE5   633 0001:00132DF5
-   634 0001:00132E12   635 0001:00132E33   640 0001:00132ED8   641 0001:00132EF6
-   642 0001:00132F13   643 0001:00132F42   650 0001:00132FDC   651 0001:00132FFC
-   652 0001:00133019   653 0001:00133042   658 0001:001330D4   659 0001:001330F4
-   660 0001:00133111   661 0001:0013313A   667 0001:001331EC   668 0001:00133223
-   669 0001:0013323E   670 0001:00133273   671 0001:0013327E   672 0001:00133297
-   675 0001:00133344   676 0001:00133373   677 0001:00133389   678 0001:00133394
-   682 0001:001333D0   683 0001:001333F3   684 0001:0013342E   689 0001:00133454
-   690 0001:00133474   691 0001:00133491   692 0001:001334B4   698 0001:00133544
-   699 0001:0013358E   700 0001:001335E7   701 0001:0013361C   702 0001:00133627
-   703 0001:00133657   708 0001:0013371C   709 0001:00133759   710 0001:00133783
-   711 0001:0013378E   712 0001:001337BB   717 0001:00133858   718 0001:00133878
-   719 0001:00133895   720 0001:001338BE   726 0001:00133958   727 0001:00133995
-   728 0001:001339BF   729 0001:001339F4   730 0001:001339FF   731 0001:00133A2C
-   736 0001:00133AF0   737 0001:00133B0D   738 0001:00133B35   741 0001:00133BD4
-   742 0001:00133BEC   743 0001:00133C02   744 0001:00133C05   747 0001:00133C24
-   748 0001:00133C41   749 0001:00133C66   754 0001:00133CF4   755 0001:00133D1E
-   756 0001:00133D24   758 0001:00133D4B   759 0001:00133D8C   761 0001:00133DC3
-   768 0001:00133F14   769 0001:00133F45   770 0001:00133F4C   772 0001:00133F76
-   773 0001:00133F8C   774 0001:00133F94   775 0001:00133FD6   777 0001:00134005
-   782 0001:0013416C   783 0001:00134197   784 0001:0013419D   786 0001:001341C4
-   787 0001:00134205   789 0001:0013423F   796 0001:001343C0   797 0001:001343F1
-   798 0001:001343F8   800 0001:00134422   801 0001:00134438   802 0001:00134440
-   803 0001:00134482   805 0001:001344B1   810 0001:00134620   811 0001:0013463D
-   812 0001:00134665   815 0001:00134704   816 0001:0013471C   817 0001:00134732
-   818 0001:00134735   821 0001:00134754   822 0001:00134771   823 0001:00134796
-   828 0001:00134824   829 0001:0013483C   830 0001:00134852   831 0001:00134855
-   836 0001:00134874   837 0001:0013489F   838 0001:001348DE   839 0001:0013490D
-   844 0001:001349C8   845 0001:001349F3   846 0001:00134A32   847 0001:00134A6A
-   854 0001:00134B30   855 0001:00134B67   856 0001:00134BBA   857 0001:00134BE0
-   862 0001:00134C8C   863 0001:00134CC3   864 0001:00134D16   865 0001:00134D3C
-   868 0001:00134DE8   869 0001:00134DFD   870 0001:00134E10   871 0001:00134E1C
-   876 0001:00134E3C   877 0001:00134E7F   878 0001:00134ED2   879 0001:00134EFF
-   884 0001:00134FA0   885 0001:00134FD7   886 0001:0013502A   887 0001:00135050
-   892 0001:0013510C   893 0001:00135143   894 0001:00135196   895 0001:001351BC
-   900 0001:00135270   901 0001:0013528D   902 0001:001352B5   906 0001:00135358
-   907 0001:00135387   908 0001:0013539D   909 0001:001353A8   912 0001:001353E4
-   913 0001:001353F2   914 0001:001353FA   915 0001:00135406   922 0001:00135418
-   923 0001:00135443   924 0001:00135449   926 0001:00135476   927 0001:0013547E
-   928 0001:00135482   929 0001:0013548C   930 0001:001354B3   932 0001:001354E8
-   934 0001:00135518   937 0001:001356F0   938 0001:0013570D   939 0001:00135732
-   946 0001:001357C0   947 0001:001357F2   948 0001:001357F8   950 0001:0013581F
-   951 0001:00135839   952 0001:00135841   953 0001:00135869   955 0001:00135898
-   957 0001:001359F7
+   198 0001:0012FB38   199 0001:0012FB55   200 0001:0012FB75   203 0001:0012FC10
+   204 0001:0012FC3C   205 0001:0012FC54   209 0001:0012FCF0   210 0001:0012FD05
+   211 0001:0012FD12   212 0001:0012FD19   213 0001:0012FD24   216 0001:0012FD44
+   217 0001:0012FD67   218 0001:0012FD9A   221 0001:0012FDC0   222 0001:0012FDCC
+   223 0001:0012FDF2   226 0001:0012FDF8   227 0001:0012FE09   228 0001:0012FE11
+   229 0001:0012FE1F   231 0001:0012FE37   233 0001:0012FE4E   239 0001:0012FE60
+   240 0001:0012FE94   241 0001:0012FE9E   242 0001:0012FEA4   243 0001:0012FEA7
+   245 0001:0012FEB1   246 0001:0012FEB7   247 0001:0012FECF   248 0001:0012FED3
+   249 0001:0012FEDD   250 0001:0012FEF1   251 0001:0012FEFF   254 0001:0012FF40
+   255 0001:0012FF49   256 0001:0012FF59   259 0001:0012FF60   260 0001:0012FF8C
+   261 0001:0012FFA4   264 0001:00130040   265 0001:00130071   266 0001:0013009F
+   269 0001:00130140   270 0001:0013015D   271 0001:0013017D   274 0001:00130210
+   275 0001:0013022D   276 0001:0013024D   279 0001:001302F0   280 0001:0013030D
+   281 0001:0013032D   284 0001:001303C8   285 0001:001303F4   286 0001:0013040C
+   289 0001:001304A4   290 0001:001304D0   291 0001:001304E8   294 0001:00130580
+   295 0001:0013059D   296 0001:001305AD   297 0001:001305C5   300 0001:001305FC
+   301 0001:00130619   302 0001:00130639   307 0001:001306CC   308 0001:001306E6
+   309 0001:00130703   310 0001:0013072C   311 0001:00130755   312 0001:0013075F
+   315 0001:0013082C   316 0001:00130849   317 0001:00130869   320 0001:00130904
+   321 0001:00130921   322 0001:00130941   325 0001:001309D0   326 0001:001309ED
+   327 0001:00130A0D   330 0001:00130A9C   331 0001:00130AC0   332 0001:00130AED
+   335 0001:00130B90   336 0001:00130BAD   337 0001:00130BCD   340 0001:00130C68
+   341 0001:00130C85   342 0001:00130CA5   345 0001:00130D38   346 0001:00130D55
+   347 0001:00130D75   350 0001:00130E08   351 0001:00130E25   352 0001:00130E45
+   355 0001:00130ED8   356 0001:00130EFC   357 0001:00130F29   360 0001:00130FD4
+   361 0001:00130FF1   362 0001:00131011   365 0001:001310A4   366 0001:001310D0
+   367 0001:001310E8   370 0001:00131180   371 0001:001311AC   372 0001:001311C4
+   375 0001:00131258   376 0001:00131275   377 0001:00131295   380 0001:00131328
+   381 0001:00131354   382 0001:0013136C   385 0001:0013140C   386 0001:0013143D
+   387 0001:0013146B   390 0001:00131510   391 0001:00131534   392 0001:00131561
+   395 0001:00131610   396 0001:0013163C   397 0001:00131654   400 0001:001316F0
+   401 0001:0013170E   402 0001:0013171D   403 0001:00131735   406 0001:00131770
+   407 0001:0013178D   408 0001:001317AD   415 0001:00131844   416 0001:00131875
+   417 0001:001318A4   418 0001:001318C6   423 0001:0013196C   424 0001:0013199D
+   425 0001:001319CC   426 0001:001319EE   432 0001:00131A94   433 0001:00131AB5
+   434 0001:00131AC2   435 0001:00131ADF   436 0001:00131B00   439 0001:00131BA0
+   440 0001:00131BB8   441 0001:00131BCE   442 0001:00131BD1   447 0001:00131BF0
+   448 0001:00131C2D   449 0001:00131C5C   450 0001:00131C8B   456 0001:00131D28
+   457 0001:00131D4B   458 0001:00131D61   459 0001:00131D7B   460 0001:00131D9F
+   465 0001:00131E30   466 0001:00131E6D   467 0001:00131E9C   468 0001:00131ECB
+   473 0001:00131F88   474 0001:00131FC5   475 0001:00131FF4   476 0001:00132023
+   482 0001:001320D8   483 0001:001320FB   484 0001:00132103   485 0001:0013211D
+   486 0001:00132141   492 0001:001321E4   493 0001:00132207   494 0001:0013221D
+   495 0001:00132237   496 0001:0013225B   502 0001:001322E4   503 0001:00132307
+   504 0001:0013230F   505 0001:00132329   506 0001:0013234D   512 0001:001323F0
+   513 0001:00132411   514 0001:0013241B   515 0001:00132438   516 0001:00132459
+   521 0001:001324EC   522 0001:0013250C   523 0001:00132529   524 0001:0013254C
+   529 0001:001325DC   530 0001:001325F5   531 0001:0013260B   532 0001:0013260E
+   537 0001:00132630   538 0001:00132654   539 0001:00132698   540 0001:001326BB
+   545 0001:0013275C   546 0001:00132780   547 0001:001327C4   548 0001:001327E7
+   553 0001:00132888   554 0001:001328CB   555 0001:00132915   556 0001:00132943
+   563 0001:001329EC   564 0001:00132A1D   565 0001:00132A53   566 0001:00132A5F
+   567 0001:00132A87   572 0001:00132B2C   573 0001:00132B5D   574 0001:00132B93
+   575 0001:00132B9F   576 0001:00132BC7   579 0001:00132C6C   580 0001:00132C81
+   581 0001:00132C94   582 0001:00132CA8   586 0001:00132CC8   587 0001:00132CEB
+   588 0001:00132D34   593 0001:00132D58   594 0001:00132D95   595 0001:00132DCB
+   596 0001:00132DD7   597 0001:00132E04   602 0001:00132EA0   603 0001:00132ED1
+   604 0001:00132F07   605 0001:00132F13   606 0001:00132F3B   611 0001:00132FF0
+   612 0001:00133021   613 0001:00133057   614 0001:00133063   615 0001:0013308B
+   621 0001:00133138   622 0001:00133159   623 0001:00133169   624 0001:00133186
+   625 0001:001331A7   631 0001:0013324C   632 0001:0013326D   633 0001:0013327D
+   634 0001:0013329A   635 0001:001332BB   640 0001:00133360   641 0001:0013337E
+   642 0001:0013339B   643 0001:001333CA   650 0001:00133464   651 0001:00133484
+   652 0001:001334A1   653 0001:001334CA   658 0001:0013355C   659 0001:0013357C
+   660 0001:00133599   661 0001:001335C2   667 0001:00133674   668 0001:001336AB
+   669 0001:001336C6   670 0001:001336FB   671 0001:00133706   672 0001:0013371F
+   675 0001:001337CC   676 0001:001337FB   677 0001:00133811   678 0001:0013381C
+   682 0001:00133858   683 0001:0013387B   684 0001:001338B6   689 0001:001338DC
+   690 0001:001338FC   691 0001:00133919   692 0001:0013393C   698 0001:001339CC
+   699 0001:00133A16   700 0001:00133A6F   701 0001:00133AA4   702 0001:00133AAF
+   703 0001:00133ADF   708 0001:00133BA4   709 0001:00133BE1   710 0001:00133C0B
+   711 0001:00133C16   712 0001:00133C43   717 0001:00133CE0   718 0001:00133D00
+   719 0001:00133D1D   720 0001:00133D46   726 0001:00133DE0   727 0001:00133E1D
+   728 0001:00133E47   729 0001:00133E7C   730 0001:00133E87   731 0001:00133EB4
+   736 0001:00133F78   737 0001:00133F95   738 0001:00133FBD   741 0001:0013405C
+   742 0001:00134074   743 0001:0013408A   744 0001:0013408D   747 0001:001340AC
+   748 0001:001340C9   749 0001:001340EE   754 0001:0013417C   755 0001:001341A6
+   756 0001:001341AC   758 0001:001341D3   759 0001:00134214   761 0001:0013424B
+   768 0001:0013439C   769 0001:001343CD   770 0001:001343D4   772 0001:001343FE
+   773 0001:00134414   774 0001:0013441C   775 0001:0013445E   777 0001:0013448D
+   782 0001:001345F4   783 0001:0013461F   784 0001:00134625   786 0001:0013464C
+   787 0001:0013468D   789 0001:001346C7   796 0001:00134848   797 0001:00134879
+   798 0001:00134880   800 0001:001348AA   801 0001:001348C0   802 0001:001348C8
+   803 0001:0013490A   805 0001:00134939   810 0001:00134AA8   811 0001:00134AC5
+   812 0001:00134AED   815 0001:00134B8C   816 0001:00134BA4   817 0001:00134BBA
+   818 0001:00134BBD   821 0001:00134BDC   822 0001:00134BF9   823 0001:00134C1E
+   828 0001:00134CAC   829 0001:00134CC4   830 0001:00134CDA   831 0001:00134CDD
+   836 0001:00134CFC   837 0001:00134D27   838 0001:00134D66   839 0001:00134D95
+   844 0001:00134E50   845 0001:00134E7B   846 0001:00134EBA   847 0001:00134EF2
+   854 0001:00134FB8   855 0001:00134FEF   856 0001:00135042   857 0001:00135068
+   862 0001:00135114   863 0001:0013514B   864 0001:0013519E   865 0001:001351C4
+   868 0001:00135270   869 0001:00135285   870 0001:00135298   871 0001:001352A4
+   876 0001:001352C4   877 0001:00135307   878 0001:0013535A   879 0001:00135387
+   884 0001:00135428   885 0001:0013545F   886 0001:001354B2   887 0001:001354D8
+   892 0001:00135594   893 0001:001355CB   894 0001:0013561E   895 0001:00135644
+   900 0001:001356F8   901 0001:00135715   902 0001:0013573D   906 0001:001357E0
+   907 0001:0013580F   908 0001:00135825   909 0001:00135830   912 0001:0013586C
+   913 0001:0013587A   914 0001:00135882   915 0001:0013588E   922 0001:001358A0
+   923 0001:001358CB   924 0001:001358D1   926 0001:001358FE   927 0001:00135906
+   928 0001:0013590A   929 0001:00135914   930 0001:0013593B   932 0001:00135970
+   934 0001:001359A0   937 0001:00135B78   938 0001:00135B95   939 0001:00135BBA
+   946 0001:00135C48   947 0001:00135C7A   948 0001:00135C80   950 0001:00135CA7
+   951 0001:00135CC1   952 0001:00135CC9   953 0001:00135CF1   955 0001:00135D20
+   957 0001:00135E7F
 
 Line numbers for dSpec(dspec\dSpec.pas) segment .text
 
-    80 0001:00136198    81 0001:001361B5    82 0001:001361BD    87 0001:001361E0
-    88 0001:001361F8    89 0001:00136201    90 0001:00136204    93 0001:00136220
-    94 0001:0013622E    95 0001:00136233    96 0001:0013623F    99 0001:00136250
-   100 0001:00136274   101 0001:0013629E   102 0001:001362C2   105 0001:001362F0
-   106 0001:00136314   107 0001:0013633E   108 0001:00136360   111 0001:00136390
-   112 0001:001363B4   113 0001:001363E7   114 0001:0013640A   117 0001:00136438
-   118 0001:00136466   119 0001:00136491   120 0001:001364B4   123 0001:001364E8
-   124 0001:00136504   125 0001:0013652E   126 0001:00136532   128 0001:0013653E
-   129 0001:00136542   131 0001:00136559   132 0001:00136566   135 0001:001365A8
-   136 0001:001365B4   137 0001:001365DE   138 0001:001365E2   140 0001:001365EE
-   141 0001:001365FB   144 0001:00136620   145 0001:0013663C   146 0001:00136666
-   147 0001:0013666A   149 0001:00136676   150 0001:0013668B   153 0001:001366B0
-   154 0001:001366D4   155 0001:00136702   156 0001:00136725   159 0001:00136754
-   160 0001:00136782   161 0001:001367AD   162 0001:001367D0   167 0001:00136808
-   168 0001:0013680B   169 0001:00136813   172 0001:00136818   173 0001:0013684D
-   174 0001:00136859   175 0001:00136871   176 0001:00136880   177 0001:0013688A
-   178 0001:001368A2   179 0001:001368B6   182 0001:00136904   183 0001:00136912
-   184 0001:00136922   185 0001:00136932   186 0001:0013693B   187 0001:00136947
-   190 0001:00136958   191 0001:00136998   192 0001:001369AE   193 0001:001369C3
-   194 0001:001369F6   197 0001:00136A60   198 0001:00136A69   199 0001:00136A6D
-   200 0001:00136A76   203 0001:00136A7C   204 0001:00136A85   205 0001:00136A8F
-   208 0001:00136A94   209 0001:00136A9D   210 0001:00136AC2   213 0001:00136AC8
-   214 0001:00136AD1   215 0001:00136ADB   218 0001:00136AE0   219 0001:00136AFB
-   220 0001:00136B21   221 0001:00136B2E   222 0001:00136B46   225 0001:00136B70
-   226 0001:00136B73   227 0001:00136B80   228 0001:00136B8A   233 0001:00136B8C
-   234 0001:00136B95   235 0001:00136BA3   236 0001:00136BB7   235 0001:00136BFC
-   238 0001:00136C0C   240 0001:00136C1F   243 0001:00136C24   244 0001:00136C47
-   245 0001:00136C4D   246 0001:00136C65   247 0001:00136C8A   250 0001:00136CF0
-   251 0001:00136CF6   252 0001:00136CF9   253 0001:00136D00   254 0001:00136D05
-   257 0001:00136D08   258 0001:00136D11   259 0001:00136D1B   260 0001:00136D21
-   261 0001:00136D47   264 0001:00136D4C   265 0001:00136D55   266 0001:00136D5F
-   268 0001:00136D6A
+    80 0001:00136620    81 0001:0013663D    82 0001:00136645    87 0001:00136668
+    88 0001:00136680    89 0001:00136689    90 0001:0013668C    93 0001:001366A8
+    94 0001:001366B6    95 0001:001366BB    96 0001:001366C7    99 0001:001366D8
+   100 0001:001366FC   101 0001:00136726   102 0001:0013674A   105 0001:00136778
+   106 0001:0013679C   107 0001:001367C6   108 0001:001367E8   111 0001:00136818
+   112 0001:0013683C   113 0001:0013686F   114 0001:00136892   117 0001:001368C0
+   118 0001:001368EE   119 0001:00136919   120 0001:0013693C   123 0001:00136970
+   124 0001:0013698C   125 0001:001369B6   126 0001:001369BA   128 0001:001369C6
+   129 0001:001369CA   131 0001:001369E1   132 0001:001369EE   135 0001:00136A30
+   136 0001:00136A3C   137 0001:00136A66   138 0001:00136A6A   140 0001:00136A76
+   141 0001:00136A83   144 0001:00136AA8   145 0001:00136AC4   146 0001:00136AEE
+   147 0001:00136AF2   149 0001:00136AFE   150 0001:00136B13   153 0001:00136B38
+   154 0001:00136B5C   155 0001:00136B8A   156 0001:00136BAD   159 0001:00136BDC
+   160 0001:00136C0A   161 0001:00136C35   162 0001:00136C58   167 0001:00136C90
+   168 0001:00136C93   169 0001:00136C9B   172 0001:00136CA0   173 0001:00136CD5
+   174 0001:00136CE1   175 0001:00136CF9   176 0001:00136D08   177 0001:00136D12
+   178 0001:00136D2A   179 0001:00136D3E   182 0001:00136D8C   183 0001:00136D9A
+   184 0001:00136DAA   185 0001:00136DBA   186 0001:00136DC3   187 0001:00136DCF
+   190 0001:00136DE0   191 0001:00136E20   192 0001:00136E36   193 0001:00136E4B
+   194 0001:00136E7E   197 0001:00136EE8   198 0001:00136EF1   199 0001:00136EF5
+   200 0001:00136EFE   203 0001:00136F04   204 0001:00136F0D   205 0001:00136F17
+   208 0001:00136F1C   209 0001:00136F25   210 0001:00136F4A   213 0001:00136F50
+   214 0001:00136F59   215 0001:00136F63   218 0001:00136F68   219 0001:00136F83
+   220 0001:00136FA9   221 0001:00136FB6   222 0001:00136FCE   225 0001:00136FF8
+   226 0001:00136FFB   227 0001:00137008   228 0001:00137012   233 0001:00137014
+   234 0001:0013701D   235 0001:0013702B   236 0001:0013703F   235 0001:00137084
+   238 0001:00137094   240 0001:001370A7   243 0001:001370AC   244 0001:001370CF
+   245 0001:001370D5   246 0001:001370ED   247 0001:00137112   250 0001:00137178
+   251 0001:0013717E   252 0001:00137181   253 0001:00137188   254 0001:0013718D
+   257 0001:00137190   258 0001:00137199   259 0001:001371A3   260 0001:001371A9
+   261 0001:001371CF   264 0001:001371D4   265 0001:001371DD   266 0001:001371E7
+   268 0001:001371F2
 
 Line numbers for TestConsts(TestConsts.pas) segment .text
 
-    13 0001:00000000
+    15 0001:00000000
 
 Line numbers for TestFeatureParser(TestFeatureParser.pas) segment .text
 
-    33 0001:00137268    34 0001:0013728A    35 0001:00137298    36 0001:001372DC
-    37 0001:00137329    40 0001:001373D8    41 0001:001373F3    42 0001:00137413
-    43 0001:00137456    46 0001:00137490    47 0001:00137496    48 0001:001374A1
-    53 0001:001374A4    54 0001:001374C0    55 0001:001374CE    56 0001:0013750B
-    57 0001:00137513    60 0001:00137560    61 0001:00137596    62 0001:001375A2
-    63 0001:001375B6
+    34 0001:00137784    35 0001:001377A5    36 0001:001377B3    37 0001:00137800
+    42 0001:0013784C    43 0001:0013786D    44 0001:0013787B    45 0001:001378BF
+    46 0001:0013790E    49 0001:001379C0    50 0001:001379DB    51 0001:001379FB
+    52 0001:00137A3E    55 0001:00137A78    56 0001:00137A7E    57 0001:00137A89
+    62 0001:00137A8C    63 0001:00137AA8    64 0001:00137AB6    65 0001:00137AF3
+    66 0001:00137AFB    69 0001:00137B48    70 0001:00137B7E    71 0001:00137B8A
+    72 0001:00137B9E
 
 Line numbers for TestFeatureParser(TestFeatureParser.pas) segment .itext
 
-    65 0002:00000C84    66 0002:00000CA0    67 0002:00000CB5
+    74 0002:00000C84    75 0002:00000CA0    76 0002:00000CB5
 
 Line numbers for dCucumberTests(dCucumberTests.dpr) segment .itext
 
-    42 0002:00000CD8    43 0002:00000CE8    44 0002:00000CF4    45 0002:00000CFE
-    46 0002:00000D05    48 0002:00000D0C    49 0002:00000D11
+    44 0002:00000CD8    45 0002:00000CE8    46 0002:00000CF4    47 0002:00000CFE
+    48 0002:00000D05    50 0002:00000D0C    51 0002:00000D11
 
 Bound resource files
 

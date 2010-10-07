@@ -10,6 +10,7 @@
 
 #define TestConsts_FeatureDir 65232
 #define TestConsts_FeatureCenarioSimples 65233
+#define TestConsts_DescricaoFeatureTeste 65234
 #define Consts_SSeparator 65248
 #define Consts_SNoGetItemEventHandler 65249
 #define Consts_SWindowsVistaRequired 65250
@@ -302,6 +303,7 @@ STRINGTABLE
 BEGIN
 	TestConsts_FeatureDir,	"..\\Features\\"
 	TestConsts_FeatureCenarioSimples,	"cenario_simples.feature"
+	TestConsts_DescricaoFeatureTeste,	"  Como Desenvolvedor\r\n  Gostaria que o teste abaixo fosse executado\r\n  Para que minhas estórias ganhem vida!"
 	Consts_SSeparator,	"Separator"
 	Consts_SNoGetItemEventHandler,	"No OnGetItem event handler assigned"
 	Consts_SWindowsVistaRequired,	"%s requires Windows Vista or later"

@@ -69,6 +69,13 @@
 			<DCCReference Include="..\pcre\pcre.pas"/>
 			<DCCReference Include="..\source\ScenarioIntf.pas"/>
 			<DCCReference Include="..\source\Scenario.pas"/>
+			<DCCReference Include="..\source\StepIntf.pas"/>
+			<DCCReference Include="..\source\Step.pas"/>
+			<DCCReference Include="TestFeature.pas"/>
+			<DCCReference Include="TestBaseClasses.pas"/>
+			<DCCReference Include="TestScenario.pas"/>
+			<DCCReference Include="..\source\dCucuberListIntf.pas"/>
+			<DCCReference Include="..\source\dCucuberList.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

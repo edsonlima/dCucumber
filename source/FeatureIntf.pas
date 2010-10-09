@@ -14,6 +14,8 @@ type
     procedure SetDescricao(const Value: string);
     procedure SetTitulo(const Value: string);
 
+    function Valid: Boolean;
+
     property Scenarios: IInterfaceList read GetScenarios;
     property Descricao: string read GetDescricao write SetDescricao;
     property Titulo: string read GetTitulo write SetTitulo;

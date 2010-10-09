@@ -18,6 +18,7 @@ type
     procedure SetTitulo(const Value: string);
   public
     constructor Create;
+    function Valid: Boolean;
     property Scenarios: IInterfaceList read GetScenarios;
     property Descricao: string read GetDescricao write SetDescricao;
     property Titulo: string read GetTitulo write SetTitulo;
@@ -53,6 +54,11 @@ end;
 procedure TFeature.SetTitulo(const Value: string);
 begin
   FTitulo := Value;
+end;
+
+function TFeature.Valid: Boolean;
+begin
+  Result := FScenarios.Count > 0;
 end;
 
 end.

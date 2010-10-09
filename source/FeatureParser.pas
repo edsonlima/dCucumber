@@ -24,7 +24,7 @@ type
 implementation
 
 uses
-  Feature, PerlRegEx, SysUtils, Types, TypeUtils, Scenario;
+  Feature, PerlRegEx, SysUtils, Types, TypeUtils, Scenario, ScenarioIntf, StepIntf, Step;
 
 destructor TFeatureParser.Destroy;
 begin
@@ -56,9 +56,12 @@ end;
 function TFeatureParser.Parse: IFeature;
 var
   LFeatureLine: string;
+  LMatchData: IMatchData;
   LRegex: TPerlRegEx;
   LSection: IXString;
   LPrevSection: string;
+  LScenario: IScenario;
+  LStep: IStep;
 begin
   Result := TFeature.Create;
 
@@ -79,7 +82,7 @@ begin
       end;
 
       // Encontrando os cenários
-      LRegex.RegEx := '^  Cenário:';
+      LRegex.RegEx := '^(.*)Cenário: ';
       if LRegex.Match then
       begin
         // Aproveita a passada e adiciona a descricao da feature
@@ -88,9 +91,18 @@ begin
           Result.Descricao := LSection.Ate(LSection.Length - 3).Value;
           LSection.Clear;
         end;
-        Result.Scenarios.Add(TScenario.Create);
+        LScenario := TScenario.Create;
+        LScenario.Titulo := LRegex.SubjectRight;
+        Result.Scenarios.Add(LScenario);
         LPrevSection := LRegex.MatchedText;
         Continue;
+      end;
+      LMatchData := S(LFeatureLine).MatchDataFor('^(.*)(Dado |Quando |Então |E |Mas )');
+      if LMatchData <> nil then
+      begin
+        LStep := TStep.Create;
+        LStep.Descricao := LMatchData.MatchedData.TrimLeft.Mais(LMatchData.PostMatch).Value;
+        (Result.Scenarios.Last as IScenario).Steps.Add(LStep);
       end;
 
       if not SX(LFeatureLine).Trim.IsEmpty then

@@ -18,6 +18,8 @@ type
 
   TProcedureString = procedure(Valor: string) of object;
 
+  IMatchData = interface;
+
   IString = interface
     ['{09850B99-B6B6-4A59-9054-A2866B5C83F4}']
     function AdicionarAntesDaString(AValue: string; Repetir: Integer = 1): string;
@@ -30,7 +32,8 @@ type
     function Vezes(AValue: Integer): string;
     function Menos(AValue: string): string; overload;
     function Menos(AValues: array of string): string; overload;
-    function Mais(AValue: string): string;
+    function Mais(AValue: string): string; overload;
+    function Mais(const AValue: IString): string; overload;
     function Centralizado(ATamanho: Integer = 38): string;
     function AlinhadoADireita(ATamanho: Integer = 38): string;
     function AlinhadoAEsquerda(ATamanho: Integer = 38): string;
@@ -108,6 +111,8 @@ type
     property Value: string read GetValue write SetValue;
     property Vazia: Boolean read GetVazia;
     procedure Clear;
+    function Match(ARegex: UTF8string): Boolean;
+    function MatchDataFor(ARegex: string): IMatchData;
   end;
 
   TString = class(TInterfacedObject, IString)
@@ -128,7 +133,8 @@ type
     function Vezes(AValue: Integer): string;
     function Menos(AValue: string): string; overload;
     function Menos(AValues: array of string): string; overload;
-    function Mais(AValue: string): string;
+    function Mais(AValue: string): string; overload;
+    function Mais(const AValue: IString): string; overload;
     function Centralizado(ATamanho: Integer = 38): string;
     function AlinhadoADireita(ATamanho: Integer = 38): string;
     function AlinhadoAEsquerda(ATamanho: Integer = 38): string;
@@ -203,6 +209,8 @@ type
     property Chave[ANome: string]: string read GetChave write SetChave;
     constructor Create(AValue: string);
     function Contem(AValues: array of string): Boolean; overload;
+    function Match(ARegex: UTF8string): Boolean;
+    function MatchDataFor(ARegex: string): IMatchData;
   end;
 
   IXString = interface
@@ -215,7 +223,8 @@ type
     function Vezes(AValue: Integer): IXString;
     function Menos(AValue: string): IXString; overload;
     function Menos(AValues: array of string): IXString; overload;
-    function Mais(AValue: string): IXString;
+    function Mais(AValue: string): IXString; overload;
+    function Mais(const AValue: IXString): IXString; overload;
     function Centralizado(ATamanho: Integer = 38): IXString;
     function AlinhadoADireita(ATamanho: Integer = 38): IXString;
     function AlinhadoAEsquerda(ATamanho: Integer = 38): IXString;
@@ -282,10 +291,12 @@ type
     function IgualA(AValor: IString): Boolean; overload;
     function IgualA(AValor: IXString): Boolean; overload;
     function IsEmpty: Boolean;
+    function Match(ARegex: UTF8string): Boolean;
     procedure Clear;
 
     property Get[De, Ate: Integer]: IXString read GetAt write SetAt; default;
     property Value: string read GetValue write SetValue;
+    function MatchDataFor(ARegex: string): IMatchData;
   end;
 
   TXString = class(TInterfacedObject, IXString)
@@ -302,7 +313,8 @@ type
     function Vezes(AValue: Integer): IXString;
     function Menos(AValue: string): IXString; overload;
     function Menos(AValues: array of string): IXString; overload;
-    function Mais(AValue: string): IXString;
+    function Mais(AValue: string): IXString; overload;
+    function Mais(const AValue: IXString): IXString; overload;
     function Centralizado(ATamanho: Integer = 38): IXString;
     function AlinhadoADireita(ATamanho: Integer = 38): IXString;
     function AlinhadoAEsquerda(ATamanho: Integer = 38): IXString;
@@ -369,12 +381,33 @@ type
     function IgualA(AValor: IString): Boolean; overload;
     function IgualA(AValor: IXString): Boolean; overload;
     procedure Clear;
+    function Match(ARegex: UTF8String): Boolean;
+    function MatchDataFor(ARegex: string): IMatchData;
 
     property Value: string read GetValue write SetValue;
     property Get[De, Ate: Integer]: IXString read GetAt write SetAt; default;
     constructor Create(AValue: string);
     function AsInteger: Integer;
     function IsEmpty: Boolean;
+  end;
+
+  IInteger = interface;
+
+  IMatchData = interface(IInterface)
+  ['{65DA766B-1565-489F-9389-9D5968CDE346}']
+    function GetMatchedData: IXString;
+    function GetPostMatch: IXString;
+    function GetPreMatch: IXString;
+    function GetSize: IInteger;
+    procedure SetMatchedData(const Value: IXString);
+    procedure SetPostMatch(const Value: IXString);
+    procedure SetPreMatch(const Value: IXString);
+    procedure SetSize(const Value: IInteger);
+
+    property MatchedData: IXString read GetMatchedData write SetMatchedData;
+    property PostMatch: IXString read GetPostMatch write SetPostMatch;
+    property PreMatch: IXString read GetPreMatch write SetPreMatch;
+    property Size: IInteger read GetSize write SetSize;
   end;
 
   TIntegerProc = reference to procedure;
@@ -403,6 +436,29 @@ type
     property Value: Integer read GetValue write SetValue;
     constructor Create(AValue: Integer);
   end;
+
+  TMatchData = class(TInterfacedObject, IMatchData)
+
+  private
+    FMatchedData: IXString;
+    FPostMatch: IXString;
+    FPreMatch: IXString;
+    FSize: IInteger;
+    function GetMatchedData: IXString;
+    function GetPostMatch: IXString;
+    function GetPreMatch: IXString;
+    function GetSize: IInteger;
+    procedure SetMatchedData(const Value: IXString);
+    procedure SetPostMatch(const Value: IXString);
+    procedure SetPreMatch(const Value: IXString);
+    procedure SetSize(const Value: IInteger);
+  public
+    property MatchedData: IXString read GetMatchedData write SetMatchedData;
+    property PostMatch: IXString read GetPostMatch write SetPostMatch;
+    property PreMatch: IXString read GetPreMatch write SetPreMatch;
+    property Size: IInteger read GetSize write SetSize;
+  end;
+
 
 function I(AIntegerValue: Integer): IInteger;
 
@@ -435,7 +491,7 @@ function IndexOf(AValor: string; AArray: array of string): Integer;
 implementation
 
 uses
-  Dialogs, Windows, Registry, StrUtils, forms;
+  Dialogs, Windows, Registry, StrUtils, forms, PerlRegEx;
 
 function IndexOf(AValor: string; AArray: array of string): Integer;
 var
@@ -830,6 +886,30 @@ end;
 function TString.Mais(AValue: string): string;
 begin
   Result := Value + AValue;
+end;
+
+function TString.Mais(const AValue: IString): string;
+begin
+  Result := S(Value).Mais(AValue.Value);
+end;
+
+function TString.Match(ARegex: UTF8string): Boolean;
+var
+  LRegex: TPerlRegEx;
+begin
+  LRegex := TPerlRegEx.Create;
+  try
+    LRegex.RegEx := ARegex;
+    LRegex.Subject := Value;
+    Result := LRegex.Match;
+  finally
+    LRegex.Free;
+  end;
+end;
+
+function TString.MatchDataFor(ARegex: string): IMatchData;
+begin
+  Result := SX(Value).MatchDataFor(ARegex);
 end;
 
 function TString.Menos(AValue: string): string;
@@ -1468,6 +1548,38 @@ begin
   Result := Self;
 end;
 
+function TXString.Mais(const AValue: IXString): IXString;
+begin
+  Result := Self.Mais(AValue.Value);
+end;
+
+function TXString.Match(ARegex: UTF8String): Boolean;
+begin
+  Result := S(Value).Match(ARegex);
+end;
+
+function TXString.MatchDataFor(ARegex: string): IMatchData;
+var
+  LRegex: TPerlRegEx;
+begin
+  Result := nil;
+  LRegex := TPerlRegEx.Create;
+  try
+    LRegex.Subject := Value;
+    LRegex.RegEx := ARegex;
+    if LRegex.Match then
+    begin
+      Result := TMatchData.Create;
+      Result.MatchedData := SX(LRegex.MatchedText);
+      Result.PostMatch := SX(LRegex.SubjectRight);
+      Result.PreMatch := SX(LRegex.SubjectLeft);
+      Result.Size := I(LRegex.MatchedLength);
+    end;
+  finally
+    LRegex.Free;
+  end;
+end;
+
 function TXString.Menos(AValues: array of string): IXString;
 begin
   Value := S(Value).Menos(AValues);
@@ -1774,6 +1886,46 @@ var
 begin
   for i := 0 to Value - 1 do
     AMetodo;
+end;
+
+function TMatchData.GetMatchedData: IXString;
+begin
+  Result := FMatchedData;
+end;
+
+function TMatchData.GetPostMatch: IXString;
+begin
+  Result := FPostMatch;
+end;
+
+function TMatchData.GetPreMatch: IXString;
+begin
+  Result := FPreMatch;
+end;
+
+function TMatchData.GetSize: IInteger;
+begin
+  Result := FSize;
+end;
+
+procedure TMatchData.SetMatchedData(const Value: IXString);
+begin
+  FMatchedData := Value;
+end;
+
+procedure TMatchData.SetPostMatch(const Value: IXString);
+begin
+  FPostMatch := Value;
+end;
+
+procedure TMatchData.SetPreMatch(const Value: IXString);
+begin
+  FPreMatch := Value;
+end;
+
+procedure TMatchData.SetSize(const Value: IInteger);
+begin
+  FSize := Value;
 end;
 
 end.

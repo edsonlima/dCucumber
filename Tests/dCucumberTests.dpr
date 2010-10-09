@@ -37,7 +37,14 @@ uses
   PerlRegEx in '..\pcre\PerlRegEx.pas',
   pcre in '..\pcre\pcre.pas',
   ScenarioIntf in '..\source\ScenarioIntf.pas',
-  Scenario in '..\source\Scenario.pas';
+  Scenario in '..\source\Scenario.pas',
+  StepIntf in '..\source\StepIntf.pas',
+  Step in '..\source\Step.pas',
+  TestFeature in 'TestFeature.pas',
+  TestBaseClasses in 'TestBaseClasses.pas',
+  TestScenario in 'TestScenario.pas',
+  dCucuberListIntf in '..\source\dCucuberListIntf.pas',
+  dCucuberList in '..\source\dCucuberList.pas';
 
 {$R *.RES}
 

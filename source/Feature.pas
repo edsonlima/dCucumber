@@ -3,15 +3,15 @@ unit Feature;
 interface
 
 uses
-  FeatureIntf, Classes;
+  FeatureIntf, Classes, dCucuberListIntf;
 
 type
   TFeature = class(TInterfacedObject, IFeature)
   private
-    FScenarios: IInterfaceList;
+    FScenarios: ICucumberList;
     FDescricao: string;
     FTitulo: string;
-    function GetScenarios: IInterfaceList;
+    function GetScenarios: ICucumberList;
     function GetDescricao: string;
     function GetTitulo: string;
     procedure SetDescricao(const Value: string);
@@ -19,19 +19,35 @@ type
   public
     constructor Create;
     function Valid: Boolean;
-    property Scenarios: IInterfaceList read GetScenarios;
+    property Scenarios: ICucumberList read GetScenarios;
     property Descricao: string read GetDescricao write SetDescricao;
     property Titulo: string read GetTitulo write SetTitulo;
   end;
 
 implementation
 
+uses
+  dCucuberList, ScenarioIntf;
+
 constructor TFeature.Create;
 begin
-  FScenarios := TInterfaceList.Create;
+  FScenarios := TCucumberList.Create;
+  FScenarios.ValidateFunction := function: Boolean
+  var
+    I: Integer;
+  begin
+    Result := FScenarios.Count > 0;
+    if Result then
+      for I := 0 to FScenarios.Count - 1 do
+      begin
+        Result := (FScenarios[i] as IScenario).Valid;
+        if not Result then
+          Exit;
+      end;
+  end;
 end;
 
-function TFeature.GetScenarios: IInterfaceList;
+function TFeature.GetScenarios: ICucumberList;
 begin
   Result := FScenarios;
 end;
@@ -58,7 +74,7 @@ end;
 
 function TFeature.Valid: Boolean;
 begin
-  Result := FScenarios.Count > 0;
+  Result := FScenarios.Valid;
 end;
 
 end.

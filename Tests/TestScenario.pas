@@ -14,12 +14,18 @@ type
     procedure TearDown; override;
   published
     procedure ScenarioDeveriaSerInvalidoSeNaoPossuirAoMenosUmStep;
+    procedure ScenarioDeveriaSerValidoSomenteSeStepsSaoValidos;
   end;
 
 implementation
 
 uses
   Step;
+
+procedure TestTScenario.ScenarioDeveriaSerValidoSomenteSeStepsSaoValidos;
+begin
+
+end;
 
 procedure TestTScenario.SetUp;
 begin

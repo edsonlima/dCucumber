@@ -21,7 +21,7 @@ type
 implementation
 
 uses
-  Scenario;
+  Scenario, ScenarioIntf, Step;
 
 procedure TestTFeature.FeatureDeveriaSerInvalidaSeCenariosNaoForemValidos;
 begin
@@ -33,6 +33,7 @@ procedure TestTFeature.FeatureDeveriaSerInvalidaSeNaoPossuirAoMenosUmCenario;
 begin
   Specify.That(FFeature.Valid).Should.Be.False;
   FFeature.Scenarios.Add(TScenario.Create);
+  (FFeature.Scenarios.First as IScenario).Steps.Add(TStep.Create);
   Specify.That(FFeature.Valid).Should.Be.True;
 end;
 

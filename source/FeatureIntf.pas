@@ -3,12 +3,12 @@ unit FeatureIntf;
 interface
 
 uses
-  Classes;
+  Classes, dCucuberListIntf;
 
 type
   IFeature = interface(IInterface)
   ['{862178A4-5ACE-44C5-8990-4D96133984C1}']
-    function GetScenarios: IInterfaceList;
+    function GetScenarios: ICucumberList;
     function GetDescricao: string;
     function GetTitulo: string;
     procedure SetDescricao(const Value: string);
@@ -16,7 +16,7 @@ type
 
     function Valid: Boolean;
 
-    property Scenarios: IInterfaceList read GetScenarios;
+    property Scenarios: ICucumberList read GetScenarios;
     property Descricao: string read GetDescricao write SetDescricao;
     property Titulo: string read GetTitulo write SetTitulo;
   end;

@@ -3,33 +3,39 @@ unit Scenario;
 interface
 
 uses
-  ScenarioIntf, Classes;
+  ScenarioIntf, Classes, dCucuberListIntf;
 
 type
   TScenario = class(TInterfacedObject, IScenario)
   private
-    FSteps: IInterfaceList;
+    FSteps: ICucumberList;
     FTitulo: string;
-    function GetSteps: IInterfaceList;
+    function GetSteps: ICucumberList;
     function GetTitulo: string;
-    procedure SetSteps(const Value: IInterfaceList);
+    procedure SetSteps(const Value: ICucumberList);
     procedure SetTitulo(const Value: string);
   public
-
     constructor Create;
     function Valid: Boolean;
-    property Steps: IInterfaceList read GetSteps write SetSteps;
+    property Steps: ICucumberList read GetSteps write SetSteps;
     property Titulo: string read GetTitulo write SetTitulo;
   end;
 
 implementation
 
+uses
+  dCucuberList;
+
 constructor TScenario.Create;
 begin
-  FSteps := TInterfaceList.Create;
+  FSteps := TCucumberList.Create;
+  FSteps.ValidateFunction := function: Boolean
+  begin
+    Result := FSteps.Count > 0;
+  end;
 end;
 
-function TScenario.GetSteps: IInterfaceList;
+function TScenario.GetSteps: ICucumberList;
 begin
   Result := FSteps;
 end;
@@ -39,7 +45,7 @@ begin
   Result := FTitulo;
 end;
 
-procedure TScenario.SetSteps(const Value: IInterfaceList);
+procedure TScenario.SetSteps(const Value: ICucumberList);
 begin
   FSteps := Value;
 end;
@@ -51,7 +57,7 @@ end;
 
 function TScenario.Valid: Boolean;
 begin
-  Result := FSteps.Count > 0;
+  Result := FSteps.Valid;
 end;
 
 end.

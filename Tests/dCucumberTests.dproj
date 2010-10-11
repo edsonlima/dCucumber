@@ -76,6 +76,7 @@
 			<DCCReference Include="TestScenario.pas"/>
 			<DCCReference Include="..\source\dCucuberListIntf.pas"/>
 			<DCCReference Include="..\source\dCucuberList.pas"/>
+			<DCCReference Include="TestdCucuberList.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

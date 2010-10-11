@@ -44,7 +44,8 @@ uses
   TestBaseClasses in 'TestBaseClasses.pas',
   TestScenario in 'TestScenario.pas',
   dCucuberListIntf in '..\source\dCucuberListIntf.pas',
-  dCucuberList in '..\source\dCucuberList.pas';
+  dCucuberList in '..\source\dCucuberList.pas',
+  TestdCucuberList in 'TestdCucuberList.pas';
 
 {$R *.RES}
 

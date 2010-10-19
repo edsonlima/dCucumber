@@ -13,18 +13,20 @@ type
     procedure SetUp; override;
     procedure TearDown; override;
   published
-    procedure ScenarioDeveriaSerInvalidoSeNaoPossuirAoMenosUmStep;
+    procedure ScenarioDeveriaSerInvalidoSeNaoPossuirAoMenosUmStepValido;
     procedure ScenarioDeveriaSerValidoSomenteSeStepsSaoValidos;
+    procedure ScenarioDeveriaSerInvalidoSeNaoPossuiTitulo;
   end;
 
 implementation
 
 uses
-  Step;
+  Step, StepIntf, ValidationRuleIntf;
 
 procedure TestTScenario.ScenarioDeveriaSerValidoSomenteSeStepsSaoValidos;
 begin
-
+  FScenario.Steps.Add(TStep.Create);
+  Specify.That((FScenario as IValidationRule).Valid).Should.Be.False;
 end;
 
 procedure TestTScenario.SetUp;
@@ -37,11 +39,19 @@ begin
   FScenario := nil;
 end;
 
-procedure TestTScenario.ScenarioDeveriaSerInvalidoSeNaoPossuirAoMenosUmStep;
+procedure TestTScenario.ScenarioDeveriaSerInvalidoSeNaoPossuiTitulo;
 begin
-  Specify.That(FScenario.Valid).Should.Be.False;
   FScenario.Steps.Add(TStep.Create);
-  Specify.That(FScenario.Valid).Should.Be.True;
+  (FScenario.Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
+  Specify.That((FScenario as IValidationRule).Valid).Should.Be.False;
+end;
+
+procedure TestTScenario.ScenarioDeveriaSerInvalidoSeNaoPossuirAoMenosUmStepValido;
+begin
+  FScenario.Titulo := 'Um Cenário Valido';
+  FScenario.Steps.Add(TStep.Create);
+  (FScenario.Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
+  Specify.That((FScenario as IValidationRule).Valid).Should.Be.True;
 end;
 
 initialization

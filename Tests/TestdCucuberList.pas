@@ -31,6 +31,9 @@ type
 
 implementation
 
+uses
+  ValidationRuleIntf;
+
 procedure TestTDcucumberList.SetUp;
 begin
   FCucumberList := TCucumberList.Create;
@@ -43,26 +46,26 @@ end;
 
 procedure TestTDcucumberList.DeveriaSerValidaSeNaoInformeiNenhumaFuncaoDeValidacao;
 begin
-  Specify.That(FCucumberList.Valid).Should.Be.True;
+  Specify.That((FCucumberList as IValidationRule).Valid).Should.Be.True;
 end;
 
 procedure TestTDcucumberList.DeveriaSerValidaSeTemAoMenosUmItemNaLista;
 begin
   FCucumberList.Add(TCucumberList.Create);
-  FCucumberList.ValidateFunction := function: Boolean
+  (FCucumberList as IValidationRule).ValidateFunction := function: Boolean
   begin
     Result := FCucumberList.Count > 0;
   end;
-  Specify.That(FCucumberList.Valid).Should.Be.True;
+  Specify.That((FCucumberList as IValidationRule).Valid).Should.Be.True;
 end;
 
 procedure TestTDcucumberList.DeveriaSerValidoSeFuncaoDeValidacaoEh;
 begin
-  FCucumberList.ValidateFunction := function: Boolean
+  (FCucumberList as IValidationRule).ValidateFunction := function: Boolean
   begin
     Result := True;
   end;
-  Specify.That(FCucumberList.Valid).Should.Be.True;
+  Specify.That((FCucumberList as IValidationRule).Valid).Should.Be.True;
 end;
 
 initialization

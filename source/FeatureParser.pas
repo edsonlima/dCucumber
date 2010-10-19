@@ -8,29 +8,45 @@ uses
 type
   TFeatureParser = class(TInterfacedObject, IFeatureParser)
   private
+    FErrors: IInterfaceList;
     FFeatureFileName: string;
     FLoadedFeature: TStringList;
 
+    function GetErrors: IInterfaceList;
     function GetFeatureFileName: string;
     procedure SetFeatureFileName(const Value: string);
 
     function LoadedFeature: TStringList;
+    procedure SetErrors(const Value: IInterfaceList);
   public
     destructor Destroy; override;
     function Parse: IFeature;
+    property Errors: IInterfaceList read GetErrors write SetErrors;
     property FeatureFileName: string read GetFeatureFileName write SetFeatureFileName;
   end;
 
 implementation
 
 uses
-  Feature, PerlRegEx, SysUtils, Types, TypeUtils, Scenario, ScenarioIntf, StepIntf, Step;
+  Feature, PerlRegEx, SysUtils, Types, TypeUtils, Scenario, ScenarioIntf, StepIntf, Step, Constants, Error, FeatureError;
 
 destructor TFeatureParser.Destroy;
 begin
   if FLoadedFeature <> nil then
     FLoadedFeature.Free;
+  if FErrors <> nil then
+  begin
+    FErrors.Clear;
+    FErrors := nil;
+  end;
   inherited;
+end;
+
+function TFeatureParser.GetErrors: IInterfaceList;
+begin
+  if FErrors = nil then
+    FErrors := TInterfaceList.Create;
+  Result := FErrors;
 end;
 
 function TFeatureParser.GetFeatureFileName: string;
@@ -55,62 +71,91 @@ end;
 
 function TFeatureParser.Parse: IFeature;
 var
-  LFeatureLine: string;
+  I, LFirstScenarioLine: Integer;
+  LFeatureLine: IXString;
   LMatchData: IMatchData;
-  LRegex: TPerlRegEx;
   LSection: IXString;
-  LPrevSection: string;
+  LPrevSection: IXString;
   LScenario: IScenario;
   LStep: IStep;
 begin
   Result := TFeature.Create;
-
-  LRegex := TPerlRegEx.Create;
-  try
-    LSection := SX('');
-    LPrevSection := '';
-    for LFeatureLine in LoadedFeature do
-    begin
-      LRegex.Subject := LFeatureLine;
-      // Encontrando o título da Feature
-      LRegex.RegEx := '^Funcionalidade: ';
-      if LRegex.Match then
-      begin
-        Result.Titulo := LRegex.SubjectRight;
-        LPrevSection := LRegex.MatchedText;
-        Continue;
-      end;
-
-      // Encontrando os cenários
-      LRegex.RegEx := '^(.*)Cenário: ';
-      if LRegex.Match then
-      begin
-        // Aproveita a passada e adiciona a descricao da feature
-        if S(LPrevSection).Equals('Funcionalidade: ') then
-        begin
-          Result.Descricao := LSection.Ate(LSection.Length - 3).Value;
-          LSection.Clear;
-        end;
-        LScenario := TScenario.Create;
-        LScenario.Titulo := LRegex.SubjectRight;
-        Result.Scenarios.Add(LScenario);
-        LPrevSection := LRegex.MatchedText;
-        Continue;
-      end;
-      LMatchData := S(LFeatureLine).MatchDataFor('^(.*)(Dado |Quando |Então |E |Mas )');
-      if LMatchData <> nil then
-      begin
-        LStep := TStep.Create;
-        LStep.Descricao := LMatchData.MatchedData.TrimLeft.Mais(LMatchData.PostMatch).Value;
-        (Result.Scenarios.Last as IScenario).Steps.Add(LStep);
-      end;
-
-      if not SX(LFeatureLine).Trim.IsEmpty then
-        LSection.Mais(LFeatureLine).Mais(#13#10);
-    end;
-  finally
-    LRegex.Free;
+  Errors.Clear;
+  if not FileExists(FFeatureFileName) then
+  begin
+    Errors.Add(TFeatureError.NewError(Format(InvalidFeatureFileName, [FFeatureFileName]), 0, SugestionToInvalidFeatureName));
+    Exit;
   end;
+
+  LSection := SX('');
+  LPrevSection := SX('');
+  LFeatureLine := SX('');
+
+  LFeatureLine.Value := LoadedFeature[0];
+  // Encontrando o título da Feature
+  LMatchData := LFeatureLine.MatchDataFor(FeatureRegex);
+  LFirstScenarioLine := 0;
+  if LMatchData <> nil then // LRegex.Match then
+  begin
+    Result.Titulo := LMatchData.PostMatch.Value;
+    for I := 1 to LoadedFeature.Count - 1 do
+    begin
+      LFeatureLine.Value := LoadedFeature[I];
+      if not LFeatureLine.Match(ScenarioRegex) and not LFeatureLine.Trim.IsEmpty then
+      begin
+        LSection.Mais(LFeatureLine).Mais(#13#10);
+        Inc(LFirstScenarioLine);
+      end else
+        Break;
+    end;
+    Result.Descricao := LSection.Ate(LSection.Length - 3).Value;
+  end
+  else
+  begin
+    Errors.Add(TFeatureError.NewError(Format(InvalidFeature, [FFeatureFileName]), 1, SugestionToFeatureInitialize));
+    Exit;
+  end;
+
+  Inc(LFirstScenarioLine);
+  for I := LFirstScenarioLine to LoadedFeature.Count - 1 do
+  begin
+    LFeatureLine.Value := LoadedFeature[I];
+
+    if LFeatureLine.Trim.IsEmpty then
+      Continue;
+
+    LMatchData := LFeatureLine.MatchDataFor(ScenarioRegex);
+    if LMatchData <> nil then
+    begin
+      LScenario := TScenario.Create;
+      LScenario.Titulo := LMatchData.PostMatch.Value;
+      Result.Scenarios.Add(LScenario);
+      Continue;
+    end;
+
+    LMatchData := LFeatureLine.MatchDataFor(StepRegex);
+    if LMatchData <> nil then
+    begin
+      LStep := TStep.Create;
+      LStep.Descricao := LMatchData.MatchedData.TrimLeft.Value;
+      (Result.Scenarios.Last as IScenario).Steps.Add(LStep);
+      Continue;
+    end;
+
+    if LFeatureLine.Match(StepValidWord) {and not LPrevSection.Match(FeatureRegex) and not LFeatureLine.Trim.IsEmpty} then
+    begin
+      Errors.Add(TFeatureError.NewError(Format(InvalidStepDefinition, [I + 1]), I + 1, Format(SugestionToStepInitialize, [LFeatureLine.MatchDataFor(FirstWordRegex).MatchedData.Value])));
+      Continue;
+    end;
+
+    if (LMatchData = nil) {and not LPrevSection.Match(FeatureRegex) and not LFeatureLine.Trim.IsEmpty }then
+      Errors.Add(TFeatureError.NewError(Format(InvalidStepIdentifierError, [I + 1, LFeatureLine.MatchDataFor(FirstWordRegex).MatchedData.Value]), I + 1, SugestedActionToStepError));
+  end;
+end;
+
+procedure TFeatureParser.SetErrors(const Value: IInterfaceList);
+begin
+  FErrors := Value;
 end;
 
 end.

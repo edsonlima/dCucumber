@@ -7,7 +7,7 @@ interface
 }
 
 uses
-  SysUtils, Classes;
+  SysUtils, Classes, PerlRegEx;
 
 const
   NOME_ARQUIVO = 'c:\arquivo.txt';
@@ -112,12 +112,14 @@ type
     property Vazia: Boolean read GetVazia;
     procedure Clear;
     function Match(ARegex: UTF8string): Boolean;
-    function MatchDataFor(ARegex: string): IMatchData;
+    function MatchDataFor(ARegex: UTF8string): IMatchData;
   end;
 
   TString = class(TInterfacedObject, IString)
   private
     FValue: string;
+    FRegex: TPerlRegEx;
+    function Regex: TPerlRegEx;
   protected
     function GetAtStr(De, Ate: string): string;
     procedure SetAtStr(De, Ate: string; const AValue: string);
@@ -208,9 +210,10 @@ type
     property Vazia: Boolean read GetVazia;
     property Chave[ANome: string]: string read GetChave write SetChave;
     constructor Create(AValue: string);
+    destructor Destroy; override;
     function Contem(AValues: array of string): Boolean; overload;
     function Match(ARegex: UTF8string): Boolean;
-    function MatchDataFor(ARegex: string): IMatchData;
+    function MatchDataFor(ARegex: UTF8string): IMatchData;
   end;
 
   IXString = interface
@@ -296,12 +299,14 @@ type
 
     property Get[De, Ate: Integer]: IXString read GetAt write SetAt; default;
     property Value: string read GetValue write SetValue;
-    function MatchDataFor(ARegex: string): IMatchData;
+    function MatchDataFor(ARegex: UTF8string): IMatchData;
   end;
 
   TXString = class(TInterfacedObject, IXString)
   private
+    FRegex: TPerlRegEx;
     FValue: IString;
+    function Regex: TPerlRegEx;
   protected
     function GetAt(De, Ate: Integer): IXString;
     procedure SetAt(De, Ate: Integer; const AValue: IXString);
@@ -382,7 +387,7 @@ type
     function IgualA(AValor: IXString): Boolean; overload;
     procedure Clear;
     function Match(ARegex: UTF8String): Boolean;
-    function MatchDataFor(ARegex: string): IMatchData;
+    function MatchDataFor(ARegex: UTF8string): IMatchData;
 
     property Value: string read GetValue write SetValue;
     property Get[De, Ate: Integer]: IXString read GetAt write SetAt; default;
@@ -491,7 +496,7 @@ function IndexOf(AValor: string; AArray: array of string): Integer;
 implementation
 
 uses
-  Dialogs, Windows, Registry, StrUtils, forms, PerlRegEx;
+  Dialogs, Windows, Registry, StrUtils, forms;
 
 function IndexOf(AValor: string; AArray: array of string): Integer;
 var
@@ -845,6 +850,13 @@ begin
   FValue := AValue;
 end;
 
+destructor TString.Destroy;
+begin
+  if Assigned(FRegex) then
+    FreeAndNil(FRegex);
+  inherited;
+end;
+
 function TString.EstaContidoEm(AValue: string): Boolean;
 begin
   Result := S(AValue).Contem(Value);
@@ -894,20 +906,13 @@ begin
 end;
 
 function TString.Match(ARegex: UTF8string): Boolean;
-var
-  LRegex: TPerlRegEx;
 begin
-  LRegex := TPerlRegEx.Create;
-  try
-    LRegex.RegEx := ARegex;
-    LRegex.Subject := Value;
-    Result := LRegex.Match;
-  finally
-    LRegex.Free;
-  end;
+  Regex.RegEx := ARegex;
+  Regex.Subject := Value;
+  Result := Regex.Match;
 end;
 
-function TString.MatchDataFor(ARegex: string): IMatchData;
+function TString.MatchDataFor(ARegex: UTF8string): IMatchData;
 begin
   Result := SX(Value).MatchDataFor(ARegex);
 end;
@@ -1043,6 +1048,13 @@ end;
 function TString.Replace(AOldPattern, ANewPattern: string; Flags: TReplaceFlags): string;
 begin
   Result := StringReplace(Value, AOldPattern, ANewPattern, Flags);
+end;
+
+function TString.Regex: TPerlRegEx;
+begin
+  if FRegex = nil then
+    FRegex := TPerlRegEx.Create;
+  Result := FRegex;
 end;
 
 function TString.Replace(AOldPatterns: array of string; ANewPattern: string; Flags: TReplaceFlags): string;
@@ -1558,25 +1570,18 @@ begin
   Result := S(Value).Match(ARegex);
 end;
 
-function TXString.MatchDataFor(ARegex: string): IMatchData;
-var
-  LRegex: TPerlRegEx;
+function TXString.MatchDataFor(ARegex: UTF8string): IMatchData;
 begin
   Result := nil;
-  LRegex := TPerlRegEx.Create;
-  try
-    LRegex.Subject := Value;
-    LRegex.RegEx := ARegex;
-    if LRegex.Match then
-    begin
-      Result := TMatchData.Create;
-      Result.MatchedData := SX(LRegex.MatchedText);
-      Result.PostMatch := SX(LRegex.SubjectRight);
-      Result.PreMatch := SX(LRegex.SubjectLeft);
-      Result.Size := I(LRegex.MatchedLength);
-    end;
-  finally
-    LRegex.Free;
+  Regex.Subject := Value;
+  Regex.RegEx := ARegex;
+  if Regex.Match then
+  begin
+    Result := TMatchData.Create;
+    Result.MatchedData := SX(Regex.MatchedText);
+    Result.PostMatch := SX(Regex.SubjectRight);
+    Result.PreMatch := SX(Regex.SubjectLeft);
+    Result.Size := I(Regex.MatchedLength);
   end;
 end;
 
@@ -1845,6 +1850,13 @@ end;
 function TXString.Contem(AValues: array of string): Boolean;
 begin
   Result := S(Value).Contem(AValues);
+end;
+
+function TXString.Regex: TPerlRegEx;
+begin
+  if FRegex = nil then
+    FRegex := TPerlRegEx.Create;
+  Result := FRegex;
 end;
 
 

@@ -13,7 +13,6 @@ type
     procedure SetSteps(const Value: ICucumberList);
     procedure SetTitulo(const Value: string);
 
-    function Valid: Boolean;
     property Titulo: string read GetTitulo write SetTitulo;
     property Steps: ICucumberList read GetSteps write SetSteps;
   end;

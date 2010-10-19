@@ -14,14 +14,15 @@ type
     procedure TearDown; override;
 
   published
-    procedure FeatureDeveriaSerInvalidaSeNaoPossuirAoMenosUmCenario;
+    procedure FeatureDeveriaSerInvalidaSeNaoPossuirAoMenosUmCenarioValido;
     procedure FeatureDeveriaSerInvalidaSeCenariosNaoForemValidos;
+    procedure FeatureDeveriaSerInvalidaSeNaoPossuirUmaClasseDeTestesParaCadaScenario;
   end;
 
 implementation
 
 uses
-  Scenario, ScenarioIntf, Step;
+  Scenario, ScenarioIntf, Step, StepIntf;
 
 procedure TestTFeature.FeatureDeveriaSerInvalidaSeCenariosNaoForemValidos;
 begin
@@ -29,12 +30,22 @@ begin
   Specify.That(FFeature.Valid).Should.Be.False;
 end;
 
-procedure TestTFeature.FeatureDeveriaSerInvalidaSeNaoPossuirAoMenosUmCenario;
+procedure TestTFeature.FeatureDeveriaSerInvalidaSeNaoPossuirAoMenosUmCenarioValido;
 begin
   Specify.That(FFeature.Valid).Should.Be.False;
   FFeature.Scenarios.Add(TScenario.Create);
+  (FFeature.Scenarios.First as IScenario).Titulo := 'Um Cenário Válido';
   (FFeature.Scenarios.First as IScenario).Steps.Add(TStep.Create);
+  ((FFeature.Scenarios.First as IScenario).Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
   Specify.That(FFeature.Valid).Should.Be.True;
+end;
+
+procedure TestTFeature.FeatureDeveriaSerInvalidaSeNaoPossuirUmaClasseDeTestesParaCadaScenario;
+begin
+  Fail('TODO: Implementar o que falta...');
+//  FFeature.Scenarios.Add(TScenario.Create);
+//  (FFeature.Scenarios.First as IScenario).Steps.Add(TStep.Create);
+//  ((FFeature.Scenarios.First as IScenario).Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
 end;
 
 procedure TestTFeature.SetUp;

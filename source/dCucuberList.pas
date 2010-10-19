@@ -3,36 +3,29 @@ unit dCucuberList;
 interface
 
 uses
-  Classes, dCucuberListIntf;
+  ValidationRuleIntf, Classes, dCucuberListIntf;
 
 type
-  TCucumberList = class(TInterfaceList, ICucumberList)
+  TCucumberList = class(TInterfaceList, ICucumberList, IValidationRule)
   private
-    FValidateFunction: TValidateFunction;
-    function GetValidateFunction: TValidateFunction;
-    procedure SetValidateFunction(const Value: TValidateFunction);
+    FValidationRule: IValidationRule;
+    function GetValidationRule: IValidationRule;
   public
-    function Valid: Boolean;
-    property ValidateFunction: TValidateFunction read GetValidateFunction write SetValidateFunction;
+    property ValidationRule: IValidationRule read GetValidationRule implements IValidationRule;
   end;
 
 implementation
 
-function TCucumberList.GetValidateFunction: TValidateFunction;
-begin
-  Result := FValidateFunction;
-end;
+uses
+  ValidationRule;
 
-procedure TCucumberList.SetValidateFunction(const Value: TValidateFunction);
-begin
-  FValidateFunction := Value;
-end;
+{ TCucumberList }
 
-function TCucumberList.Valid: Boolean;
+function TCucumberList.GetValidationRule: IValidationRule;
 begin
-  Result := True;
-  if Assigned(FValidateFunction) then
-    Result := FValidateFunction;
+  if FValidationRule = nil then
+    FValidationRule := TValidationRule.Create;
+  Result := FValidationRule;
 end;
 
 end.

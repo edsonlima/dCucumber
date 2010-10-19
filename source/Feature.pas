@@ -27,12 +27,12 @@ type
 implementation
 
 uses
-  dCucuberList, ScenarioIntf;
+  dCucuberList, ScenarioIntf, ValidationRuleIntf;
 
 constructor TFeature.Create;
 begin
   FScenarios := TCucumberList.Create;
-  FScenarios.ValidateFunction := function: Boolean
+  FScenarios.ValidationRule.ValidateFunction := function: Boolean
   var
     I: Integer;
   begin
@@ -40,7 +40,7 @@ begin
     if Result then
       for I := 0 to FScenarios.Count - 1 do
       begin
-        Result := (FScenarios[i] as IScenario).Valid;
+        Result := (FScenarios[i] as IValidationRule).Valid;
         if not Result then
           Exit;
       end;
@@ -74,7 +74,7 @@ end;
 
 function TFeature.Valid: Boolean;
 begin
-  Result := FScenarios.Valid;
+  Result := FScenarios.ValidationRule.Valid;
 end;
 
 end.

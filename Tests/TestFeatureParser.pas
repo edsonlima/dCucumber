@@ -18,12 +18,16 @@ type
     procedure ParseDeveriaTrazerOTituloEADescricaoDaFeature;
     procedure ParseDeveriaTrazerOTituloDosCenarios;
     procedure ParserDeveriaTrazerOsPassosDosCenarios;
+    procedure ParseDeveriaCarregarOErroDaFeature;
+    procedure ParseDeveriaIdentificarSePassoContemApenasUmaPalavra;
+    procedure ParseFeatureDeveriaInicializarComAPalavraFuncionalidade;
+    procedure ArquivoDaFeatureDeveriaExistir;
   end;
 
 implementation
 
 uses
-  TypeUtils, TestConsts, FeatureIntf, ScenarioIntf, StepIntf;
+  TypeUtils, TestConsts, FeatureIntf, ScenarioIntf, StepIntf, FeatureErrorIntf, Constants, SysUtils;
 
 procedure TestTFeatureParser.ParseDeveriaTrazerOsCenariosDaFeature;
 var
@@ -50,6 +54,29 @@ begin
   Specify.That(LFeature.Descricao).Should.Equal(DescricaoFeatureTeste);
 end;
 
+procedure TestTFeatureParser.ParseFeatureDeveriaInicializarComAPalavraFuncionalidade;
+var
+  LError: IFeatureError;
+begin
+  FFeatureParser.FeatureFileName := S(FeatureDir).Mais(FeatureSemFuncionalidade);
+  FFeatureParser.Parse;
+  Specify.That(FFeatureParser.Errors.Count).Should.Equal(1);
+  LError := FFeatureParser.Errors.First as IFeatureError;
+
+  Specify.That(LError.Line).Should.Equal(1);
+  Specify.That(LError.Message).Should.Equal(Format(InvalidFeature, [FFeatureParser.FeatureFileName]));
+  Specify.That(LError.SugestedAction).Should.Equal('Exemplo: Funcionalidade: Aqui vai o título da sua funcionalidade.');
+
+  FFeatureParser.FeatureFileName := S(FeatureDir).Mais(FeatureComPrimeiraLinhaEmBranco);
+  FFeatureParser.Parse;
+  Specify.That(FFeatureParser.Errors.Count).Should.Equal(1);
+  LError := FFeatureParser.Errors.First as IFeatureError;
+
+  Specify.That(LError.Line).Should.Equal(1);
+  Specify.That(LError.Message).Should.Equal(Format(InvalidFeature, [FFeatureParser.FeatureFileName]));
+  Specify.That(LError.SugestedAction).Should.Equal('Exemplo: Funcionalidade: Aqui vai o título da sua funcionalidade.');
+end;
+
 procedure TestTFeatureParser.ParserDeveriaTrazerOsPassosDosCenarios;
 var
   LFeature: IFeature;
@@ -68,6 +95,46 @@ end;
 procedure TestTFeatureParser.TearDown;
 begin
   FFeatureParser := nil;
+end;
+
+procedure TestTFeatureParser.ArquivoDaFeatureDeveriaExistir;
+var
+  LError: IFeatureError;
+begin
+  FFeatureParser.FeatureFileName := 'InvalidFileName.feature';
+  FFeatureParser.Parse;
+  Specify.That(FFeatureParser.Errors.Count).Should.Equal(1);
+  LError := FFeatureParser.Errors.First as IFeatureError;
+  Specify.That(LError.Message).Should.Equal('O arquivo que você tentou carregar (InvalidFileName.feature) não existe.');
+  Specify.That(LError.SugestedAction).Should.Equal('Tente carregar um arquivo que exista :)');
+end;
+
+procedure TestTFeatureParser.ParseDeveriaCarregarOErroDaFeature;
+var
+  LError: IFeatureError;
+begin
+  FFeatureParser.FeatureFileName := S(FeatureDir).Mais(FeatureComUmErro);
+  FFeatureParser.Parse;
+  Specify.That(FFeatureParser.Errors).Should.Not_.Be.Empty;
+  LError := FFeatureParser.Errors.First as IFeatureError;
+
+  Specify.That(LError.Line).Should.Equal(8);
+  Specify.That(LError.Message).Should.Equal('A linha 8 começa com uma palavra chave desconhecida (Essa).');
+  Specify.That(LError.SugestedAction).Should.Equal(SugestedActionToStepError)
+end;
+
+procedure TestTFeatureParser.ParseDeveriaIdentificarSePassoContemApenasUmaPalavra;
+var
+  LError: IFeatureError;
+begin
+  FFeatureParser.FeatureFileName := S(FeatureDir).Mais(FeatureComUmErro);
+  FFeatureParser.Parse;
+  Specify.That(FFeatureParser.Errors).Should.Not_.Be.Empty;
+  LError := FFeatureParser.Errors.Last as IFeatureError;
+
+  Specify.That(LError.Line).Should.Equal(13);
+  Specify.That(LError.Message).Should.Equal('O passo da linha 13 deve conter mais do que apenas uma palavra.');
+  Specify.That(LError.SugestedAction).Should.Equal('Quando... ?!');
 end;
 
 procedure TestTFeatureParser.ParseDeveriaRetornarUmaFeature;

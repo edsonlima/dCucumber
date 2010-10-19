@@ -11,8 +11,11 @@
 #define ComStrs_sInvalidComCtl32 65232
 #define TestConsts_FeatureDir 65233
 #define TestConsts_FeatureCenarioSimples 65234
-#define TestConsts_DescricaoFeatureTeste 65235
-#define TestConsts_DescricaoPrimeiroStep 65236
+#define TestConsts_FeatureComUmErro 65235
+#define TestConsts_FeatureSemFuncionalidade 65236
+#define TestConsts_FeatureComPrimeiraLinhaEmBranco 65237
+#define TestConsts_DescricaoFeatureTeste 65238
+#define TestConsts_DescricaoPrimeiroStep 65239
 #define Consts_SMultiSelectRequired 65248
 #define Consts_SSeparator 65249
 #define Consts_SNoGetItemEventHandler 65250
@@ -306,7 +309,10 @@ BEGIN
 	ComStrs_sInvalidComCtl32,	"This control requires version 4.70 or greater of COMCTL32.DLL"
 	TestConsts_FeatureDir,	"..\\Features\\"
 	TestConsts_FeatureCenarioSimples,	"cenario_simples.feature"
-	TestConsts_DescricaoFeatureTeste,	"  Como Desenvolvedor\r\n  Gostaria que o teste abaixo fosse executado\r\n  Para que minhas estórias ganhem vida!"
+	TestConsts_FeatureComUmErro,	"cenario_com_erro.feature"
+	TestConsts_FeatureSemFuncionalidade,	"feature_sem_funcionalidade.feature"
+	TestConsts_FeatureComPrimeiraLinhaEmBranco,	"feature_com_primeira_linha_em_branco.feature"
+	TestConsts_DescricaoFeatureTeste,	"Como Desenvolvedor\r\nGostaria que o teste abaixo fosse executado\r\nPara que minhas estórias ganhem vida!"
 	TestConsts_DescricaoPrimeiroStep,	"Dado que não criei o cenário \"primeiros passos\" em minha classe de testes"
 	Consts_SMultiSelectRequired,	"Multiselect mode must be on for this feature"
 	Consts_SSeparator,	"Separator"

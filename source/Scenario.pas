@@ -3,20 +3,23 @@ unit Scenario;
 interface
 
 uses
-  ScenarioIntf, Classes, dCucuberListIntf;
+  ScenarioIntf, Classes, dCucuberListIntf, ValidationRuleIntf;
 
 type
-  TScenario = class(TInterfacedObject, IScenario)
+  TScenario = class(TInterfacedObject, IScenario, IValidationRule)
   private
     FSteps: ICucumberList;
     FTitulo: string;
+    FValidationRule: IValidationRule;
     function GetSteps: ICucumberList;
     function GetTitulo: string;
+    function GetValidationRule: IValidationRule;
     procedure SetSteps(const Value: ICucumberList);
     procedure SetTitulo(const Value: string);
+    procedure SetValidationRule(const Value: IValidationRule);
   public
     constructor Create;
-    function Valid: Boolean;
+    property ValidationRule: IValidationRule read GetValidationRule write SetValidationRule implements IValidationRule;
     property Steps: ICucumberList read GetSteps write SetSteps;
     property Titulo: string read GetTitulo write SetTitulo;
   end;
@@ -24,14 +27,27 @@ type
 implementation
 
 uses
-  dCucuberList;
+  dCucuberList, StepIntf, ValidationRule, TypeUtils;
 
 constructor TScenario.Create;
 begin
   FSteps := TCucumberList.Create;
-  FSteps.ValidateFunction := function: Boolean
+  FSteps.ValidationRule.ValidateFunction := function: Boolean
+  var i: Integer;
   begin
     Result := FSteps.Count > 0;
+    for I := 0 to FSteps.Count - 1 do
+    begin
+      Result := Result and (FSteps[i] as IStep).ValidationRule.Valid;
+      if not Result then
+        Break;
+    end;
+  end;
+
+  ValidationRule.ValidateFunction := function: Boolean
+  begin
+    Result := not S(FTitulo).Vazia;
+    Result := Result and FSteps.ValidationRule.Valid;
   end;
 end;
 
@@ -45,6 +61,13 @@ begin
   Result := FTitulo;
 end;
 
+function TScenario.GetValidationRule: IValidationRule;
+begin
+  if FValidationRule = nil then
+    FValidationRule := TValidationRule.Create;
+  Result := FValidationRule;
+end;
+
 procedure TScenario.SetSteps(const Value: ICucumberList);
 begin
   FSteps := Value;
@@ -55,9 +78,9 @@ begin
   FTitulo := Value;
 end;
 
-function TScenario.Valid: Boolean;
+procedure TScenario.SetValidationRule(const Value: IValidationRule);
 begin
-  Result := FSteps.Valid;
+  FValidationRule := Value;
 end;
 
 end.

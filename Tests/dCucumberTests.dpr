@@ -45,7 +45,14 @@ uses
   TestScenario in 'TestScenario.pas',
   dCucuberListIntf in '..\source\dCucuberListIntf.pas',
   dCucuberList in '..\source\dCucuberList.pas',
-  TestdCucuberList in 'TestdCucuberList.pas';
+  TestdCucuberList in 'TestdCucuberList.pas',
+  ErrorIntf in '..\source\ErrorIntf.pas',
+  ValidationRuleIntf in '..\source\ValidationRuleIntf.pas',
+  ValidationRule in '..\source\ValidationRule.pas',
+  Constants in '..\source\Constants.pas',
+  FeatureErrorIntf in '..\source\FeatureErrorIntf.pas',
+  FeatureError in '..\source\FeatureError.pas',
+  Error in '..\source\Error.pas';
 
 {$R *.RES}
 

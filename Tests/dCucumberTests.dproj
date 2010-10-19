@@ -77,6 +77,13 @@
 			<DCCReference Include="..\source\dCucuberListIntf.pas"/>
 			<DCCReference Include="..\source\dCucuberList.pas"/>
 			<DCCReference Include="TestdCucuberList.pas"/>
+			<DCCReference Include="..\source\ErrorIntf.pas"/>
+			<DCCReference Include="..\source\ValidationRuleIntf.pas"/>
+			<DCCReference Include="..\source\ValidationRule.pas"/>
+			<DCCReference Include="..\source\Constants.pas"/>
+			<DCCReference Include="..\source\FeatureErrorIntf.pas"/>
+			<DCCReference Include="..\source\FeatureError.pas"/>
+			<DCCReference Include="..\source\Error.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

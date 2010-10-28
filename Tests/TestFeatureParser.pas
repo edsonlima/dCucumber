@@ -13,15 +13,15 @@ type
     procedure SetUp; override;
     procedure TearDown; override;
   published
-    procedure ParseDeveriaRetornarUmaFeature;
-    procedure ParseDeveriaTrazerOsCenariosDaFeature;
-    procedure ParseDeveriaTrazerOTituloEADescricaoDaFeature;
-    procedure ParseDeveriaTrazerOTituloDosCenarios;
-    procedure ParserDeveriaTrazerOsPassosDosCenarios;
-    procedure ParseDeveriaCarregarOErroDaFeature;
-    procedure ParseDeveriaIdentificarSePassoContemApenasUmaPalavra;
-    procedure ParseFeatureDeveriaInicializarComAPalavraFuncionalidade;
-    procedure ArquivoDaFeatureDeveriaExistir;
+    procedure DeveriaRetornarUmaFeature;
+    procedure DeveriaTrazerOsCenariosDaFeature;
+    procedure DeveriaTrazerOTituloEADescricaoDaFeature;
+    procedure DeveriaTrazerOTituloDosCenarios;
+    procedure DeveriaTrazerOsPassosDosCenarios;
+    procedure DeveriaCarregarOErroDaFeature;
+    procedure DeveriaIdentificarSePassoContemApenasUmaPalavra;
+    procedure DeveriaInicializarComAPalavraFuncionalidade;
+    procedure DeveriaExistirOArquivoDaFeature;
   end;
 
 implementation
@@ -29,7 +29,7 @@ implementation
 uses
   TypeUtils, TestConsts, FeatureIntf, ScenarioIntf, StepIntf, FeatureErrorIntf, Constants, SysUtils;
 
-procedure TestTFeatureParser.ParseDeveriaTrazerOsCenariosDaFeature;
+procedure TestTFeatureParser.DeveriaTrazerOsCenariosDaFeature;
 var
   LFeature: IFeature;
 begin
@@ -37,7 +37,7 @@ begin
   Specify.That(LFeature.Scenarios.Count).Should.Equal(1);
 end;
 
-procedure TestTFeatureParser.ParseDeveriaTrazerOTituloDosCenarios;
+procedure TestTFeatureParser.DeveriaTrazerOTituloDosCenarios;
 var
   LFeature: IFeature;
 begin
@@ -45,7 +45,7 @@ begin
   Specify.That((LFeature.Scenarios[0] as IScenario).Titulo).Should.Equal('Primeiros Passos');
 end;
 
-procedure TestTFeatureParser.ParseDeveriaTrazerOTituloEADescricaoDaFeature;
+procedure TestTFeatureParser.DeveriaTrazerOTituloEADescricaoDaFeature;
 var
   LFeature: IFeature;
 begin
@@ -54,7 +54,7 @@ begin
   Specify.That(LFeature.Descricao).Should.Equal(DescricaoFeatureTeste);
 end;
 
-procedure TestTFeatureParser.ParseFeatureDeveriaInicializarComAPalavraFuncionalidade;
+procedure TestTFeatureParser.DeveriaInicializarComAPalavraFuncionalidade;
 var
   LError: IFeatureError;
 begin
@@ -77,7 +77,7 @@ begin
   Specify.That(LError.SugestedAction).Should.Equal('Exemplo: Funcionalidade: Aqui vai o título da sua funcionalidade.');
 end;
 
-procedure TestTFeatureParser.ParserDeveriaTrazerOsPassosDosCenarios;
+procedure TestTFeatureParser.DeveriaTrazerOsPassosDosCenarios;
 var
   LFeature: IFeature;
 begin
@@ -97,7 +97,7 @@ begin
   FFeatureParser := nil;
 end;
 
-procedure TestTFeatureParser.ArquivoDaFeatureDeveriaExistir;
+procedure TestTFeatureParser.DeveriaExistirOArquivoDaFeature;
 var
   LError: IFeatureError;
 begin
@@ -109,7 +109,7 @@ begin
   Specify.That(LError.SugestedAction).Should.Equal('Tente carregar um arquivo que exista :)');
 end;
 
-procedure TestTFeatureParser.ParseDeveriaCarregarOErroDaFeature;
+procedure TestTFeatureParser.DeveriaCarregarOErroDaFeature;
 var
   LError: IFeatureError;
 begin
@@ -123,7 +123,7 @@ begin
   Specify.That(LError.SugestedAction).Should.Equal(SugestedActionToStepError)
 end;
 
-procedure TestTFeatureParser.ParseDeveriaIdentificarSePassoContemApenasUmaPalavra;
+procedure TestTFeatureParser.DeveriaIdentificarSePassoContemApenasUmaPalavra;
 var
   LError: IFeatureError;
 begin
@@ -137,7 +137,7 @@ begin
   Specify.That(LError.SugestedAction).Should.Equal('Quando... ?!');
 end;
 
-procedure TestTFeatureParser.ParseDeveriaRetornarUmaFeature;
+procedure TestTFeatureParser.DeveriaRetornarUmaFeature;
 var
   LFeature: IFeature;
 begin

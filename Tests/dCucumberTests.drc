@@ -9,13 +9,21 @@
 */
 
 #define ComStrs_sInvalidComCtl32 65232
-#define TestConsts_FeatureDir 65233
-#define TestConsts_FeatureCenarioSimples 65234
-#define TestConsts_FeatureComUmErro 65235
-#define TestConsts_FeatureSemFuncionalidade 65236
-#define TestConsts_FeatureComPrimeiraLinhaEmBranco 65237
-#define TestConsts_DescricaoFeatureTeste 65238
-#define TestConsts_DescricaoPrimeiroStep 65239
+#define DIConsts_SInvalidElementType 65233
+#define DIRegEx_Consts_SDIRegExCodeNilError 65234
+#define DIRegEx_Consts_SDIRegExBadMagicError 65235
+#define DIRegEx_Consts_SDIRegExInvalidBsrOptions 65236
+#define DIRegEx_Consts_SDIRegExInvalidNewLineOptions 65237
+#define DIRegEx_Consts_SDIRegExNamedSubStringIndexError 65238
+#define DIRegEx_Consts_SDIRegExSubStringIndexError 65239
+#define DIRegEx_Consts_SDIRegExUnknownSubStringName 65240
+#define TestConsts_FeatureDir 65241
+#define TestConsts_FeatureCenarioSimples 65242
+#define TestConsts_FeatureComUmErro 65243
+#define TestConsts_FeatureSemFuncionalidade 65244
+#define TestConsts_FeatureComPrimeiraLinhaEmBranco 65245
+#define TestConsts_DescricaoFeatureTeste 65246
+#define TestConsts_DescricaoPrimeiroStep 65247
 #define Consts_SMultiSelectRequired 65248
 #define Consts_SSeparator 65249
 #define Consts_SNoGetItemEventHandler 65250
@@ -307,6 +315,14 @@
 STRINGTABLE
 BEGIN
 	ComStrs_sInvalidComCtl32,	"This control requires version 4.70 or greater of COMCTL32.DLL"
+	DIConsts_SInvalidElementType,	"Invalid Element Type"
+	DIRegEx_Consts_SDIRegExCodeNilError,	"Regular Expression pattern not compiled"
+	DIRegEx_Consts_SDIRegExBadMagicError,	"Magic number not found"
+	DIRegEx_Consts_SDIRegExInvalidBsrOptions,	"Invalid combination of BSR options"
+	DIRegEx_Consts_SDIRegExInvalidNewLineOptions,	"Invalid combination of newLine options"
+	DIRegEx_Consts_SDIRegExNamedSubStringIndexError,	"Named SubString index out of bounds (%d)"
+	DIRegEx_Consts_SDIRegExSubStringIndexError,	"SubString index out of bounds (%d)"
+	DIRegEx_Consts_SDIRegExUnknownSubStringName,	"Named SubString '%s' does not exist"
 	TestConsts_FeatureDir,	"..\\Features\\"
 	TestConsts_FeatureCenarioSimples,	"cenario_simples.feature"
 	TestConsts_FeatureComUmErro,	"cenario_com_erro.feature"

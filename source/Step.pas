@@ -11,11 +11,13 @@ type
     FDescricao: string;
     FValidationRule: IValidationRule;
     function GetDescricao: string;
+    function GetMetodoDeTeste: string;
     function GetValidationRule: IValidationRule;
     procedure SetDescricao(const Value: string);
   public
     constructor Create;
     property Descricao: string read GetDescricao write SetDescricao;
+    property MetodoDeTeste: string read GetMetodoDeTeste;
     property ValidationRule: IValidationRule read GetValidationRule implements IValidationRule;
   end;
 
@@ -35,6 +37,11 @@ end;
 function TStep.GetDescricao: string;
 begin
   Result := FDescricao;
+end;
+
+function TStep.GetMetodoDeTeste: string;
+begin
+  Result := S(Descricao).AsClassName('');
 end;
 
 { TStep }

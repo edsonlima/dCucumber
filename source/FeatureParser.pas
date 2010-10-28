@@ -28,7 +28,7 @@ type
 implementation
 
 uses
-  Feature, PerlRegEx, SysUtils, Types, TypeUtils, Scenario, ScenarioIntf, StepIntf, Step, Constants, Error, FeatureError;
+  Feature, SysUtils, Types, TypeUtils, Scenario, ScenarioIntf, StepIntf, Step, Constants, Error, FeatureError;
 
 destructor TFeatureParser.Destroy;
 begin

@@ -34,8 +34,6 @@ uses
   Specifiers in 'dspec\Specifiers.pas',
   FeatureIntf in '..\source\FeatureIntf.pas',
   Feature in '..\source\Feature.pas',
-  PerlRegEx in '..\pcre\PerlRegEx.pas',
-  pcre in '..\pcre\pcre.pas',
   ScenarioIntf in '..\source\ScenarioIntf.pas',
   Scenario in '..\source\Scenario.pas',
   StepIntf in '..\source\StepIntf.pas',
@@ -52,7 +50,9 @@ uses
   Constants in '..\source\Constants.pas',
   FeatureErrorIntf in '..\source\FeatureErrorIntf.pas',
   FeatureError in '..\source\FeatureError.pas',
-  Error in '..\source\Error.pas';
+  Error in '..\source\Error.pas',
+  TestStep in 'TestStep.pas',
+  DummyTests in 'DummyTests.pas';
 
 {$R *.RES}
 

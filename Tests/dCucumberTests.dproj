@@ -65,8 +65,6 @@
 			<DCCReference Include="dspec\Specifiers.pas"/>
 			<DCCReference Include="..\source\FeatureIntf.pas"/>
 			<DCCReference Include="..\source\Feature.pas"/>
-			<DCCReference Include="..\pcre\PerlRegEx.pas"/>
-			<DCCReference Include="..\pcre\pcre.pas"/>
 			<DCCReference Include="..\source\ScenarioIntf.pas"/>
 			<DCCReference Include="..\source\Scenario.pas"/>
 			<DCCReference Include="..\source\StepIntf.pas"/>
@@ -84,6 +82,8 @@
 			<DCCReference Include="..\source\FeatureErrorIntf.pas"/>
 			<DCCReference Include="..\source\FeatureError.pas"/>
 			<DCCReference Include="..\source\Error.pas"/>
+			<DCCReference Include="TestStep.pas"/>
+			<DCCReference Include="DummyTests.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

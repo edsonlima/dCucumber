@@ -3,11 +3,11 @@ unit Constants;
 interface
 
 const
-  ScenarioRegex = '^(.*)Cenário: ';
-  FeatureRegex: UTF8String = '^(( |\t)*)Funcionalidade: ';
-  StepRegex: UTF8String = '^(( |\t)*)(Dado|Quando|Então|E|Mas) .*';
-  StepValidWord: UTF8String = '^(( |\t)*)(Dado|Quando|Então|E|Mas)(\b| )';
-  FirstWordRegex: UTF8String = '\w([\w])*';
+  ScenarioRegex = '^(\s*)Cenário:\s';
+  FeatureRegex: UTF8String = '^(\s|)*Funcionalidade:\s*';
+  StepRegex: UTF8String = '^(\s*)(Dado|Quando|Então|E|Mas)\s.*';
+  StepValidWord: UTF8String = '^(\s*)(Dado|Quando|Então|E|Mas)\b';
+  FirstWordRegex: UTF8String = '\b\w*\b';
   InvalidStepIdentifierError = 'A linha %d começa com uma palavra chave desconhecida (%s).';
   SugestedActionToStepError = 'Os passos devem começar com: Dado, Quando, E, Então, e Mas';
   InvalidStepDefinition = 'O passo da linha %d deve conter mais do que apenas uma palavra.';

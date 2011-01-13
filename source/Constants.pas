@@ -3,6 +3,8 @@ unit Constants;
 interface
 
 const
+  NotFound = -1;
+
   ScenarioRegex = '^(\s*)Cenário:\s';
   FeatureRegex: UTF8String = '^(\s|)*Funcionalidade:\s*';
   StepRegex: UTF8String = '^(\s*)(Dado|Quando|Então|E|Mas)\s.*';

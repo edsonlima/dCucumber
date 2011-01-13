@@ -4,5 +4,13 @@
     <Transaction>2010/10/28 11:12:10.202.pas,E:\projetos\delphi\dCucumber\pcre\pcre.pas=</Transaction>
     <Transaction>2010/10/28 11:12:14.845.pas,E:\projetos\delphi\dCucumber\pcre\PerlRegEx.pas=</Transaction>
     <Transaction>2010/10/28 15:28:42.762.pas,E:\projetos\delphi\dCucumber\Tests\Unit1.pas=E:\projetos\delphi\dCucumber\Tests\DummyTests.pas</Transaction>
+    <Transaction>2010/10/28 16:24:20.751.pas,E:\projetos\delphi\dCucumber\Tests\Unit1.pas=E:\projetos\delphi\dCucumber\source\dCucumberRunnerForm.pas</Transaction>
+    <Transaction>2010/10/28 16:24:20.751.dfm,E:\projetos\delphi\dCucumber\Tests\Unit1.dfm=E:\projetos\delphi\dCucumber\source\dCucumberRunnerForm.dfm</Transaction>
+    <Transaction>2010/12/31 11:28:21.439.pas,E:\projetos\delphi\dCucumber\Tests\Unit1.pas=E:\projetos\delphi\dCucumber\source\StepParamIntf.pas</Transaction>
+    <Transaction>2010/12/31 11:31:54.393.pas,E:\projetos\delphi\dCucumber\Tests\Unit1.pas=E:\projetos\delphi\dCucumber\source\StepParamsIntf.pas</Transaction>
+    <Transaction>2011/01/03 11:22:53.355.pas,E:\projetos\delphi\dCucumber\Tests\Unit1.pas=E:\projetos\delphi\dCucumber\source\StepParam.pas</Transaction>
+    <Transaction>2011/01/03 11:23:59.087.pas,E:\projetos\delphi\dCucumber\Tests\Unit1.pas=E:\projetos\delphi\dCucumber\Tests\TestStepParam.pas</Transaction>
+    <Transaction>2011/01/03 11:25:48.604.pas,E:\projetos\delphi\dCucumber\Tests\TestStepParam.pas=</Transaction>
+    <Transaction>2011/01/03 14:34:52.563.pas,E:\projetos\delphi\dCucumber\Tests\Unit1.pas=E:\projetos\delphi\dCucumber\source\StepParams.pas</Transaction>
   </Transactions>
 </BorlandProject>

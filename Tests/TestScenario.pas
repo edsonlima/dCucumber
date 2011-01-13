@@ -43,14 +43,17 @@ begin
 end;
 
 procedure TestTScenario.DeveriaSerValidoSePossuirUmaClasseDeTesteAssociadaAoTitulo;
+var
+  LCenarioValidoSuite: ITestSuite;
 begin
-  RegisterTest(TUmCenarioValido.Suite);
+  LCenarioValidoSuite := TUmCenarioValido.Suite;
+  RegisterTest(LCenarioValidoSuite);
   FScenario.Titulo := 'Um Cenário Valido';
   FScenario.Steps.Add(TStep.Create);
   (FScenario.Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
   Specify.That(FScenario.TestSuite).Should.Not_.Be.Nil_;
   Specify.That((FScenario as IValidationRule).Valid).Should.Be.True;
-  RegisteredTests.Tests.Remove(TUmCenarioValido.Suite);
+  RegisteredTests.Tests.Remove(LCenarioValidoSuite);
 end;
 
 procedure TestTScenario.DeveriaSerInvalidoSeNaoPossuiTitulo;
@@ -62,9 +65,11 @@ end;
 
 procedure TestTScenario.DeveriaSerInvalidoSeNaoPossuiTestesAssociadosAosSteps;
 var
+  LCenarioValido: ITestSuite;
   LStep: IStep;
 begin
-  RegisterTest(TUmCenarioInvalido.Suite);
+  LCenarioValido := TUmCenarioInvalido.Suite;
+  RegisterTest(LCenarioValido);
   FScenario.Titulo := 'Um Cenário Invalido';
   FScenario.Steps.Add(TStep.Create);
   LStep := (FScenario.Steps.First as IStep);
@@ -73,7 +78,7 @@ begin
   Specify.That((FScenario as IValidationRule).Valid).Should.Be.False;
   Specify.That(FScenario.TestSuite.Tests).Should.Not_.Be.Empty;
 
-  RegisteredTests.Tests.Remove(TUmCenarioInvalido.Suite);
+  RegisteredTests.Tests.Remove(LCenarioValido);
 end;
 
 procedure TestTScenario.DeveriaRetornarONomeDaClasseDeTesteCorretamente;
@@ -83,14 +88,17 @@ begin
 end;
 
 procedure TestTScenario.DeveriaSerInvalidoSeNaoPossuirAoMenosUmStepValido;
+var
+  LCenarioValido: ITestSuite;
 begin
-  RegisterTest(TUmCenarioValido.Suite);
+  LCenarioValido := TUmCenarioValido.Suite;
+  RegisterTest(LCenarioValido);
   FScenario.TestSuite;
   FScenario.Titulo := 'Um Cenário Valido';
   FScenario.Steps.Add(TStep.Create);
   (FScenario.Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
   Specify.That((FScenario as IValidationRule).Valid).Should.Be.True;
-  RegisteredTests.Tests.Remove(TUmCenarioValido.Suite);
+  RegisteredTests.Tests.Remove(LCenarioValido);
 end;
 
 initialization

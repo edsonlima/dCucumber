@@ -92,10 +92,9 @@ begin
   LFeatureLine := SX('');
 
   LFeatureLine.Value := LoadedFeature[0];
-  // Encontrando o título da Feature
   LMatchData := LFeatureLine.MatchDataFor(FeatureRegex);
   LFirstScenarioLine := 0;
-  if LMatchData <> nil then // LRegex.Match then
+  if LMatchData <> nil then
   begin
     Result.Titulo := LMatchData.PostMatch.Value;
     for I := 1 to LoadedFeature.Count - 1 do
@@ -142,13 +141,13 @@ begin
       Continue;
     end;
 
-    if LFeatureLine.Match(StepValidWord) {and not LPrevSection.Match(FeatureRegex) and not LFeatureLine.Trim.IsEmpty} then
+    if LFeatureLine.Match(StepValidWord) then
     begin
       Errors.Add(TFeatureError.NewError(Format(InvalidStepDefinition, [I + 1]), I + 1, Format(SugestionToStepInitialize, [LFeatureLine.MatchDataFor(FirstWordRegex).MatchedData.Value])));
       Continue;
     end;
 
-    if (LMatchData = nil) {and not LPrevSection.Match(FeatureRegex) and not LFeatureLine.Trim.IsEmpty }then
+    if (LMatchData = nil) then
       Errors.Add(TFeatureError.NewError(Format(InvalidStepIdentifierError, [I + 1, LFeatureLine.MatchDataFor(FirstWordRegex).MatchedData.Value]), I + 1, SugestedActionToStepError));
   end;
 end;

@@ -21,7 +21,8 @@ type
     procedure DeveriaCarregarOErroDaFeature;
     procedure DeveriaIdentificarSePassoContemApenasUmaPalavra;
     procedure DeveriaInicializarComAPalavraFuncionalidade;
-    procedure DeveriaExistirOArquivoDaFeature;
+    procedure DeveriaValidarSeExistiOArquivoDaFeature;
+    procedure DeveriaCarregarOsParametrosDoStep;
   end;
 
 implementation
@@ -97,7 +98,7 @@ begin
   FFeatureParser := nil;
 end;
 
-procedure TestTFeatureParser.DeveriaExistirOArquivoDaFeature;
+procedure TestTFeatureParser.DeveriaValidarSeExistiOArquivoDaFeature;
 var
   LError: IFeatureError;
 begin
@@ -121,6 +122,11 @@ begin
   Specify.That(LError.Line).Should.Equal(8);
   Specify.That(LError.Message).Should.Equal('A linha 8 começa com uma palavra chave desconhecida (Essa).');
   Specify.That(LError.SugestedAction).Should.Equal(SugestedActionToStepError)
+end;
+
+procedure TestTFeatureParser.DeveriaCarregarOsParametrosDoStep;
+begin
+  Fail('TODO - criar lista de parâmetros no Scenario.');
 end;
 
 procedure TestTFeatureParser.DeveriaIdentificarSePassoContemApenasUmaPalavra;

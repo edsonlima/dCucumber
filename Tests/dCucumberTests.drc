@@ -8,22 +8,44 @@
   resources were bound to the produced executable.
 */
 
+#define TestConsts_FeatureCenarioSimples 65200
+#define TestConsts_FeatureComUmErro 65201
+#define TestConsts_FeatureSemFuncionalidade 65202
+#define TestConsts_FeatureComPrimeiraLinhaEmBranco 65203
+#define TestConsts_DescricaoFeatureTeste 65204
+#define TestConsts_DescricaoPrimeiroStep 65205
+#define JclResources_RsErrBadCount 65216
+#define JclResources_RsErrDfaUItem 65217
+#define JclResources_RsErrDfaUCond 65218
+#define JclResources_RsErrDfaUMLimit 65219
+#define JclResources_RsErrDfaWSSize 65220
+#define JclResources_RsErrDfaRecurse 65221
+#define JclResources_RsErrRecursionLimit 65222
+#define JclResources_RsErrNullWsLimit 65223
+#define JclResources_RsErrBadNewLine 65224
+#define JclResources_RsErrLibNotLoaded 65225
+#define JclResources_RsErrStudyFailed 65226
+#define JclResources_RsErrCalloutError 65227
+#define JclResources_RsErrUnknownError 65228
+#define JclResources_RsErrNoUTF8Support 65229
+#define JclResources_RsEUnexpectedEOSeq 65230
+#define TestConsts_FeatureDir 65231
 #define ComStrs_sInvalidComCtl32 65232
-#define DIConsts_SInvalidElementType 65233
-#define DIRegEx_Consts_SDIRegExCodeNilError 65234
-#define DIRegEx_Consts_SDIRegExBadMagicError 65235
-#define DIRegEx_Consts_SDIRegExInvalidBsrOptions 65236
-#define DIRegEx_Consts_SDIRegExInvalidNewLineOptions 65237
-#define DIRegEx_Consts_SDIRegExNamedSubStringIndexError 65238
-#define DIRegEx_Consts_SDIRegExSubStringIndexError 65239
-#define DIRegEx_Consts_SDIRegExUnknownSubStringName 65240
-#define TestConsts_FeatureDir 65241
-#define TestConsts_FeatureCenarioSimples 65242
-#define TestConsts_FeatureComUmErro 65243
-#define TestConsts_FeatureSemFuncionalidade 65244
-#define TestConsts_FeatureComPrimeiraLinhaEmBranco 65245
-#define TestConsts_DescricaoFeatureTeste 65246
-#define TestConsts_DescricaoPrimeiroStep 65247
+#define JclResources_RsEReplacementChar 65233
+#define JclResources_RsErrNoMatch 65234
+#define JclResources_RsErrNull 65235
+#define JclResources_RsErrBadOption 65236
+#define JclResources_RsErrBadMagic 65237
+#define JclResources_RsErrUnknownNode 65238
+#define JclResources_RsErrNoMemory 65239
+#define JclResources_RsErrNoSubString 65240
+#define JclResources_RsErrMatchLimit 65241
+#define JclResources_RsErrCallout 65242
+#define JclResources_RsErrBadUTF8 65243
+#define JclResources_RsErrBadUTF8Offset 65244
+#define JclResources_RsErrPartial 65245
+#define JclResources_RsErrBadPartial 65246
+#define JclResources_RsErrInternal 65247
 #define Consts_SMultiSelectRequired 65248
 #define Consts_SSeparator 65249
 #define Consts_SNoGetItemEventHandler 65250
@@ -314,22 +336,44 @@
 #define SysConst_SOverflow 65535
 STRINGTABLE
 BEGIN
-	ComStrs_sInvalidComCtl32,	"This control requires version 4.70 or greater of COMCTL32.DLL"
-	DIConsts_SInvalidElementType,	"Invalid Element Type"
-	DIRegEx_Consts_SDIRegExCodeNilError,	"Regular Expression pattern not compiled"
-	DIRegEx_Consts_SDIRegExBadMagicError,	"Magic number not found"
-	DIRegEx_Consts_SDIRegExInvalidBsrOptions,	"Invalid combination of BSR options"
-	DIRegEx_Consts_SDIRegExInvalidNewLineOptions,	"Invalid combination of newLine options"
-	DIRegEx_Consts_SDIRegExNamedSubStringIndexError,	"Named SubString index out of bounds (%d)"
-	DIRegEx_Consts_SDIRegExSubStringIndexError,	"SubString index out of bounds (%d)"
-	DIRegEx_Consts_SDIRegExUnknownSubStringName,	"Named SubString '%s' does not exist"
-	TestConsts_FeatureDir,	"..\\Features\\"
 	TestConsts_FeatureCenarioSimples,	"cenario_simples.feature"
 	TestConsts_FeatureComUmErro,	"cenario_com_erro.feature"
 	TestConsts_FeatureSemFuncionalidade,	"feature_sem_funcionalidade.feature"
 	TestConsts_FeatureComPrimeiraLinhaEmBranco,	"feature_com_primeira_linha_em_branco.feature"
 	TestConsts_DescricaoFeatureTeste,	"Como Desenvolvedor\r\nGostaria que o teste abaixo fosse executado\r\nPara que minhas estórias ganhem vida!"
 	TestConsts_DescricaoPrimeiroStep,	"Dado que não criei o cenário \"primeiros passos\" em minha classe de testes"
+	JclResources_RsErrBadCount,	"Bad count"
+	JclResources_RsErrDfaUItem,	"DFA UItem"
+	JclResources_RsErrDfaUCond,	"DFA UCond"
+	JclResources_RsErrDfaUMLimit,	"DFA UMLimit"
+	JclResources_RsErrDfaWSSize,	"DFA WSSize"
+	JclResources_RsErrDfaRecurse,	"DFA Recurse"
+	JclResources_RsErrRecursionLimit,	"Recursion limit"
+	JclResources_RsErrNullWsLimit,	"Null WS limit"
+	JclResources_RsErrBadNewLine,	"Bad new line"
+	JclResources_RsErrLibNotLoaded,	"PCRE library not loaded"
+	JclResources_RsErrStudyFailed,	"Study failed"
+	JclResources_RsErrCalloutError,	"Unhandled exception in callout"
+	JclResources_RsErrUnknownError,	"Unknown error"
+	JclResources_RsErrNoUTF8Support,	"No UTF8 support in this version of PCRE"
+	JclResources_RsEUnexpectedEOSeq,	"Unexpected end of sequence"
+	TestConsts_FeatureDir,	"..\\Features\\"
+	ComStrs_sInvalidComCtl32,	"This control requires version 4.70 or greater of COMCTL32.DLL"
+	JclResources_RsEReplacementChar,	"Failed to get ANSI replacement character"
+	JclResources_RsErrNoMatch,	"No match"
+	JclResources_RsErrNull,	"Required value is null"
+	JclResources_RsErrBadOption,	"Bad option"
+	JclResources_RsErrBadMagic,	"Bad magic"
+	JclResources_RsErrUnknownNode,	"Unknown node"
+	JclResources_RsErrNoMemory,	"Out of memory"
+	JclResources_RsErrNoSubString,	"No substring"
+	JclResources_RsErrMatchLimit,	"Match limit"
+	JclResources_RsErrCallout,	"Callout"
+	JclResources_RsErrBadUTF8,	"Bad UTF-8"
+	JclResources_RsErrBadUTF8Offset,	"Bad UTF-8 offset"
+	JclResources_RsErrPartial,	"Partial"
+	JclResources_RsErrBadPartial,	"Bad partial"
+	JclResources_RsErrInternal,	"Internal"
 	Consts_SMultiSelectRequired,	"Multiselect mode must be on for this feature"
 	Consts_SSeparator,	"Separator"
 	Consts_SNoGetItemEventHandler,	"No OnGetItem event handler assigned"
@@ -624,5 +668,6 @@ END
 /* c:\program files (x86)\embarcadero\rad studio\7.0\lib\Controls.res */
 /* c:\program files (x86)\embarcadero\rad studio\7.0\lib\Buttons.res */
 /* c:\program files (x86)\embarcadero\rad studio\7.0\Source\DUnit\src\GUITestRunner.DFM */
+/* ..\source\dCucumberRunnerForm.dfm */
 /* E:\projetos\delphi\dCucumber\Tests\dCucumberTests.RES */
 /* E:\projetos\delphi\dCucumber\Tests\dCucumberTests.drf */

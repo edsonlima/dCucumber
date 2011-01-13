@@ -52,7 +52,14 @@ uses
   FeatureError in '..\source\FeatureError.pas',
   Error in '..\source\Error.pas',
   TestStep in 'TestStep.pas',
-  DummyTests in 'DummyTests.pas';
+  DummyTests in 'DummyTests.pas',
+  dCucumberRunnerForm in '..\source\dCucumberRunnerForm.pas' {frCucumberRunner},
+  StepParamIntf in '..\source\StepParamIntf.pas',
+  StepParamsIntf in '..\source\StepParamsIntf.pas',
+  StepParam in '..\source\StepParam.pas',
+  TestStepParam in 'TestStepParam.pas',
+  StepParams in '..\source\StepParams.pas',
+  TestStepParams in 'TestStepParams.pas';
 
 {$R *.RES}
 

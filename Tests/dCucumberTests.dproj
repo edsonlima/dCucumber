@@ -84,6 +84,15 @@
 			<DCCReference Include="..\source\Error.pas"/>
 			<DCCReference Include="TestStep.pas"/>
 			<DCCReference Include="DummyTests.pas"/>
+			<DCCReference Include="..\source\dCucumberRunnerForm.pas">
+				<Form>frCucumberRunner</Form>
+			</DCCReference>
+			<DCCReference Include="..\source\StepParamIntf.pas"/>
+			<DCCReference Include="..\source\StepParamsIntf.pas"/>
+			<DCCReference Include="..\source\StepParam.pas"/>
+			<DCCReference Include="TestStepParam.pas"/>
+			<DCCReference Include="..\source\StepParams.pas"/>
+			<DCCReference Include="TestStepParams.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

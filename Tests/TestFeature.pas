@@ -32,23 +32,30 @@ begin
 end;
 
 procedure TestTFeature.FeatureDeveriaSerInvalidaSeNaoPossuirAoMenosUmCenarioValido;
+var
+  LCenarioValido: ITestSuite;
 begin
-  RegisterTest(TUmCenarioValido.Suite);
+  LCenarioValido := TUmCenarioValido.Suite;
+  RegisterTest(LCenarioValido);
   Specify.That(FFeature.Valid).Should.Be.False;
   FFeature.Scenarios.Add(TScenario.Create);
   (FFeature.Scenarios.First as IScenario).Titulo := 'Um Cenário Válido';
   (FFeature.Scenarios.First as IScenario).Steps.Add(TStep.Create);
   ((FFeature.Scenarios.First as IScenario).Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
   Specify.That(FFeature.Valid).Should.Be.True;
-  RegisteredTests.Tests.Remove(TUmCenarioValido.Suite);
+  RegisteredTests.Tests.Remove(LCenarioValido);
 end;
 
 procedure TestTFeature.FeatureDeveriaSerInvalidaSeNaoPossuirUmaClasseDeTestesParaCadaScenario;
 var
+  LCenarioCom3Passos: ITestSuite;
+  LCenarioValidoSuite: ITestSuite;
   LScenario: IScenario;
 begin
-  RegisterTest(TUmCenarioValido.Suite);
-  RegisterTest(TUmCenarioCom3Passos.Suite);
+  LCenarioValidoSuite := TUmCenarioValido.Suite;
+  RegisterTest(LCenarioValidoSuite);
+  LCenarioCom3Passos := TUmCenarioCom3Passos.Suite;
+  RegisterTest(LCenarioCom3Passos);
   LScenario := TScenario.Create;
   LScenario.Titulo := 'Um cenário com 3 passos';
   LScenario.Steps.Add(NovoStep('Dado que tenho 3 passos nesse cenário'));
@@ -64,8 +71,8 @@ begin
   FFeature.Scenarios.Add(LScenario);
 
   Specify.That(FFeature.Valid).Should.Be.True;
-  RegisteredTests.Tests.Remove(TUmCenarioValido.Suite);
-  RegisteredTests.Tests.Remove(TUmCenarioCom3Passos.Suite);
+  RegisteredTests.Tests.Remove(LCenarioValidoSuite);
+  RegisteredTests.Tests.Remove(LCenarioCom3Passos);
 end;
 
 function TestTFeature.NovoStep(ADescricao: string): IStep;

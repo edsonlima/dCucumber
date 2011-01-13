@@ -7,23 +7,34 @@ interface
 }
 
 uses
-  SysUtils, Classes, DISystemCompat, DIUtils, DIRegEx;
+  SysUtils, Classes, JclPCRE;
 
 const
   NOME_ARQUIVO = 'c:\arquivo.txt';
   QUEBRA_DE_LINHA = #13#10;
   FILTRO_PADRAO_DE_ARQUIVO = '*.*';
+
+  // IString, IXString constants
   ACCENTED_CHARS: array [0 .. 56] of Char = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåæçèéêëìíîïñòóôõöùúûüýÿ';
   UNACCENTED_CHARS: array [0 .. 56] of Char = 'AAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaaceeeeiiiinooooouuuuyy';
-  // ACCENTED_CHARS_SET: set of Char = [#192 .. #255] - [#215, #216, #222, #223, #247, #248];
+  REGEX_FIRST_WORD_LETTER: UTF8String = '^\p{L}|(\p{P}|\p{Z})\p{L}';
+  REGEX_ACCENTED_CHARS: UTF8String = '[ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåæçèéêëìíîïñòóôõöùúûüýÿ]';
+  REGEX_PUNCTS_OR_SPACES: UTF8String = '[[:punct:]]|\s';
 
-  REGEX_PRIMEIRA_LETRA_DE_CADA_PALAVRA = '\b(\w)';
-  REGEX_ACCENTED_CHARS = '[ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÙÚÛÜÝàáâãäåæçèéêëìíîïñòóôõöùúûüýÿ]';
+  // IURI constants
+  REGEX_SCHEME: UTF8String = '[a-zA-Z][+-.a-zA-Z]*';
+  REGEX_LAST_PATH: UTF8String = '([^/])([a-zA-Z][+-.a-zA-Z:?&\d#=]*)$';
+  REGEX_DOCUMENT: UTF8String = '^([][.-\w\d]*)([^?])';
 
-  // Evita possíveis problemas ao executar regex em string muito grandes;
+  // To avoid possible erros on large string regex;
 {$MAXSTACKSIZE $00200000}
 
 type
+
+  TMatchOffSet = record
+    Start: Integer;
+    Stop: Integer;
+  end;
 
   TProcedureString = procedure(Valor: string) of object;
 
@@ -125,14 +136,15 @@ type
     function Match(ARegex: UTF8String): Boolean;
     function MatchDataFor(ARegex: UTF8String): IMatchData;
     function AsClassName(AUnsingPrefix: string = 'T'): string;
+    function IsEmpty(ATrimBefore: boolean = False): Boolean;
     function WithoutAccents: string;
   end;
 
   TString = class(TInterfacedObject, IString)
   private
     FValue: string;
-    FRegex: TDIPerlRegEx;
-    function Regex: TDIPerlRegEx;
+    FRegex: TJclRegEx;
+    function Regex: TJclRegEx;
   protected
     function GetAtStr(De, Ate: string): string;
     procedure SetAtStr(De, Ate: string; const AValue: string);
@@ -231,6 +243,7 @@ type
     function Match(ARegex: UTF8String): Boolean;
     function MatchDataFor(ARegex: UTF8String): IMatchData;
     function AsClassName(AUsingPrefix: string = 'T'): string;
+    function IsEmpty(ATrimBefore: boolean = False): Boolean;
     function WithoutAccents: string;
   end;
 
@@ -310,7 +323,7 @@ type
     function IgualA(AValor: string): Boolean; overload;
     function IgualA(AValor: IString): Boolean; overload;
     function IgualA(AValor: IXString): Boolean; overload;
-    function IsEmpty: Boolean;
+    function IsEmpty(ATrimBefore: boolean = False): Boolean;
     function Match(ARegex: UTF8String): Boolean;
     procedure Clear;
 
@@ -324,9 +337,9 @@ type
 
   TXString = class(TInterfacedObject, IXString)
   private
-    FRegex: TDIPerlRegEx;
+    FRegex: TJclRegEx;
     FValue: IString;
-    function Regex: TDIPerlRegEx;
+    function Regex: TJclRegEx;
   protected
     function GetAt(De, Ate: Integer): IXString;
     procedure SetAt(De, Ate: Integer; const AValue: IXString);
@@ -415,7 +428,7 @@ type
     property Get[De, Ate: Integer]: IXString read GetAt write SetAt; default;
     function After(AIndex: Integer): IXString;
     function AsInteger: Integer;
-    function IsEmpty: Boolean;
+    function IsEmpty(ATrimBefore: boolean = False): Boolean;
     function AsClassName(AUsingPrefix: string = 'T'): IXString;
     function WithoutAccents: IXString;
   end;
@@ -424,19 +437,31 @@ type
 
   IMatchData = interface(IInterface)
     ['{65DA766B-1565-489F-9389-9D5968CDE346}']
+    function GetCaptures(Index: Integer): IXString;
     function GetMatchedData: IXString;
     function GetPostMatch: IXString;
     function GetPreMatch: IXString;
     function GetSize: IInteger;
+    procedure SetCaptures(Index: Integer; const Value: IXString);
     procedure SetMatchedData(const Value: IXString);
     procedure SetPostMatch(const Value: IXString);
     procedure SetPreMatch(const Value: IXString);
     procedure SetSize(const Value: IInteger);
+    function GetOffSet(Index: Integer): TMatchOffSet;
+    procedure SetOffSet(Index: Integer; const Value: TMatchOffSet);
+    function GetStart(Index: Integer): IInteger;
+    procedure SetStart(Index: Integer; const Value: IInteger);
+    function GetStop(Index: Integer): IInteger;
+    procedure SetStop(Index: Integer; const Value: IInteger);
 
     property MatchedData: IXString read GetMatchedData write SetMatchedData;
     property PostMatch: IXString read GetPostMatch write SetPostMatch;
     property PreMatch: IXString read GetPreMatch write SetPreMatch;
     property Size: IInteger read GetSize write SetSize;
+    property Captures[Index: Integer]: IXString read GetCaptures write SetCaptures; default;
+    property OffSet[Index: Integer]: TMatchOffSet read GetOffSet write SetOffSet;
+    property Start[Index: Integer]: IInteger read GetStart write SetStart;
+    property Stop[Index: Integer]: IInteger read GetStop write SetStop;
   end;
 
   TIntegerProc = reference to procedure;
@@ -449,7 +474,18 @@ type
     function AsString: string;
     function Format(AFormat: string = '000000'): string;
     procedure Times(AMetodo: TIntegerProc);
+    function Next: Integer;
     property Value: Integer read GetValue write SetValue;
+  end;
+
+  IURI = interface(IInterface)
+  ['{6F4B598A-01AE-4028-96D1-C1DE9F23C3C8}']
+    function GetURL: IXString;
+    procedure SetURL(const Value: IXString);
+
+    function Document: IXString;
+    function EncodedURI: IXString;
+    property URL: IXString read GetURL write SetURL;
   end;
 
   TInteger = class(TInterfacedObject, IInteger)
@@ -459,43 +495,84 @@ type
     function GetValue: Integer;
     procedure SetValue(const Value: Integer);
   public
+    constructor Create(AValue: Integer);
+
     procedure Times(AMetodo: TIntegerProc);
     function AsString: string;
     function Format(AFormat: string = '000000'): string;
+    function Next: Integer;
+
     property Value: Integer read GetValue write SetValue;
-    constructor Create(AValue: Integer);
   end;
 
   TMatchData = class(TInterfacedObject, IMatchData)
-
   private
+    FCaptures: IInterfaceList;
+    FOffSets: array of TMatchOffSet;
+    FStarts: array of IInteger;
+    FStops: array of IInteger;
     FMatchedData: IXString;
     FPostMatch: IXString;
     FPreMatch: IXString;
     FSize: IInteger;
+    function GetCaptures(Index: Integer): IXString;
     function GetMatchedData: IXString;
+    function GetOffSet(Index: Integer): TMatchOffSet;
     function GetPostMatch: IXString;
     function GetPreMatch: IXString;
     function GetSize: IInteger;
+    function GetStart(Index: Integer): IInteger;
+    function GetStop(Index: Integer): IInteger;
+    procedure SetCaptures(Index: Integer; const Value: IXString);
     procedure SetMatchedData(const Value: IXString);
+    procedure SetOffSet(Index: Integer; const Value: TMatchOffSet);
     procedure SetPostMatch(const Value: IXString);
     procedure SetPreMatch(const Value: IXString);
     procedure SetSize(const Value: IInteger);
+    procedure SetStart(Index: Integer; const Value: IInteger);
+    procedure SetStop(Index: Integer; const Value: IInteger);
   public
+    constructor Create(const ASize: Integer);
+
+    property Captures[Index: Integer]: IXString read GetCaptures write SetCaptures; default;
     property MatchedData: IXString read GetMatchedData write SetMatchedData;
+    property OffSet[Index: Integer]: TMatchOffSet read GetOffSet write SetOffSet;
     property PostMatch: IXString read GetPostMatch write SetPostMatch;
     property PreMatch: IXString read GetPreMatch write SetPreMatch;
     property Size: IInteger read GetSize write SetSize;
+    property Start[Index: Integer]: IInteger read GetStart write SetStart;
+    property Stop[Index: Integer]: IInteger read GetStop write SetStop;
   end;
 
+  TURI = class(TInterfacedObject, IURI)
+  private
+    FURL: IXString;
+    FDocument: IXString;
+    FEncodedURI: IXString;
+    function GetURL: IXString;
+    procedure InitInstance;
+    procedure SetURL(const Value: IXString);
+  public
+    constructor Create(const AURL: string); overload;
+    constructor Create(const AURL: IXString); overload;
+    function Document: IXString;
+    function EncodedURI: IXString;
+    property URL: IXString read GetURL write SetURL;
+  end;
+
+// IInteger
 function I(AIntegerValue: Integer): IInteger;
 
+// IString, IXString
 function S(Value: string): IString;
 function SX(Value: string): IXString;
 function SDoArquivo(AArquivo: string): IString;
 function SXDoArquivo(AArquivo: string): IXString;
-function Concatenar(AStrings: array of string; AFormat: string = '"%s"'; ASeparador: string = ', '): string;
 
+// IURI
+function URI(const AURI: string): IURI;
+
+function Concatenar(AStrings: array of string; AFormat: string = '"%s"'; ASeparador: string = ', '): string;
 function Aspas(AStr: string): string;
 procedure ArrayExecute(AValores: array of string; AMetodo: TProcedureString);
 function ReplaceMany(S: string; OldPatterns: array of string; NewPatterns: array of string; Flags: TReplaceFlags): string; overload;
@@ -516,7 +593,7 @@ function IndexOf(AValor: string; AArray: array of string): Integer;
 implementation
 
 uses
-  Dialogs, Windows, Registry, StrUtils, forms, Math;
+  Dialogs, Windows, Registry, StrUtils, forms, Math, HTTPApp;
 
 function IndexOf(AValor: string; AArray: array of string): Integer;
 var
@@ -876,8 +953,7 @@ end;
 
 function TString.AsClassName(AUsingPrefix: string = 'T'): string;
 begin
-  Result := SX(Value).Humanize.Camelize.WithoutAccents.Replace(StrEncodeUtf8('[[:punct:]]|\s'), '').AdicionarAntesDaString
-    (AUsingPrefix).Value;
+  Result := SX(Value).Humanize.Camelize.WithoutAccents.Replace(REGEX_PUNCTS_OR_SPACES, '').AdicionarAntesDaString(AUsingPrefix).Value;
 end;
 
 function TString.EstaContidoEm(AValue: string): Boolean;
@@ -930,9 +1006,9 @@ end;
 
 function TString.Match(ARegex: UTF8String): Boolean;
 begin
-  Regex.MatchPatternRaw := ARegex;
-  Regex.SetSubjectStr(StrEncodeUtf8(Value));
-  Result := Regex.Match(0) > 0;
+  Regex.Compile(ARegex, True, True);
+  Regex.Match(Value);
+  Result := Regex.Match(Value);
 end;
 
 function TString.MatchDataFor(ARegex: UTF8String): IMatchData;
@@ -982,20 +1058,21 @@ end;
 function TString.WithoutAccents: string;
 var
   LAccentedChar: UTF8String;
-  LIndex: Integer;
+  LAccentedLetterIndex: Integer;
+  LLastOffSet: Integer;
   LResult: IXString;
 begin
-  Regex.MatchPatternRaw := StrEncodeUtf8(REGEX_ACCENTED_CHARS);
-  Regex.SetSubjectStr(StrEncodeUtf8(Value));
+  Regex.Compile(REGEX_ACCENTED_CHARS, True, True);
   LResult := SX(Value);
-  if Regex.Match(0) > 0 then
+  if Regex.Match(Value) then
   begin
     repeat
-      LAccentedChar := StrDecodeUtf8(Regex.MatchedStr);
-      LIndex := S(ACCENTED_CHARS).IndexOf(LAccentedChar);
-      if LIndex >= 0 then
-        LResult.ReplaceAll(LAccentedChar, UNACCENTED_CHARS[LIndex]);
-    until Regex.MatchNext < 0;
+      LAccentedChar := Regex.Captures[0];
+      LAccentedLetterIndex := S(ACCENTED_CHARS).IndexOf(LAccentedChar);
+      LLastOffSet := Regex.CaptureRanges[0].LastPos + 1;
+      if LAccentedLetterIndex >= 0 then
+        LResult.ReplaceAll(LAccentedChar, UNACCENTED_CHARS[LAccentedLetterIndex]);
+    until not Regex.Match(Value, LLastOffSet);
   end;
   Value := LResult.Value;
   Result := LResult.Value;
@@ -1095,23 +1172,28 @@ begin
   Result := StringReplace(Value, AOldPattern, ANewPattern, Flags);
 end;
 
-function TString.Regex: TDIPerlRegEx;
+function TString.Regex: TJclRegEx;
 begin
   if FRegex = nil then
   begin
-    FRegex := TDIPerlRegEx.Create(nil);
-    FRegex.CompileOptions := FRegex.CompileOptions + [coUtf8];
+    FRegex := TJclRegEx.Create;
+    FRegex.Options := FRegex.Options + [roNotEmpty, roNewLineAny, roUTF8, roIgnoreCase];
   end;
   Result := FRegex;
 end;
 
 function TString.Replace(ARegexPattern: UTF8String; ANewPattern: string): string;
+var
+  LOffSet: Integer;
 begin
-  Regex.SetSubjectStr(StrEncodeUtf8(Value));
-  Regex.MatchPatternRaw := StrEncodeUtf8(ARegexPattern);
-  Regex.FormatPattern := StrEncodeUtf8(ANewPattern);
-  Regex.Match;
-  Result := StrDecodeUtf8(Regex.Replace(0, -1));
+  Regex.Compile(ARegexPattern, True, True);
+  if Regex.Match(FValue) then
+    repeat
+      LOffSet := Regex.CaptureRanges[0].FirstPos;
+      Delete(FValue, LOffSet, System.Length(Regex.Captures[0]));
+      Insert(ANewPattern, FValue, LOffSet);
+    until not Regex.Match(FValue, Regex.CaptureRanges[0].LastPos);
+  Result := FValue;
 end;
 
 function TString.Replace(AOldPatterns: array of string; ANewPattern: string; Flags: TReplaceFlags): string;
@@ -1194,14 +1276,14 @@ var
   LOffset: Cardinal;
 begin
   Result := Value;
-  Regex.SetSubjectStr(StrEncodeUtf8(Result));
-  Regex.MatchPatternRaw := REGEX_PRIMEIRA_LETRA_DE_CADA_PALAVRA;
-  if Regex.Match(0) > 0 then
+  Regex.Compile(REGEX_FIRST_WORD_LETTER, True, True);
+  if Regex.Match(Result) then
   begin
     repeat
-      LOffset := BufCountUtf8Chars(PAnsiChar(StrEncodeUtf8(Result)), Regex.MatchedStrFirstCharPos);
-      Result[LOffset + 1] := SysUtils.AnsiUpperCase(StrDecodeUtf8(Regex.MatchedStr))[1];
-    until Regex.MatchNext < 0;
+      LOffset := Regex.CaptureRanges[0].FirstPos;
+      Delete(Result, LOffset, System.Length(Regex.Captures[0]));
+      Insert(SysUtils.AnsiUpperCase(Regex.Captures[0]), Result, LOffset);
+    until not Regex.Match(Result, Regex.CaptureRanges[0].LastPos + 1);
   end;
 end;
 
@@ -1465,6 +1547,11 @@ begin
   end
 end;
 
+function TString.IsEmpty(ATrimBefore: boolean = False): Boolean;
+begin
+  Result :=  SX(Value).IsEmpty(ATrimBefore);
+end;
+
 procedure TString.SetChave(ANome: string; const Value: string);
 begin
   //
@@ -1612,9 +1699,12 @@ begin
   Result := S(Value).IndexOf(ASubstring, AOffSet);
 end;
 
-function TXString.IsEmpty: Boolean;
+function TXString.IsEmpty(ATrimBefore: boolean = False): Boolean;
 begin
-  Result := System.Length(Value) = 0;
+  if not ATrimBefore then
+    Result := System.Length(Value) = 0
+  else
+    Result := Self.Trim.IsEmpty;
 end;
 
 function TXString.Length: Integer;
@@ -1644,26 +1734,44 @@ begin
   Result := S(Value).Match(ARegex);
 end;
 
+
 function TXString.MatchDataFor(ARegex: UTF8String): IMatchData;
 var
+  LCaptureIndex: Integer;
   LFirstMatchedCharPos: Integer;
   LLastMatchedCharPos: Integer;
+  LOffSet: TMatchOffSet;
 begin
   Result := nil;
-  Regex.SetSubjectStr(StrEncodeUtf8(Value));
-  Regex.MatchPatternRaw := ARegex;
-  if Regex.Match(0) > 0 then
+  Regex.Compile(ARegex, True, True);
+  if Regex.Match(Value) then
   begin
-    Result := TMatchData.Create;
-    LFirstMatchedCharPos := BufCountUtf8Chars(PAnsiChar(StrEncodeUtf8(Value)), Regex.MatchedStrFirstCharPos);
-    LLastMatchedCharPos := BufCountUtf8Chars(PAnsiChar(StrEncodeUtf8(Value)), Regex.MatchedStrAfterLastCharPos);
-    Result.MatchedData := SX(StrDecodeUtf8(Regex.MatchedStr));
+    Result := TMatchData.Create(Regex.CaptureCount);
+    Result.MatchedData := SX(Regex.Captures[0]);
+    LFirstMatchedCharPos := Regex.CaptureRanges[0].FirstPos;
+    LLastMatchedCharPos := Regex.CaptureRanges[0].LastPos;
     if LFirstMatchedCharPos > 1 then
-      Result.PreMatch := SX(Value).Ate(LFirstMatchedCharPos - 1)
+      Result.PreMatch := SX(Value).Ate(LFirstMatchedCharPos - 2)
     else
       Result.PreMatch := SX('');
     Result.PostMatch := SX(Value).After(LLastMatchedCharPos);
-    Result.Size := I(BufCountUtf8Chars(PAnsiChar(StrEncodeUtf8(Value)), Regex.MatchedStrLength));
+
+    for LCaptureIndex := 0 to Regex.CaptureCount - 1 do
+    begin
+      Result[LCaptureIndex] := SX(Regex.Captures[LCaptureIndex]);
+      LOffSet.Start := Regex.CaptureRanges[LCaptureIndex].FirstPos;
+      LOffSet.Stop := Regex.CaptureRanges[LCaptureIndex].LastPos;
+      Result.OffSet[LCaptureIndex] := LOffSet;
+      Result.Start[LCaptureIndex] := I(Regex.CaptureRanges[LCaptureIndex].FirstPos);
+      Result.Stop[LCaptureIndex] := I(Regex.CaptureRanges[LCaptureIndex].LastPos);
+    end;
+
+//    LCaptureIndex := 0;
+//    repeat
+//      Result[LCaptureIndex] := SX(Regex.Captures[0]);
+//      Inc(LCaptureIndex);
+//    until not Regex.Match(Value, Regex.CaptureRanges[0].LastPos + 1);
+    Result.Size := I(Regex.CaptureCount);
   end;
 end;
 
@@ -1950,16 +2058,24 @@ begin
   Result := S(Value).Contem(AValues);
 end;
 
-function TXString.Regex: TDIPerlRegEx;
+function TXString.Regex: TJclRegEx;
 begin
   if FRegex = nil then
-    FRegex := TDIPerlRegEx.Create(nil);
+  begin
+    FRegex := TJclRegEx.Create;
+    FRegex.Options := FRegex.Options + [roNotEmpty, roNewLineAny, roUTF8, roIgnoreCase];
+  end;
   Result := FRegex;
 end;
 
 function I(AIntegerValue: Integer): IInteger;
 begin
   Result := TInteger.Create(AIntegerValue);
+end;
+
+function URI(const AURI: string): IURI;
+begin
+  Result := TURI.Create(AURI);
 end;
 
 { TInteger }
@@ -1984,6 +2100,12 @@ begin
   Result := FValue;
 end;
 
+function TInteger.Next: Integer;
+begin
+  Inc(FValue);
+  Result := FValue;
+end;
+
 procedure TInteger.SetValue(const Value: Integer);
 begin
   FValue := Value;
@@ -1995,6 +2117,21 @@ var
 begin
   for I := 0 to Value - 1 do
     AMetodo;
+end;
+
+constructor TMatchData.Create(const ASize: Integer);
+begin
+  inherited Create;
+  FCaptures := TInterfaceList.Create;
+  FSize := I(ASize);
+  SetLength(FOffSets, ASize);
+  SetLength(FStarts, ASize);
+  SetLength(FStops, ASize);
+end;
+
+function TMatchData.GetCaptures(Index: Integer): IXString;
+begin
+  Result := FCaptures[Index] as IXString;
 end;
 
 function TMatchData.GetMatchedData: IXString;
@@ -2017,9 +2154,27 @@ begin
   Result := FSize;
 end;
 
+function TMatchData.GetOffSet(Index: Integer): TMatchOffSet;
+begin
+  Result := FOffSets[Index];
+end;
+
+procedure TMatchData.SetCaptures(Index: Integer; const Value: IXString);
+begin
+  if (FCaptures.Count - 1 < Index) then
+    FCaptures.Add(Value)
+  else
+    FCaptures[Index] := Value;
+end;
+
 procedure TMatchData.SetMatchedData(const Value: IXString);
 begin
   FMatchedData := Value;
+end;
+
+procedure TMatchData.SetOffSet(Index: Integer; const Value: TMatchOffSet);
+begin
+  FOffSets[Index] := Value;
 end;
 
 procedure TMatchData.SetPostMatch(const Value: IXString);
@@ -2035,6 +2190,67 @@ end;
 procedure TMatchData.SetSize(const Value: IInteger);
 begin
   FSize := Value;
+end;
+
+function TMatchData.GetStart(Index: Integer): IInteger;
+begin
+  Result := FStarts[Index];
+end;
+
+procedure TMatchData.SetStart(Index: Integer; const Value: IInteger);
+begin
+  FStarts[Index] := Value;
+end;
+
+function TMatchData.GetStop(Index: Integer): IInteger;
+begin
+  Result := FStops[Index];
+end;
+
+procedure TMatchData.SetStop(Index: Integer; const Value: IInteger);
+begin
+  FStops[Index] := Value;
+end;
+
+constructor TURI.Create(const AURL: string);
+begin
+  InitInstance;
+  FURL.Value := AURL;
+end;
+
+constructor TURI.Create(const AURL: IXString);
+begin
+  InitInstance;
+  FURL.Value := AURL.Value;
+end;
+
+function TURI.Document: IXString;
+begin
+  FDocument := FURL.MatchDataFor(REGEX_LAST_PATH).MatchedData.MatchDataFor(REGEX_DOCUMENT).MatchedData;
+  Result := FDocument;
+end;
+
+function TURI.EncodedURI: IXString;
+begin
+  FEncodedURI.Value := HTTPEncode(FURL.Value);
+  Result := FEncodedURI;
+end;
+
+function TURI.GetURL: IXString;
+begin
+  Result := FURL;
+end;
+
+procedure TURI.InitInstance;
+begin
+  FDocument := SX('');
+  FURL := SX('');
+  FEncodedURI := SX('');
+end;
+
+procedure TURI.SetURL(const Value: IXString);
+begin
+  FURL := Value;
 end;
 
 end.

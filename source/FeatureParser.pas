@@ -126,7 +126,7 @@ begin
     LMatchData := LFeatureLine.MatchDataFor(ScenarioRegex);
     if LMatchData <> nil then
     begin
-      LScenario := TScenario.Create;
+      LScenario := TScenario.Create(LMatchData.PostMatch.AsClassName.Value);
       LScenario.Titulo := LMatchData.PostMatch.Value;
       Result.Scenarios.Add(LScenario);
       Continue;

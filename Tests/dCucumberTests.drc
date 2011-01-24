@@ -8,204 +8,214 @@
   resources were bound to the produced executable.
 */
 
-#define TestConsts_FeatureCenarioSimples 65200
-#define TestConsts_FeatureComUmErro 65201
-#define TestConsts_FeatureSemFuncionalidade 65202
-#define TestConsts_FeatureComPrimeiraLinhaEmBranco 65203
-#define TestConsts_DescricaoFeatureTeste 65204
-#define TestConsts_DescricaoPrimeiroStep 65205
-#define JclResources_RsErrBadCount 65216
-#define JclResources_RsErrDfaUItem 65217
-#define JclResources_RsErrDfaUCond 65218
-#define JclResources_RsErrDfaUMLimit 65219
-#define JclResources_RsErrDfaWSSize 65220
-#define JclResources_RsErrDfaRecurse 65221
-#define JclResources_RsErrRecursionLimit 65222
-#define JclResources_RsErrNullWsLimit 65223
-#define JclResources_RsErrBadNewLine 65224
-#define JclResources_RsErrLibNotLoaded 65225
-#define JclResources_RsErrStudyFailed 65226
-#define JclResources_RsErrCalloutError 65227
-#define JclResources_RsErrUnknownError 65228
-#define JclResources_RsErrNoUTF8Support 65229
-#define JclResources_RsEUnexpectedEOSeq 65230
-#define TestConsts_FeatureDir 65231
-#define ComStrs_sInvalidComCtl32 65232
-#define JclResources_RsEReplacementChar 65233
-#define JclResources_RsErrNoMatch 65234
-#define JclResources_RsErrNull 65235
-#define JclResources_RsErrBadOption 65236
-#define JclResources_RsErrBadMagic 65237
-#define JclResources_RsErrUnknownNode 65238
-#define JclResources_RsErrNoMemory 65239
-#define JclResources_RsErrNoSubString 65240
-#define JclResources_RsErrMatchLimit 65241
-#define JclResources_RsErrCallout 65242
-#define JclResources_RsErrBadUTF8 65243
-#define JclResources_RsErrBadUTF8Offset 65244
-#define JclResources_RsErrPartial 65245
-#define JclResources_RsErrBadPartial 65246
-#define JclResources_RsErrInternal 65247
-#define Consts_SMultiSelectRequired 65248
-#define Consts_SSeparator 65249
-#define Consts_SNoGetItemEventHandler 65250
-#define Consts_SWindowsVistaRequired 65251
-#define Consts_SXPThemesRequired 65252
-#define Consts_STaskDlgButtonCaption 65253
-#define Consts_STaskDlgRadioButtonCaption 65254
-#define Consts_SInvalidTaskDlgButtonCaption 65255
-#define ComStrs_sInvalidLevel 65256
-#define ComStrs_sInvalidLevelEx 65257
-#define ComStrs_sInvalidIndex 65258
-#define ComStrs_sInsertError 65259
-#define ComStrs_sInvalidOwner 65260
-#define ComStrs_sRichEditInsertError 65261
-#define ComStrs_sRichEditLoadFail 65262
-#define ComStrs_sRichEditSaveFail 65263
-#define Consts_SmkcCtrl 65264
-#define Consts_SmkcAlt 65265
-#define Consts_SOutOfRange 65266
-#define Consts_sAllFilter 65267
-#define Consts_SInvalidClipFmt 65268
-#define Consts_SIconToClipboard 65269
-#define Consts_SCannotOpenClipboard 65270
-#define Consts_SInvalidMemoSize 65271
-#define Consts_SInvalidPrinterOp 65272
-#define Consts_SNoDefaultPrinter 65273
-#define Consts_SDuplicateMenus 65274
-#define Consts_SDockedCtlNeedsName 65275
-#define Consts_SDockTreeRemoveError 65276
-#define Consts_SDockZoneNotFound 65277
-#define Consts_SDockZoneHasNoCtl 65278
-#define Consts_SDockZoneVersionConflict 65279
-#define Consts_SmkcBkSp 65280
-#define Consts_SmkcTab 65281
-#define Consts_SmkcEsc 65282
-#define Consts_SmkcEnter 65283
-#define Consts_SmkcSpace 65284
-#define Consts_SmkcPgUp 65285
-#define Consts_SmkcPgDn 65286
-#define Consts_SmkcEnd 65287
-#define Consts_SmkcHome 65288
-#define Consts_SmkcLeft 65289
-#define Consts_SmkcUp 65290
-#define Consts_SmkcRight 65291
-#define Consts_SmkcDown 65292
-#define Consts_SmkcIns 65293
-#define Consts_SmkcDel 65294
-#define Consts_SmkcShift 65295
-#define Consts_SMsgDlgWarning 65296
-#define Consts_SMsgDlgError 65297
-#define Consts_SMsgDlgInformation 65298
-#define Consts_SMsgDlgConfirm 65299
-#define Consts_SMsgDlgYes 65300
-#define Consts_SMsgDlgNo 65301
-#define Consts_SMsgDlgOK 65302
-#define Consts_SMsgDlgCancel 65303
-#define Consts_SMsgDlgHelp 65304
-#define Consts_SMsgDlgAbort 65305
-#define Consts_SMsgDlgRetry 65306
-#define Consts_SMsgDlgIgnore 65307
-#define Consts_SMsgDlgAll 65308
-#define Consts_SMsgDlgNoToAll 65309
-#define Consts_SMsgDlgYesToAll 65310
-#define Consts_SMsgDlgClose 65311
-#define Consts_SOKButton 65312
-#define Consts_SCancelButton 65313
-#define Consts_SYesButton 65314
-#define Consts_SNoButton 65315
-#define Consts_SHelpButton 65316
-#define Consts_SCloseButton 65317
-#define Consts_SIgnoreButton 65318
-#define Consts_SRetryButton 65319
-#define Consts_SAbortButton 65320
-#define Consts_SAllButton 65321
-#define Consts_SCannotDragForm 65322
-#define Consts_SVMetafiles 65323
-#define Consts_SVEnhMetafiles 65324
-#define Consts_SVIcons 65325
-#define Consts_SVBitmaps 65326
-#define Consts_SVTIFFImages 65327
-#define Consts_SVisibleChanged 65328
-#define Consts_SCannotShowModal 65329
-#define Consts_SPropertyOutOfRange 65330
-#define Consts_SMenuIndexError 65331
-#define Consts_SMenuReinserted 65332
-#define Consts_SMenuNotFound 65333
-#define Consts_SNoTimers 65334
-#define Consts_SNotPrinting 65335
-#define Consts_SPrinting 65336
-#define Consts_SPrinterIndexError 65337
-#define Consts_SInvalidPrinter 65338
-#define Consts_SDeviceOnPort 65339
-#define Consts_SGroupIndexTooLow 65340
-#define Consts_SNoMDIForm 65341
-#define Consts_SImageCanvasNeedsBitmap 65342
-#define Consts_SControlParentSetToSelf 65343
-#define Consts_SUnknownExtension 65344
-#define Consts_SUnknownClipboardFormat 65345
-#define Consts_SOutOfResources 65346
-#define Consts_SNoCanvasHandle 65347
-#define Consts_SInvalidImageSize 65348
-#define Consts_SInvalidImageList 65349
-#define Consts_SReplaceImage 65350
-#define Consts_SImageIndexError 65351
-#define Consts_SImageReadFail 65352
-#define Consts_SImageWriteFail 65353
-#define Consts_SWindowDCError 65354
-#define Consts_SWindowClass 65355
-#define Consts_SCannotFocus 65356
-#define Consts_SParentRequired 65357
-#define Consts_SParentGivenNotAParent 65358
-#define Consts_SMDIChildNotVisible 65359
-#define RTLConsts_SInvalidTime 65360
-#define RTLConsts_STimeEncodeError 65361
-#define RTLConsts_SNoContext 65362
-#define RTLConsts_SNoContextFound 65363
-#define RTLConsts_SNoIndex 65364
-#define RTLConsts_SNoSearch 65365
-#define RTLConsts_SNoTableOfContents 65366
-#define RTLConsts_SNoTopics 65367
-#define RTLConsts_SNothingFound 65368
-#define Consts_SInvalidBitmap 65369
-#define Consts_SInvalidIcon 65370
-#define Consts_SInvalidMetafile 65371
-#define Consts_SInvalidPixelFormat 65372
-#define Consts_SInvalidImage 65373
-#define Consts_SChangeIconSize 65374
-#define Consts_SChangeWicSize 65375
-#define RTLConsts_SThreadError 65376
-#define RTLConsts_SThreadExternalTerminate 65377
-#define RTLConsts_SThreadExternalWait 65378
-#define RTLConsts_SThreadStartError 65379
-#define RTLConsts_SParamIsNegative 65380
-#define RTLConsts_SInputBufferExceed 65381
-#define RTLConsts_SInvalidCharsInPath 65382
-#define RTLConsts_SPathTooLong 65383
-#define RTLConsts_SPathNotFound 65384
-#define RTLConsts_SPathFormatNotSupported 65385
-#define RTLConsts_SFileNotFound 65386
-#define RTLConsts_hNoFilterViewer 65387
-#define RTLConsts_sInvalidTimeoutValue 65388
-#define RTLConsts_SInvalidDate 65389
-#define RTLConsts_SInvalidDateTime 65390
-#define RTLConsts_SInvalidInteger 65391
-#define RTLConsts_SListIndexError 65392
-#define RTLConsts_SMemoryStreamError 65393
-#define RTLConsts_SNoComSupport 65394
-#define RTLConsts_SPropertyException 65395
-#define RTLConsts_SReadError 65396
-#define RTLConsts_SReadOnlyProperty 65397
-#define RTLConsts_SRegCreateFailed 65398
-#define RTLConsts_SRegGetDataFailed 65399
-#define RTLConsts_SRegSetDataFailed 65400
-#define RTLConsts_SResNotFound 65401
-#define RTLConsts_SSeekNotImplemented 65402
-#define RTLConsts_SSortedListError 65403
-#define RTLConsts_SUnknownGroup 65404
-#define RTLConsts_SUnknownProperty 65405
-#define RTLConsts_SWriteError 65406
-#define RTLConsts_SThreadCreateError 65407
+#define JclResources_RsEUnexpectedEOSeq 65200
+#define TestConsts_FeatureDir 65201
+#define TestConsts_FeatureCenarioSimples 65202
+#define TestConsts_FeatureComUmErro 65203
+#define TestConsts_FeatureSemFuncionalidade 65204
+#define TestConsts_FeatureComPrimeiraLinhaEmBranco 65205
+#define TestConsts_DescricaoFeatureTeste 65206
+#define TestConsts_DescricaoPrimeiroStep 65207
+#define DBConsts_SBcdOverflow 65208
+#define DBConsts_SInvalidBcdValue 65209
+#define DBConsts_SCouldNotParseTimeStamp 65210
+#define DBConsts_SInvalidSqlTimeStamp 65211
+#define ComConst_SOleError 65212
+#define ComConst_SNoMethod 65213
+#define ComConst_SVarNotObject 65214
+#define ComConst_STooManyParams 65215
+#define JclResources_RsErrBadPartial 65216
+#define JclResources_RsErrInternal 65217
+#define JclResources_RsErrBadCount 65218
+#define JclResources_RsErrDfaUItem 65219
+#define JclResources_RsErrDfaUCond 65220
+#define JclResources_RsErrDfaUMLimit 65221
+#define JclResources_RsErrDfaWSSize 65222
+#define JclResources_RsErrDfaRecurse 65223
+#define JclResources_RsErrRecursionLimit 65224
+#define JclResources_RsErrNullWsLimit 65225
+#define JclResources_RsErrBadNewLine 65226
+#define JclResources_RsErrLibNotLoaded 65227
+#define JclResources_RsErrStudyFailed 65228
+#define JclResources_RsErrCalloutError 65229
+#define JclResources_RsErrUnknownError 65230
+#define JclResources_RsErrNoUTF8Support 65231
+#define ComStrs_sRichEditLoadFail 65232
+#define ComStrs_sRichEditSaveFail 65233
+#define ComStrs_sInvalidComCtl32 65234
+#define JclResources_RsEReplacementChar 65235
+#define JclResources_RsErrNoMatch 65236
+#define JclResources_RsErrNull 65237
+#define JclResources_RsErrBadOption 65238
+#define JclResources_RsErrBadMagic 65239
+#define JclResources_RsErrUnknownNode 65240
+#define JclResources_RsErrNoMemory 65241
+#define JclResources_RsErrNoSubString 65242
+#define JclResources_RsErrMatchLimit 65243
+#define JclResources_RsErrCallout 65244
+#define JclResources_RsErrBadUTF8 65245
+#define JclResources_RsErrBadUTF8Offset 65246
+#define JclResources_RsErrPartial 65247
+#define Consts_SDockZoneHasNoCtl 65248
+#define Consts_SDockZoneVersionConflict 65249
+#define Consts_SMultiSelectRequired 65250
+#define Consts_SSeparator 65251
+#define Consts_SNoGetItemEventHandler 65252
+#define Consts_SWindowsVistaRequired 65253
+#define Consts_SXPThemesRequired 65254
+#define Consts_STaskDlgButtonCaption 65255
+#define Consts_STaskDlgRadioButtonCaption 65256
+#define Consts_SInvalidTaskDlgButtonCaption 65257
+#define ComStrs_sInvalidLevel 65258
+#define ComStrs_sInvalidLevelEx 65259
+#define ComStrs_sInvalidIndex 65260
+#define ComStrs_sInsertError 65261
+#define ComStrs_sInvalidOwner 65262
+#define ComStrs_sRichEditInsertError 65263
+#define Consts_SmkcDel 65264
+#define Consts_SmkcShift 65265
+#define Consts_SmkcCtrl 65266
+#define Consts_SmkcAlt 65267
+#define Consts_SOutOfRange 65268
+#define Consts_sAllFilter 65269
+#define Consts_SInvalidClipFmt 65270
+#define Consts_SIconToClipboard 65271
+#define Consts_SCannotOpenClipboard 65272
+#define Consts_SInvalidMemoSize 65273
+#define Consts_SInvalidPrinterOp 65274
+#define Consts_SNoDefaultPrinter 65275
+#define Consts_SDuplicateMenus 65276
+#define Consts_SDockedCtlNeedsName 65277
+#define Consts_SDockTreeRemoveError 65278
+#define Consts_SDockZoneNotFound 65279
+#define Consts_SMsgDlgYesToAll 65280
+#define Consts_SMsgDlgClose 65281
+#define Consts_SmkcBkSp 65282
+#define Consts_SmkcTab 65283
+#define Consts_SmkcEsc 65284
+#define Consts_SmkcEnter 65285
+#define Consts_SmkcSpace 65286
+#define Consts_SmkcPgUp 65287
+#define Consts_SmkcPgDn 65288
+#define Consts_SmkcEnd 65289
+#define Consts_SmkcHome 65290
+#define Consts_SmkcLeft 65291
+#define Consts_SmkcUp 65292
+#define Consts_SmkcRight 65293
+#define Consts_SmkcDown 65294
+#define Consts_SmkcIns 65295
+#define Consts_SVBitmaps 65296
+#define Consts_SVTIFFImages 65297
+#define Consts_SMsgDlgWarning 65298
+#define Consts_SMsgDlgError 65299
+#define Consts_SMsgDlgInformation 65300
+#define Consts_SMsgDlgConfirm 65301
+#define Consts_SMsgDlgYes 65302
+#define Consts_SMsgDlgNo 65303
+#define Consts_SMsgDlgOK 65304
+#define Consts_SMsgDlgCancel 65305
+#define Consts_SMsgDlgHelp 65306
+#define Consts_SMsgDlgAbort 65307
+#define Consts_SMsgDlgRetry 65308
+#define Consts_SMsgDlgIgnore 65309
+#define Consts_SMsgDlgAll 65310
+#define Consts_SMsgDlgNoToAll 65311
+#define Consts_SImageCanvasNeedsBitmap 65312
+#define Consts_SControlParentSetToSelf 65313
+#define Consts_SOKButton 65314
+#define Consts_SCancelButton 65315
+#define Consts_SYesButton 65316
+#define Consts_SNoButton 65317
+#define Consts_SHelpButton 65318
+#define Consts_SCloseButton 65319
+#define Consts_SIgnoreButton 65320
+#define Consts_SRetryButton 65321
+#define Consts_SAbortButton 65322
+#define Consts_SAllButton 65323
+#define Consts_SCannotDragForm 65324
+#define Consts_SVMetafiles 65325
+#define Consts_SVEnhMetafiles 65326
+#define Consts_SVIcons 65327
+#define Consts_SParentGivenNotAParent 65328
+#define Consts_SMDIChildNotVisible 65329
+#define Consts_SVisibleChanged 65330
+#define Consts_SCannotShowModal 65331
+#define Consts_SPropertyOutOfRange 65332
+#define Consts_SMenuIndexError 65333
+#define Consts_SMenuReinserted 65334
+#define Consts_SMenuNotFound 65335
+#define Consts_SNoTimers 65336
+#define Consts_SNotPrinting 65337
+#define Consts_SPrinting 65338
+#define Consts_SPrinterIndexError 65339
+#define Consts_SInvalidPrinter 65340
+#define Consts_SDeviceOnPort 65341
+#define Consts_SGroupIndexTooLow 65342
+#define Consts_SNoMDIForm 65343
+#define Consts_SChangeIconSize 65344
+#define Consts_SChangeWicSize 65345
+#define Consts_SUnknownExtension 65346
+#define Consts_SUnknownClipboardFormat 65347
+#define Consts_SOutOfResources 65348
+#define Consts_SNoCanvasHandle 65349
+#define Consts_SInvalidImageSize 65350
+#define Consts_SInvalidImageList 65351
+#define Consts_SReplaceImage 65352
+#define Consts_SImageIndexError 65353
+#define Consts_SImageReadFail 65354
+#define Consts_SImageWriteFail 65355
+#define Consts_SWindowDCError 65356
+#define Consts_SWindowClass 65357
+#define Consts_SCannotFocus 65358
+#define Consts_SParentRequired 65359
+#define RTLConsts_SInvalidDateTime 65360
+#define RTLConsts_SInvalidInteger 65361
+#define RTLConsts_SInvalidTime 65362
+#define RTLConsts_STimeEncodeError 65363
+#define RTLConsts_SNoContext 65364
+#define RTLConsts_SNoContextFound 65365
+#define RTLConsts_SNoIndex 65366
+#define RTLConsts_SNoSearch 65367
+#define RTLConsts_SNoTableOfContents 65368
+#define RTLConsts_SNoTopics 65369
+#define RTLConsts_SNothingFound 65370
+#define Consts_SInvalidBitmap 65371
+#define Consts_SInvalidIcon 65372
+#define Consts_SInvalidMetafile 65373
+#define Consts_SInvalidPixelFormat 65374
+#define Consts_SInvalidImage 65375
+#define RTLConsts_SWriteError 65376
+#define RTLConsts_SThreadCreateError 65377
+#define RTLConsts_SThreadError 65378
+#define RTLConsts_SThreadExternalTerminate 65379
+#define RTLConsts_SThreadExternalWait 65380
+#define RTLConsts_SThreadStartError 65381
+#define RTLConsts_SParamIsNegative 65382
+#define RTLConsts_SInputBufferExceed 65383
+#define RTLConsts_SInvalidCharsInPath 65384
+#define RTLConsts_SPathTooLong 65385
+#define RTLConsts_SPathNotFound 65386
+#define RTLConsts_SPathFormatNotSupported 65387
+#define RTLConsts_SFileNotFound 65388
+#define RTLConsts_hNoFilterViewer 65389
+#define RTLConsts_sInvalidTimeoutValue 65390
+#define RTLConsts_SInvalidDate 65391
+#define RTLConsts_SListCapacityError 65392
+#define RTLConsts_SListCountError 65393
+#define RTLConsts_SListIndexError 65394
+#define RTLConsts_SMemoryStreamError 65395
+#define RTLConsts_SNoComSupport 65396
+#define RTLConsts_SPropertyException 65397
+#define RTLConsts_SReadError 65398
+#define RTLConsts_SReadOnlyProperty 65399
+#define RTLConsts_SRegCreateFailed 65400
+#define RTLConsts_SRegGetDataFailed 65401
+#define RTLConsts_SRegSetDataFailed 65402
+#define RTLConsts_SResNotFound 65403
+#define RTLConsts_SSeekNotImplemented 65404
+#define RTLConsts_SSortedListError 65405
+#define RTLConsts_SUnknownGroup 65406
+#define RTLConsts_SUnknownProperty 65407
 #define RTLConsts_SDuplicateClass 65408
 #define RTLConsts_SDuplicateItem 65409
 #define RTLConsts_SDuplicateName 65410
@@ -217,11 +227,11 @@
 #define RTLConsts_SInvalidImage 65416
 #define RTLConsts_SInvalidName 65417
 #define RTLConsts_SInvalidProperty 65418
-#define RTLConsts_SInvalidPropertyPath 65419
-#define RTLConsts_SInvalidPropertyValue 65420
-#define RTLConsts_SInvalidRegType 65421
-#define RTLConsts_SListCapacityError 65422
-#define RTLConsts_SListCountError 65423
+#define RTLConsts_SInvalidPropertyElement 65419
+#define RTLConsts_SInvalidPropertyPath 65420
+#define RTLConsts_SInvalidPropertyType 65421
+#define RTLConsts_SInvalidPropertyValue 65422
+#define RTLConsts_SInvalidRegType 65423
 #define SysConst_SLongDayNameThu 65424
 #define SysConst_SLongDayNameFri 65425
 #define SysConst_SLongDayNameSat 65426
@@ -336,12 +346,24 @@
 #define SysConst_SOverflow 65535
 STRINGTABLE
 BEGIN
+	JclResources_RsEUnexpectedEOSeq,	"Unexpected end of sequence"
+	TestConsts_FeatureDir,	"..\\Features\\"
 	TestConsts_FeatureCenarioSimples,	"cenario_simples.feature"
 	TestConsts_FeatureComUmErro,	"cenario_com_erro.feature"
 	TestConsts_FeatureSemFuncionalidade,	"feature_sem_funcionalidade.feature"
 	TestConsts_FeatureComPrimeiraLinhaEmBranco,	"feature_com_primeira_linha_em_branco.feature"
 	TestConsts_DescricaoFeatureTeste,	"Como Desenvolvedor\r\nGostaria que o teste abaixo fosse executado\r\nPara que minhas estórias ganhem vida!"
 	TestConsts_DescricaoPrimeiroStep,	"Dado que não criei o cenário \"primeiros passos\" em minha classe de testes"
+	DBConsts_SBcdOverflow,	"BCD overflow"
+	DBConsts_SInvalidBcdValue,	"%s is not a valid BCD value"
+	DBConsts_SCouldNotParseTimeStamp,	"Could not parse SQL TimeStamp string"
+	DBConsts_SInvalidSqlTimeStamp,	"Invalid SQL date/time values"
+	ComConst_SOleError,	"OLE error %.8x"
+	ComConst_SNoMethod,	"Method '%s' not supported by automation object"
+	ComConst_SVarNotObject,	"Variant does not reference an automation object"
+	ComConst_STooManyParams,	"Dispatch methods do not support more than 64 parameters"
+	JclResources_RsErrBadPartial,	"Bad partial"
+	JclResources_RsErrInternal,	"Internal"
 	JclResources_RsErrBadCount,	"Bad count"
 	JclResources_RsErrDfaUItem,	"DFA UItem"
 	JclResources_RsErrDfaUCond,	"DFA UCond"
@@ -356,8 +378,8 @@ BEGIN
 	JclResources_RsErrCalloutError,	"Unhandled exception in callout"
 	JclResources_RsErrUnknownError,	"Unknown error"
 	JclResources_RsErrNoUTF8Support,	"No UTF8 support in this version of PCRE"
-	JclResources_RsEUnexpectedEOSeq,	"Unexpected end of sequence"
-	TestConsts_FeatureDir,	"..\\Features\\"
+	ComStrs_sRichEditLoadFail,	"Failed to Load Stream"
+	ComStrs_sRichEditSaveFail,	"Failed to Save Stream"
 	ComStrs_sInvalidComCtl32,	"This control requires version 4.70 or greater of COMCTL32.DLL"
 	JclResources_RsEReplacementChar,	"Failed to get ANSI replacement character"
 	JclResources_RsErrNoMatch,	"No match"
@@ -372,8 +394,8 @@ BEGIN
 	JclResources_RsErrBadUTF8,	"Bad UTF-8"
 	JclResources_RsErrBadUTF8Offset,	"Bad UTF-8 offset"
 	JclResources_RsErrPartial,	"Partial"
-	JclResources_RsErrBadPartial,	"Bad partial"
-	JclResources_RsErrInternal,	"Internal"
+	Consts_SDockZoneHasNoCtl,	" - Dock zone has no control"
+	Consts_SDockZoneVersionConflict,	"Error loading dock zone from the stream. Expecting version %d, but found %d."
 	Consts_SMultiSelectRequired,	"Multiselect mode must be on for this feature"
 	Consts_SSeparator,	"Separator"
 	Consts_SNoGetItemEventHandler,	"No OnGetItem event handler assigned"
@@ -388,8 +410,8 @@ BEGIN
 	ComStrs_sInsertError,	"Unable to insert an item"
 	ComStrs_sInvalidOwner,	"Invalid owner"
 	ComStrs_sRichEditInsertError,	"RichEdit line insertion error"
-	ComStrs_sRichEditLoadFail,	"Failed to Load Stream"
-	ComStrs_sRichEditSaveFail,	"Failed to Save Stream"
+	Consts_SmkcDel,	"Del"
+	Consts_SmkcShift,	"Shift+"
 	Consts_SmkcCtrl,	"Ctrl+"
 	Consts_SmkcAlt,	"Alt+"
 	Consts_SOutOfRange,	"Value must be between %d and %d"
@@ -404,8 +426,8 @@ BEGIN
 	Consts_SDockedCtlNeedsName,	"Docked control must have a name"
 	Consts_SDockTreeRemoveError,	"Error removing control from dock tree"
 	Consts_SDockZoneNotFound,	" - Dock zone not found"
-	Consts_SDockZoneHasNoCtl,	" - Dock zone has no control"
-	Consts_SDockZoneVersionConflict,	"Error loading dock zone from the stream. Expecting version %d, but found %d."
+	Consts_SMsgDlgYesToAll,	"Yes to &All"
+	Consts_SMsgDlgClose,	"&Close"
 	Consts_SmkcBkSp,	"BkSp"
 	Consts_SmkcTab,	"Tab"
 	Consts_SmkcEsc,	"Esc"
@@ -420,8 +442,8 @@ BEGIN
 	Consts_SmkcRight,	"Right"
 	Consts_SmkcDown,	"Down"
 	Consts_SmkcIns,	"Ins"
-	Consts_SmkcDel,	"Del"
-	Consts_SmkcShift,	"Shift+"
+	Consts_SVBitmaps,	"Bitmaps"
+	Consts_SVTIFFImages,	"TIFF Images"
 	Consts_SMsgDlgWarning,	"Warning"
 	Consts_SMsgDlgError,	"Error"
 	Consts_SMsgDlgInformation,	"Information"
@@ -436,8 +458,8 @@ BEGIN
 	Consts_SMsgDlgIgnore,	"&Ignore"
 	Consts_SMsgDlgAll,	"&All"
 	Consts_SMsgDlgNoToAll,	"N&o to All"
-	Consts_SMsgDlgYesToAll,	"Yes to &All"
-	Consts_SMsgDlgClose,	"&Close"
+	Consts_SImageCanvasNeedsBitmap,	"Can only modify an image if it contains a bitmap"
+	Consts_SControlParentSetToSelf,	"A control cannot have itself as its parent"
 	Consts_SOKButton,	"OK"
 	Consts_SCancelButton,	"Cancel"
 	Consts_SYesButton,	"&Yes"
@@ -452,8 +474,8 @@ BEGIN
 	Consts_SVMetafiles,	"Metafiles"
 	Consts_SVEnhMetafiles,	"Enhanced Metafiles"
 	Consts_SVIcons,	"Icons"
-	Consts_SVBitmaps,	"Bitmaps"
-	Consts_SVTIFFImages,	"TIFF Images"
+	Consts_SParentGivenNotAParent,	"Parent given is not a parent of '%s'"
+	Consts_SMDIChildNotVisible,	"Cannot hide an MDI Child Form"
 	Consts_SVisibleChanged,	"Cannot change Visible in OnShow or OnHide"
 	Consts_SCannotShowModal,	"Cannot make a visible window modal"
 	Consts_SPropertyOutOfRange,	"%s property out of range"
@@ -468,8 +490,8 @@ BEGIN
 	Consts_SDeviceOnPort,	"%s on %s"
 	Consts_SGroupIndexTooLow,	"GroupIndex cannot be less than a previous menu item's GroupIndex"
 	Consts_SNoMDIForm,	"Cannot create form. No MDI forms are currently active"
-	Consts_SImageCanvasNeedsBitmap,	"Can only modify an image if it contains a bitmap"
-	Consts_SControlParentSetToSelf,	"A control cannot have itself as its parent"
+	Consts_SChangeIconSize,	"Cannot change the size of an icon"
+	Consts_SChangeWicSize,	"Cannot change the size of a WIC Image"
 	Consts_SUnknownExtension,	"Unknown picture file extension (.%s)"
 	Consts_SUnknownClipboardFormat,	"Unsupported clipboard format"
 	Consts_SOutOfResources,	"Out of system resources"
@@ -484,8 +506,8 @@ BEGIN
 	Consts_SWindowClass,	"Error creating window class"
 	Consts_SCannotFocus,	"Cannot focus a disabled or invisible window"
 	Consts_SParentRequired,	"Control '%s' has no parent window"
-	Consts_SParentGivenNotAParent,	"Parent given is not a parent of '%s'"
-	Consts_SMDIChildNotVisible,	"Cannot hide an MDI Child Form"
+	RTLConsts_SInvalidDateTime,	"''%s'' is not a valid date and time"
+	RTLConsts_SInvalidInteger,	"''%s'' is not a valid integer value"
 	RTLConsts_SInvalidTime,	"''%s'' is not a valid time"
 	RTLConsts_STimeEncodeError,	"Invalid argument to time encode"
 	RTLConsts_SNoContext,	"No context-sensitive help installed"
@@ -500,8 +522,8 @@ BEGIN
 	Consts_SInvalidMetafile,	"Metafile is not valid"
 	Consts_SInvalidPixelFormat,	"Invalid pixel format"
 	Consts_SInvalidImage,	"Invalid image"
-	Consts_SChangeIconSize,	"Cannot change the size of an icon"
-	Consts_SChangeWicSize,	"Cannot change the size of a WIC Image"
+	RTLConsts_SWriteError,	"Stream write error"
+	RTLConsts_SThreadCreateError,	"Thread creation error: %s"
 	RTLConsts_SThreadError,	"Thread Error: %s (%d)"
 	RTLConsts_SThreadExternalTerminate,	"Cannot terminate an externally created thread"
 	RTLConsts_SThreadExternalWait,	"Cannot wait for an externally created thread"
@@ -516,8 +538,8 @@ BEGIN
 	RTLConsts_hNoFilterViewer,	"No help viewer that supports filters"
 	RTLConsts_sInvalidTimeoutValue,	"Invalid Timeout value: %s"
 	RTLConsts_SInvalidDate,	"''%s'' is not a valid date"
-	RTLConsts_SInvalidDateTime,	"''%s'' is not a valid date and time"
-	RTLConsts_SInvalidInteger,	"''%s'' is not a valid integer value"
+	RTLConsts_SListCapacityError,	"List capacity out of bounds (%d)"
+	RTLConsts_SListCountError,	"List count out of bounds (%d)"
 	RTLConsts_SListIndexError,	"List index out of bounds (%d)"
 	RTLConsts_SMemoryStreamError,	"Out of memory while expanding memory stream"
 	RTLConsts_SNoComSupport,	"%s has not been registered as a COM class"
@@ -532,8 +554,6 @@ BEGIN
 	RTLConsts_SSortedListError,	"Operation not allowed on sorted list"
 	RTLConsts_SUnknownGroup,	"%s not in a class registration group"
 	RTLConsts_SUnknownProperty,	"Property %s does not exist"
-	RTLConsts_SWriteError,	"Stream write error"
-	RTLConsts_SThreadCreateError,	"Thread creation error: %s"
 	RTLConsts_SDuplicateClass,	"A class named %s already exists"
 	RTLConsts_SDuplicateItem,	"List does not allow duplicates ($0%x)"
 	RTLConsts_SDuplicateName,	"A component named %s already exists"
@@ -545,11 +565,11 @@ BEGIN
 	RTLConsts_SInvalidImage,	"Invalid stream format"
 	RTLConsts_SInvalidName,	"''%s'' is not a valid component name"
 	RTLConsts_SInvalidProperty,	"Invalid property value"
+	RTLConsts_SInvalidPropertyElement,	"Invalid property element: %s"
 	RTLConsts_SInvalidPropertyPath,	"Invalid property path"
+	RTLConsts_SInvalidPropertyType,	"Invalid property type: %s"
 	RTLConsts_SInvalidPropertyValue,	"Invalid property value"
 	RTLConsts_SInvalidRegType,	"Invalid data type for '%s'"
-	RTLConsts_SListCapacityError,	"List capacity out of bounds (%d)"
-	RTLConsts_SListCountError,	"List count out of bounds (%d)"
 	SysConst_SLongDayNameThu,	"Thursday"
 	SysConst_SLongDayNameFri,	"Friday"
 	SysConst_SLongDayNameSat,	"Saturday"

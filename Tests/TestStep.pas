@@ -15,7 +15,7 @@ type
   published
     procedure DeveriaRetornarONomeDoMetodoCorrespondente;
     procedure ShouldIdentifyMethodWithParams;
-    procedure ShouldCaptureStringParams;
+    procedure ShouldCaptureParams;
   end;
 
 implementation
@@ -37,12 +37,12 @@ begin
   Specify.That(FStep.MetodoDeTeste).Should.Equal('GivenIHaveAParameterTestInMyStepAnd1')
 end;
 
-procedure TestTStep.ShouldCaptureStringParams;
+procedure TestTStep.ShouldCaptureParams;
 begin
   FStep.Descricao := 'Given I have a parameter "test" in my step and 1';
-  FStep.ParamsRegex := '(".*"|\d)';
+  FStep.ParamsRegex := 'Given I have a parameter "([^"]*)" in my step and (\d+)';
   Specify.That(FStep.Params['1']).Should.Not_.Be.Nil_;
-  Specify.That(FStep.Params['"test"']).Should.Not_.Be.Nil_;
+  Specify.That(FStep.Params['test']).Should.Not_.Be.Nil_;
 end;
 
 procedure TestTStep.TearDown;

@@ -3,9 +3,11 @@ unit StepParams;
 interface
 
 uses
-  StepParamsIntf, StepParamIntf, Classes;
+  StepParamsIntf, StepParamIntf, Classes, SysUtils;
 
 type
+  EInvalidParamType = class(EVariantError);
+
   TStepParams = class(TInterfacedObject, IStepParams)
   private
     FParams: IInterfaceList;
@@ -24,7 +26,7 @@ type
 implementation
 
 uses
-  StepParam, TypeUtils, Constants;
+  StepParam, TypeUtils, Constants, Variants;
 
 procedure TStepParams.Clear;
 begin
@@ -67,6 +69,8 @@ end;
 
 function TStepParams.GetParam(AParam: Variant): IStepParam;
 begin
+  if not (VarIsStr(AParam) or VarIsOrdinal(AParam)) then
+    raise EInvalidParamType.CreateFmt(InvalidParamTypeError, [VarTypeAsText(TVarData(AParam).VType)]);
   case TVarData(AParam).VType of
     varString, varOleStr, varUString: Result := ByName(AParam)
   else
@@ -84,6 +88,7 @@ begin
     if FParams.Count -1 >= AParam then
       LParam := (FParams[AParam] as IStepParam)
   end;
+
   if (LParam = nil) then
     if (Value <> nil) then
       LParam := Value

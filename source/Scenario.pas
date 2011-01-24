@@ -6,28 +6,24 @@ uses
   ScenarioIntf, Classes, dCucuberListIntf, ValidationRuleIntf, TestFramework, StepIntf;
 
 type
-  TScenario = class(TInterfacedObject, IScenario, IValidationRule)
+  TScenario = class(TTestCase, IScenario, IValidationRule)
   private
     FSteps: ICucumberList;
-    FTestSuite: ITestSuite;
     FTitulo: string;
     FValidationRule: IValidationRule;
     function GetSteps: ICucumberList;
     function GetTestName: string;
-    function GetTestSuite: ITestSuite;
     function GetTitulo: string;
     function GetValidationRule: IValidationRule;
     procedure SetSteps(const Value: ICucumberList);
     procedure SetTitulo(const Value: string);
     procedure SetValidationRule(const Value: IValidationRule);
-    function HasTestMethodFor(const AStep: IStep): Boolean;
+    class function HasTestMethodFor(const AStep: IStep): Boolean;
   public
-    constructor Create;
-
+    constructor Create(MethodName: string); override;
     property ValidationRule: IValidationRule read GetValidationRule write SetValidationRule implements IValidationRule;
     property Steps: ICucumberList read GetSteps write SetSteps;
     property Titulo: string read GetTitulo write SetTitulo;
-    property TestSuite: ITestSuite read GetTestSuite;
     property TestName: string read GetTestName;
   end;
 
@@ -36,8 +32,9 @@ implementation
 uses
   dCucuberList, ValidationRule, TypeUtils;
 
-constructor TScenario.Create;
+constructor TScenario.Create(MethodName: string);
 begin
+  inherited Create(MethodName);
   FSteps := TCucumberList.Create;
   FSteps.ValidationRule.ValidateFunction := function: Boolean
   var
@@ -57,7 +54,7 @@ begin
 
   ValidationRule.ValidateFunction := function: Boolean
   begin
-    Result := not S(FTitulo).Vazia;
+    Result := not S(FTitulo).IsEmpty(True);
     Result := Result and FSteps.ValidationRule.Valid;
   end;
 end;
@@ -72,21 +69,6 @@ begin
   Result := S(FTitulo).AsClassName;
 end;
 
-function TScenario.GetTestSuite: ITestSuite;
-var
-  I: Integer;
-  LTestName: string;
-begin
-  if (FTestSuite = nil) then
-  begin
-    LTestName := TestName;
-    for I := 0 to RegisteredTests.Tests.Count - 1 do
-      if (RegisteredTests.Tests[i] as ITestSuite).Name = LTestName then
-        FTestSuite := RegisteredTests.Tests[i] as ITestSuite;
-  end;
-  Result := FTestSuite;
-end;
-
 function TScenario.GetTitulo: string;
 begin
   Result := FTitulo;
@@ -99,16 +81,16 @@ begin
   Result := FValidationRule;
 end;
 
-function TScenario.HasTestMethodFor(const AStep: IStep): Boolean;
+class function TScenario.HasTestMethodFor(const AStep: IStep): Boolean;
 var
   I: Integer;
   LTest: ITest;
 begin
   Result := False;
-  if TestSuite <> nil then
-    for I := 0 to TestSuite.Tests.Count - 1 do
+  if Suite.Tests.Count > 0 then
+    for I := 0 to Suite.Tests.Count - 1 do
     begin
-      LTest := TestSuite.Tests[i] as ITest;
+      LTest := Suite.Tests[i] as ITest;
       Result := S(LTest.Name).Equals(AStep.MetodoDeTeste);
       if Result then
         Break;

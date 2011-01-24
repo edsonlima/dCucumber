@@ -27,7 +27,7 @@ uses
 
 procedure TestTFeature.FeatureDeveriaSerInvalidaSeCenariosNaoForemValidos;
 begin
-  FFeature.Scenarios.Add(TScenario.Create);
+  FFeature.Scenarios.Add(TScenario.Create('NoTest'));
   Specify.That(FFeature.Valid).Should.Be.False;
 end;
 
@@ -38,7 +38,7 @@ begin
   LCenarioValido := TUmCenarioValido.Suite;
   RegisterTest(LCenarioValido);
   Specify.That(FFeature.Valid).Should.Be.False;
-  FFeature.Scenarios.Add(TScenario.Create);
+  FFeature.Scenarios.Add(TScenario.Create('TUmCenarioValido'));
   (FFeature.Scenarios.First as IScenario).Titulo := 'Um Cenário Válido';
   (FFeature.Scenarios.First as IScenario).Steps.Add(TStep.Create);
   ((FFeature.Scenarios.First as IScenario).Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
@@ -56,7 +56,7 @@ begin
   RegisterTest(LCenarioValidoSuite);
   LCenarioCom3Passos := TUmCenarioCom3Passos.Suite;
   RegisterTest(LCenarioCom3Passos);
-  LScenario := TScenario.Create;
+  LScenario := TScenario.Create('UmCenarioCom3Passos');
   LScenario.Titulo := 'Um cenário com 3 passos';
   LScenario.Steps.Add(NovoStep('Dado que tenho 3 passos nesse cenário'));
   LScenario.Steps.Add(NovoStep('Quando eu validar a Featuare'));
@@ -64,7 +64,7 @@ begin
 
   FFeature.Scenarios.Add(LScenario);
 
-  LScenario := TScenario.Create;
+  LScenario := TScenario.Create('UmCenarioValido');
   LScenario.Titulo := 'Um cenário Válido';
   LScenario.Steps.Add(NovoStep('Dado Que Tenho Um Step Valido'));
 

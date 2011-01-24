@@ -24,7 +24,7 @@ type
 implementation
 
 uses
-  Step, StepIntf, ValidationRuleIntf, DummyTests;
+  Step, StepIntf, ValidationRuleIntf, DummyTests, SysUtils;
 
 procedure TestTScenario.DeveriaSerValidoSomenteSeStepsSaoValidos;
 begin
@@ -33,8 +33,15 @@ begin
 end;
 
 procedure TestTScenario.SetUp;
+var
+  LTest: ITest;
 begin
-  FScenario := TScenario.Create;
+//  FScenario := TUmCenarioValido.Create('');
+//  LTest := TUmCenarioValido.Suite as ITest;
+  LTest := TUmCenarioValido.Suite;
+  FScenario := LTest.Tests[0] as IScenario;
+//  FScenario := TUmCenarioValido.Create('DadoQueTenhoUmStepValido');
+//  FScenario := TUmCenarioValido.Suite as IScenario;
 end;
 
 procedure TestTScenario.TearDown;
@@ -43,17 +50,11 @@ begin
 end;
 
 procedure TestTScenario.DeveriaSerValidoSePossuirUmaClasseDeTesteAssociadaAoTitulo;
-var
-  LCenarioValidoSuite: ITestSuite;
 begin
-  LCenarioValidoSuite := TUmCenarioValido.Suite;
-  RegisterTest(LCenarioValidoSuite);
   FScenario.Titulo := 'Um Cenário Valido';
   FScenario.Steps.Add(TStep.Create);
   (FScenario.Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
-  Specify.That(FScenario.TestSuite).Should.Not_.Be.Nil_;
   Specify.That((FScenario as IValidationRule).Valid).Should.Be.True;
-  RegisteredTests.Tests.Remove(LCenarioValidoSuite);
 end;
 
 procedure TestTScenario.DeveriaSerInvalidoSeNaoPossuiTitulo;
@@ -65,20 +66,16 @@ end;
 
 procedure TestTScenario.DeveriaSerInvalidoSeNaoPossuiTestesAssociadosAosSteps;
 var
-  LCenarioValido: ITestSuite;
   LStep: IStep;
 begin
-  LCenarioValido := TUmCenarioInvalido.Suite;
-  RegisterTest(LCenarioValido);
+  FScenario := nil;
+  FScenario := (TUmCenarioInvalido.Suite.Tests[0] as IScenario);
   FScenario.Titulo := 'Um Cenário Invalido';
   FScenario.Steps.Add(TStep.Create);
   LStep := (FScenario.Steps.First as IStep);
   LStep.Descricao := 'Dado que tenho um step valido.';
-  Specify.That(FScenario.TestSuite).Should.Not_.Be.Nil_;
   Specify.That((FScenario as IValidationRule).Valid).Should.Be.False;
-  Specify.That(FScenario.TestSuite.Tests).Should.Not_.Be.Empty;
-
-  RegisteredTests.Tests.Remove(LCenarioValido);
+  Specify.That((FScenario as ITest).Tests).Should.Not_.Be.Empty;
 end;
 
 procedure TestTScenario.DeveriaRetornarONomeDaClasseDeTesteCorretamente;
@@ -92,13 +89,12 @@ var
   LCenarioValido: ITestSuite;
 begin
   LCenarioValido := TUmCenarioValido.Suite;
-  RegisterTest(LCenarioValido);
-  FScenario.TestSuite;
+//  RegisterTest(LCenarioValido);
+//  FScenario.TestSuite;
   FScenario.Titulo := 'Um Cenário Valido';
   FScenario.Steps.Add(TStep.Create);
   (FScenario.Steps.First as IStep).Descricao := 'Dado que tenho um step valido';
   Specify.That((FScenario as IValidationRule).Valid).Should.Be.True;
-  RegisteredTests.Tests.Remove(LCenarioValido);
 end;
 
 initialization

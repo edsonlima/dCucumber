@@ -10,21 +10,43 @@ type
   TestTStepParams = class(TParseContext)
   strict private
     FStepParams: IStepParams;
+    FParam: Variant;
   public
     procedure SetUp; override;
     procedure TearDown; override;
+    procedure RaiseExceptionIfParamTypeIsInvalid;
+    procedure RaiseExceptionIfTrySetInvalidParamType;
   published
     procedure ShouldAddSomeStepParams;
     procedure ShouldGetStepParamByName;
     procedure ShouldGetAndSetStepParamByName;
     procedure ShouldGetAndSetStepParamByIndex;
+    procedure ShouldRaiseExceptionIfParamNotIsStringOrInteger;
+    procedure ShouldRaiseExceptionIfTrySetInvalidParamType;
     procedure ShouldClearParams;
   end;
 
 implementation
 
 uses
-  StepParam, Dialogs, dSpecUtils, Rtti, TypInfo;
+  StepParam, Dialogs, dSpecUtils, Rtti, TypInfo, Variants, DB;
+
+procedure TestTStepParams.RaiseExceptionIfParamTypeIsInvalid;
+var
+  LParam: IStepParam;
+begin
+  LParam := FStepParams[FParam];
+end;
+
+procedure TestTStepParams.RaiseExceptionIfTrySetInvalidParamType;
+var
+  LParam: IStepParam;
+begin
+  LParam := TStepParam.Create;
+  LParam.Name := 'Name';
+  LParam.Value := 'Name';
+  FStepParams[FParam] := LParam;
+end;
 
 procedure TestTStepParams.SetUp;
 begin
@@ -33,6 +55,7 @@ end;
 
 procedure TestTStepParams.TearDown;
 begin
+  FParam := null;
   FStepParams := nil;
 end;
 
@@ -79,6 +102,18 @@ begin
   Specify.That(FStepParams.ByName('New param')).Should.Not_.Be.Nil_;
   Specify.That(FStepParams.ByName('New param')).Should.Support(IStepParam);
   Specify.That(FStepParams.ByName('New param').Name).Should.Equal('New param');
+end;
+
+procedure TestTStepParams.ShouldRaiseExceptionIfParamNotIsStringOrInteger;
+begin
+  FParam := 1.89;
+  CheckException(RaiseExceptionIfParamTypeIsInvalid, EInvalidParamType);
+end;
+
+procedure TestTStepParams.ShouldRaiseExceptionIfTrySetInvalidParamType;
+begin
+  FParam := 1.89;
+  CheckException(RaiseExceptionIfTrySetInvalidParamType, EInvalidParamType);
 end;
 
 initialization

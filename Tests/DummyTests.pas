@@ -3,19 +3,19 @@ unit DummyTests;
 interface
 
 uses
-  TestFramework;
+  TestFramework, Scenario;
 
 type
-  TUmCenarioValido = class(TTestCase)
+  TUmCenarioValido = class(TScenario)
     published
     procedure DadoQueTenhoUmStepValido;
   end;
 
-  TUmCenarioInvalido = class(TTestCase)
+  TUmCenarioInvalido = class(TScenario)
     published
   end;
 
-  TUmCenarioCom3Passos = class(TTestCase)
+  TUmCenarioCom3Passos = class(TScenario)
     published
     procedure DadoQueTenho3PassosNesseCenario;
     procedure QuandoEuValidarAFeatuare;
